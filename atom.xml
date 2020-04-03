@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>王永坤的小窝</title>
+  
+  <subtitle>未来的路 就在脚下</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://homewyk.com/"/>
+  <updated>2020-04-03T09:08:26.787Z</updated>
+  <id>http://homewyk.com/</id>
+  
+  <author>
+    <name>HomeWyk</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用软件集合</title>
+    <link href="http://homewyk.com/2020/04/03/20200403-165757/"/>
+    <id>http://homewyk.com/2020/04/03/20200403-165757/</id>
+    <published>2020-04-03T08:56:02.000Z</published>
+    <updated>2020-04-03T09:08:26.787Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.compresss.com/cn/compress-video.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;在线压缩软件&lt;/a&gt;: compresss&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="http://homewyk.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="软件" scheme="http://homewyk.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+      <category term="生活" scheme="http://homewyk.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unbroken(坚不可摧)</title>
+    <link href="http://homewyk.com/2020/04/03/20200403-171150/"/>
+    <id>http://homewyk.com/2020/04/03/20200403-171150/</id>
+    <published>2020-04-03T08:53:12.000Z</published>
+    <updated>2020-04-03T09:36:56.185Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;视频资源：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=26U_seo0a1g&amp;amp;t=7s&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;youtube&lt;/a&gt;&lt;/p&gt;
+&lt;video
+        
+      
+    
+    </summary>
+    
+    
+      <category term="励志" scheme="http://homewyk.com/categories/%E5%8A%B1%E5%BF%97/"/>
+    
+    
+      <category term="励志" scheme="http://homewyk.com/tags/%E5%8A%B1%E5%BF%97/"/>
+    
+      <category term="学习" scheme="http://homewyk.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Yolov1算法解读及其详细实现</title>
+    <link href="http://homewyk.com/2020/04/02/20200402-111922/"/>
+    <id>http://homewyk.com/2020/04/02/20200402-111922/</id>
+    <published>2020-04-02T02:57:05.000Z</published>
+    <updated>2020-04-02T16:27:16.146Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="目标检测" scheme="http://homewyk.com/categories/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
+    
+      <category term="深度学习" scheme="http://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Yolov1" scheme="http://homewyk.com/tags/Yolov1/"/>
+    
+      <category term="目标检测" scheme="http://homewyk.com/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
+      <category term="论文解读" scheme="http://homewyk.com/tags/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>写Blog四剑客：PicGo + Gitee(码云)+Snipaste 实现markdown图床</title>
+    <link href="http://homewyk.com/2020/04/01/20200401-122211/"/>
+    <id>http://homewyk.com/2020/04/01/20200401-122211/</id>
+    <published>2020-04-01T04:22:11.000Z</published>
+    <updated>2020-04-01T11:48:13.206Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://homewyk.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://homewyk.com/tags/hexo/"/>
+    
+      <category term="blog工具" scheme="http://homewyk.com/tags/blog%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="质量网站" scheme="http://homewyk.com/tags/%E8%B4%A8%E9%87%8F%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于TensorFolw2的Yolov1程序实现</title>
+    <link href="http://homewyk.com/2020/04/01/20200401-100427/"/>
+    <id>http://homewyk.com/2020/04/01/20200401-100427/</id>
+    <published>2020-04-01T02:04:27.000Z</published>
+    <updated>2020-04-02T08:15:46.635Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;完整程序实现&quot;&gt;&lt;a href=&quot;#完整程序实现&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="深度学习" scheme="http://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="http://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="tensorflow" scheme="http://homewyk.com/tags/tensorflow/"/>
+    
+      <category term="Yolov1" scheme="http://homewyk.com/tags/Yolov1/"/>
+    
+      <category term="Yolov1Programing" scheme="http://homewyk.com/tags/Yolov1Programing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>写于2020年3月31日深夜</title>
+    <link href="http://homewyk.com/2020/03/31/20200331-230851/"/>
+    <id>http://homewyk.com/2020/03/31/20200331-230851/</id>
+    <published>2020-03-31T15:08:51.000Z</published>
+    <updated>2020-04-01T08:04:40.536Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;code&gt;2020年3月31日23:09:52&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="杂谈" scheme="http://homewyk.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="以笔谈心" scheme="http://homewyk.com/tags/%E4%BB%A5%E7%AC%94%E8%B0%88%E5%BF%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>质量网站</title>
+    <link href="http://homewyk.com/2020/03/31/20200331-202916/"/>
+    <id>http://homewyk.com/2020/03/31/20200331-202916/</id>
+    <published>2020-03-31T12:29:16.000Z</published>
+    <updated>2020-04-01T10:17:18.183Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;网站汇总&quot;&gt;&lt;a href=&quot;#网站汇总&quot; class=&quot;headerlink&quot; title=&quot;网站汇总&quot;&gt;&lt;/a&gt;网站汇总&lt;/h2&gt;&lt;h3 id=&quot;1-设计类&quot;&gt;&lt;a href=&quot;#1-设计类&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="website" scheme="http://homewyk.com/categories/website/"/>
+    
+    
+      <category term="website" scheme="http://homewyk.com/tags/website/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ps技巧</title>
+    <link href="http://homewyk.com/2020/03/31/20200331-201841/"/>
+    <id>http://homewyk.com/2020/03/31/20200331-201841/</id>
+    <published>2020-03-31T12:18:41.000Z</published>
+    <updated>2020-04-01T07:56:25.257Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;PS技巧汇总&quot;&gt;&lt;a href=&quot;#PS技巧汇总&quot; class=&quot;headerlink&quot; title=&quot;PS技巧汇总&quot;&gt;&lt;/a&gt;PS技巧汇总&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 用到什么学什么，主要是没时间学啊…&lt;/p&gt;
+&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="ps" scheme="http://homewyk.com/categories/ps/"/>
+    
+    
+      <category term="ps" scheme="http://homewyk.com/tags/ps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pycharm使用记录</title>
+    <link href="http://homewyk.com/2020/03/30/20200330-194036/"/>
+    <id>http://homewyk.com/2020/03/30/20200330-194036/</id>
+    <published>2020-03-30T11:40:36.000Z</published>
+    <updated>2020-04-01T07:58:28.884Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-pycharm的调试功能&quot;&gt;&lt;a href=&quot;#1-pycharm的调试功能&quot; class=&quot;headerlink&quot; title=&quot;1. pycharm的调试功能&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://homewyk.com/categories/python/"/>
+    
+    
+      <category term="pycharm" scheme="http://homewyk.com/tags/pycharm/"/>
+    
+      <category term="python" scheme="http://homewyk.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>YoloV1 基于tensorflow2的代码编写过程记录</title>
+    <link href="http://homewyk.com/2020/03/27/20200327-092117/"/>
+    <id>http://homewyk.com/2020/03/27/20200327-092117/</id>
+    <published>2020-03-27T01:21:17.000Z</published>
+    <updated>2020-04-01T12:44:07.553Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="深度学习" scheme="http://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="http://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="tensorflow" scheme="http://homewyk.com/tags/tensorflow/"/>
+    
+      <category term="Yolov1" scheme="http://homewyk.com/tags/Yolov1/"/>
+    
+      <category term="目标识别" scheme="http://homewyk.com/tags/%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录使用Hexo打造个人博客系统--持续记录中</title>
+    <link href="http://homewyk.com/2020/03/26/20200326-112506/"/>
+    <id>http://homewyk.com/2020/03/26/20200326-112506/</id>
+    <published>2020-03-26T03:25:06.000Z</published>
+    <updated>2020-04-03T03:46:27.058Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://homewyk.com/categories/hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://homewyk.com/tags/Hexo/"/>
+    
+      <category term="theme-matery" scheme="http://homewyk.com/tags/theme-matery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello Blog</title>
+    <link href="http://homewyk.com/2020/03/23/20200323-140000/"/>
+    <id>http://homewyk.com/2020/03/23/20200323-140000/</id>
+    <published>2020-03-23T06:00:00.000Z</published>
+    <updated>2020-04-01T08:00:58.187Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;code&gt;Hello Blog!&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 开启新的学习旅程！&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Hello_Blog" scheme="http://homewyk.com/categories/Hello-Blog/"/>
+    
+    
+      <category term="Hello Blog" scheme="http://homewyk.com/tags/Hello-Blog/"/>
+    
+  </entry>
+  
+</feed>

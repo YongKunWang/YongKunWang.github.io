@@ -1,0 +1,1557 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="记录使用Hexo打造个人博客系统--持续记录中, 王永坤的小窝">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>记录使用Hexo打造个人博客系统--持续记录中 | 王永坤的小窝</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="王永坤的小窝" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">王永坤的小窝</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="far fa-comment" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bars" style="zoom: 0.6;"></i>
+      
+      <span>学习导航</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/study/Java-Learning">
+          
+          <i class="fab fa-java" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Java Learning</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://www.baidu.com" target="_blank" rel="noopener">
+          
+          <i class="far fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Bookmark</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">王永坤的小窝</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw far fa-comment"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bars"></i>
+			
+			学习导航
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/study/Java-Learning " style="margin-left:75px";>
+				  
+				   <i class="fa fab fa-java" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Java Learning</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="https://www.baidu.com " target="_blank" rel="noopener" style="margin-left:75px";>
+				  
+				   <i class="fa far fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Bookmark</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/Home-wang/cloudimg/raw/master/scenic-view-of-mountains-1095817.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">记录使用Hexo打造个人博客系统--持续记录中</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
+                            </a>
+                        
+                            <a href="/tags/theme-matery/">
+                                <span class="chip bg-color">theme-matery</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/hexo/" class="post-category">
+                                hexo
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-03-26
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-04-03
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    19 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&nbsp;&nbsp;&nbsp;&nbsp; 2020年3月26日，开始搭建了第一个自己的独立博客，并且打算坚持持续使用并且进行不断的优化。 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  关于我：我是一个正在不断学习计算机相关的菜鸟小硕。2020年由于新冠肺炎疫情的影响，以在家3个月有余，每天在家坚持学习（有时效率贼低）。我现在最大的愿望就是毕业的时候能卖个好价格。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 很多人应该也想过搭建一个自己的博客，网上也有一堆详细教程。<strong>我在此打算将这篇文章集百家之长，将自己能够了解到的相关hexo搭建博客的知识整合在这一篇文章中。</strong>这篇文章将不断的进行更新。</p>
+<h2 id="关于搭建博客的工具-Hexo"><a href="#关于搭建博客的工具-Hexo" class="headerlink" title="关于搭建博客的工具-Hexo"></a>关于搭建博客的工具-Hexo</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;  首先要了解一下我们搭建博客要用到的框架。<code>Hexo</code>是高效的静态站点生成框架，它基于<code>Node.js</code>。通过<code>Hexo</code>，你可以直接使用<code>Markdown</code>语法来书写博客。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;   当然你可能对上面的这些概念比较陌生，不用过分担心，其实就是使用工具搭建博客系统罢了。请记住大部分都是满满的套路，直接按部就班就好。 你无需关心网页源代码的具体细节，你只需要用心写好你的博客内容就行。</p>
+<h2 id="搭建博客的步骤"><a href="#搭建博客的步骤" class="headerlink" title="搭建博客的步骤"></a>搭建博客的步骤</h2><h3 id="1-安装Node-js"><a href="#1-安装Node-js" class="headerlink" title="1.安装Node.js"></a>1.安装Node.js</h3><p>首先下载稳定版<a href="https://nodejs.org/dist/v9.11.1/node-v9.11.1-x64.msi" target="_blank" rel="noopener">Node.js</a>，我这里给的是64位的。</p>
+<p>安装选项全部默认，一路点击<code>Next</code>。</p>
+<p>最后安装好之后，按<code>Win+R</code>打开命令提示符，输入<code>node -v</code>和<code>npm -v</code>，如果出现版本号，那么就安装成功了。</p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200401185856.png" alt=""></p>
+<h3 id="2-添加国内镜像源"><a href="#2-添加国内镜像源" class="headerlink" title="2. 添加国内镜像源"></a>2. 添加国内镜像源</h3><p>如果没有梯子的话，可以使用阿里的国内镜像进行加速。 </p>
+<pre class=" language-js"><code class="language-js">npm config <span class="token keyword">set</span> registry https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>registry<span class="token punctuation">.</span>npm<span class="token punctuation">.</span>taobao<span class="token punctuation">.</span>org</code></pre>
+<h3 id="3-安装Git"><a href="#3-安装Git" class="headerlink" title="3. 安装Git"></a>3. 安装Git</h3><p>为了把本地的网页文件上传到github上面去，我们需要用到分布式版本控制工具————<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git</a>。</p>
+<p>安装选项还是全部默认，只不过最后一步添加路径时选择<code>Use Git from the Windows Command Prompt</code>，这样我们就可以直接在命令提示符里打开git了。</p>
+<p>安装完成后在命令提示符中输入<code>git --version</code>验证是否安装成功</p>
+<h3 id="4-注册Github账号-amp-新建仓库repository"><a href="#4-注册Github账号-amp-新建仓库repository" class="headerlink" title="4.注册Github账号&amp;新建仓库repository"></a>4.注册Github账号&amp;新建仓库repository</h3><ol>
+<li>注册一个<code>Github</code>账号。</li>
+<li>新建项目</li>
+<li>项目名称以<code>你的GitHub账号名字.github.io</code>!! 注意一定要这样写！！</li>
+</ol>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.png" alt=""></p>
+<h3 id="5-安装Hexo"><a href="#5-安装Hexo" class="headerlink" title="5.安装Hexo"></a>5.安装Hexo</h3><ol>
+<li><p>在合适的地方新建一个文件夹，用来存放自己的博客文件，比如我的博客文件都存放在<code>E:\MyBlog\</code>目录下。</p>
+</li>
+<li><p>在该目录下右键点击<code>Git Bash Here</code>，打开git的控制台窗口，以后我们所有的操作都在<code>git</code>控制台进行，就不要用<code>Windows</code>自带的控制台了。</p>
+</li>
+<li><p>定位到该目录下，输入<code>npm i hexo-cli -g</code>安装Hexo。会有几个报错，无视它就行。</p>
+</li>
+<li><p>安装完后输入<code>hexo -v</code>验证是否安装成功。</p>
+</li>
+<li><p>然后就要初始化我们的网站，输入<code>hexo init</code>初始化文件夹，接着输入<code>npm install</code>安装必备的组件。</p>
+</li>
+<li><p>这样本地的网站配置也弄好啦，输入<code>hexo g</code>（g 为 generator的缩写）生成静态网页，然后输入<code>hexo s</code>（s 为services的缩写）打开本地服务器，然后浏览器打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，就可以看到我们的博客啦，效果如下:</p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/%E5%8E%9F%E5%A7%8B%E6%95%88%E6%9E%9C.jpg" alt=""></p>
+<ol start="7">
+<li>使用<code>ctrl+c</code>可以关闭本地服务器</li>
+</ol>
+</li>
+</ol>
+<h3 id="6-连接Github和本地"><a href="#6-连接Github和本地" class="headerlink" title="6. 连接Github和本地"></a>6. 连接Github和本地</h3><ol>
+<li>首先右键打开git bash，然后输入下面命令： </li>
+</ol>
+<pre><code>git config --global user.name "YongKunWang"
+git config --global user.email "Wang_YongKun@yeah.net"</code></pre><p>用户名和邮箱根据你注册github的信息自行修改。</p>
+<ol start="2">
+<li>然后生成密钥SSH key：</li>
+</ol>
+<pre><code>ssh-keygen -t rsa -C "Wang_YongKun@yeah.net"</code></pre><ol start="3">
+<li>打开<a href="http://github.com/" target="_blank" rel="noopener">github</a>，在头像下面点击<code>settings</code>，再点击<code>SSH and GPG keys</code>，新建一个SSH，名字随便。 </li>
+<li>git bash中输入 :</li>
+</ol>
+<pre><code>cat ~/.ssh/id_rsa.pub</code></pre><ol start="5">
+<li><p>将输出的内容复制到框中，点击确定保存。 </p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/ssh%E8%AE%BE%E7%BD%AE.png" alt=""></p>
+</li>
+<li><p>输入<code>ssh -T git@github.com</code>，如果如下图所示，出现你的用户名，那就成功了。</p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200403114408.png" alt=""></p>
+</li>
+<li><p>打开博客根目录下的<code>_config.yml</code>文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。 </p>
+<p>修改最后一行的配置： </p>
+<pre><code>deploy:
+  type: git
+  repository: https://github.com/godweiyang/YongKunWang.github.io
+  branch: master</code></pre><p><code>repository</code>修改为你自己的<code>github</code>项目地址。 </p>
+</li>
+</ol>
+<p><strong>经过以上7个步骤，必要的环境配置条件基本已经完成了！！</strong></p>
+<h3 id="7-测试本地写文章、发布文章"><a href="#7-测试本地写文章、发布文章" class="headerlink" title="7.测试本地写文章、发布文章"></a>7.测试本地写文章、发布文章</h3><p>首先在博客根目录下右键打开git bash，安装一个扩展<code>npm i hexo-deployer-git</code>。</p>
+<p>然后输入<code>hexo new post "article title"</code>，新建一篇文章。</p>
+<p>然后打开<code>E:\MyBlog\source\_posts</code>的目录，可以发现下面多了一个<code>.md</code>文件，可以新建一个<code>images</code>文件用来存放你的图片等数据，另一个就是你的文章文件啦。</p>
+<p>编写完<code>markdown</code>文件后，根目录下输入<code>hexo g</code>生成静态网页，然后输入<code>hexo s</code>可以本地预览效果，最后输入<code>hexo d</code>上传到github上。这时打开你的github.io主页就能看到发布的文章啦。</p>
+<p><strong>我们经常用的关于hexo的4个指令：</strong></p>
+<pre><code>//不需要添加后缀，hexo会自动生成title.md文件
+hexo new post "title" 
+// g:generator
+hexo g
+// s: service
+hexo s
+// d: deploy
+hexo d</code></pre><h3 id="8-绑定域名"><a href="#8-绑定域名" class="headerlink" title="8. 绑定域名"></a>8. 绑定域名</h3><p>&nbsp;&nbsp;&nbsp;&nbsp; 现在默认的域名还是<code>xxx.github.io</code>，可以直接通过<code>xxx.github.io</code>访问自己搭建的博客系统。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 如果想要绑定自己的域名，可以通过网络购买一个域名，然后进行配置。本人在阿里云购买的域名，如下图所示，并且添加两条解析记录：</p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png" alt=""></p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%901.png" alt=""></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 然后打开自己新建的仓库，点击<code>settings</code>，拉到下面<code>Custom domain</code>处，填上你自己的域名，保存： </p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A.png" alt=""></p>
+<p>此时在你的<code>github</code>仓库的根目录下会生成一个名字为<code>CNAME</code>的文件，如果没有的话（其实如果本地没有这个文件的话，<code>hexo d</code>会将全部文件上传，此时github仓库会丢失这个文件，所以<code>CNAME</code>这个文件本地一定要有的 ）打开你本地博客<code>/source</code>目录，我的是<code>E:\Myblog\source</code>，新建<code>CNAME</code>文件，注意没有后缀。然后在里面写上你的域名<code>homewyk.com</code>，保存。最后运行<code>hexo g</code>、<code>hexo d</code>上传到github。 </p>
+<h3 id="9-主题推荐"><a href="#9-主题推荐" class="headerlink" title="9.主题推荐"></a>9.主题推荐</h3><p>主题的原地址在这里：<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">hexo-theme-matery</a>，它的文档写得也非常的详细，还有中英文两个版本，作者回复也很及时。效果图如下，可以看出非常合我的口味： </p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/theme.png" alt=""></p>
+<h2 id="个性化配置（matery-theme）"><a href="#个性化配置（matery-theme）" class="headerlink" title="个性化配置（matery_theme）"></a>个性化配置（matery_theme）</h2><h3 id="博客的目录结构"><a href="#博客的目录结构" class="headerlink" title="博客的目录结构"></a>博客的目录结构</h3><pre><code>- node_modules
+- public
+- scaffolds
+- source
+    - _data
+    - _posts
+    - about
+    - archives
+    - categories
+    - friends
+    - tags
+- themes</code></pre><ul>
+<li><code>node_modules</code>是<code>node.js</code>各种库的目录</li>
+<li><code>public</code>是生成的网页文件目录</li>
+<li><code>scaffolds</code>里面就三个文件，存储着新文章和新页面的初始设置</li>
+<li><code>source</code>是我们最常用到的一个目录，里面存放着文章、各类页面、图像等文件</li>
+<li><code>themes</code>存放着主题文件，一般也用不到</li>
+<li>我们平时写文章只需要关注<code>source/_posts</code>这个文件夹就行了</li>
+</ul>
+<h4 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h4><p>在文件根目录下的<code>_config.yml</code>，就是整个<code>hexo</code>框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的<a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">配置描述</a> </p>
+<h5 id="网站相关信息"><a href="#网站相关信息" class="headerlink" title="网站相关信息"></a>网站相关信息</h5><p>参数描述：</p>
+<ul>
+<li><code>title</code>网站标题</li>
+<li><code>subtitle</code>网站副标题</li>
+<li><code>description</code>网站描述</li>
+<li><code>author</code>您的名字</li>
+<li><code>language</code>网站使用的语言</li>
+<li><code>timezone</code>网站时区。<code>Hexo</code> 默认使用您电脑的时区。时区列表。比如说：<code>America/New_York, Japan</code>, 和 <code>UTC</code> 。</li>
+</ul>
+<p>其中：</p>
+<ul>
+<li><code>description</code>主要用于<code>SEO</code>，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。</li>
+<li><code>author</code>参数用于主题显示文章的作者。</li>
+</ul>
+<h5 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h5><p>参数描述：</p>
+<ul>
+<li><code>url</code>网址</li>
+<li><code>root</code>网站根目录</li>
+<li><code>permalink</code>文章的<a href="https://hexo.io/zh-cn/docs/permalinks" target="_blank" rel="noopener">永久链接</a>格式</li>
+<li><code>permalink_defaults</code>永久链接中各部分的默认值</li>
+</ul>
+<p>在这里，你需要把<code>url</code>改成你的<strong>网站域名</strong>。</p>
+<p><code>permalink</code>，也就是你生成某个文章时的那个链接格式。</p>
+<p>比如我新建一个文章叫<code>temp.md</code>，那么这个时候他自动生成的地址就是<code>http://yoursite.com/2018/09/05/temp</code>。</p>
+<p>再往下翻，中间这些都默认就好了。 </p>
+<h4 id="theme"><a href="#theme" class="headerlink" title="theme"></a><code>theme</code></h4><p> <code>theme</code>就是选择什么主题，也就是在<code>themes</code>这个文件夹下，在官网上有很多个主题，默认给你安装的是<code>lanscape</code>这个主题。当你需要更换主题时，在官网上下载，把主题的文件放在<code>themes</code>文件夹下，再修改这个主题参数就可以了。 </p>
+<h4 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h4><h5 id="post"><a href="#post" class="headerlink" title="post"></a><code>post</code></h5><p>当你每一次使用代码 </p>
+<pre class=" language-bash"><code class="language-bash">hexo new XXX</code></pre>
+<p>它其实默认使用的是<code>post</code>这个布局，也就是在<code>source</code>文件夹下的<code>_post</code>里面。</p>
+<p><code>Hexo</code>有三种默认布局：<code>post</code>、<code>page</code>和<code>draft</code>，它们分别对应不同的路径，而您自定义的其他布局和<code>post</code>相同，都将储存到<code>source/_posts</code>文件夹。</p>
+<p>而new这个命令其实是：</p>
+<pre class=" language-bash"><code class="language-bash">hexo new <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>title<span class="token operator">></span></code></pre>
+<p>只不过这个<code>layout</code>默认是<code>post</code>罢了。 </p>
+<h5 id="page"><a href="#page" class="headerlink" title="page"></a><code>page</code></h5><p>如果你想另起一页，那么可以使用 :</p>
+<pre class=" language-bash"><code class="language-bash">hexo new page newpage</code></pre>
+<p>系统会自动给你在<code>source</code>文件夹下创建一个<code>newpage</code>文件夹，以及<code>newpage</code>文件夹中的<code>index.md</code>，这样你访问的<code>newpage</code>对应的链接就是<a href="http://xxx.xxx/newpage" target="_blank" rel="noopener">http://xxx.xxx/newpage</a> </p>
+<h5 id="draft"><a href="#draft" class="headerlink" title="draft"></a><code>draft</code></h5><p><code>draft</code>是草稿的意思，也就是你如果想写文章，又不希望被看到，那么可以 :</p>
+<pre class=" language-bash"><code class="language-bash">hexo server --draft</code></pre>
+<p>在本地端口中开启服务预览。</p>
+<p>如果你的草稿文件写完了，想要发表到<code>post</code>中:</p>
+<pre class=" language-bash"><code class="language-bash">hexo publish draft newdraft</code></pre>
+<p>就会自动把<code>newdraft.md</code>发送到<code>post</code>中 。</p>
+<h3 id="更改导航栏颜色"><a href="#更改导航栏颜色" class="headerlink" title="更改导航栏颜色"></a>更改导航栏颜色</h3><p>在主题文件的theme/matery /source/css/matery.css 文件中，搜索 .bg-color 来修改背景颜色：  </p>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.bg-color</span> </span><span class="token punctuation">{</span>
+    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right, <span class="token hexcode">#103945</span> <span class="token number">0%</span>, <span class="token hexcode">#c1baa7</span> <span class="token number">100%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0.6</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>效果：</p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200401204906.png" alt=""></p>
+<h3 id="取消蒙版特效"><a href="#取消蒙版特效" class="headerlink" title="取消蒙版特效"></a>取消蒙版特效</h3><p>在主题文件的 theme/matery /source/css/matery.css 文件中，搜索 .bg-cover:after 注释它： </p>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.bg-cover</span><span class="token pseudo-element">:after</span> </span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/*-webkit-animation: rainbow 60s infinite;*/</span>
+    <span class="token comment" spellcheck="true">/*animation: rainbow 60s infinite;*/</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="设置首页显示部分"><a href="#设置首页显示部分" class="headerlink" title="设置首页显示部分"></a>设置首页显示部分</h3><pre><code># index page dream text,
+# 配置首页显示"梦想"的语句.
+dream:
+  enable: true
+  showTitle: true
+  title: 吉檀迦利
+  text: &lt;p&gt;离你最近的地方，路途最远，&lt;/p&gt;&lt;br /&gt;&lt;p&gt;最简单的音调，需要最艰苦的练习。&lt;/p&gt;&lt;br /&gt;&lt;p&gt;旅客要在每个生人门口敲叩，才能敲到自己的家门,&lt;/p&gt;&lt;br /&gt;&lt;p&gt;人要在外面到处漂流，最后才能走到最深的内殿。&lt;/p&gt;&lt;br /&gt;&lt;p&gt;我的眼睛向空阔处四望，最后才合上眼说：“你原来住在这里！”。&lt;/p&gt;&lt;br /&gt;&lt;p align="right" style="margin-right:100px"&gt;——泰戈尔(Rabindranath Thakur)&lt;/p&gt;</code></pre><p>效果显示：</p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200401213211.png" alt=""></p>
+<h3 id="设置打字效果副标题"><a href="#设置打字效果副标题" class="headerlink" title="设置打字效果副标题"></a>设置打字效果副标题</h3><pre><code># 打字效果副标题.
+# 如果有符号 ‘ ，请在 ’ 前面加上 \
+subtitle:
+  enable: true
+  loop: true # 是否循环
+  showCursor: true # 是否显示光标
+  startDelay: 300 # 开始延迟
+  typeSpeed: 100 # 打字速度
+  backSpeed: 50 # 删除速度
+  sub1: 天空没有留下鸟的痕迹，但我已飞过
+  sub2: I leave no trace of wings in the air,but I am glad I have had my flight.</code></pre><p>效果展示：</p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200401213337.png" alt=""></p>
+<h3 id="添加404页面"><a href="#添加404页面" class="headerlink" title="添加404页面"></a>添加404页面</h3><p>原来的主题没有<code>404</code>页面，我们加一个。首先在<code>/source/</code>目录下新建一个<code>404.md</code>，非主题目录下的<code>source</code>内容如下： </p>
+<pre class=" language-json"><code class="language-json">title<span class="token operator">:</span> <span class="token number">404</span>
+date<span class="token operator">:</span> <span class="token number">2019</span>-<span class="token number">08</span>-<span class="token number">5</span> <span class="token number">16</span><span class="token operator">:</span><span class="token number">41</span><span class="token operator">:</span><span class="token number">10</span>
+type<span class="token operator">:</span> <span class="token string">"404"</span>
+layout<span class="token operator">:</span> <span class="token string">"404"</span>
+description<span class="token operator">:</span> <span class="token string">"Oops～，我崩溃了！找不到你想要的页面 :("</span></code></pre>
+<p>然后在<code>/themes/matery/layout/</code>目录下新建一个<code>404.ejs</code>文件，内容如下： </p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token comment" spellcheck="true">/* don't remove. */</span>
+    <span class="token selector"><span class="token class">.about-cover</span> </span><span class="token punctuation">{</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">75</span>vh<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bg-cover pd-header about-cover<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col s10 offset-s1 m8 offset-m2 l8 offset-l2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>brand<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title center-align<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                        404
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description center-align<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                        &lt;%= page.description %>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token comment" spellcheck="true">// 每天切换 banner 图.  Switch banner image every day.</span>
+    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.bg-cover'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'background-image'</span><span class="token punctuation">,</span> <span class="token string">'url(/medias/banner/'</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.jpg)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><h3 id="1-hexo的网页的TOC的目录显示"><a href="#1-hexo的网页的TOC的目录显示" class="headerlink" title="1. hexo的网页的TOC的目录显示"></a>1. hexo的网页的TOC的目录显示</h3><p>是从二级标题开始能够正常实现的，<code>##</code></p>
+<p>一级标题不能在<code>toc</code>目录中正常显示<code>#</code></p>
+<h3 id="2-博文中添加image"><a href="#2-博文中添加image" class="headerlink" title="2. 博文中添加image"></a>2. 博文中添加<code>image</code></h3><p><strong>好方法：</strong></p>
+<p>通过图床的方式来做</p>
+<p>详情请看<a href="https://homewyk.com/2020/04/01/20200401-122211/">写作四剑客</a></p>
+<p>结束上述配置以后，就可以实现markdowm的img图片的插入了，还能够预览，比下面的方法好多了。</p>
+<hr>
+<p>不好的方法：</p>
+<p>采用相对路径的方法：</p>
+<ol>
+<li><p>配置文件：<code>_config.yml</code></p>
+<pre><code>post_asset_folder: true</code></pre></li>
+<li><p>将<code>_config.yml</code>文件中的配置项<code>post_asset_folder</code>设为<code>true</code>后，执行命令<code>$ hexo new post_name</code>，在<code>source/_posts</code>中会生成文章<code>post_name.md</code>和同名文件夹<code>post_name</code>。将图片资源放在<code>post_name</code>中，文章就可以使用相对路径引用图片资源了。 </p>
+</li>
+<li><p>引用的时候还是和之前的markdown语法是不一样的:</p>
+<pre><code>![](image.jpg)</code></pre></li>
+<li><p>当<code>hexo g</code>的时候，会将.md文件和图片文件一块发布到以时间命名的文件夹中。</p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/%E5%8F%91%E5%B8%83%E6%95%88%E6%9E%9C.png" alt=""></p>
+</li>
+</ol>
+<h3 id="3-添加首页和推荐页部分的Img设置"><a href="#3-添加首页和推荐页部分的Img设置" class="headerlink" title="3. 添加首页和推荐页部分的Img设置"></a>3. 添加首页和推荐页部分的<code>Img</code>设置</h3><p>需要在文章头部添加：</p>
+<pre><code>img： url链接
+coverImg: url链接</code></pre><p>或者直接在scaffolds文件夹中的post中添加全局：</p>
+<pre><code>title: {{ title }}
+id:
+img:
+coverImg: 
+date: {{ date }}
+top: false
+cover: false
+password:
+toc: true
+mathjax: true
+summary:
+tags:
+categories:</code></pre><p>截图：</p>
+<p>本篇博文使用的文件头部：</p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200401182625.png" alt=""></p>
+<p>公共头部信息：</p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200401182801.png" alt=""></p>
+<p><strong>注意：图床的Image的大小要在1MB以内，要不然会出现加载失败的情况</strong></p>
+<h3 id="4-Hexo-添加自定义静态HTML的解决方法"><a href="#4-Hexo-添加自定义静态HTML的解决方法" class="headerlink" title="4. Hexo 添加自定义静态HTML的解决方法"></a>4. Hexo 添加自定义静态HTML的解决方法</h3><p>使用<code>hexo</code>创建的静态博客，所有博文内容都是有<code>markdown</code>生成，且页面样式也是由下载的主题自动化生成的，那么想要在独立页面中大展身手的前端小伙伴，如何将写好的静态页面引入到<code>hexo</code>博客中呢？<code>html</code>，<code>css</code>，<code>js</code>等文件在<code>hexo</code>项目里如何避免被自动渲染呢？ </p>
+<pre><code>hexo
+├─ public
+|  └┈ demo
+|     ├─ new_file.html
+|     ├─ css
+|     └┈ js
+├─ source
+|  ├─ _posts
+|  ├─ demo
+|  |  ├─ new_file.html
+|  |  ├─ css
+|  |  └┈ js
+|  └┈ space
+├─ themes
+|  └┈ next
+|     └┈ source
+└┈ _config.yml</code></pre><p>&nbsp;&nbsp;&nbsp;&nbsp; 首先，在根目录下的<code>source</code>文件夹下，新建一个文件夹，用来存放静态页面文件。这里假设文件夹叫<code>demo</code>。 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 然后，在<code>demo</code>文件夹中放入所需的<code>html</code>文件。这里为<code>new_file.html</code>。 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <code>hexo -g</code>，<code>public</code>文件夹中就会有相应的<code>demo</code>文件夹和其包含的文件生成。 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 此时，再在某个<code>md</code>文件中添加一个链接，直接在浏览器中访问地址<code>"xxx/demo/new_file.html"</code>，即可链接到我们新建的<code>new_file</code>页面了。 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 这时你会发现，我们访问到的<code>new_file</code>页面和在本地打开的并不相同，原因就是，<code>hexo</code>的<code>source</code>文件夹下的所有文件都会自动编译。 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 这种形式我们也可能用到，就是新引入的页面作为一篇博文的内容展示。这样做的话，就和写一篇<code>md</code>文章相差无几。<br>&nbsp;&nbsp;&nbsp;&nbsp; 当然，使用<code>html</code>的好处就是可以随意修改<code>css</code>和<code>js</code>。这里就不建议使用外链的形式引入<code>css</code>、<code>js</code>，因为上面提到过，<code>source</code>文件下的文件都会被编译，从而导致<code>css</code>、<code>js</code>的编译错误。</p>
+<p>那么，有没有方法可以避免文件被编译呢？</p>
+<p>答案是肯定的。只要在文件开头加上 </p>
+<pre><code>---
+layout: false
+---</code></pre><p>即可。只是这个方法只适用于<code>html</code>文件，而且每个文件都要加，还是有很大的局限性。除此之外，有个还笨办法，就是把要引用的文件放到<code>themes/(主题名)/source</code>文件夹下，这样也会避免被编译，但本人不建议使用。</p>
+<p>那么没有更好地办法了？</p>
+<hr>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 打开hexo项目根目录下的配置文件<code>_config.yml</code>，找到<code>skip_render:</code>，在这里就可以配置需要跳过渲染的文件。 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 例如，我们把所有静态页面放到<code>source</code>文件夹下的<code>demo</code>文件夹中，只要配置 </p>
+<pre><code>skip_render: demo/**</code></pre><p>&nbsp;&nbsp;&nbsp;&nbsp; 就可以使<code>demo</code>下的所有文件（包括子文件）避免被编译。这样的匹配规则在许多前端框架和自动化工具中都有用到，前端小伙伴应该都很熟悉。举几个例子： </p>
+<pre><code>skip_render: demo/*             # 屏蔽demo文件夹下的文件，不包括子文件夹内的内容
+skip_render: demo/**            # 屏蔽demo文件夹下的所有文件，包括子文件夹内的内容
+skip_render: demo/index.html    # 屏蔽demo文件夹下的index.html，特指一个文件
+skip_render: demo/*.html        # 屏蔽demo文件夹下的所有html文件</code></pre><p>写多个筛选条件时，要这样： </p>
+<pre><code>skip_render:
+    - space/**
+    - demo/*</code></pre><p>&nbsp;&nbsp;&nbsp;&nbsp; 配置文件写好后，重新生成代码，就可以通过链接访问未经编码的原生页面了。这里有个小问题，在<code>markdown</code>页面里的链接只能在本页面打开，如果想实现以新标签打开链接，可以直接在<code>markdown</code>写<code>&lt;a target="_blank" href="#"&gt;&lt;/a&gt;</code>，或者通过<code>js</code>控制。 </p>
+<p><strong>注意：</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 在执行<code>hexo g</code>生成代码之前，建议先执行<code>hexo clean</code>将原有代码清空，以免造成混乱。 </p>
+<p><strong>举例</strong></p>
+<p><a target="_blank" href="../../../../staticHtml/test.html">test页面</a> </p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../../../staticHtml/test.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> 
+<span class="token comment" spellcheck="true">&lt;!--
+    这是部署到github上的访问路径
+    staticHtml 就是上面的Demo
+--></span></code></pre>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 通过这种方法其实可以有多重实践，在此文件下放很多可以从博客链接过来的东西。比如首页的视频可以直接链接到这个文件夹下。</p>
+<h3 id="5-更换Hexo的网页图标-小图片"><a href="#5-更换Hexo的网页图标-小图片" class="headerlink" title="5.更换Hexo的网页图标/小图片"></a>5.更换Hexo的网页图标/小图片</h3><p>本文介绍的是主题theme配置文件中的修改方式，也就是说仅适用于被修改的主题。 </p>
+<h4 id="制作favicon图标"><a href="#制作favicon图标" class="headerlink" title="制作favicon图标"></a>制作favicon图标</h4><ol>
+<li>备好用作标签页/网页小图标favicon的图片</li>
+<li>搜索<code>favicon 在线</code>，可以看到一些在线图片转favicon的工具<br>我用的是这个（link）： <a href="http://www.bitbug.net/" target="_blank" rel="noopener">bitbug</a></li>
+<li>利用工具做成图标。<br>我做了16x16，与32x32的。</li>
+</ol>
+<h4 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h4><pre><code>favicon: /favicon.png</code></pre><p>直接在相应文件下进行替换</p>
+<p><strong>注意</strong>：是以<code>sources</code>为根目录的</p>
+<h4 id="如何确定favicon信息"><a href="#如何确定favicon信息" class="headerlink" title="如何确定favicon信息"></a>如何确定<code>favicon</code>信息</h4><p>查看网页图标的信息：</p>
+<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/favicon.png" alt=""></p>
+<p>###6. Hexo博客网址变得简洁，使用英文路径</p>
+<h4 id="为什么要是用英文网址"><a href="#为什么要是用英文网址" class="headerlink" title="为什么要是用英文网址"></a>为什么要是用英文网址</h4><p>&nbsp;&nbsp;&nbsp;&nbsp; 一般来说，URL只能使用英文和数字和一些标点符号表示。这是因为网络标准<code>RFC 1738</code> 做了硬性规定。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 虽然在<code>Hexo</code>中的全局配置文件中的网址的构成引用了<code>:title</code>(其实就是markdown的文件名称)可以显示中文的网址，但是复制粘贴到记事本会发现得到的是一大串百分号之类的“乱码”（其实这并不是乱码，而是中文被转码成十六进制编码的结果），看起来不怎么好看。</p>
+<h4 id="解决方法-经使用不大好，使用法2"><a href="#解决方法-经使用不大好，使用法2" class="headerlink" title="解决方法(经使用不大好，使用法2)"></a>解决方法(经使用不大好，使用法2)</h4><p>我们可以在生成<code>markdown</code>文件名称的时候，使用全英文作为文件名称。</p>
+<p>在博客根目录下的配置文件中(<code>_config.yml</code>)中进行修改:</p>
+<pre><code>#permalink: :year/:month/:day/:title # 这是原配置
+permalink: :year/:title/ # 替换为此新配置</code></pre><h4 id="解决方法2"><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h4><p>通过添加文章<code>id</code>来实现</p>
+<p>需要修改2个部分：</p>
+<p>我们可以在博客根目录的配置文件（<code>_config.yml</code>）中这样修改：</p>
+<pre><code>#permalink: :year/:month/:day/:title # 这是原配置
+permalink: :year/:id/ # 替换为此新配置</code></pre><p>并且在<code>.\scaffolds\post.md</code>中修改为：</p>
+<p>（注意新增了一个<code>id:</code>）</p>
+<pre><code>title: {{ title }}
+id: 
+date: {{ date }}
+updated: {{ date }}
+categories:
+tags:
+permalink: 
+---</code></pre><p>在写文档时需要添加id信息:</p>
+<pre><code>title: 如何让你的Hexo博客网址使用全英文路径
+id: 123456789-abcd
+date: 2017-12-30 20:57:46
+updated: 2017-12-30
+categories: 后台01 文档管理
+tags:
+permalink:
+---</code></pre><p>不过为了命名规范（同时也是为了方便记忆），我的做法是使用创建日期中的<code>月+日+时+分+秒</code>来定义一个id，比如使用<code>1230-205746</code>作为<code>id</code>。 </p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://blog.csdn.net/Likianta/article/details/79343427" target="_blank" rel="noopener">CSDN</a></p>
+<h2 id="参考资料-1"><a href="#参考资料-1" class="headerlink" title="参考资料"></a>参考资料</h2><p>待续…</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://homewyk.com" rel="external nofollow noreferrer">HomeWyk</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://homewyk.com/2020/03/26/20200326-112506/">http://homewyk.com/2020/03/26/20200326-112506/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://homewyk.com" target="_blank">HomeWyk</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
+                                </a>
+                            
+                                <a href="/tags/theme-matery/">
+                                    <span class="chip bg-color">theme-matery</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/03/27/20200327-092117/">
+                    <div class="card-image">
+                        
+                        <img src="https://gitee.com/Home-wang/cloudimg/raw/master/clouds-cold-frost-frosty-540518.jpg" class="responsive-img" alt="YoloV1 基于tensorflow2的代码编写过程记录">
+                        
+                        <span class="card-title">YoloV1 基于tensorflow2的代码编写过程记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            前言&nbsp;&nbsp;&nbsp;&nbsp; 本来打算使用jupyter来写，但是之间使用jupyter调用opencv的imshow函数显示图片时会卡顿，图像显示的GUI窗体无响应，所以还是使用pycharm来写吧
+pycharm
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-27
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    深度学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/tensorflow/">
+                        <span class="chip bg-color">tensorflow</span>
+                    </a>
+                    
+                    <a href="/tags/Yolov1/">
+                        <span class="chip bg-color">Yolov1</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB/">
+                        <span class="chip bg-color">目标识别</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/03/23/20200323-140000/">
+                    <div class="card-image">
+                        
+                        <img src="https://gitee.com/Home-wang/cloudimg/raw/master/clouds-cold-conifers-dawn-548264.jpg" class="responsive-img" alt="Hello Blog">
+                        
+                        <span class="card-title">Hello Blog</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            &nbsp;&nbsp;&nbsp;&nbsp; Hello Blog!
+&nbsp;&nbsp;&nbsp;&nbsp; 开启新的学习旅程！
+&nbsp;&nbsp;&nbsp;&nbsp; 这将是我研究生乃至后续时间写作的主要地方！
+&
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hello-Blog/" class="post-category">
+                                    Hello_Blog
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hello-Blog/">
+                        <span class="chip bg-color">Hello Blog</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5, h6'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5, h6').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://homewyk.com" target="_blank">HomeWyk</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">20.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="" target="_blank"></a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/YongKunWang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wang_yongkun@yeah.net" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=364576957" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 364576957" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
