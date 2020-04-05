@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="gitee和github同时配置ssh key, 王永坤的小窝">
+    <meta name="keywords" content="gitee、github、coding同时配置ssh key, 王永坤的小窝">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>gitee和github同时配置ssh key | 王永坤的小窝</title>
+    <title>gitee、github、coding同时配置ssh key | 王永坤的小窝</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -381,7 +381,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">gitee和github同时配置ssh key</h1>
+                    <h1 class="description center-align post-title">gitee、github、coding同时配置ssh key</h1>
                 </div>
             </div>
         </div>
@@ -545,7 +545,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    269
+                    334
                 </div>
                 
 
@@ -568,15 +568,17 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Gitee-码云-、Github同时配置ssh-key"><a href="#Gitee-码云-、Github同时配置ssh-key" class="headerlink" title="Gitee(码云)、Github同时配置ssh key"></a>Gitee(码云)、Github同时配置ssh key</h1><h4 id="一、cd-ssh"><a href="#一、cd-ssh" class="headerlink" title="一、cd ~/.ssh"></a>一、<code>cd ~/.ssh</code></h4><h4 id="二、通过下面的命令，依次生成两个平台的key"><a href="#二、通过下面的命令，依次生成两个平台的key" class="headerlink" title="二、通过下面的命令，依次生成两个平台的key"></a>二、通过下面的命令，依次生成两个平台的key</h4><pre class=" language-bash"><code class="language-bash">$ ssh-keygen -t rsa -C <span class="token string">"xxxxxxx@qq.com"</span> -f <span class="token string">"github_id_rsa"</span>
-$ ssh-keygen -t rsa -C <span class="token string">"xxxxxxx@qq.com"</span> -f <span class="token string">"gitee_id_rsa"</span></code></pre>
+                <h1 id="Gitee-码云-、Github、coding同时配置ssh-key"><a href="#Gitee-码云-、Github、coding同时配置ssh-key" class="headerlink" title="Gitee(码云)、Github、coding同时配置ssh key"></a>Gitee(码云)、Github、coding同时配置ssh key</h1><h4 id="一、cd-ssh"><a href="#一、cd-ssh" class="headerlink" title="一、cd ~/.ssh"></a>一、<code>cd ~/.ssh</code></h4><h4 id="二、通过下面的命令，依次生成两个平台的key"><a href="#二、通过下面的命令，依次生成两个平台的key" class="headerlink" title="二、通过下面的命令，依次生成两个平台的key"></a>二、通过下面的命令，依次生成两个平台的key</h4><pre class=" language-bash"><code class="language-bash">$ ssh-keygen -t rsa -C <span class="token string">"xxxxxxx@qq.com"</span> -f <span class="token string">"github_id_rsa"</span>
+$ ssh-keygen -t rsa -C <span class="token string">"xxxxxxx@qq.com"</span> -f <span class="token string">"gitee_id_rsa"</span>
+$ ssh-keygen -t rsa -C <span class="token string">"xxxxxxx@qq.com"</span></code></pre>
 <p>三次回车</p>
 <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/170141_5aa5bc98_551147.png" alt=""></p>
 <p>完成后，.ssh文件夹生成以下文件 </p>
 <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200405103414.png" alt=""></p>
-<h4 id="三、把public-key复制到gitee和github"><a href="#三、把public-key复制到gitee和github" class="headerlink" title="三、把public key复制到gitee和github"></a>三、把public key复制到gitee和github</h4><p>执行命令<code>cat github_id_rsa.pub</code>把第二行到结尾的内容复制到github的ssh中保存 </p>
+<h4 id="三、把public-key复制到gitee、github、coding"><a href="#三、把public-key复制到gitee、github、coding" class="headerlink" title="三、把public key复制到gitee、github、coding"></a>三、把public key复制到gitee、github、coding</h4><p>执行命令<code>cat github_id_rsa.pub</code>把第二行到结尾的内容复制到github的ssh中保存 </p>
 <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200405103500.png" alt=""></p>
 <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200405103514.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200405142048.png" alt=""></p>
 <h4 id="四、创建config文件解决ssh冲突"><a href="#四、创建config文件解决ssh冲突" class="headerlink" title="四、创建config文件解决ssh冲突"></a>四、创建config文件解决ssh冲突</h4><p>在.ssh文件夹下执行命令<code>vi config</code> 文件中添加以下内容 :</p>
 <p><strong>注意</strong>： 上面的东西不需要删除</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># gitee</span>
@@ -590,7 +592,13 @@ Host github.com
 HostName github.com
 PreferredAuthentications publickey
 IdentityFile ~/.ssh/github_id_rsa</code></pre>
-<h4 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h4><p>执行<br><code>ssh -T git@gitee.com</code><br>成功则返回<br><code>Welcome to Gitee.com ,yourname!</code><br>执行<br><code>ssh -T git@github.com</code><br>成功则返回<br><code>Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.</code><br><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200405103918.png" alt=""></p>
+<h4 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h4><p>执行<br><code>ssh -T git@gitee.com</code><br>成功则返回<br><code>Welcome to Gitee.com ,yourname!</code><br>执行<br><code>ssh -T git@github.com</code><br>成功则返回<br><code>Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.</code></p>
+<p>执行</p>
+<p><code>ssh -T git@e.coding.net</code></p>
+<p>返回：</p>
+<p>xxx,你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥.<br>公钥指纹：87:e8:2c:46:2d:b4:13:c8:6f:6c:14:50:da:ba:77:00</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200405103918.png" alt=""></p>
+<p><img src="C:%5CUsers%5Casdw1%5CAppData%5CLocal%5CTemp%5C1586067705097.png" alt="1586067705097"></p>
 <p>参考：</p>
 <p><a href="https://blog.csdn.net/weixin_36191602/article/details/80946242" target="_blank" rel="noopener">https://blog.csdn.net/weixin_36191602/article/details/80946242</a> </p>
 <script>
@@ -857,16 +865,15 @@ IdentityFile ~/.ssh/github_id_rsa</code></pre>
                 <a href="/2020/04/05/20200405-103148/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/20200405104009.png" class="responsive-img" alt="gitee和github同时配置ssh key">
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/20200405104009.png" class="responsive-img" alt="gitee、github、coding同时配置ssh key">
                         
-                        <span class="card-title">gitee和github同时配置ssh key</span>
+                        <span class="card-title">gitee、github、coding同时配置ssh key</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Gitee(码云)、Github同时配置ssh key一、cd ~/.ssh二、通过下面的命令，依次生成两个平台的key$ ssh-keygen -t rsa -C "xxxxxxx@qq.com" -f "github_id_rsa"
-$
+                            Gitee(码云)、Github、coding同时配置ssh key一、cd ~/.ssh二、通过下面的命令，依次生成两个平台的key$ ssh-keygen -t rsa -C "xxxxxxx@qq.com" -f "github_id
                         
                     </div>
                     <div class="publish-info">
@@ -1107,7 +1114,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.4k</span>&nbsp;字
+                class="white-color">36.5k</span>&nbsp;字
             
             
             
