@@ -5,9 +5,9 @@
   <subtitle>未来的路 就在脚下</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://home-wang.gitee.io/"/>
+  <link href="https://homewyk.com/"/>
   <updated>2020-04-05T02:44:40.887Z</updated>
-  <id>http://home-wang.gitee.io/</id>
+  <id>https://homewyk.com/</id>
   
   <author>
     <name>HomeWyk</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>gitee和github同时配置ssh key</title>
-    <link href="http://home-wang.gitee.io/2020/04/05/20200405-103148/"/>
-    <id>http://home-wang.gitee.io/2020/04/05/20200405-103148/</id>
+    <link href="https://homewyk.com/2020/04/05/20200405-103148/"/>
+    <id>https://homewyk.com/2020/04/05/20200405-103148/</id>
     <published>2020-04-05T02:31:48.000Z</published>
     <updated>2020-04-05T02:44:40.887Z</updated>
     
@@ -36,23 +36,23 @@
     </summary>
     
     
-      <category term="软件安装" scheme="http://home-wang.gitee.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+      <category term="软件安装" scheme="https://homewyk.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
     
-      <category term="github" scheme="http://home-wang.gitee.io/tags/github/"/>
+      <category term="github" scheme="https://homewyk.com/tags/github/"/>
     
-      <category term="gitee" scheme="http://home-wang.gitee.io/tags/gitee/"/>
+      <category term="gitee" scheme="https://homewyk.com/tags/gitee/"/>
     
-      <category term="ssh" scheme="http://home-wang.gitee.io/tags/ssh/"/>
+      <category term="ssh" scheme="https://homewyk.com/tags/ssh/"/>
     
   </entry>
   
   <entry>
     <title>Blog由Github改为部署到Gitee</title>
-    <link href="http://home-wang.gitee.io/2020/04/05/20200405-092916/"/>
-    <id>http://home-wang.gitee.io/2020/04/05/20200405-092916/</id>
+    <link href="https://homewyk.com/2020/04/05/20200405-092916/"/>
+    <id>https://homewyk.com/2020/04/05/20200405-092916/</id>
     <published>2020-04-05T01:29:16.000Z</published>
-    <updated>2020-04-05T01:37:52.178Z</updated>
+    <updated>2020-04-05T02:47:09.047Z</updated>
     
     <summary type="html">
     
@@ -67,21 +67,21 @@
     </summary>
     
     
-      <category term="Hexo" scheme="http://home-wang.gitee.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://homewyk.com/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="http://home-wang.gitee.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://homewyk.com/tags/Hexo/"/>
     
-      <category term="theme-matery" scheme="http://home-wang.gitee.io/tags/theme-matery/"/>
+      <category term="theme-matery" scheme="https://homewyk.com/tags/theme-matery/"/>
     
-      <category term="Gitee" scheme="http://home-wang.gitee.io/tags/Gitee/"/>
+      <category term="Gitee" scheme="https://homewyk.com/tags/Gitee/"/>
     
   </entry>
   
   <entry>
     <title>vim--终端中的编辑器</title>
-    <link href="http://home-wang.gitee.io/2020/04/05/20200405-091853/"/>
-    <id>http://home-wang.gitee.io/2020/04/05/20200405-091853/</id>
+    <link href="https://homewyk.com/2020/04/05/20200405-091853/"/>
+    <id>https://homewyk.com/2020/04/05/20200405-091853/</id>
     <published>2020-04-05T01:18:53.000Z</published>
     <updated>2020-04-05T01:23:38.613Z</updated>
     
@@ -98,19 +98,19 @@
     </summary>
     
     
-      <category term="软件安装" scheme="http://home-wang.gitee.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+      <category term="软件安装" scheme="https://homewyk.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
     
-      <category term="Linux" scheme="http://home-wang.gitee.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://homewyk.com/tags/Linux/"/>
     
-      <category term="vim" scheme="http://home-wang.gitee.io/tags/vim/"/>
+      <category term="vim" scheme="https://homewyk.com/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu的虚拟机设置</title>
-    <link href="http://home-wang.gitee.io/2020/04/04/20200404-163009/"/>
-    <id>http://home-wang.gitee.io/2020/04/04/20200404-163009/</id>
+    <link href="https://homewyk.com/2020/04/04/20200404-163009/"/>
+    <id>https://homewyk.com/2020/04/04/20200404-163009/</id>
     <published>2020-04-04T08:28:13.000Z</published>
     <updated>2020-04-04T13:23:52.065Z</updated>
     
@@ -130,21 +130,21 @@
     </summary>
     
     
-      <category term="软件安装" scheme="http://home-wang.gitee.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+      <category term="软件安装" scheme="https://homewyk.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
     
-      <category term="Ubuntu" scheme="http://home-wang.gitee.io/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="https://homewyk.com/tags/Ubuntu/"/>
     
-      <category term="VM" scheme="http://home-wang.gitee.io/tags/VM/"/>
+      <category term="VM" scheme="https://homewyk.com/tags/VM/"/>
     
-      <category term="系统安装" scheme="http://home-wang.gitee.io/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
+      <category term="系统安装" scheme="https://homewyk.com/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
     
   </entry>
   
   <entry>
     <title>Yolov1论文翻译中文版本</title>
-    <link href="http://home-wang.gitee.io/2020/04/04/20200404-104201/"/>
-    <id>http://home-wang.gitee.io/2020/04/04/20200404-104201/</id>
+    <link href="https://homewyk.com/2020/04/04/20200404-104201/"/>
+    <id>https://homewyk.com/2020/04/04/20200404-104201/</id>
     <published>2020-04-04T02:31:25.000Z</published>
     <updated>2020-04-04T03:11:34.530Z</updated>
     
@@ -161,21 +161,21 @@
     </summary>
     
     
-      <category term="论文翻译" scheme="http://home-wang.gitee.io/categories/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"/>
+      <category term="论文翻译" scheme="https://homewyk.com/categories/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"/>
     
     
-      <category term="深度学习" scheme="http://home-wang.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="YOLOV1" scheme="http://home-wang.gitee.io/tags/YOLOV1/"/>
+      <category term="YOLOV1" scheme="https://homewyk.com/tags/YOLOV1/"/>
     
-      <category term="论文翻译" scheme="http://home-wang.gitee.io/tags/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"/>
+      <category term="论文翻译" scheme="https://homewyk.com/tags/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"/>
     
   </entry>
   
   <entry>
     <title>使用软件集合</title>
-    <link href="http://home-wang.gitee.io/2020/04/03/20200403-165757/"/>
-    <id>http://home-wang.gitee.io/2020/04/03/20200403-165757/</id>
+    <link href="https://homewyk.com/2020/04/03/20200403-165757/"/>
+    <id>https://homewyk.com/2020/04/03/20200403-165757/</id>
     <published>2020-04-03T08:56:02.000Z</published>
     <updated>2020-04-04T02:23:04.286Z</updated>
     
@@ -194,19 +194,19 @@
     </summary>
     
     
-      <category term="杂记" scheme="http://home-wang.gitee.io/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://homewyk.com/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="软件" scheme="http://home-wang.gitee.io/tags/%E8%BD%AF%E4%BB%B6/"/>
+      <category term="软件" scheme="https://homewyk.com/tags/%E8%BD%AF%E4%BB%B6/"/>
     
-      <category term="生活" scheme="http://home-wang.gitee.io/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://homewyk.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
     <title>Unbroken(坚不可摧)</title>
-    <link href="http://home-wang.gitee.io/2020/04/03/20200403-171150/"/>
-    <id>http://home-wang.gitee.io/2020/04/03/20200403-171150/</id>
+    <link href="https://homewyk.com/2020/04/03/20200403-171150/"/>
+    <id>https://homewyk.com/2020/04/03/20200403-171150/</id>
     <published>2020-04-03T08:53:12.000Z</published>
     <updated>2020-04-03T09:36:56.185Z</updated>
     
@@ -225,19 +225,19 @@
     </summary>
     
     
-      <category term="励志" scheme="http://home-wang.gitee.io/categories/%E5%8A%B1%E5%BF%97/"/>
+      <category term="励志" scheme="https://homewyk.com/categories/%E5%8A%B1%E5%BF%97/"/>
     
     
-      <category term="励志" scheme="http://home-wang.gitee.io/tags/%E5%8A%B1%E5%BF%97/"/>
+      <category term="励志" scheme="https://homewyk.com/tags/%E5%8A%B1%E5%BF%97/"/>
     
-      <category term="学习" scheme="http://home-wang.gitee.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="https://homewyk.com/tags/%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>Yolov1算法解读及其详细实现</title>
-    <link href="http://home-wang.gitee.io/2020/04/02/20200402-111922/"/>
-    <id>http://home-wang.gitee.io/2020/04/02/20200402-111922/</id>
+    <link href="https://homewyk.com/2020/04/02/20200402-111922/"/>
+    <id>https://homewyk.com/2020/04/02/20200402-111922/</id>
     <published>2020-04-02T02:57:05.000Z</published>
     <updated>2020-04-02T16:27:16.146Z</updated>
     
@@ -254,23 +254,23 @@
     </summary>
     
     
-      <category term="目标检测" scheme="http://home-wang.gitee.io/categories/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+      <category term="目标检测" scheme="https://homewyk.com/categories/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
     
-      <category term="Yolov1" scheme="http://home-wang.gitee.io/tags/Yolov1/"/>
+      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="深度学习" scheme="http://home-wang.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Yolov1" scheme="https://homewyk.com/tags/Yolov1/"/>
     
-      <category term="目标检测" scheme="http://home-wang.gitee.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+      <category term="目标检测" scheme="https://homewyk.com/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
-      <category term="论文解读" scheme="http://home-wang.gitee.io/tags/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
+      <category term="论文解读" scheme="https://homewyk.com/tags/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>写Blog四剑客：PicGo + Gitee(码云)+Snipaste 实现markdown图床</title>
-    <link href="http://home-wang.gitee.io/2020/04/01/20200401-122211/"/>
-    <id>http://home-wang.gitee.io/2020/04/01/20200401-122211/</id>
+    <link href="https://homewyk.com/2020/04/01/20200401-122211/"/>
+    <id>https://homewyk.com/2020/04/01/20200401-122211/</id>
     <published>2020-04-01T04:22:11.000Z</published>
     <updated>2020-04-01T11:48:13.206Z</updated>
     
@@ -287,21 +287,21 @@
     </summary>
     
     
-      <category term="hexo" scheme="http://home-wang.gitee.io/categories/hexo/"/>
+      <category term="hexo" scheme="https://homewyk.com/categories/hexo/"/>
     
     
-      <category term="hexo" scheme="http://home-wang.gitee.io/tags/hexo/"/>
+      <category term="hexo" scheme="https://homewyk.com/tags/hexo/"/>
     
-      <category term="blog工具" scheme="http://home-wang.gitee.io/tags/blog%E5%B7%A5%E5%85%B7/"/>
+      <category term="blog工具" scheme="https://homewyk.com/tags/blog%E5%B7%A5%E5%85%B7/"/>
     
-      <category term="质量网站" scheme="http://home-wang.gitee.io/tags/%E8%B4%A8%E9%87%8F%E7%BD%91%E7%AB%99/"/>
+      <category term="质量网站" scheme="https://homewyk.com/tags/%E8%B4%A8%E9%87%8F%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
   <entry>
     <title>基于TensorFolw2的Yolov1程序实现</title>
-    <link href="http://home-wang.gitee.io/2020/04/01/20200401-100427/"/>
-    <id>http://home-wang.gitee.io/2020/04/01/20200401-100427/</id>
+    <link href="https://homewyk.com/2020/04/01/20200401-100427/"/>
+    <id>https://homewyk.com/2020/04/01/20200401-100427/</id>
     <published>2020-04-01T02:04:27.000Z</published>
     <updated>2020-04-02T08:15:46.635Z</updated>
     
@@ -318,23 +318,23 @@
     </summary>
     
     
-      <category term="深度学习" scheme="http://home-wang.gitee.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="深度学习" scheme="https://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Yolov1" scheme="http://home-wang.gitee.io/tags/Yolov1/"/>
+      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="深度学习" scheme="http://home-wang.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="tensorflow" scheme="https://homewyk.com/tags/tensorflow/"/>
     
-      <category term="tensorflow" scheme="http://home-wang.gitee.io/tags/tensorflow/"/>
+      <category term="Yolov1" scheme="https://homewyk.com/tags/Yolov1/"/>
     
-      <category term="Yolov1Programing" scheme="http://home-wang.gitee.io/tags/Yolov1Programing/"/>
+      <category term="Yolov1Programing" scheme="https://homewyk.com/tags/Yolov1Programing/"/>
     
   </entry>
   
   <entry>
     <title>写于2020年3月31日深夜</title>
-    <link href="http://home-wang.gitee.io/2020/03/31/20200331-230851/"/>
-    <id>http://home-wang.gitee.io/2020/03/31/20200331-230851/</id>
+    <link href="https://homewyk.com/2020/03/31/20200331-230851/"/>
+    <id>https://homewyk.com/2020/03/31/20200331-230851/</id>
     <published>2020-03-31T15:08:51.000Z</published>
     <updated>2020-04-01T08:04:40.536Z</updated>
     
@@ -351,17 +351,17 @@
     </summary>
     
     
-      <category term="杂谈" scheme="http://home-wang.gitee.io/categories/%E6%9D%82%E8%B0%88/"/>
+      <category term="杂谈" scheme="https://homewyk.com/categories/%E6%9D%82%E8%B0%88/"/>
     
     
-      <category term="以笔谈心" scheme="http://home-wang.gitee.io/tags/%E4%BB%A5%E7%AC%94%E8%B0%88%E5%BF%83/"/>
+      <category term="以笔谈心" scheme="https://homewyk.com/tags/%E4%BB%A5%E7%AC%94%E8%B0%88%E5%BF%83/"/>
     
   </entry>
   
   <entry>
     <title>质量网站</title>
-    <link href="http://home-wang.gitee.io/2020/03/31/20200331-202916/"/>
-    <id>http://home-wang.gitee.io/2020/03/31/20200331-202916/</id>
+    <link href="https://homewyk.com/2020/03/31/20200331-202916/"/>
+    <id>https://homewyk.com/2020/03/31/20200331-202916/</id>
     <published>2020-03-31T12:29:16.000Z</published>
     <updated>2020-04-01T10:17:18.183Z</updated>
     
@@ -378,17 +378,17 @@
     </summary>
     
     
-      <category term="website" scheme="http://home-wang.gitee.io/categories/website/"/>
+      <category term="website" scheme="https://homewyk.com/categories/website/"/>
     
     
-      <category term="website" scheme="http://home-wang.gitee.io/tags/website/"/>
+      <category term="website" scheme="https://homewyk.com/tags/website/"/>
     
   </entry>
   
   <entry>
     <title>ps技巧</title>
-    <link href="http://home-wang.gitee.io/2020/03/31/20200331-201841/"/>
-    <id>http://home-wang.gitee.io/2020/03/31/20200331-201841/</id>
+    <link href="https://homewyk.com/2020/03/31/20200331-201841/"/>
+    <id>https://homewyk.com/2020/03/31/20200331-201841/</id>
     <published>2020-03-31T12:18:41.000Z</published>
     <updated>2020-04-01T07:56:25.257Z</updated>
     
@@ -406,17 +406,17 @@
     </summary>
     
     
-      <category term="ps" scheme="http://home-wang.gitee.io/categories/ps/"/>
+      <category term="ps" scheme="https://homewyk.com/categories/ps/"/>
     
     
-      <category term="ps" scheme="http://home-wang.gitee.io/tags/ps/"/>
+      <category term="ps" scheme="https://homewyk.com/tags/ps/"/>
     
   </entry>
   
   <entry>
     <title>pycharm使用记录</title>
-    <link href="http://home-wang.gitee.io/2020/03/30/20200330-194036/"/>
-    <id>http://home-wang.gitee.io/2020/03/30/20200330-194036/</id>
+    <link href="https://homewyk.com/2020/03/30/20200330-194036/"/>
+    <id>https://homewyk.com/2020/03/30/20200330-194036/</id>
     <published>2020-03-30T11:40:36.000Z</published>
     <updated>2020-04-01T07:58:28.884Z</updated>
     
@@ -433,19 +433,19 @@
     </summary>
     
     
-      <category term="python" scheme="http://home-wang.gitee.io/categories/python/"/>
+      <category term="python" scheme="https://homewyk.com/categories/python/"/>
     
     
-      <category term="pycharm" scheme="http://home-wang.gitee.io/tags/pycharm/"/>
+      <category term="pycharm" scheme="https://homewyk.com/tags/pycharm/"/>
     
-      <category term="python" scheme="http://home-wang.gitee.io/tags/python/"/>
+      <category term="python" scheme="https://homewyk.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>YoloV1 基于tensorflow2的代码编写过程记录</title>
-    <link href="http://home-wang.gitee.io/2020/03/27/20200327-092117/"/>
-    <id>http://home-wang.gitee.io/2020/03/27/20200327-092117/</id>
+    <link href="https://homewyk.com/2020/03/27/20200327-092117/"/>
+    <id>https://homewyk.com/2020/03/27/20200327-092117/</id>
     <published>2020-03-27T01:21:17.000Z</published>
     <updated>2020-04-01T12:44:07.553Z</updated>
     
@@ -462,23 +462,23 @@
     </summary>
     
     
-      <category term="深度学习" scheme="http://home-wang.gitee.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="深度学习" scheme="https://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Yolov1" scheme="http://home-wang.gitee.io/tags/Yolov1/"/>
+      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="深度学习" scheme="http://home-wang.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="tensorflow" scheme="https://homewyk.com/tags/tensorflow/"/>
     
-      <category term="tensorflow" scheme="http://home-wang.gitee.io/tags/tensorflow/"/>
+      <category term="Yolov1" scheme="https://homewyk.com/tags/Yolov1/"/>
     
-      <category term="目标识别" scheme="http://home-wang.gitee.io/tags/%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB/"/>
+      <category term="目标识别" scheme="https://homewyk.com/tags/%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB/"/>
     
   </entry>
   
   <entry>
     <title>记录使用Hexo打造个人博客系统--持续记录中</title>
-    <link href="http://home-wang.gitee.io/2020/03/26/20200326-112506/"/>
-    <id>http://home-wang.gitee.io/2020/03/26/20200326-112506/</id>
+    <link href="https://homewyk.com/2020/03/26/20200326-112506/"/>
+    <id>https://homewyk.com/2020/03/26/20200326-112506/</id>
     <published>2020-03-26T03:25:06.000Z</published>
     <updated>2020-04-03T03:46:27.058Z</updated>
     
@@ -495,19 +495,19 @@
     </summary>
     
     
-      <category term="hexo" scheme="http://home-wang.gitee.io/categories/hexo/"/>
+      <category term="hexo" scheme="https://homewyk.com/categories/hexo/"/>
     
     
-      <category term="Hexo" scheme="http://home-wang.gitee.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://homewyk.com/tags/Hexo/"/>
     
-      <category term="theme-matery" scheme="http://home-wang.gitee.io/tags/theme-matery/"/>
+      <category term="theme-matery" scheme="https://homewyk.com/tags/theme-matery/"/>
     
   </entry>
   
   <entry>
     <title>Hello Blog</title>
-    <link href="http://home-wang.gitee.io/2020/03/23/20200323-140000/"/>
-    <id>http://home-wang.gitee.io/2020/03/23/20200323-140000/</id>
+    <link href="https://homewyk.com/2020/03/23/20200323-140000/"/>
+    <id>https://homewyk.com/2020/03/23/20200323-140000/</id>
     <published>2020-03-23T06:00:00.000Z</published>
     <updated>2020-04-01T08:00:58.187Z</updated>
     
@@ -526,10 +526,10 @@
     </summary>
     
     
-      <category term="Hello_Blog" scheme="http://home-wang.gitee.io/categories/Hello-Blog/"/>
+      <category term="Hello_Blog" scheme="https://homewyk.com/categories/Hello-Blog/"/>
     
     
-      <category term="Hello Blog" scheme="http://home-wang.gitee.io/tags/Hello-Blog/"/>
+      <category term="Hello Blog" scheme="https://homewyk.com/tags/Hello-Blog/"/>
     
   </entry>
   

@@ -498,12 +498,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Yolov1/">
-                                <span class="chip bg-color">Yolov1</span>
-                            </a>
-                        
                             <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
                                 <span class="chip bg-color">深度学习</span>
+                            </a>
+                        
+                            <a href="/tags/Yolov1/">
+                                <span class="chip bg-color">Yolov1</span>
                             </a>
                         
                             <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">
@@ -574,7 +574,7 @@
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;将自己这段时间以来的关于Yolov1算法知识做一个总结。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 这篇文章是YOLO的开山之作，理解其思想是十分重要的。</p>
-<p><a href="https://homewyk.com/staticHtml/PDF/essay/Yolov1.pdf" target="_blank" rel="noopener">论文原文请移步</a></p>
+<p><a href="https://homewyk.com/staticHtml/PDF/essay/Yolov1.pdf">论文原文请移步</a></p>
 <p><a href="https://github.com/gliese581gg/YOLO_tensorflow" target="_blank" rel="noopener">基于<code>Tensorflow</code>版本的<code>Yolov1</code>实现</a></p>
 <h2 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h2><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200402113612.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 这篇文章提出了一个新的目标检测的方法。之间的一些框架将目标检测问题转变为分类问题，与之相反的是，<strong>这篇文章提出的YOLO框架最主要的创新点是将目标检测视作为一个回归问题，这个回归问题定义为预测边框和相关的类概率</strong>（我们知道，分类问题处理的对象是离散值，回归问题处理的对象是连续值，在目标检测任务中，有对<code>Bounding box</code>坐标的预测，这篇文章考虑在网络的最后使用2个<code>FC</code>(全连接层)做作为一个线性回归器，对<code>bounding box</code>和所属的物体类别进行回归）。图像仅经过一个神经网络，就可以得到预测框<code>bounding box</code>和每一个预测框中的物体类别概率。正是因为整个的检测网络是一个单一的神经网络，所以他才能够直接进行<code>end-to-end</code>（图像通过神经网络从输入到输出）的优化。</p>
@@ -721,7 +721,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://home-wang.gitee.io" rel="external nofollow noreferrer">HomeWyk</a>
+                    <a href="https://homewyk.com" rel="external nofollow noreferrer">HomeWyk</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -731,7 +731,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://home-wang.gitee.io/2020/04/02/20200402-111922/">http://home-wang.gitee.io/2020/04/02/20200402-111922/</a>
+                    <a href="https://homewyk.com/2020/04/02/20200402-111922/">https://homewyk.com/2020/04/02/20200402-111922/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -744,7 +744,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="http://home-wang.gitee.io" target="_blank">HomeWyk</a>
+                    <a href="https://homewyk.com" target="_blank">HomeWyk</a>
                     !
                 </span>
             </div>
@@ -769,12 +769,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Yolov1/">
-                                    <span class="chip bg-color">Yolov1</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
                                     <span class="chip bg-color">深度学习</span>
+                                </a>
+                            
+                                <a href="/tags/Yolov1/">
+                                    <span class="chip bg-color">Yolov1</span>
                                 </a>
                             
                                 <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">
@@ -1200,13 +1200,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="http://home-wang.gitee.io" target="_blank">HomeWyk</a>
+            <a href="https://homewyk.com" target="_blank">HomeWyk</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.3k</span>&nbsp;字
+                class="white-color">36.4k</span>&nbsp;字
             
             
             
