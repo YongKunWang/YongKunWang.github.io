@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://homewyk.com/"/>
-  <updated>2020-04-04T13:23:52.065Z</updated>
+  <updated>2020-04-05T01:37:52.178Z</updated>
   <id>http://homewyk.com/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Blog由Github改为部署到Gitee</title>
+    <link href="http://homewyk.com/2020/04/05/20200405-092916/"/>
+    <id>http://homewyk.com/2020/04/05/20200405-092916/</id>
+    <published>2020-04-05T01:29:16.000Z</published>
+    <updated>2020-04-05T01:37:52.178Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;为何使用Gitee而不是GitHub&quot;&gt;&lt;a href=&quot;#为何使用Gitee而不是GitHub&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="http://homewyk.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://homewyk.com/tags/Hexo/"/>
+    
+      <category term="theme-matery" scheme="http://homewyk.com/tags/theme-matery/"/>
+    
+      <category term="Gitee" scheme="http://homewyk.com/tags/Gitee/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vim--终端中的编辑器</title>
+    <link href="http://homewyk.com/2020/04/05/20200405-091853/"/>
+    <id>http://homewyk.com/2020/04/05/20200405-091853/</id>
+    <published>2020-04-05T01:18:53.000Z</published>
+    <updated>2020-04-05T01:23:38.613Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;vi-——-终端中的编辑器&quot;&gt;&lt;a href=&quot;#vi-——-终端中的编辑器&quot; class=&quot;headerlink&quot; title=&quot;vi —— 终端中的编辑器&quot;&gt;&lt;/a&gt;&lt;code&gt;vi&lt;/code&gt; —— 终端中的编辑器&lt;/h1&gt;&lt;h2 id=&quot;目标&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="软件安装" scheme="http://homewyk.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+    
+      <category term="Linux" scheme="http://homewyk.com/tags/Linux/"/>
+    
+      <category term="vim" scheme="http://homewyk.com/tags/vim/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu的虚拟机设置</title>
