@@ -376,7 +376,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/Home-wang/cloudimg/raw/master/clouds-cold-frost-frosty-540518.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/homewyk/cloudimg/raw/master/clouds-cold-frost-frosty-540518.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -542,7 +542,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-01
+                    2020-04-05
                 </div>
                 
 
@@ -575,18 +575,18 @@
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&nbsp;&nbsp;&nbsp;&nbsp; 本来打算使用<code>jupyter</code>来写，但是之间使用<code>jupyter</code>调用<code>opencv</code>的<code>imshow</code>函数显示图片时会卡顿，图像显示的<code>GUI</code>窗体无响应，所以还是使用<code>pycharm</code>来写吧</p>
 <h2 id="pycharm-IDE的基本配置"><a href="#pycharm-IDE的基本配置" class="headerlink" title="pycharm IDE的基本配置"></a>pycharm IDE的基本配置</h2><ol>
 <li><p>setting 在File中</p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/setting.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/setting.png" alt=""></p>
 </li>
 <li><p>设置主题，最好设置为Darcula的主题，偏黑灰色，属于护眼模式，当然也能够装..</p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/setting1.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/setting1.png" alt=""></p>
 </li>
 <li><p>显示行号，不解释</p>
 <p>选择-<code>Editor-General-Appearance</code> 选择<code>show line numbers</code>显示行号 </p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/setting2.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/setting2.png" alt=""></p>
 </li>
 <li><p>修改字体大小，默认的字体太不友好了</p>
 <p>选择<code>Editor-Colors&amp;Font-Font</code>，我们可以选择<code>Consolas</code> 字体，字号修改为18</p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/setting3.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/setting3.png" alt=""></p>
 </li>
 </ol>
 <h2 id="机器学习相关知识整理"><a href="#机器学习相关知识整理" class="headerlink" title="机器学习相关知识整理"></a>机器学习相关知识整理</h2><h3 id="理解卷积网络中的通道channel"><a href="#理解卷积网络中的通道channel" class="headerlink" title="理解卷积网络中的通道channel"></a>理解卷积网络中的通道channel</h3><p>&nbsp;&nbsp;&nbsp;&nbsp; 在深度学习的算法学习中，都会提到 <code>channels</code> 这个概念。在一般的深度学习框架的 <code>conv2d</code> 中，如 <code>channels</code> 都是必填的一个参数。 </p>
@@ -598,12 +598,12 @@
 </blockquote>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 如下图，假设现有一个为 6x6x3 的图片样本，使用 3×3×3 的卷积核（filter）进行卷积操作。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 此时输入图片的 <code>channels</code>为 3 ，而卷积核中的 <code>in_channels</code> 与 需要进行卷积操作的数据的<code>channels</code> 一致（这里就是图片样本，为3）。</p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/channel1.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/channel1.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 接下来，进行卷积操作，卷积核中的（3<em>3</em>3 = 27）27个数字与分别与样本对应相乘后，再进行求和，得到第一个结果。依次进行，最终得到 4×4x1 的上图所示的结果。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>注意</strong>：在这里有一个让人迷惑的部分，<code>input_image</code>的通道数为3，所以卷积核中的 <code>in_channels</code>的数值也应该为3，这是因为卷积核和图像的相应通道要进行卷积操作，最后还要在加到一块，形成上图所示的4x4x1的输出。</p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/channel2.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/channel2.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 在实际应用过程中，会使用多个卷积核，这里如果在添加一个3x3x3的卷积核，就会得到4x4x2的结果。</p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/channel3.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/channel3.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 总结：可以把一个卷积核理解为一个特征，一个物体肯定会有多个特征，所以要使用多个卷积核。</p>
 <ol>
 <li>最初输入的图片样本的<code>channel</code>取决于图片的类型,例如上面的<code>RGB</code>图片的<code>channel</code>=3</li>
@@ -705,7 +705,7 @@ init <span class="token operator">=</span> tf<span class="token punctuation">.</
 <li><p><code>strides</code>:卷积时在图像每一维的步长，这是一个一维的向量，长度4 </p>
 </li>
 <li><p><code>padding</code>:<code>string</code>类型的量，只能是<code>"SAME"</code>,<code>"VALID"</code>其中之一，这个值决定了不同的卷积方式</p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/padding.jpg" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/padding.jpg" alt=""></p>
 <ul>
 <li><code>VALID</code>是采用丢弃的方式,比如上述的<code>input_width=13</code>,只允许滑动2次,多余的元素全部丢掉 </li>
 <li><code>SAME</code>的方式,采用的是补全的方式,对于上述的情况,允许滑动3次,但是需要补3个元素,左奇右偶,在左边补一个0,右边补2个0 </li>
@@ -720,8 +720,8 @@ init <span class="token operator">=</span> tf<span class="token punctuation">.</
 <li><p><code>ReLU</code>是将所有的负值都设为零，正区间为<code>y=x</code></p>
 </li>
 <li><p><code>leak_relu</code>:是给所有的赋值赋予一个非零斜率</p>
-<p>​    <img src="https://gitee.com/Home-wang/cloudimg/raw/master/leak_relu.png" alt=""></p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/relu.png" alt=""></p>
+<p>​    <img src="https://gitee.com/homewyk/cloudimg/raw/master/leak_relu.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/relu.png" alt=""></p>
 </li>
 </ul>
 <h3 id="CNN中卷积层的计算细节"><a href="#CNN中卷积层的计算细节" class="headerlink" title="CNN中卷积层的计算细节"></a>CNN中卷积层的计算细节</h3><blockquote>
@@ -750,7 +750,7 @@ init <span class="token operator">=</span> tf<span class="token punctuation">.</
 <li>输出矩阵的通道数（<code>Out Channel</code>）由卷积核的个数(<code>kernel-&gt;Out Channel</code>)所决定。（绿色标注） </li>
 <li>输出矩阵的高度和宽度（<code>height, width</code>）这两个维度的尺寸由输入矩阵、卷积核、扫描方式所共同决定。计算公式如下。（蓝色标注）</li>
 </ul>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/relation.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/relation.png" alt=""></p>
 <blockquote>
 <p>严格来说还有一个bias ,这里省略掉了,具体例子如下图所示</p>
 </blockquote>
@@ -766,18 +766,18 @@ init <span class="token operator">=</span> tf<span class="token punctuation">.</
 <p>则输出矩阵的高度/宽度为 (227 - 11) / 4 + 1 = 55 </p>
 </blockquote>
 <p><strong>注意一点:</strong> kernel的<code>out channel</code>需要被理解为<code>kernel numbers</code></p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/eg1.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/eg1.png" alt=""></p>
 <h5 id="1x1卷积举例"><a href="#1x1卷积举例" class="headerlink" title="1x1卷积举例"></a>1x1卷积举例</h5><blockquote>
 <p>后期 GoogLeNet、ResNet 等经典模型中普遍使用一个像素大小的卷积核作为降低参数复杂度的手段。 </p>
 <p>从下面的运算可以看到，其实 1 x 1 卷积没有什么神秘的，其作用就是将输入矩阵的通道数量缩减后输出（512 降为 32），</p>
 <p>并保持它在宽度和高度维度上的尺寸（227 x 227）。 </p>
 </blockquote>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/eg2.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/eg2.png" alt=""></p>
 <h5 id="全连接层计算举例"><a href="#全连接层计算举例" class="headerlink" title="全连接层计算举例"></a>全连接层计算举例</h5><blockquote>
 <p>实际上，全连接层也可以被视为是一种极端情况的卷积层，</p>
 <p>其卷积核尺寸就是输入矩阵尺寸，因此输出矩阵的高度和宽度尺寸都是1。 </p>
 </blockquote>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/eg3.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/eg3.png" alt=""></p>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
 <li>总结下来，其实只需要认识到:<ul>
 <li>虽然输入的每一张图像本身具有三个维度，</li>
@@ -820,7 +820,7 @@ init <span class="token operator">=</span> tf<span class="token punctuation">.</
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://homewyk.com" rel="external nofollow noreferrer">HomeWyk</a>
+                    <a href="https://homewyk.gitee.io" rel="external nofollow noreferrer">HomeWyk</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -830,7 +830,7 @@ init <span class="token operator">=</span> tf<span class="token punctuation">.</
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://homewyk.com/2020/03/27/20200327-092117/">https://homewyk.com/2020/03/27/20200327-092117/</a>
+                    <a href="https://homewyk.gitee.io/2020/03/27/20200327-092117/">https://homewyk.gitee.io/2020/03/27/20200327-092117/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -843,7 +843,7 @@ init <span class="token operator">=</span> tf<span class="token punctuation">.</
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://homewyk.com" target="_blank">HomeWyk</a>
+                    <a href="https://homewyk.gitee.io" target="_blank">HomeWyk</a>
                     !
                 </span>
             </div>
@@ -1054,7 +1054,7 @@ init <span class="token operator">=</span> tf<span class="token punctuation">.</
                 <a href="/2020/03/30/20200330-194036/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/Home-wang/cloudimg/raw/master/trees-on-mountain-3551227.jpg" class="responsive-img" alt="pycharm使用记录">
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/trees-on-mountain-3551227.jpg" class="responsive-img" alt="pycharm使用记录">
                         
                         <span class="card-title">pycharm使用记录</span>
                     </div>
@@ -1116,7 +1116,7 @@ step over（F8快捷键）：在单步执行时，在函数内遇到子函数时
                 <a href="/2020/03/26/20200326-112506/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/Home-wang/cloudimg/raw/master/scenic-view-of-mountains-1095817.jpg" class="responsive-img" alt="记录使用Hexo打造个人博客系统--持续记录中">
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/scenic-view-of-mountains-1095817.jpg" class="responsive-img" alt="记录使用Hexo打造个人博客系统--持续记录中">
                         
                         <span class="card-title">记录使用Hexo打造个人博客系统--持续记录中</span>
                     </div>
@@ -1298,7 +1298,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="https://homewyk.com" target="_blank">HomeWyk</a>
+            <a href="https://homewyk.gitee.io" target="_blank">HomeWyk</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>

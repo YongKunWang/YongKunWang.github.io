@@ -376,7 +376,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/Home-wang/cloudimg/raw/master/20200405104009.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/homewyk/cloudimg/raw/master/20200405104009.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -571,12 +571,12 @@
                 <h1 id="Gitee-码云-、Github同时配置ssh-key"><a href="#Gitee-码云-、Github同时配置ssh-key" class="headerlink" title="Gitee(码云)、Github同时配置ssh key"></a>Gitee(码云)、Github同时配置ssh key</h1><h4 id="一、cd-ssh"><a href="#一、cd-ssh" class="headerlink" title="一、cd ~/.ssh"></a>一、<code>cd ~/.ssh</code></h4><h4 id="二、通过下面的命令，依次生成两个平台的key"><a href="#二、通过下面的命令，依次生成两个平台的key" class="headerlink" title="二、通过下面的命令，依次生成两个平台的key"></a>二、通过下面的命令，依次生成两个平台的key</h4><pre class=" language-bash"><code class="language-bash">$ ssh-keygen -t rsa -C <span class="token string">"xxxxxxx@qq.com"</span> -f <span class="token string">"github_id_rsa"</span>
 $ ssh-keygen -t rsa -C <span class="token string">"xxxxxxx@qq.com"</span> -f <span class="token string">"gitee_id_rsa"</span></code></pre>
 <p>三次回车</p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/170141_5aa5bc98_551147.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/170141_5aa5bc98_551147.png" alt=""></p>
 <p>完成后，.ssh文件夹生成以下文件 </p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200405103414.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200405103414.png" alt=""></p>
 <h4 id="三、把public-key复制到gitee和github"><a href="#三、把public-key复制到gitee和github" class="headerlink" title="三、把public key复制到gitee和github"></a>三、把public key复制到gitee和github</h4><p>执行命令<code>cat github_id_rsa.pub</code>把第二行到结尾的内容复制到github的ssh中保存 </p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200405103500.png" alt=""></p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200405103514.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200405103500.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200405103514.png" alt=""></p>
 <h4 id="四、创建config文件解决ssh冲突"><a href="#四、创建config文件解决ssh冲突" class="headerlink" title="四、创建config文件解决ssh冲突"></a>四、创建config文件解决ssh冲突</h4><p>在.ssh文件夹下执行命令<code>vi config</code> 文件中添加以下内容 :</p>
 <p><strong>注意</strong>： 上面的东西不需要删除</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># gitee</span>
@@ -590,7 +590,7 @@ Host github.com
 HostName github.com
 PreferredAuthentications publickey
 IdentityFile ~/.ssh/github_id_rsa</code></pre>
-<h4 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h4><p>执行<br><code>ssh -T git@gitee.com</code><br>成功则返回<br><code>Welcome to Gitee.com ,yourname!</code><br>执行<br><code>ssh -T git@github.com</code><br>成功则返回<br><code>Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.</code><br><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200405103918.png" alt=""></p>
+<h4 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h4><p>执行<br><code>ssh -T git@gitee.com</code><br>成功则返回<br><code>Welcome to Gitee.com ,yourname!</code><br>执行<br><code>ssh -T git@github.com</code><br>成功则返回<br><code>Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.</code><br><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200405103918.png" alt=""></p>
 <p>参考：</p>
 <p><a href="https://blog.csdn.net/weixin_36191602/article/details/80946242" target="_blank" rel="noopener">https://blog.csdn.net/weixin_36191602/article/details/80946242</a> </p>
 <script>
@@ -626,7 +626,7 @@ IdentityFile ~/.ssh/github_id_rsa</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://homewyk.com" rel="external nofollow noreferrer">HomeWyk</a>
+                    <a href="https://homewyk.gitee.io" rel="external nofollow noreferrer">HomeWyk</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -636,7 +636,7 @@ IdentityFile ~/.ssh/github_id_rsa</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://homewyk.com/2020/04/05/20200405-103148/">https://homewyk.com/2020/04/05/20200405-103148/</a>
+                    <a href="https://homewyk.gitee.io/2020/04/05/20200405-103148/">https://homewyk.gitee.io/2020/04/05/20200405-103148/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -649,7 +649,7 @@ IdentityFile ~/.ssh/github_id_rsa</code></pre>
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://homewyk.com" target="_blank">HomeWyk</a>
+                    <a href="https://homewyk.gitee.io" target="_blank">HomeWyk</a>
                     !
                 </span>
             </div>
@@ -857,7 +857,7 @@ IdentityFile ~/.ssh/github_id_rsa</code></pre>
                 <a href="/2020/04/05/20200405-103148/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200405104009.png" class="responsive-img" alt="gitee和github同时配置ssh key">
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/20200405104009.png" class="responsive-img" alt="gitee和github同时配置ssh key">
                         
                         <span class="card-title">gitee和github同时配置ssh key</span>
                     </div>
@@ -915,8 +915,7 @@ $
                 <a href="/2020/04/05/20200405-092916/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Blog由Github改为部署到Gitee">
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/alone-buildings-city-cityscape-220444.jpg" class="responsive-img" alt="Blog由Github改为部署到Gitee">
                         
                         <span class="card-title">Blog由Github改为部署到Gitee</span>
                     </div>
@@ -1102,7 +1101,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="https://homewyk.com" target="_blank">HomeWyk</a>
+            <a href="https://homewyk.gitee.io" target="_blank">HomeWyk</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>

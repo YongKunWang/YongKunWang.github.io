@@ -376,7 +376,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/Home-wang/cloudimg/raw/master/xxx1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/homewyk/cloudimg/raw/master/xxx1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -538,7 +538,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-04
+                    2020-04-05
                 </div>
                 
 
@@ -575,7 +575,7 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 最近的方法，如R-CNN使用区域提出方法首先在图像中生成潜在的边界框，然后在这些提出的框上运行分类器。在分类之后，后处理用于细化边界框，消除重复的检测，并根据场景中的其它目标重新定位边界框[13]。这些复杂的流程很慢，很难优化，因为每个单独的组件都必须单独进行训练。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 我们将目标检测重新看作单一的回归问题，直接从图像像素到边界框坐标和类概率。使用我们的系统，您只需要在图像上看一次（YOLO），以预测出现的目标和位置。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; YOLO很简单：参见图1。单个卷积网络同时预测这些盒子的多个边界框和类概率。YOLO在全图像上训练并直接优化检测性能。这种统一的模型比传统的目标检测方法有一些好处。</p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200404105307.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200404105307.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>图1：YOLO检测系统。</strong>用YOLO处理图像简单直接。我们的系统（1）将输入图像调整为448×448，（2）在图像上运行单个卷积网络，以及（3）由模型的置信度对所得到的检测进行阈值处理。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 首先，YOLO速度非常快。由于我们将检测视为回归问题，所以我们不需要复杂的流程。测试时我们在一张新图像上简单的运行我们的神经网络来预测检测。我们的基础网络以每秒45帧的速度运行，在Titan X GPU上没有批处理，快速版本运行速度超过150fps。这意味着我们可以在不到25毫秒的延迟内实时处理流媒体视频。此外，YOLO实现了其它实时系统两倍以上的平均精度。关于我们的系统在网络摄像头上实时运行的演示，请参阅我们的项目网页：<a href="http://pjreddie.com/yolo/" target="_blank" rel="noopener">http://pjreddie.com/yolo/</a>。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 其次，YOLO在进行预测时，会对图像进行全局推理。与基于滑动窗口和区域提出的技术不同，YOLO在训练期间和测试时会看到整个图像，所以它隐式地编码了关于类的上下文信息以及它们的外观。快速R-CNN是一种顶级的检测方法[14]，因为它看不到更大的上下文，所以在图像中会将背景块误检为目标。与快速R-CNN相比，YOLO的背景误检数量少了一半。</p>
@@ -590,11 +590,11 @@
 <p>在测试时，我们乘以条件类概率和单个盒子的置信度预测，</p>
 <p>$Pr(Classi|Object)∗Pr(Object)∗IOU^{truth}<em>{pred}=Pr(Class</em>{i})∗IOU^{truth}_{pred}$</p>
 <p>为了在Pascal VOC上评估YOLO，我们使用S=7，B=2。Pascal VOC有20个标注类，所以C=20。我们最终的预测是7×7×30的张量。</p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200404105915.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200404105915.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>模型。</strong> 我们的系统将检测建模为回归问题。它将图像分成S×S的网格，并且每个网格单元预测B个边界框，这些边界框的置信度以及C个类别概率。这些预测被编码为S×S×(B∗5+C)的张量。</p>
 <h3 id="2-1-网络设计"><a href="#2-1-网络设计" class="headerlink" title="2.1. 网络设计"></a>2.1. 网络设计</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;我们将此模型作为卷积神经网络来实现，并在Pascal VOC检测数据集[9]上进行评估。网络的初始卷积层从图像中提取特征，而全连接层预测输出概率和坐标。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;我们的网络架构受到GoogLeNet图像分类模型的启发[34]。我们的网络有24个卷积层，后面是2个全连接层。我们只使用1×1降维层，后面是3×3卷积层，这与Lin等人[22]类似，而不是GoogLeNet使用的Inception模块。完整的网络如图3所示。</p>
-<p><img src="https://gitee.com/Home-wang/cloudimg/raw/master/20200404110013.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200404110013.png" alt=""></p>
 <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;图3：架构。</strong>我们的检测网络有24个卷积层，其次是2个全连接层。交替1×1卷积层减少了前面层的特征空间。我们在ImageNet分类任务上以一半的分辨率（224×224的输入图像）预训练卷积层，然后将分辨率加倍来进行检测。</p>
 <p>我们还训练了快速版本的YOLO，旨在推动快速目标检测的界限。快速YOLO使用具有较少卷积层（9层而不是24层）的神经网络，在这些层中使用较少的滤波器。除了网络规模之外，YOLO和快速YOLO的所有训练和测试参数都是相同的。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;我们网络的最终输出是7×7×30的预测张量。</p>
@@ -754,7 +754,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://homewyk.com" rel="external nofollow noreferrer">HomeWyk</a>
+                    <a href="https://homewyk.gitee.io" rel="external nofollow noreferrer">HomeWyk</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -764,7 +764,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://homewyk.com/2020/04/04/20200404-104201/">https://homewyk.com/2020/04/04/20200404-104201/</a>
+                    <a href="https://homewyk.gitee.io/2020/04/04/20200404-104201/">https://homewyk.gitee.io/2020/04/04/20200404-104201/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -777,7 +777,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://homewyk.com" target="_blank">HomeWyk</a>
+                    <a href="https://homewyk.gitee.io" target="_blank">HomeWyk</a>
                     !
                 </span>
             </div>
@@ -984,7 +984,7 @@
                 <a href="/2020/04/04/20200404-163009/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/Home-wang/cloudimg/raw/master/person-in-front-of-laptop-on-brown-wooden-table-2115217.jpg" class="responsive-img" alt="Ubuntu的虚拟机设置">
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/person-in-front-of-laptop-on-brown-wooden-table-2115217.jpg" class="responsive-img" alt="Ubuntu的虚拟机设置">
                         
                         <span class="card-title">Ubuntu的虚拟机设置</span>
                     </div>
@@ -1049,7 +1049,7 @@ sudo gedit
                 <a href="/2020/04/03/20200403-165757/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/Home-wang/cloudimg/raw/master/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg" class="responsive-img" alt="使用软件集合">
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg" class="responsive-img" alt="使用软件集合">
                         
                         <span class="card-title">使用软件集合</span>
                     </div>
@@ -1266,7 +1266,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="https://homewyk.com" target="_blank">HomeWyk</a>
+            <a href="https://homewyk.gitee.io" target="_blank">HomeWyk</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
