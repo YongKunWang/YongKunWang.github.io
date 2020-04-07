@@ -548,7 +548,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    20 分
                 </div>
                 
 
@@ -564,73 +564,80 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&nbsp;&nbsp;&nbsp;&nbsp; 2020年3月26日，开始搭建了第一个自己的独立博客，并且打算坚持持续使用并且进行不断的优化。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;  关于我：我是一个正在不断学习计算机相关的菜鸟小硕。2020年由于新冠肺炎疫情的影响，以在家3个月有余，每天在家坚持学习（有时效率贼低）。我现在最大的愿望就是毕业的时候能卖个好价格。</p>
+                <h2 id="前言">前言</h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 2020年3月26日，开始搭建了第一个自己的独立博客，并且打算坚持持续使用并且进行不断的优化。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 关于我：我是一个正在不断学习计算机相关的菜鸟小硕。2020年由于新冠肺炎疫情的影响，以在家3个月有余，每天在家坚持学习（有时效率贼低）。我现在最大的愿望就是毕业的时候能卖个好价格。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 很多人应该也想过搭建一个自己的博客，网上也有一堆详细教程。<strong>我在此打算将这篇文章集百家之长，将自己能够了解到的相关hexo搭建博客的知识整合在这一篇文章中。</strong>这篇文章将不断的进行更新。</p>
-<h2 id="关于搭建博客的工具-Hexo"><a href="#关于搭建博客的工具-Hexo" class="headerlink" title="关于搭建博客的工具-Hexo"></a>关于搭建博客的工具-Hexo</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;  首先要了解一下我们搭建博客要用到的框架。<code>Hexo</code>是高效的静态站点生成框架，它基于<code>Node.js</code>。通过<code>Hexo</code>，你可以直接使用<code>Markdown</code>语法来书写博客。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;   当然你可能对上面的这些概念比较陌生，不用过分担心，其实就是使用工具搭建博客系统罢了。请记住大部分都是满满的套路，直接按部就班就好。 你无需关心网页源代码的具体细节，你只需要用心写好你的博客内容就行。</p>
-<h2 id="搭建博客的步骤"><a href="#搭建博客的步骤" class="headerlink" title="搭建博客的步骤"></a>搭建博客的步骤</h2><h3 id="1-安装Node-js"><a href="#1-安装Node-js" class="headerlink" title="1.安装Node.js"></a>1.安装Node.js</h3><p>首先下载稳定版<a href="https://nodejs.org/dist/v9.11.1/node-v9.11.1-x64.msi" target="_blank" rel="noopener">Node.js</a>，我这里给的是64位的。</p>
+<h2 id="关于搭建博客的工具-hexo">关于搭建博客的工具-Hexo</h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 首先要了解一下我们搭建博客要用到的框架。<code>Hexo</code>是高效的静态站点生成框架，它基于<code>Node.js</code>。通过<code>Hexo</code>，你可以直接使用<code>Markdown</code>语法来书写博客。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 当然你可能对上面的这些概念比较陌生，不用过分担心，其实就是使用工具搭建博客系统罢了。请记住大部分都是满满的套路，直接按部就班就好。 你无需关心网页源代码的具体细节，你只需要用心写好你的博客内容就行。</p>
+<h2 id="搭建博客的步骤">搭建博客的步骤</h2>
+<h3 id="安装node.js">1.安装Node.js</h3>
+<p>首先下载稳定版<a href="https://nodejs.org/dist/v9.11.1/node-v9.11.1-x64.msi" target="_blank" rel="noopener">Node.js</a>，我这里给的是64位的。</p>
 <p>安装选项全部默认，一路点击<code>Next</code>。</p>
 <p>最后安装好之后，按<code>Win+R</code>打开命令提示符，输入<code>node -v</code>和<code>npm -v</code>，如果出现版本号，那么就安装成功了。</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401185856.png" alt=""></p>
-<h3 id="2-添加国内镜像源"><a href="#2-添加国内镜像源" class="headerlink" title="2. 添加国内镜像源"></a>2. 添加国内镜像源</h3><p>如果没有梯子的话，可以使用阿里的国内镜像进行加速。 </p>
-<pre class=" language-js"><code class="language-js">npm config <span class="token keyword">set</span> registry https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>registry<span class="token punctuation">.</span>npm<span class="token punctuation">.</span>taobao<span class="token punctuation">.</span>org</code></pre>
-<h3 id="3-安装Git"><a href="#3-安装Git" class="headerlink" title="3. 安装Git"></a>3. 安装Git</h3><p>为了把本地的网页文件上传到github上面去，我们需要用到分布式版本控制工具————<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git</a>。</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401185856.png"></p>
+<h3 id="添加国内镜像源">2. 添加国内镜像源</h3>
+<p>如果没有梯子的话，可以使用阿里的国内镜像进行加速。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" data-line-number="1">npm config set registry https<span class="op">:</span><span class="co">//registry.npm.taobao.org</span></a></code></pre></div>
+<h3 id="安装git">3. 安装Git</h3>
+<p>为了把本地的网页文件上传到github上面去，我们需要用到分布式版本控制工具————<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git</a>。</p>
 <p>安装选项还是全部默认，只不过最后一步添加路径时选择<code>Use Git from the Windows Command Prompt</code>，这样我们就可以直接在命令提示符里打开git了。</p>
 <p>安装完成后在命令提示符中输入<code>git --version</code>验证是否安装成功</p>
-<h3 id="4-注册Github账号-amp-新建仓库repository"><a href="#4-注册Github账号-amp-新建仓库repository" class="headerlink" title="4.注册Github账号&amp;新建仓库repository"></a>4.注册Github账号&amp;新建仓库repository</h3><ol>
+<h3 id="注册github账号新建仓库repository">4.注册Github账号&amp;新建仓库repository</h3>
+<ol type="1">
 <li>注册一个<code>Github</code>账号。</li>
 <li>新建项目</li>
 <li>项目名称以<code>你的GitHub账号名字.github.io</code>!! 注意一定要这样写！！</li>
 </ol>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.png" alt=""></p>
-<h3 id="5-安装Hexo"><a href="#5-安装Hexo" class="headerlink" title="5.安装Hexo"></a>5.安装Hexo</h3><ol>
-<li><p>在合适的地方新建一个文件夹，用来存放自己的博客文件，比如我的博客文件都存放在<code>E:\MyBlog\</code>目录下。</p>
-</li>
-<li><p>在该目录下右键点击<code>Git Bash Here</code>，打开git的控制台窗口，以后我们所有的操作都在<code>git</code>控制台进行，就不要用<code>Windows</code>自带的控制台了。</p>
-</li>
-<li><p>定位到该目录下，输入<code>npm i hexo-cli -g</code>安装Hexo。会有几个报错，无视它就行。</p>
-</li>
-<li><p>安装完后输入<code>hexo -v</code>验证是否安装成功。</p>
-</li>
-<li><p>然后就要初始化我们的网站，输入<code>hexo init</code>初始化文件夹，接着输入<code>npm install</code>安装必备的组件。</p>
-</li>
-<li><p>这样本地的网站配置也弄好啦，输入<code>hexo g</code>（g 为 generator的缩写）生成静态网页，然后输入<code>hexo s</code>（s 为services的缩写）打开本地服务器，然后浏览器打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，就可以看到我们的博客啦，效果如下:</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/%E5%8E%9F%E5%A7%8B%E6%95%88%E6%9E%9C.jpg" alt=""></p>
-<ol start="7">
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/新建仓库.png"></p>
+<h3 id="安装hexo">5.安装Hexo</h3>
+<ol type="1">
+<li><p>在合适的地方新建一个文件夹，用来存放自己的博客文件，比如我的博客文件都存放在<code>E:\MyBlog\</code>目录下。</p></li>
+<li><p>在该目录下右键点击<code>Git Bash Here</code>，打开git的控制台窗口，以后我们所有的操作都在<code>git</code>控制台进行，就不要用<code>Windows</code>自带的控制台了。</p></li>
+<li><p>定位到该目录下，输入<code>npm i hexo-cli -g</code>安装Hexo。会有几个报错，无视它就行。</p></li>
+<li><p>安装完后输入<code>hexo -v</code>验证是否安装成功。</p></li>
+<li><p>然后就要初始化我们的网站，输入<code>hexo init</code>初始化文件夹，接着输入<code>npm install</code>安装必备的组件。</p></li>
+<li><p>这样本地的网站配置也弄好啦，输入<code>hexo g</code>（g 为 generator的缩写）生成静态网页，然后输入<code>hexo s</code>（s 为services的缩写）打开本地服务器，然后浏览器打开<a href="http://localhost:4000/" target="_blank" rel="noopener" class="uri">http://localhost:4000/</a>，就可以看到我们的博客啦，效果如下:</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/原始效果.jpg"></p>
+<ol start="7" type="1">
 <li>使用<code>ctrl+c</code>可以关闭本地服务器</li>
+</ol></li>
 </ol>
-</li>
-</ol>
-<h3 id="6-连接Github和本地"><a href="#6-连接Github和本地" class="headerlink" title="6. 连接Github和本地"></a>6. 连接Github和本地</h3><ol>
-<li>首先右键打开git bash，然后输入下面命令： </li>
+<h3 id="连接github和本地">6. 连接Github和本地</h3>
+<ol type="1">
+<li>首先右键打开git bash，然后输入下面命令：</li>
 </ol>
 <pre><code>git config --global user.name "YongKunWang"
-git config --global user.email "Wang_YongKun@yeah.net"</code></pre><p>用户名和邮箱根据你注册github的信息自行修改。</p>
-<ol start="2">
+git config --global user.email "Wang_YongKun@yeah.net"</code></pre>
+<p>用户名和邮箱根据你注册github的信息自行修改。</p>
+<ol start="2" type="1">
 <li>然后生成密钥SSH key：</li>
 </ol>
-<pre><code>ssh-keygen -t rsa -C "Wang_YongKun@yeah.net"</code></pre><ol start="3">
-<li>打开<a href="http://github.com/" target="_blank" rel="noopener">github</a>，在头像下面点击<code>settings</code>，再点击<code>SSH and GPG keys</code>，新建一个SSH，名字随便。 </li>
+<pre><code>ssh-keygen -t rsa -C "Wang_YongKun@yeah.net"</code></pre>
+<ol start="3" type="1">
+<li>打开<a href="http://github.com/" target="_blank" rel="noopener">github</a>，在头像下面点击<code>settings</code>，再点击<code>SSH and GPG keys</code>，新建一个SSH，名字随便。</li>
 <li>git bash中输入 :</li>
 </ol>
-<pre><code>cat ~/.ssh/id_rsa.pub</code></pre><ol start="5">
-<li><p>将输出的内容复制到框中，点击确定保存。 </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/ssh%E8%AE%BE%E7%BD%AE.png" alt=""></p>
-</li>
-<li><p>输入<code>ssh -T git@github.com</code>，如果如下图所示，出现你的用户名，那就成功了。</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200403114408.png" alt=""></p>
-</li>
-<li><p>打开博客根目录下的<code>_config.yml</code>文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。 </p>
-<p>修改最后一行的配置： </p>
+<pre><code>cat ~/.ssh/id_rsa.pub</code></pre>
+<ol start="5" type="1">
+<li><p>将输出的内容复制到框中，点击确定保存。</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/ssh设置.png"></p></li>
+<li><p>输入<code>ssh -T git@github.com</code>，如果如下图所示，出现你的用户名，那就成功了。</p></li>
+</ol>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200403114408.png"></p>
+<ol start="7" type="1">
+<li><p>打开博客根目录下的<code>_config.yml</code>文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。</p>
+<p>修改最后一行的配置：</p>
 <pre><code>deploy:
   type: git
   repository: https://github.com/godweiyang/YongKunWang.github.io
-  branch: master</code></pre><p><code>repository</code>修改为你自己的<code>github</code>项目地址。 </p>
-</li>
+  branch: master</code></pre>
+<p><code>repository</code>修改为你自己的<code>github</code>项目地址。</p></li>
 </ol>
 <p><strong>经过以上7个步骤，必要的环境配置条件基本已经完成了！！</strong></p>
-<h3 id="7-测试本地写文章、发布文章"><a href="#7-测试本地写文章、发布文章" class="headerlink" title="7.测试本地写文章、发布文章"></a>7.测试本地写文章、发布文章</h3><p>首先在博客根目录下右键打开git bash，安装一个扩展<code>npm i hexo-deployer-git</code>。</p>
+<h3 id="测试本地写文章发布文章">7.测试本地写文章、发布文章</h3>
+<p>首先在博客根目录下右键打开git bash，安装一个扩展<code>npm i hexo-deployer-git</code>。</p>
 <p>然后输入<code>hexo new post "article title"</code>，新建一篇文章。</p>
 <p>然后打开<code>E:\MyBlog\source\_posts</code>的目录，可以发现下面多了一个<code>.md</code>文件，可以新建一个<code>images</code>文件用来存放你的图片等数据，另一个就是你的文章文件啦。</p>
 <p>编写完<code>markdown</code>文件后，根目录下输入<code>hexo g</code>生成静态网页，然后输入<code>hexo s</code>可以本地预览效果，最后输入<code>hexo d</code>上传到github上。这时打开你的github.io主页就能看到发布的文章啦。</p>
@@ -642,16 +649,21 @@ hexo g
 // s: service
 hexo s
 // d: deploy
-hexo d</code></pre><h3 id="8-绑定域名"><a href="#8-绑定域名" class="headerlink" title="8. 绑定域名"></a>8. 绑定域名</h3><p>&nbsp;&nbsp;&nbsp;&nbsp; 现在默认的域名还是<code>xxx.github.io</code>，可以直接通过<code>xxx.github.io</code>访问自己搭建的博客系统。</p>
+hexo d</code></pre>
+<h3 id="绑定域名">8. 绑定域名</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 现在默认的域名还是<code>xxx.github.io</code>，可以直接通过<code>xxx.github.io</code>访问自己搭建的博客系统。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 如果想要绑定自己的域名，可以通过网络购买一个域名，然后进行配置。本人在阿里云购买的域名，如下图所示，并且添加两条解析记录：</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png" alt=""></p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%901.png" alt=""></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 然后打开自己新建的仓库，点击<code>settings</code>，拉到下面<code>Custom domain</code>处，填上你自己的域名，保存： </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A.png" alt=""></p>
-<p>此时在你的<code>github</code>仓库的根目录下会生成一个名字为<code>CNAME</code>的文件，如果没有的话（其实如果本地没有这个文件的话，<code>hexo d</code>会将全部文件上传，此时github仓库会丢失这个文件，所以<code>CNAME</code>这个文件本地一定要有的 ）打开你本地博客<code>/source</code>目录，我的是<code>E:\Myblog\source</code>，新建<code>CNAME</code>文件，注意没有后缀。然后在里面写上你的域名<code>homewyk.com</code>，保存。最后运行<code>hexo g</code>、<code>hexo d</code>上传到github。 </p>
-<h3 id="9-主题推荐"><a href="#9-主题推荐" class="headerlink" title="9.主题推荐"></a>9.主题推荐</h3><p>主题的原地址在这里：<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">hexo-theme-matery</a>，它的文档写得也非常的详细，还有中英文两个版本，作者回复也很及时。效果图如下，可以看出非常合我的口味： </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/theme.png" alt=""></p>
-<h2 id="个性化配置（matery-theme）"><a href="#个性化配置（matery-theme）" class="headerlink" title="个性化配置（matery_theme）"></a>个性化配置（matery_theme）</h2><h3 id="博客的目录结构"><a href="#博客的目录结构" class="headerlink" title="博客的目录结构"></a>博客的目录结构</h3><pre><code>- node_modules
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/域名解析.png"></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/域名解析1.png"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 然后打开自己新建的仓库，点击<code>settings</code>，拉到下面<code>Custom domain</code>处，填上你自己的域名，保存：</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/域名绑定.png"></p>
+<p>此时在你的<code>github</code>仓库的根目录下会生成一个名字为<code>CNAME</code>的文件，如果没有的话（其实如果本地没有这个文件的话，<code>hexo d</code>会将全部文件上传，此时github仓库会丢失这个文件，所以<code>CNAME</code>这个文件本地一定要有的 ）打开你本地博客<code>/source</code>目录，我的是<code>E:\Myblog\source</code>，新建<code>CNAME</code>文件，注意没有后缀。然后在里面写上你的域名<code>homewyk.com</code>，保存。最后运行<code>hexo g</code>、<code>hexo d</code>上传到github。</p>
+<h3 id="主题推荐">9.主题推荐</h3>
+<p>主题的原地址在这里：<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">hexo-theme-matery</a>，它的文档写得也非常的详细，还有中英文两个版本，作者回复也很及时。效果图如下，可以看出非常合我的口味：</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/theme.png"></p>
+<h2 id="个性化配置matery_theme">个性化配置（matery_theme）</h2>
+<h3 id="博客的目录结构">博客的目录结构</h3>
+<pre><code>- node_modules
 - public
 - scaffolds
 - source
@@ -662,7 +674,8 @@ hexo d</code></pre><h3 id="8-绑定域名"><a href="#8-绑定域名" class="head
     - categories
     - friends
     - tags
-- themes</code></pre><ul>
+- themes</code></pre>
+<ul>
 <li><code>node_modules</code>是<code>node.js</code>各种库的目录</li>
 <li><code>public</code>是生成的网页文件目录</li>
 <li><code>scaffolds</code>里面就三个文件，存储着新文章和新页面的初始设置</li>
@@ -670,8 +683,10 @@ hexo d</code></pre><h3 id="8-绑定域名"><a href="#8-绑定域名" class="head
 <li><code>themes</code>存放着主题文件，一般也用不到</li>
 <li>我们平时写文章只需要关注<code>source/_posts</code>这个文件夹就行了</li>
 </ul>
-<h4 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h4><p>在文件根目录下的<code>_config.yml</code>，就是整个<code>hexo</code>框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的<a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">配置描述</a> </p>
-<h5 id="网站相关信息"><a href="#网站相关信息" class="headerlink" title="网站相关信息"></a>网站相关信息</h5><p>参数描述：</p>
+<h4 id="基本配置">基本配置</h4>
+<p>在文件根目录下的<code>_config.yml</code>，就是整个<code>hexo</code>框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的<a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">配置描述</a></p>
+<h5 id="网站相关信息">网站相关信息</h5>
+<p>参数描述：</p>
 <ul>
 <li><code>title</code>网站标题</li>
 <li><code>subtitle</code>网站副标题</li>
@@ -685,7 +700,8 @@ hexo d</code></pre><h3 id="8-绑定域名"><a href="#8-绑定域名" class="head
 <li><code>description</code>主要用于<code>SEO</code>，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。</li>
 <li><code>author</code>参数用于主题显示文章的作者。</li>
 </ul>
-<h5 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h5><p>参数描述：</p>
+<h5 id="网址">网址</h5>
+<p>参数描述：</p>
 <ul>
 <li><code>url</code>网址</li>
 <li><code>root</code>网站根目录</li>
@@ -695,45 +711,55 @@ hexo d</code></pre><h3 id="8-绑定域名"><a href="#8-绑定域名" class="head
 <p>在这里，你需要把<code>url</code>改成你的<strong>网站域名</strong>。</p>
 <p><code>permalink</code>，也就是你生成某个文章时的那个链接格式。</p>
 <p>比如我新建一个文章叫<code>temp.md</code>，那么这个时候他自动生成的地址就是<code>http://yoursite.com/2018/09/05/temp</code>。</p>
-<p>再往下翻，中间这些都默认就好了。 </p>
-<h4 id="theme"><a href="#theme" class="headerlink" title="theme"></a><code>theme</code></h4><p> <code>theme</code>就是选择什么主题，也就是在<code>themes</code>这个文件夹下，在官网上有很多个主题，默认给你安装的是<code>lanscape</code>这个主题。当你需要更换主题时，在官网上下载，把主题的文件放在<code>themes</code>文件夹下，再修改这个主题参数就可以了。 </p>
-<h4 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h4><h5 id="post"><a href="#post" class="headerlink" title="post"></a><code>post</code></h5><p>当你每一次使用代码 </p>
-<pre class=" language-bash"><code class="language-bash">hexo new XXX</code></pre>
+<p>再往下翻，中间这些都默认就好了。</p>
+<h4 id="theme"><code>theme</code></h4>
+<p><code>theme</code>就是选择什么主题，也就是在<code>themes</code>这个文件夹下，在官网上有很多个主题，默认给你安装的是<code>lanscape</code>这个主题。当你需要更换主题时，在官网上下载，把主题的文件放在<code>themes</code>文件夹下，再修改这个主题参数就可以了。</p>
+<h4 id="布局">布局</h4>
+<h5 id="post"><code>post</code></h5>
+<p>当你每一次使用代码</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="ex">hexo</span> new XXX</a></code></pre></div>
 <p>它其实默认使用的是<code>post</code>这个布局，也就是在<code>source</code>文件夹下的<code>_post</code>里面。</p>
 <p><code>Hexo</code>有三种默认布局：<code>post</code>、<code>page</code>和<code>draft</code>，它们分别对应不同的路径，而您自定义的其他布局和<code>post</code>相同，都将储存到<code>source/_posts</code>文件夹。</p>
 <p>而new这个命令其实是：</p>
-<pre class=" language-bash"><code class="language-bash">hexo new <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>title<span class="token operator">></span></code></pre>
-<p>只不过这个<code>layout</code>默认是<code>post</code>罢了。 </p>
-<h5 id="page"><a href="#page" class="headerlink" title="page"></a><code>page</code></h5><p>如果你想另起一页，那么可以使用 :</p>
-<pre class=" language-bash"><code class="language-bash">hexo new page newpage</code></pre>
-<p>系统会自动给你在<code>source</code>文件夹下创建一个<code>newpage</code>文件夹，以及<code>newpage</code>文件夹中的<code>index.md</code>，这样你访问的<code>newpage</code>对应的链接就是<a href="http://xxx.xxx/newpage" target="_blank" rel="noopener">http://xxx.xxx/newpage</a> </p>
-<h5 id="draft"><a href="#draft" class="headerlink" title="draft"></a><code>draft</code></h5><p><code>draft</code>是草稿的意思，也就是你如果想写文章，又不希望被看到，那么可以 :</p>
-<pre class=" language-bash"><code class="language-bash">hexo server --draft</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="ex">hexo</span> new [layout] <span class="op">&lt;</span>title<span class="op">&gt;</span></a></code></pre></div>
+<p>只不过这个<code>layout</code>默认是<code>post</code>罢了。</p>
+<h5 id="page"><code>page</code></h5>
+<p>如果你想另起一页，那么可以使用 :</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="ex">hexo</span> new page newpage</a></code></pre></div>
+<p>系统会自动给你在<code>source</code>文件夹下创建一个<code>newpage</code>文件夹，以及<code>newpage</code>文件夹中的<code>index.md</code>，这样你访问的<code>newpage</code>对应的链接就是<a href="http://xxx.xxx/newpage" target="_blank" rel="noopener" class="uri">http://xxx.xxx/newpage</a></p>
+<h5 id="draft"><code>draft</code></h5>
+<p><code>draft</code>是草稿的意思，也就是你如果想写文章，又不希望被看到，那么可以 :</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="ex">hexo</span> server --draft</a></code></pre></div>
 <p>在本地端口中开启服务预览。</p>
 <p>如果你的草稿文件写完了，想要发表到<code>post</code>中:</p>
-<pre class=" language-bash"><code class="language-bash">hexo publish draft newdraft</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="ex">hexo</span> publish draft newdraft</a></code></pre></div>
 <p>就会自动把<code>newdraft.md</code>发送到<code>post</code>中 。</p>
-<h3 id="更改导航栏颜色"><a href="#更改导航栏颜色" class="headerlink" title="更改导航栏颜色"></a>更改导航栏颜色</h3><p>在主题文件的theme/matery /source/css/matery.css 文件中，搜索 .bg-color 来修改背景颜色：  </p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.bg-color</span> </span><span class="token punctuation">{</span>
-    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right, <span class="token hexcode">#103945</span> <span class="token number">0%</span>, <span class="token hexcode">#c1baa7</span> <span class="token number">100%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0.6</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<h3 id="更改导航栏颜色">更改导航栏颜色</h3>
+<p>在主题文件的theme/matery /source/css/matery.css 文件中，搜索 .bg-color 来修改背景颜色：</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="fu">.bg-color</span> {</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">    <span class="kw">background-image</span>: linear-gradient(to <span class="dv">right</span>, <span class="dv">#103945</span> <span class="dv">0%</span>, <span class="dv">#c1baa7</span> <span class="dv">100%</span>);</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">    <span class="kw">opacity</span>: <span class="dv">0.6</span>;</a>
+<a class="sourceLine" id="cb13-4" data-line-number="4">}</a></code></pre></div>
 <p>效果：</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401204906.png" alt=""></p>
-<h3 id="取消蒙版特效"><a href="#取消蒙版特效" class="headerlink" title="取消蒙版特效"></a>取消蒙版特效</h3><p>在主题文件的 theme/matery /source/css/matery.css 文件中，搜索 .bg-cover:after 注释它： </p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.bg-cover</span><span class="token pseudo-element">:after</span> </span><span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/*-webkit-animation: rainbow 60s infinite;*/</span>
-    <span class="token comment" spellcheck="true">/*animation: rainbow 60s infinite;*/</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="设置首页显示部分"><a href="#设置首页显示部分" class="headerlink" title="设置首页显示部分"></a>设置首页显示部分</h3><pre><code># index page dream text,
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401204906.png"></p>
+<h3 id="取消蒙版特效">取消蒙版特效</h3>
+<p>在主题文件的 theme/matery /source/css/matery.css 文件中，搜索 .bg-cover:after 注释它：</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="fu">.bg-cover</span><span class="in">:after</span> {</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">    <span class="co">/*-webkit-animation: rainbow 60s infinite;*/</span></a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">    <span class="co">/*animation: rainbow 60s infinite;*/</span></a>
+<a class="sourceLine" id="cb14-4" data-line-number="4">}</a></code></pre></div>
+<h3 id="设置首页显示部分">设置首页显示部分</h3>
+<pre><code># index page dream text,
 # 配置首页显示"梦想"的语句.
 dream:
   enable: true
   showTitle: true
   title: 吉檀迦利
-  text: &lt;p&gt;离你最近的地方，路途最远，&lt;/p&gt;&lt;br /&gt;&lt;p&gt;最简单的音调，需要最艰苦的练习。&lt;/p&gt;&lt;br /&gt;&lt;p&gt;旅客要在每个生人门口敲叩，才能敲到自己的家门,&lt;/p&gt;&lt;br /&gt;&lt;p&gt;人要在外面到处漂流，最后才能走到最深的内殿。&lt;/p&gt;&lt;br /&gt;&lt;p&gt;我的眼睛向空阔处四望，最后才合上眼说：“你原来住在这里！”。&lt;/p&gt;&lt;br /&gt;&lt;p align="right" style="margin-right:100px"&gt;——泰戈尔(Rabindranath Thakur)&lt;/p&gt;</code></pre><p>效果显示：</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401213211.png" alt=""></p>
-<h3 id="设置打字效果副标题"><a href="#设置打字效果副标题" class="headerlink" title="设置打字效果副标题"></a>设置打字效果副标题</h3><pre><code># 打字效果副标题.
+  text: &lt;p&gt;离你最近的地方，路途最远，&lt;/p&gt;&lt;br /&gt;&lt;p&gt;最简单的音调，需要最艰苦的练习。&lt;/p&gt;&lt;br /&gt;&lt;p&gt;旅客要在每个生人门口敲叩，才能敲到自己的家门,&lt;/p&gt;&lt;br /&gt;&lt;p&gt;人要在外面到处漂流，最后才能走到最深的内殿。&lt;/p&gt;&lt;br /&gt;&lt;p&gt;我的眼睛向空阔处四望，最后才合上眼说：“你原来住在这里！”。&lt;/p&gt;&lt;br /&gt;&lt;p align="right" style="margin-right:100px"&gt;——泰戈尔(Rabindranath Thakur)&lt;/p&gt;</code></pre>
+<p>效果显示：</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401213211.png"></p>
+<h3 id="设置打字效果副标题">设置打字效果副标题</h3>
+<pre><code># 打字效果副标题.
 # 如果有符号 ‘ ，请在 ’ 前面加上 \
 subtitle:
   enable: true
@@ -743,66 +769,72 @@ subtitle:
   typeSpeed: 100 # 打字速度
   backSpeed: 50 # 删除速度
   sub1: 天空没有留下鸟的痕迹，但我已飞过
-  sub2: I leave no trace of wings in the air,but I am glad I have had my flight.</code></pre><p>效果展示：</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401213337.png" alt=""></p>
-<h3 id="添加404页面"><a href="#添加404页面" class="headerlink" title="添加404页面"></a>添加404页面</h3><p>原来的主题没有<code>404</code>页面，我们加一个。首先在<code>/source/</code>目录下新建一个<code>404.md</code>，非主题目录下的<code>source</code>内容如下： </p>
-<pre class=" language-json"><code class="language-json">title<span class="token operator">:</span> <span class="token number">404</span>
-date<span class="token operator">:</span> <span class="token number">2019</span>-<span class="token number">08</span>-<span class="token number">5</span> <span class="token number">16</span><span class="token operator">:</span><span class="token number">41</span><span class="token operator">:</span><span class="token number">10</span>
-type<span class="token operator">:</span> <span class="token string">"404"</span>
-layout<span class="token operator">:</span> <span class="token string">"404"</span>
-description<span class="token operator">:</span> <span class="token string">"Oops～，我崩溃了！找不到你想要的页面 :("</span></code></pre>
-<p>然后在<code>/themes/matery/layout/</code>目录下新建一个<code>404.ejs</code>文件，内容如下： </p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-    <span class="token comment" spellcheck="true">/* don't remove. */</span>
-    <span class="token selector"><span class="token class">.about-cover</span> </span><span class="token punctuation">{</span>
-        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">75</span>vh<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bg-cover pd-header about-cover<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col s10 offset-s1 m8 offset-m2 l8 offset-l2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>brand<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title center-align<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                        404
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description center-align<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                        &lt;%= page.description %>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
-    <span class="token comment" spellcheck="true">// 每天切换 banner 图.  Switch banner image every day.</span>
-    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.bg-cover'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'background-image'</span><span class="token punctuation">,</span> <span class="token string">'url(/medias/banner/'</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.jpg)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="嗷嗷"><a href="#嗷嗷" class="headerlink" title="嗷嗷"></a>嗷嗷</h3><h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><h3 id="1-hexo的网页的TOC的目录显示"><a href="#1-hexo的网页的TOC的目录显示" class="headerlink" title="1. hexo的网页的TOC的目录显示"></a>1. hexo的网页的TOC的目录显示</h3><p>是从二级标题开始能够正常实现的，<code>##</code></p>
+  sub2: I leave no trace of wings in the air,but I am glad I have had my flight.</code></pre>
+<p>效果展示：</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401213337.png"></p>
+<h3 id="添加404页面">添加404页面</h3>
+<p>原来的主题没有<code>404</code>页面，我们加一个。首先在<code>/source/</code>目录下新建一个<code>404.md</code>，非主题目录下的<code>source</code>内容如下：</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="er">title:</span> <span class="er">404</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="er">date:</span> <span class="er">2019-08-5</span> <span class="er">16:41:10</span></a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="er">type:</span> <span class="er">"404"</span></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="er">layout:</span> <span class="er">"404"</span></a>
+<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="er">description:</span> <span class="er">"Oops～，我崩溃了！找不到你想要的页面</span> <span class="er">:("</span></a></code></pre></div>
+<p>然后在<code>/themes/matery/layout/</code>目录下新建一个<code>404.ejs</code>文件，内容如下：</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">&lt;style</span><span class="ot"> type=</span><span class="st">"text/css"</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb18-2" data-line-number="2">    <span class="co">/* don't remove. */</span></a>
+<a class="sourceLine" id="cb18-3" data-line-number="3">    <span class="fu">.about-cover</span> {</a>
+<a class="sourceLine" id="cb18-4" data-line-number="4">        <span class="kw">height</span>: <span class="dv">75vh</span>;</a>
+<a class="sourceLine" id="cb18-5" data-line-number="5">    }</a>
+<a class="sourceLine" id="cb18-6" data-line-number="6"><span class="kw">&lt;/style&gt;</span></a>
+<a class="sourceLine" id="cb18-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb18-8" data-line-number="8"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">"bg-cover pd-header about-cover"</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb18-9" data-line-number="9">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">"container"</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb18-10" data-line-number="10">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">"row"</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb18-11" data-line-number="11">            <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">"col s10 offset-s1 m8 offset-m2 l8 offset-l2"</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb18-12" data-line-number="12">                <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">"brand"</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb18-13" data-line-number="13">                    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">"title center-align"</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb18-14" data-line-number="14">                        404</a>
+<a class="sourceLine" id="cb18-15" data-line-number="15">                    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb18-16" data-line-number="16">                    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">"description center-align"</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb18-17" data-line-number="17">                        <span class="er">&lt;</span>%= page.description %&gt;</a>
+<a class="sourceLine" id="cb18-18" data-line-number="18">                    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb18-19" data-line-number="19">                <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb18-20" data-line-number="20">            <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb18-21" data-line-number="21">        <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb18-22" data-line-number="22">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb18-23" data-line-number="23"><span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb18-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb18-25" data-line-number="25"><span class="kw">&lt;script&gt;</span></a>
+<a class="sourceLine" id="cb18-26" data-line-number="26">    <span class="co">// 每天切换 banner 图.  Switch banner image every day.</span></a>
+<a class="sourceLine" id="cb18-27" data-line-number="27">    <span class="at">$</span>(<span class="st">'.bg-cover'</span>).<span class="at">css</span>(<span class="st">'background-image'</span><span class="op">,</span> <span class="st">'url(/medias/banner/'</span> <span class="op">+</span> <span class="kw">new</span> <span class="at">Date</span>().<span class="at">getDay</span>() <span class="op">+</span> <span class="st">'.jpg)'</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb18-28" data-line-number="28"><span class="kw">&lt;/script&gt;</span></a></code></pre></div>
+<h3 id="嗷嗷">嗷嗷</h3>
+<h2 id="问题解决">问题解决</h2>
+<h3 id="hexo的网页的toc的目录显示">1. hexo的网页的TOC的目录显示</h3>
+<p>是从二级标题开始能够正常实现的，<code>##</code></p>
 <p>一级标题不能在<code>toc</code>目录中正常显示<code>#</code></p>
-<h3 id="2-博文中添加image"><a href="#2-博文中添加image" class="headerlink" title="2. 博文中添加image"></a>2. 博文中添加<code>image</code></h3><p><strong>好方法：</strong></p>
+<h3 id="博文中添加image">2. 博文中添加<code>image</code></h3>
+<p><strong>好方法：</strong></p>
 <p>通过图床的方式来做</p>
 <p>详情请看<a href="https://homewyk.com/2020/04/01/20200401-122211/">写作四剑客</a></p>
 <p>结束上述配置以后，就可以实现markdowm的img图片的插入了，还能够预览，比下面的方法好多了。</p>
 <hr>
 <p>不好的方法：</p>
 <p>采用相对路径的方法：</p>
-<ol>
+<ol type="1">
 <li><p>配置文件：<code>_config.yml</code></p>
 <pre><code>post_asset_folder: true</code></pre></li>
-<li><p>将<code>_config.yml</code>文件中的配置项<code>post_asset_folder</code>设为<code>true</code>后，执行命令<code>$ hexo new post_name</code>，在<code>source/_posts</code>中会生成文章<code>post_name.md</code>和同名文件夹<code>post_name</code>。将图片资源放在<code>post_name</code>中，文章就可以使用相对路径引用图片资源了。 </p>
-</li>
+<li><p>将<code>_config.yml</code>文件中的配置项<code>post_asset_folder</code>设为<code>true</code>后，执行命令<code>$ hexo new post_name</code>，在<code>source/_posts</code>中会生成文章<code>post_name.md</code>和同名文件夹<code>post_name</code>。将图片资源放在<code>post_name</code>中，文章就可以使用相对路径引用图片资源了。</p></li>
 <li><p>引用的时候还是和之前的markdown语法是不一样的:</p>
 <pre><code>![](image.jpg)</code></pre></li>
 <li><p>当<code>hexo g</code>的时候，会将.md文件和图片文件一块发布到以时间命名的文件夹中。</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/%E5%8F%91%E5%B8%83%E6%95%88%E6%9E%9C.png" alt=""></p>
-</li>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/发布效果.png"></p></li>
 </ol>
-<h3 id="3-添加首页和推荐页部分的Img设置"><a href="#3-添加首页和推荐页部分的Img设置" class="headerlink" title="3. 添加首页和推荐页部分的Img设置"></a>3. 添加首页和推荐页部分的<code>Img</code>设置</h3><p>需要在文章头部添加：</p>
+<h3 id="添加首页和推荐页部分的img设置">3. 添加首页和推荐页部分的<code>Img</code>设置</h3>
+<p>需要在文章头部添加：</p>
 <pre><code>img： url链接
-coverImg: url链接</code></pre><p>或者直接在scaffolds文件夹中的post中添加全局：</p>
+coverImg: url链接</code></pre>
+<p>或者直接在scaffolds文件夹中的post中添加全局：</p>
 <pre><code>title: {{ title }}
 id:
 img:
@@ -815,13 +847,15 @@ toc: true
 mathjax: true
 summary:
 tags:
-categories:</code></pre><p>截图：</p>
+categories:</code></pre>
+<p>截图：</p>
 <p>本篇博文使用的文件头部：</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401182625.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401182625.png"></p>
 <p>公共头部信息：</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401182801.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401182801.png"></p>
 <p><strong>注意：图床的Image的大小要在1MB以内，要不然会出现加载失败的情况</strong></p>
-<h3 id="4-Hexo-添加自定义静态HTML的解决方法"><a href="#4-Hexo-添加自定义静态HTML的解决方法" class="headerlink" title="4. Hexo 添加自定义静态HTML的解决方法"></a>4. Hexo 添加自定义静态HTML的解决方法</h3><p>使用<code>hexo</code>创建的静态博客，所有博文内容都是有<code>markdown</code>生成，且页面样式也是由下载的主题自动化生成的，那么想要在独立页面中大展身手的前端小伙伴，如何将写好的静态页面引入到<code>hexo</code>博客中呢？<code>html</code>，<code>css</code>，<code>js</code>等文件在<code>hexo</code>项目里如何避免被自动渲染呢？ </p>
+<h3 id="hexo-添加自定义静态html的解决方法">4. Hexo 添加自定义静态HTML的解决方法</h3>
+<p>使用<code>hexo</code>创建的静态博客，所有博文内容都是有<code>markdown</code>生成，且页面样式也是由下载的主题自动化生成的，那么想要在独立页面中大展身手的前端小伙伴，如何将写好的静态页面引入到<code>hexo</code>博客中呢？<code>html</code>，<code>css</code>，<code>js</code>等文件在<code>hexo</code>项目里如何避免被自动渲染呢？</p>
 <pre><code>hexo
 ├─ public
 |  └┈ demo
@@ -838,60 +872,75 @@ categories:</code></pre><p>截图：</p>
 ├─ themes
 |  └┈ next
 |     └┈ source
-└┈ _config.yml</code></pre><p>&nbsp;&nbsp;&nbsp;&nbsp; 首先，在根目录下的<code>source</code>文件夹下，新建一个文件夹，用来存放静态页面文件。这里假设文件夹叫<code>demo</code>。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 然后，在<code>demo</code>文件夹中放入所需的<code>html</code>文件。这里为<code>new_file.html</code>。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; <code>hexo -g</code>，<code>public</code>文件夹中就会有相应的<code>demo</code>文件夹和其包含的文件生成。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 此时，再在某个<code>md</code>文件中添加一个链接，直接在浏览器中访问地址<code>"xxx/demo/new_file.html"</code>，即可链接到我们新建的<code>new_file</code>页面了。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 这时你会发现，我们访问到的<code>new_file</code>页面和在本地打开的并不相同，原因就是，<code>hexo</code>的<code>source</code>文件夹下的所有文件都会自动编译。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 这种形式我们也可能用到，就是新引入的页面作为一篇博文的内容展示。这样做的话，就和写一篇<code>md</code>文章相差无几。<br>&nbsp;&nbsp;&nbsp;&nbsp; 当然，使用<code>html</code>的好处就是可以随意修改<code>css</code>和<code>js</code>。这里就不建议使用外链的形式引入<code>css</code>、<code>js</code>，因为上面提到过，<code>source</code>文件下的文件都会被编译，从而导致<code>css</code>、<code>js</code>的编译错误。</p>
+└┈ _config.yml</code></pre>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 首先，在根目录下的<code>source</code>文件夹下，新建一个文件夹，用来存放静态页面文件。这里假设文件夹叫<code>demo</code>。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 然后，在<code>demo</code>文件夹中放入所需的<code>html</code>文件。这里为<code>new_file.html</code>。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <code>hexo -g</code>，<code>public</code>文件夹中就会有相应的<code>demo</code>文件夹和其包含的文件生成。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 此时，再在某个<code>md</code>文件中添加一个链接，直接在浏览器中访问地址<code>"xxx/demo/new_file.html"</code>，即可链接到我们新建的<code>new_file</code>页面了。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 这时你会发现，我们访问到的<code>new_file</code>页面和在本地打开的并不相同，原因就是，<code>hexo</code>的<code>source</code>文件夹下的所有文件都会自动编译。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 这种形式我们也可能用到，就是新引入的页面作为一篇博文的内容展示。这样做的话，就和写一篇<code>md</code>文章相差无几。 &nbsp;&nbsp;&nbsp;&nbsp; 当然，使用<code>html</code>的好处就是可以随意修改<code>css</code>和<code>js</code>。这里就不建议使用外链的形式引入<code>css</code>、<code>js</code>，因为上面提到过，<code>source</code>文件下的文件都会被编译，从而导致<code>css</code>、<code>js</code>的编译错误。</p>
 <p>那么，有没有方法可以避免文件被编译呢？</p>
-<p>答案是肯定的。只要在文件开头加上 </p>
+<p>答案是肯定的。只要在文件开头加上</p>
 <pre><code>---
 layout: false
----</code></pre><p>即可。只是这个方法只适用于<code>html</code>文件，而且每个文件都要加，还是有很大的局限性。除此之外，有个还笨办法，就是把要引用的文件放到<code>themes/(主题名)/source</code>文件夹下，这样也会避免被编译，但本人不建议使用。</p>
+---</code></pre>
+<p>即可。只是这个方法只适用于<code>html</code>文件，而且每个文件都要加，还是有很大的局限性。除此之外，有个还笨办法，就是把要引用的文件放到<code>themes/(主题名)/source</code>文件夹下，这样也会避免被编译，但本人不建议使用。</p>
 <p>那么没有更好地办法了？</p>
 <hr>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 打开hexo项目根目录下的配置文件<code>_config.yml</code>，找到<code>skip_render:</code>，在这里就可以配置需要跳过渲染的文件。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 例如，我们把所有静态页面放到<code>source</code>文件夹下的<code>demo</code>文件夹中，只要配置 </p>
-<pre><code>skip_render: demo/**</code></pre><p>&nbsp;&nbsp;&nbsp;&nbsp; 就可以使<code>demo</code>下的所有文件（包括子文件）避免被编译。这样的匹配规则在许多前端框架和自动化工具中都有用到，前端小伙伴应该都很熟悉。举几个例子： </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 打开hexo项目根目录下的配置文件<code>_config.yml</code>，找到<code>skip_render:</code>，在这里就可以配置需要跳过渲染的文件。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 例如，我们把所有静态页面放到<code>source</code>文件夹下的<code>demo</code>文件夹中，只要配置</p>
+<pre><code>skip_render: demo/**</code></pre>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 就可以使<code>demo</code>下的所有文件（包括子文件）避免被编译。这样的匹配规则在许多前端框架和自动化工具中都有用到，前端小伙伴应该都很熟悉。举几个例子：</p>
 <pre><code>skip_render: demo/*             # 屏蔽demo文件夹下的文件，不包括子文件夹内的内容
 skip_render: demo/**            # 屏蔽demo文件夹下的所有文件，包括子文件夹内的内容
 skip_render: demo/index.html    # 屏蔽demo文件夹下的index.html，特指一个文件
-skip_render: demo/*.html        # 屏蔽demo文件夹下的所有html文件</code></pre><p>写多个筛选条件时，要这样： </p>
+skip_render: demo/*.html        # 屏蔽demo文件夹下的所有html文件</code></pre>
+<p>写多个筛选条件时，要这样：</p>
 <pre><code>skip_render:
     - space/**
-    - demo/*</code></pre><p>&nbsp;&nbsp;&nbsp;&nbsp; 配置文件写好后，重新生成代码，就可以通过链接访问未经编码的原生页面了。这里有个小问题，在<code>markdown</code>页面里的链接只能在本页面打开，如果想实现以新标签打开链接，可以直接在<code>markdown</code>写<code>&lt;a target="_blank" href="#"&gt;&lt;/a&gt;</code>，或者通过<code>js</code>控制。 </p>
+    - demo/*</code></pre>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 配置文件写好后，重新生成代码，就可以通过链接访问未经编码的原生页面了。这里有个小问题，在<code>markdown</code>页面里的链接只能在本页面打开，如果想实现以新标签打开链接，可以直接在<code>markdown</code>写<code>&lt;a target="_blank" href="#"&gt;&lt;/a&gt;</code>，或者通过<code>js</code>控制。</p>
 <p><strong>注意：</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 在执行<code>hexo g</code>生成代码之前，建议先执行<code>hexo clean</code>将原有代码清空，以免造成混乱。 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 在执行<code>hexo g</code>生成代码之前，建议先执行<code>hexo clean</code>将原有代码清空，以免造成混乱。</p>
 <p><strong>举例</strong></p>
-<p><a target="_blank" href="../../../../staticHtml/test.html">test页面</a> </p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../../../staticHtml/test.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> 
-<span class="token comment" spellcheck="true">&lt;!--
-    这是部署到github上的访问路径
-    staticHtml 就是上面的Demo
---></span></code></pre>
+<p><a target="_blank" href="../../../../staticHtml/test.html">test页面</a></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">&lt;a</span><span class="ot"> target=</span><span class="st">"_blank"</span><span class="ot"> href=</span><span class="st">"../../../../staticHtml/test.html"</span><span class="kw">&gt;</span>test<span class="kw">&lt;/a&gt;</span> </a>
+<a class="sourceLine" id="cb28-2" data-line-number="2"><span class="co">&lt;!--</span></a>
+<a class="sourceLine" id="cb28-3" data-line-number="3"><span class="co">    这是部署到github上的访问路径</span></a>
+<a class="sourceLine" id="cb28-4" data-line-number="4"><span class="co">    staticHtml 就是上面的Demo</span></a>
+<a class="sourceLine" id="cb28-5" data-line-number="5"><span class="co">--&gt;</span></a></code></pre></div>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 通过这种方法其实可以有多重实践，在此文件下放很多可以从博客链接过来的东西。比如首页的视频可以直接链接到这个文件夹下。</p>
-<h3 id="5-更换Hexo的网页图标-小图片"><a href="#5-更换Hexo的网页图标-小图片" class="headerlink" title="5.更换Hexo的网页图标/小图片"></a>5.更换Hexo的网页图标/小图片</h3><p>本文介绍的是主题theme配置文件中的修改方式，也就是说仅适用于被修改的主题。 </p>
-<h4 id="制作favicon图标"><a href="#制作favicon图标" class="headerlink" title="制作favicon图标"></a>制作favicon图标</h4><ol>
+<h3 id="更换hexo的网页图标小图片">5.更换Hexo的网页图标/小图片</h3>
+<p>本文介绍的是主题theme配置文件中的修改方式，也就是说仅适用于被修改的主题。</p>
+<h4 id="制作favicon图标">制作favicon图标</h4>
+<ol type="1">
 <li>备好用作标签页/网页小图标favicon的图片</li>
-<li>搜索<code>favicon 在线</code>，可以看到一些在线图片转favicon的工具<br>我用的是这个（link）： <a href="http://www.bitbug.net/" target="_blank" rel="noopener">bitbug</a></li>
-<li>利用工具做成图标。<br>我做了16x16，与32x32的。</li>
+<li>搜索<code>favicon 在线</code>，可以看到一些在线图片转favicon的工具 我用的是这个（link）： <a href="http://www.bitbug.net/" target="_blank" rel="noopener">bitbug</a></li>
+<li>利用工具做成图标。 我做了16x16，与32x32的。</li>
 </ol>
-<h4 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h4><pre><code>favicon: /favicon.png</code></pre><p>直接在相应文件下进行替换</p>
+<h4 id="设置">设置</h4>
+<pre><code>favicon: /favicon.png</code></pre>
+<p>直接在相应文件下进行替换</p>
 <p><strong>注意</strong>：是以<code>sources</code>为根目录的</p>
-<h4 id="如何确定favicon信息"><a href="#如何确定favicon信息" class="headerlink" title="如何确定favicon信息"></a>如何确定<code>favicon</code>信息</h4><p>查看网页图标的信息：</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/favicon.png" alt=""></p>
+<h4 id="如何确定favicon信息">如何确定<code>favicon</code>信息</h4>
+<p>查看网页图标的信息：</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/favicon.png"></p>
 <p>###6. Hexo博客网址变得简洁，使用英文路径</p>
-<h4 id="为什么要是用英文网址"><a href="#为什么要是用英文网址" class="headerlink" title="为什么要是用英文网址"></a>为什么要是用英文网址</h4><p>&nbsp;&nbsp;&nbsp;&nbsp; 一般来说，URL只能使用英文和数字和一些标点符号表示。这是因为网络标准<code>RFC 1738</code> 做了硬性规定。</p>
+<h4 id="为什么要是用英文网址">为什么要是用英文网址</h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 一般来说，URL只能使用英文和数字和一些标点符号表示。这是因为网络标准<code>RFC 1738</code> 做了硬性规定。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 虽然在<code>Hexo</code>中的全局配置文件中的网址的构成引用了<code>:title</code>(其实就是markdown的文件名称)可以显示中文的网址，但是复制粘贴到记事本会发现得到的是一大串百分号之类的“乱码”（其实这并不是乱码，而是中文被转码成十六进制编码的结果），看起来不怎么好看。</p>
-<h4 id="解决方法-经使用不大好，使用法2"><a href="#解决方法-经使用不大好，使用法2" class="headerlink" title="解决方法(经使用不大好，使用法2)"></a>解决方法(经使用不大好，使用法2)</h4><p>我们可以在生成<code>markdown</code>文件名称的时候，使用全英文作为文件名称。</p>
+<h4 id="解决方法经使用不大好使用法2">解决方法(经使用不大好，使用法2)</h4>
+<p>我们可以在生成<code>markdown</code>文件名称的时候，使用全英文作为文件名称。</p>
 <p>在博客根目录下的配置文件中(<code>_config.yml</code>)中进行修改:</p>
 <pre><code>#permalink: :year/:month/:day/:title # 这是原配置
-permalink: :year/:title/ # 替换为此新配置</code></pre><h4 id="解决方法2"><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h4><p>通过添加文章<code>id</code>来实现</p>
+permalink: :year/:title/ # 替换为此新配置</code></pre>
+<h4 id="解决方法2">解决方法2</h4>
+<p>通过添加文章<code>id</code>来实现</p>
 <p>需要修改2个部分：</p>
 <p>我们可以在博客根目录的配置文件（<code>_config.yml</code>）中这样修改：</p>
 <pre><code>#permalink: :year/:month/:day/:title # 这是原配置
-permalink: :year/:id/ # 替换为此新配置</code></pre><p>并且在<code>.\scaffolds\post.md</code>中修改为：</p>
+permalink: :year/:id/ # 替换为此新配置</code></pre>
+<p>并且在<code>.\scaffolds\post.md</code>中修改为：</p>
 <p>（注意新增了一个<code>id:</code>）</p>
 <pre><code>title: {{ title }}
 id: 
@@ -900,7 +949,8 @@ updated: {{ date }}
 categories:
 tags:
 permalink: 
----</code></pre><p>在写文档时需要添加id信息:</p>
+---</code></pre>
+<p>在写文档时需要添加id信息:</p>
 <pre><code>title: 如何让你的Hexo博客网址使用全英文路径
 id: 123456789-abcd
 date: 2017-12-30 20:57:46
@@ -908,9 +958,12 @@ updated: 2017-12-30
 categories: 后台01 文档管理
 tags:
 permalink:
----</code></pre><p>不过为了命名规范（同时也是为了方便记忆），我的做法是使用创建日期中的<code>月+日+时+分+秒</code>来定义一个id，比如使用<code>1230-205746</code>作为<code>id</code>。 </p>
-<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://blog.csdn.net/Likianta/article/details/79343427" target="_blank" rel="noopener">CSDN</a></p>
-<h2 id="参考资料-1"><a href="#参考资料-1" class="headerlink" title="参考资料"></a>参考资料</h2><p>待续…</p>
+---</code></pre>
+<p>不过为了命名规范（同时也是为了方便记忆），我的做法是使用创建日期中的<code>月+日+时+分+秒</code>来定义一个id，比如使用<code>1230-205746</code>作为<code>id</code>。</p>
+<h4 id="参考资料">参考资料</h4>
+<p><a href="https://blog.csdn.net/Likianta/article/details/79343427" target="_blank" rel="noopener">CSDN</a></p>
+<h2 id="参考资料-1">参考资料</h2>
+<p>待续...</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1205,8 +1258,9 @@ permalink:
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前言&nbsp;&nbsp;&nbsp;&nbsp; 本来打算使用jupyter来写，但是之间使用jupyter调用opencv的imshow函数显示图片时会卡顿，图像显示的GUI窗体无响应，所以还是使用pycharm来写吧
-pycharm
+                            前言
+&nbsp;&nbsp;&nbsp;&nbsp; 本来打算使用jupyter来写，但是之间使用jupyter调用opencv的imshow函数显示图片时会卡顿，图像显示的GUI窗体无响应，所以还是使用pycharm来写吧
+pychar
                         
                     </div>
                     <div class="publish-info">
@@ -1228,16 +1282,16 @@ pycharm
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Yolov1/">
+                        <span class="chip bg-color">Yolov1</span>
+                    </a>
+                    
                     <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
                         <span class="chip bg-color">深度学习</span>
                     </a>
                     
                     <a href="/tags/tensorflow/">
                         <span class="chip bg-color">tensorflow</span>
-                    </a>
-                    
-                    <a href="/tags/Yolov1/">
-                        <span class="chip bg-color">Yolov1</span>
                     </a>
                     
                     <a href="/tags/%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB/">
@@ -1455,7 +1509,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">47.3k</span>&nbsp;字
+                class="white-color">47.4k</span>&nbsp;字
             
             
             

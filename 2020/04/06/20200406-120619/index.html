@@ -537,7 +537,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    850
+                    870
                 </div>
                 
 
@@ -560,390 +560,408 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="MathJax-基本语法总结"><a href="#MathJax-基本语法总结" class="headerlink" title="MathJax 基本语法总结"></a>MathJax 基本语法总结</h2><h2 id="MathJax-简介"><a href="#MathJax-简介" class="headerlink" title="MathJax 简介"></a>MathJax 简介</h2><p>MathJax 是一款运行在浏览器中的开源数学符号渲染引擎，使用 MathJax 可以方便的在浏览器中显示数学公式，在 Markdown 中输入数学公式需要 LaTeX 语法的支持。</p>
-<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ul>
+                <h2 id="mathjax-基本语法总结">MathJax 基本语法总结</h2>
+<h2 id="mathjax-简介">MathJax 简介</h2>
+<p>MathJax 是一款运行在浏览器中的开源数学符号渲染引擎，使用 MathJax 可以方便的在浏览器中显示数学公式，在 Markdown 中输入数学公式需要 LaTeX 语法的支持。</p>
+<h3 id="基本语法">基本语法</h3>
+<ul>
 <li><p>在正文中同一行插入 LaTeX 公式用 <code>$...$</code> 定义</p>
 <ul>
 <li>例如语句为 <code>$\sum_{i=0}^N\int_{a}^{b}g(t,i)\text{d}t$</code></li>
-<li>显示为 $\sum_{i=0}^N\int_{a}^{b}g(t,i)\text{d}t$</li>
-</ul>
-</li>
+<li>显示为 <span class="math inline">\(\sum_{i=0}^N\int_{a}^{b}g(t,i)\text{d}t\)</span></li>
+</ul></li>
 <li><p>另起一行显示 LaTeX 公式用 <code>$$...$$</code></p>
 <ul>
-<li><p>例如语句为 <code>$$W_G^{mn}=max\lbrace 0,W_G.\xi_G(f_G^m,f_G^n) \rbrace$$</code></p>
-</li>
+<li><p>例如语句为 <code>$$W_G^{mn}=max\lbrace 0,W_G.\xi_G(f_G^m,f_G^n) \rbrace$$</code></p></li>
 <li><p>显示为</p>
-<p>$$W_G^{mn}=max\lbrace 0,W_G.\xi_G(f_G^m,f_G^n) \rbrace$$</p>
-</li>
+<p><span class="math display">\[W_G^{mn}=max\lbrace 0,W_G.\xi_G(f_G^m,f_G^n) \rbrace\]</span></p></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h3><table>
+<h3 id="希腊字母">希腊字母</h3>
+<table>
 <thead>
-<tr>
-<th align="center">显示</th>
-<th align="center">命令</th>
-<th align="center">显示</th>
-<th align="center">命令</th>
+<tr class="header">
+<th style="text-align: center;">显示</th>
+<th style="text-align: center;">命令</th>
+<th style="text-align: center;">显示</th>
+<th style="text-align: center;">命令</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">α</td>
-<td align="center"><code>\alpha</code></td>
-<td align="center">β</td>
-<td align="center"><code>\beta</code></td>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">α</td>
+<td style="text-align: center;"><code>\alpha</code></td>
+<td style="text-align: center;">β</td>
+<td style="text-align: center;"><code>\beta</code></td>
 </tr>
-<tr>
-<td align="center">γ</td>
-<td align="center"><code>\gamma</code></td>
-<td align="center">δ</td>
-<td align="center"><code>\delta</code></td>
+<tr class="even">
+<td style="text-align: center;">γ</td>
+<td style="text-align: center;"><code>\gamma</code></td>
+<td style="text-align: center;">δ</td>
+<td style="text-align: center;"><code>\delta</code></td>
 </tr>
-<tr>
-<td align="center">ϵ</td>
-<td align="center"><code>\epsilon</code></td>
-<td align="center">ζ</td>
-<td align="center"><code>\zeta</code></td>
+<tr class="odd">
+<td style="text-align: center;">ϵ</td>
+<td style="text-align: center;"><code>\epsilon</code></td>
+<td style="text-align: center;">ζ</td>
+<td style="text-align: center;"><code>\zeta</code></td>
 </tr>
-<tr>
-<td align="center">η</td>
-<td align="center"><code>\eta</code></td>
-<td align="center">θ</td>
-<td align="center"><code>\theta</code></td>
+<tr class="even">
+<td style="text-align: center;">η</td>
+<td style="text-align: center;"><code>\eta</code></td>
+<td style="text-align: center;">θ</td>
+<td style="text-align: center;"><code>\theta</code></td>
 </tr>
-<tr>
-<td align="center">ι</td>
-<td align="center"><code>\iota</code></td>
-<td align="center">κ</td>
-<td align="center"><code>\kappa</code></td>
+<tr class="odd">
+<td style="text-align: center;">ι</td>
+<td style="text-align: center;"><code>\iota</code></td>
+<td style="text-align: center;">κ</td>
+<td style="text-align: center;"><code>\kappa</code></td>
 </tr>
-<tr>
-<td align="center">λ</td>
-<td align="center"><code>\lambda</code></td>
-<td align="center">μ</td>
-<td align="center"><code>\mu</code></td>
+<tr class="even">
+<td style="text-align: center;">λ</td>
+<td style="text-align: center;"><code>\lambda</code></td>
+<td style="text-align: center;">μ</td>
+<td style="text-align: center;"><code>\mu</code></td>
 </tr>
-<tr>
-<td align="center">ν</td>
-<td align="center"><code>\nu</code></td>
-<td align="center">ξ</td>
-<td align="center"><code>\xi</code></td>
+<tr class="odd">
+<td style="text-align: center;">ν</td>
+<td style="text-align: center;"><code>\nu</code></td>
+<td style="text-align: center;">ξ</td>
+<td style="text-align: center;"><code>\xi</code></td>
 </tr>
-<tr>
-<td align="center">π</td>
-<td align="center"><code>\pi</code></td>
-<td align="center">ρ</td>
-<td align="center"><code>\rho</code></td>
+<tr class="even">
+<td style="text-align: center;">π</td>
+<td style="text-align: center;"><code>\pi</code></td>
+<td style="text-align: center;">ρ</td>
+<td style="text-align: center;"><code>\rho</code></td>
 </tr>
-<tr>
-<td align="center">σ</td>
-<td align="center"><code>\sigma</code></td>
-<td align="center">τ</td>
-<td align="center"><code>\tau</code></td>
+<tr class="odd">
+<td style="text-align: center;">σ</td>
+<td style="text-align: center;"><code>\sigma</code></td>
+<td style="text-align: center;">τ</td>
+<td style="text-align: center;"><code>\tau</code></td>
 </tr>
-<tr>
-<td align="center">υ</td>
-<td align="center"><code>\upsilon</code></td>
-<td align="center">ϕ</td>
-<td align="center"><code>\phi</code></td>
+<tr class="even">
+<td style="text-align: center;">υ</td>
+<td style="text-align: center;"><code>\upsilon</code></td>
+<td style="text-align: center;">ϕ</td>
+<td style="text-align: center;"><code>\phi</code></td>
 </tr>
-<tr>
-<td align="center">χ</td>
-<td align="center"><code>\chi</code></td>
-<td align="center">ψ</td>
-<td align="center"><code>\psi</code></td>
+<tr class="odd">
+<td style="text-align: center;">χ</td>
+<td style="text-align: center;"><code>\chi</code></td>
+<td style="text-align: center;">ψ</td>
+<td style="text-align: center;"><code>\psi</code></td>
 </tr>
-<tr>
-<td align="center">ω</td>
-<td align="center"><code>\omega</code></td>
-<td align="center"></td>
-<td align="center"></td>
+<tr class="even">
+<td style="text-align: center;">ω</td>
+<td style="text-align: center;"><code>\omega</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
-<li>如果需要 <strong>大写</strong> 希腊字母，将命令首字母大写即可。<code>\Gamma</code> 呈现为 $\Gamma$。</li>
-<li>如果需要 <strong>斜体</strong> 希腊字母，将命令前加上 <code>var</code> 即可。<code>\varGamma</code> 呈现为 $\varGamma$。</li>
+<li>如果需要 <strong>大写</strong> 希腊字母，将命令首字母大写即可。<code>\Gamma</code> 呈现为 <span class="math inline">\(\Gamma\)</span>。</li>
+<li>如果需要 <strong>斜体</strong> 希腊字母，将命令前加上 <code>var</code> 即可。<code>\varGamma</code> 呈现为 <span class="math inline">\(\varGamma\)</span>。</li>
 </ul>
-<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><table>
+<h3 id="关系运算符">关系运算符</h3>
+<table>
 <thead>
-<tr>
-<th align="center">显示</th>
-<th align="center">命令</th>
-<th align="center">显示</th>
-<th align="center">命令</th>
+<tr class="header">
+<th style="text-align: center;">显示</th>
+<th style="text-align: center;">命令</th>
+<th style="text-align: center;">显示</th>
+<th style="text-align: center;">命令</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">∣</td>
-<td align="center"><code>\mid</code></td>
-<td align="center">∤</td>
-<td align="center"><code>\nmid</code></td>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">∣</td>
+<td style="text-align: center;"><code>\mid</code></td>
+<td style="text-align: center;">∤</td>
+<td style="text-align: center;"><code>\nmid</code></td>
 </tr>
-<tr>
-<td align="center">⋅⋅</td>
-<td align="center"><code>\cdot</code></td>
-<td align="center">≤</td>
-<td align="center"><code>\leq</code></td>
+<tr class="even">
+<td style="text-align: center;">⋅⋅</td>
+<td style="text-align: center;"><code>\cdot</code></td>
+<td style="text-align: center;">≤</td>
+<td style="text-align: center;"><code>\leq</code></td>
 </tr>
-<tr>
-<td align="center">≥</td>
-<td align="center"><code>\geq</code></td>
-<td align="center">≠</td>
-<td align="center"><code>\neq</code></td>
+<tr class="odd">
+<td style="text-align: center;">≥</td>
+<td style="text-align: center;"><code>\geq</code></td>
+<td style="text-align: center;">≠</td>
+<td style="text-align: center;"><code>\neq</code></td>
 </tr>
-<tr>
-<td align="center">≈</td>
-<td align="center"><code>\approx</code></td>
-<td align="center">≡</td>
-<td align="center"><code>\equiv</code></td>
+<tr class="even">
+<td style="text-align: center;">≈</td>
+<td style="text-align: center;"><code>\approx</code></td>
+<td style="text-align: center;">≡</td>
+<td style="text-align: center;"><code>\equiv</code></td>
 </tr>
-<tr>
-<td align="center">≺</td>
-<td align="center"><code>\prec</code></td>
-<td align="center">⪯</td>
-<td align="center"><code>\preceq</code></td>
+<tr class="odd">
+<td style="text-align: center;">≺</td>
+<td style="text-align: center;"><code>\prec</code></td>
+<td style="text-align: center;">⪯</td>
+<td style="text-align: center;"><code>\preceq</code></td>
 </tr>
-<tr>
-<td align="center">≪</td>
-<td align="center"><code>\ll</code></td>
-<td align="center">≻</td>
-<td align="center"><code>\succ</code></td>
+<tr class="even">
+<td style="text-align: center;">≪</td>
+<td style="text-align: center;"><code>\ll</code></td>
+<td style="text-align: center;">≻</td>
+<td style="text-align: center;"><code>\succ</code></td>
 </tr>
-<tr>
-<td align="center">⪰</td>
-<td align="center"><code>\succeq</code></td>
-<td align="center">≫</td>
-<td align="center"><code>\gg</code></td>
+<tr class="odd">
+<td style="text-align: center;">⪰</td>
+<td style="text-align: center;"><code>\succeq</code></td>
+<td style="text-align: center;">≫</td>
+<td style="text-align: center;"><code>\gg</code></td>
 </tr>
-<tr>
-<td align="center">∼</td>
-<td align="center"><code>\sim</code></td>
-<td align="center">≃</td>
-<td align="center"><code>\simeq</code></td>
+<tr class="even">
+<td style="text-align: center;">∼</td>
+<td style="text-align: center;"><code>\sim</code></td>
+<td style="text-align: center;">≃</td>
+<td style="text-align: center;"><code>\simeq</code></td>
 </tr>
-<tr>
-<td align="center">≍</td>
-<td align="center"><code>\asymp</code></td>
-<td align="center">≅</td>
-<td align="center"><code>\cong</code></td>
+<tr class="odd">
+<td style="text-align: center;">≍</td>
+<td style="text-align: center;"><code>\asymp</code></td>
+<td style="text-align: center;">≅</td>
+<td style="text-align: center;"><code>\cong</code></td>
 </tr>
-<tr>
-<td align="center">≐</td>
-<td align="center"><code>\doteq</code></td>
-<td align="center">∝</td>
-<td align="center"><code>\propto</code></td>
+<tr class="even">
+<td style="text-align: center;">≐</td>
+<td style="text-align: center;"><code>\doteq</code></td>
+<td style="text-align: center;">∝</td>
+<td style="text-align: center;"><code>\propto</code></td>
 </tr>
-<tr>
-<td align="center">⊨</td>
-<td align="center"><code>\models</code></td>
-<td align="center">∥</td>
-<td align="center"><code>\parallel</code></td>
+<tr class="odd">
+<td style="text-align: center;">⊨</td>
+<td style="text-align: center;"><code>\models</code></td>
+<td style="text-align: center;">∥</td>
+<td style="text-align: center;"><code>\parallel</code></td>
 </tr>
-<tr>
-<td align="center">⋈</td>
-<td align="center"><code>\bowtie</code></td>
-<td align="center">⊥</td>
-<td align="center"><code>\perp</code></td>
+<tr class="even">
+<td style="text-align: center;">⋈</td>
+<td style="text-align: center;"><code>\bowtie</code></td>
+<td style="text-align: center;">⊥</td>
+<td style="text-align: center;"><code>\perp</code></td>
 </tr>
-<tr>
-<td align="center">∘</td>
-<td align="center"><code>\circ</code></td>
-<td align="center">∗</td>
-<td align="center"><code>\ast</code></td>
+<tr class="odd">
+<td style="text-align: center;">∘</td>
+<td style="text-align: center;"><code>\circ</code></td>
+<td style="text-align: center;">∗</td>
+<td style="text-align: center;"><code>\ast</code></td>
 </tr>
-<tr>
-<td align="center">⨀</td>
-<td align="center"><code>\bigodot</code></td>
-<td align="center">⨂</td>
-<td align="center"><code>\bigotimes</code></td>
+<tr class="even">
+<td style="text-align: center;">⨀</td>
+<td style="text-align: center;"><code>\bigodot</code></td>
+<td style="text-align: center;">⨂</td>
+<td style="text-align: center;"><code>\bigotimes</code></td>
 </tr>
-<tr>
-<td align="center">⨁</td>
-<td align="center"><code>\bigoplus</code></td>
-<td align="center"></td>
-<td align="center"></td>
+<tr class="odd">
+<td style="text-align: center;">⨁</td>
+<td style="text-align: center;"><code>\bigoplus</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
-</tbody></table>
-<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><table>
+</tbody>
+</table>
+<h3 id="算术运算符">算术运算符</h3>
+<table>
 <thead>
-<tr>
-<th align="center">显示</th>
-<th align="center">命令</th>
-<th align="center">显示</th>
-<th align="center">命令</th>
+<tr class="header">
+<th style="text-align: center;">显示</th>
+<th style="text-align: center;">命令</th>
+<th style="text-align: center;">显示</th>
+<th style="text-align: center;">命令</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">±</td>
-<td align="center"><code>\pm</code></td>
-<td align="center">∓</td>
-<td align="center"><code>\mp</code></td>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">±</td>
+<td style="text-align: center;"><code>\pm</code></td>
+<td style="text-align: center;">∓</td>
+<td style="text-align: center;"><code>\mp</code></td>
 </tr>
-<tr>
-<td align="center">×</td>
-<td align="center"><code>\times</code></td>
-<td align="center">∗</td>
-<td align="center"><code>\ast</code></td>
+<tr class="even">
+<td style="text-align: center;">×</td>
+<td style="text-align: center;"><code>\times</code></td>
+<td style="text-align: center;">∗</td>
+<td style="text-align: center;"><code>\ast</code></td>
 </tr>
-<tr>
-<td align="center">⋆</td>
-<td align="center"><code>\star</code></td>
-<td align="center">∘</td>
-<td align="center"><code>\circ</code></td>
+<tr class="odd">
+<td style="text-align: center;">⋆</td>
+<td style="text-align: center;"><code>\star</code></td>
+<td style="text-align: center;">∘</td>
+<td style="text-align: center;"><code>\circ</code></td>
 </tr>
-<tr>
-<td align="center">∙</td>
-<td align="center"><code>\bullet</code></td>
-<td align="center">⋅</td>
-<td align="center"><code>\cdot</code></td>
+<tr class="even">
+<td style="text-align: center;">∙</td>
+<td style="text-align: center;"><code>\bullet</code></td>
+<td style="text-align: center;">⋅</td>
+<td style="text-align: center;"><code>\cdot</code></td>
 </tr>
-<tr>
-<td align="center">÷</td>
-<td align="center"><code>\div</code></td>
-<td align="center">∑</td>
-<td align="center"><code>\sum</code></td>
+<tr class="odd">
+<td style="text-align: center;">÷</td>
+<td style="text-align: center;"><code>\div</code></td>
+<td style="text-align: center;">∑</td>
+<td style="text-align: center;"><code>\sum</code></td>
 </tr>
-<tr>
-<td align="center">∏</td>
-<td align="center"><code>\prod</code></td>
-<td align="center">∐</td>
-<td align="center"><code>\coprod</code></td>
+<tr class="even">
+<td style="text-align: center;">∏</td>
+<td style="text-align: center;"><code>\prod</code></td>
+<td style="text-align: center;">∐</td>
+<td style="text-align: center;"><code>\coprod</code></td>
 </tr>
-<tr>
-<td align="center">⊕</td>
-<td align="center"><code>\oplus</code></td>
-<td align="center">⨁</td>
-<td align="center"><code>\bigoplus</code></td>
+<tr class="odd">
+<td style="text-align: center;">⊕</td>
+<td style="text-align: center;"><code>\oplus</code></td>
+<td style="text-align: center;">⨁</td>
+<td style="text-align: center;"><code>\bigoplus</code></td>
 </tr>
-<tr>
-<td align="center">⨂</td>
-<td align="center"><code>\bigotimes</code></td>
-<td align="center">⊘</td>
-<td align="center"><code>\oslash</code></td>
+<tr class="even">
+<td style="text-align: center;">⨂</td>
+<td style="text-align: center;"><code>\bigotimes</code></td>
+<td style="text-align: center;">⊘</td>
+<td style="text-align: center;"><code>\oslash</code></td>
 </tr>
-<tr>
-<td align="center">⊙</td>
-<td align="center"><code>\odot</code></td>
-<td align="center">⨀</td>
-<td align="center"><code>\bigodot</code></td>
+<tr class="odd">
+<td style="text-align: center;">⊙</td>
+<td style="text-align: center;"><code>\odot</code></td>
+<td style="text-align: center;">⨀</td>
+<td style="text-align: center;"><code>\bigodot</code></td>
 </tr>
-<tr>
-<td align="center">⋄</td>
-<td align="center"><code>\diamond</code></td>
-<td align="center">△</td>
-<td align="center"><code>\bigtriangleup</code></td>
+<tr class="even">
+<td style="text-align: center;">⋄</td>
+<td style="text-align: center;"><code>\diamond</code></td>
+<td style="text-align: center;">△</td>
+<td style="text-align: center;"><code>\bigtriangleup</code></td>
 </tr>
-<tr>
-<td align="center">▽</td>
-<td align="center"><code>\bigtriangledown</code></td>
-<td align="center">◃</td>
-<td align="center"><code>\triangleleft</code></td>
+<tr class="odd">
+<td style="text-align: center;">▽</td>
+<td style="text-align: center;"><code>\bigtriangledown</code></td>
+<td style="text-align: center;">◃</td>
+<td style="text-align: center;"><code>\triangleleft</code></td>
 </tr>
-<tr>
-<td align="center">$\triangleright$</td>
-<td align="center"><code>\triangleright</code></td>
-<td align="center">▹</td>
-<td align="center"><code>\trigangleright</code></td>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\triangleright\)</span></td>
+<td style="text-align: center;"><code>\triangleright</code></td>
+<td style="text-align: center;">▹</td>
+<td style="text-align: center;"><code>\trigangleright</code></td>
 </tr>
-<tr>
-<td align="center">◯</td>
-<td align="center"><code>\bigcirc</code></td>
-<td align="center"></td>
-<td align="center"></td>
+<tr class="odd">
+<td style="text-align: center;">◯</td>
+<td style="text-align: center;"><code>\bigcirc</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
-</tbody></table>
-<h3 id="集合符号"><a href="#集合符号" class="headerlink" title="集合符号"></a>集合符号</h3><table>
+</tbody>
+</table>
+<h3 id="集合符号">集合符号</h3>
+<table>
 <thead>
-<tr>
-<th align="center">显示</th>
-<th align="center">命令</th>
+<tr class="header">
+<th style="text-align: center;">显示</th>
+<th style="text-align: center;">命令</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">$ \mathbb{R} $</td>
-<td align="center"><code>\mathbb{R}</code></td>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">$  $</td>
+<td style="text-align: center;"><code>\mathbb{R}</code></td>
 </tr>
-<tr>
-<td align="center">$ \mathbb{Z} $</td>
-<td align="center"><code>\mathbb{Z}</code></td>
+<tr class="even">
+<td style="text-align: center;">$  $</td>
+<td style="text-align: center;"><code>\mathbb{Z}</code></td>
 </tr>
-<tr>
-<td align="center">$ \mathbb{N} $</td>
-<td align="center"><code>\mathbb{N}</code></td>
+<tr class="odd">
+<td style="text-align: center;">$  $</td>
+<td style="text-align: center;"><code>\mathbb{N}</code></td>
 </tr>
-<tr>
-<td align="center">$\subset$</td>
-<td align="center"><code>\subset</code></td>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\subset\)</span></td>
+<td style="text-align: center;"><code>&nbsp;\subset</code></td>
 </tr>
-<tr>
-<td align="center">$\subseteq$</td>
-<td align="center"><code>\subseteq</code></td>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\subseteq\)</span></td>
+<td style="text-align: center;"><code>&nbsp;\subseteq</code></td>
 </tr>
-<tr>
-<td align="center">$\supset$</td>
-<td align="center"><code>\supset</code></td>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\supset\)</span></td>
+<td style="text-align: center;"><code>\supset</code></td>
 </tr>
-<tr>
-<td align="center">$\in$</td>
-<td align="center"><code>\in</code></td>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\in\)</span></td>
+<td style="text-align: center;"><code>\in</code></td>
 </tr>
-<tr>
-<td align="center">$\cap$</td>
-<td align="center"><code>\cap</code></td>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\cap\)</span></td>
+<td style="text-align: center;"><code>\cap</code></td>
 </tr>
-<tr>
-<td align="center">$\mid$</td>
-<td align="center"><code>\mid</code></td>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mid\)</span></td>
+<td style="text-align: center;"><code>\mid</code></td>
 </tr>
-<tr>
-<td align="center">$\notin$</td>
-<td align="center"><code>\notin</code></td>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\notin\)</span></td>
+<td style="text-align: center;"><code>\notin &nbsp;</code></td>
 </tr>
-</tbody></table>
-<h3 id="字母修饰"><a href="#字母修饰" class="headerlink" title="字母修饰"></a>字母修饰</h3><h4 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h4><ul>
+</tbody>
+</table>
+<h3 id="字母修饰">字母修饰</h3>
+<h4 id="上下标">上下标</h4>
+<ul>
 <li>上标：<code>^</code></li>
 <li>下标：<code>_</code></li>
-<li>例如：<code>C_n^2</code> ，显示为$C_n^2$</li>
+<li>例如：<code>C_n^2</code> ，显示为<span class="math inline">\(C_n^2\)</span></li>
 </ul>
-<h4 id="矢量"><a href="#矢量" class="headerlink" title="矢量"></a>矢量</h4><ul>
-<li><code>\vec a</code>，显示为 $\vec a$</li>
-<li><code>\overrightarrow{xy}</code> ，显示为 $\overrightarrow{xy}$</li>
-</ul>
-<h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><ul>
-<li>打印机字体 Typewriter：<code>\mathtt{A}</code> 显示为 $\mathtt{A}$</li>
-<li>黑板粗体字 Blackboard Bold：<code>\mathbb{A}</code> 显示为 $\mathbb{A}$</li>
-<li>无衬线字体 Sans Serif：<code>\mathsf{A}</code> 显示为 $\mathsf{A}$</li>
-<li>手写体：<code>\mathscr{A}</code> 显示为 $\mathscr{A}$</li>
-<li>罗马字体：<code>\mathrm{A}</code> 显示为 $\mathrm{A}$</li>
-</ul>
-<h4 id="括号"><a href="#括号" class="headerlink" title="括号"></a>括号</h4><ul>
-<li>小括号：<code>()</code> ，显示为 ()  </li>
-<li>中括号：<code>[]</code> ，显示为 []  </li>
-<li>尖括号：<code>\langle</code> 和 <code>\rangle</code>，显示为 $\langle$和 $\rangle$</li>
-<li>大括号：<code>\lbrace</code> 和 <code>\rbrace</code> ，显示为 { 和 } 。 <code>\{</code> 和 <code>\}</code> 也可以使用，但推荐前一种  ,后一种无法被 Hexo 博客显示。 </li>
-</ul>
-<h4 id="求和"><a href="#求和" class="headerlink" title="求和"></a>求和</h4><ul>
-<li><code>\sum_{i}^{n}</code>: $\sum_{i}^{n}$</li>
-<li><code>\sum\limits_{i}^{j}</code>: $\sum\limits_{i}^{n}$</li>
-</ul>
-<h4 id="分式和根式"><a href="#分式和根式" class="headerlink" title="分式和根式"></a>分式和根式</h4><ul>
-<li>分式：<code>\frac{x}{y}</code>: $\frac{x}{y}$</li>
-<li>根式：<code>\sqrt[x]{y}</code>: $\sqrt[x]{y}$</li>
-</ul>
-<h4 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h4><p><code>Latex</code>语法会忽略空格，需要使用转义字符：</p>
+<h4 id="矢量">矢量</h4>
 <ul>
-<li>单空格：<code>a\ b</code>: $a \ b$</li>
-<li>四空格： <code>a \quad b</code> : $a \quad b$</li>
+<li><code>\vec a</code>，显示为 <span class="math inline">\(\vec a\)</span></li>
+<li><code>\overrightarrow{xy}</code> ，显示为 <span class="math inline">\(\overrightarrow{xy}\)</span></li>
 </ul>
-<h4 id="多项式"><a href="#多项式" class="headerlink" title="多项式"></a>多项式</h4><ul>
-<li><p>起始以 <code>\begin{cases}</code> 声明，结束以 <code>\end{cases}</code> 声明 </p>
+<h4 id="字体">字体</h4>
+<ul>
+<li>打印机字体 Typewriter：<code>\mathtt{A}</code> 显示为 <span class="math inline">\(\mathtt{A}\)</span></li>
+<li>黑板粗体字 Blackboard Bold：<code>\mathbb{A}</code> 显示为 <span class="math inline">\(\mathbb{A}\)</span></li>
+<li>无衬线字体 Sans Serif：<code>\mathsf{A}</code> 显示为 <span class="math inline">\(\mathsf{A}\)</span></li>
+<li>手写体：<code>\mathscr{A}</code> 显示为 <span class="math inline">\(\mathscr{A}\)</span></li>
+<li>罗马字体：<code>\mathrm{A}</code> 显示为 <span class="math inline">\(\mathrm{A}\)</span></li>
+</ul>
+<h4 id="括号">括号</h4>
+<ul>
+<li>小括号：<code>()</code>&nbsp;，显示为&nbsp;()<br>
 </li>
-<li><p>下标可以使用： <code>a_1</code>: $a_1$</p>
+<li>中括号：<code>[]</code>&nbsp;，显示为&nbsp;[]<br>
 </li>
-<li><p>换行：<code>\\</code> $ a \ b$</p>
-</li>
-<li><p>公式编号(针对整体的公式)： <code>\tag{n}</code> $f(x) = x \tag{1}$</p>
-</li>
+<li>尖括号：<code>\langle</code>&nbsp;和&nbsp;<code>\rangle</code>，显示为&nbsp;<span class="math inline">\(\langle\)</span>和&nbsp;<span class="math inline">\(\rangle\)</span></li>
+<li>大括号：<code>\lbrace</code>&nbsp;和&nbsp;<code>\rbrace</code>&nbsp;，显示为&nbsp;{&nbsp;和&nbsp;}&nbsp;。&nbsp;<code>\{</code>&nbsp;和&nbsp;<code>\}</code>&nbsp;也可以使用，但推荐前一种 ,后一种无法被 Hexo 博客显示。</li>
+</ul>
+<h4 id="求和">求和</h4>
+<ul>
+<li><code>\sum_{i}^{n}</code>: <span class="math inline">\(\sum_{i}^{n}\)</span></li>
+<li><code>\sum\limits_{i}^{j}</code>: <span class="math inline">\(\sum\limits_{i}^{n}\)</span></li>
+</ul>
+<h4 id="分式和根式">分式和根式</h4>
+<ul>
+<li>分式：<code>\frac{x}{y}</code>: <span class="math inline">\(\frac{x}{y}\)</span></li>
+<li>根式：<code>\sqrt[x]{y}</code>: <span class="math inline">\(\sqrt[x]{y}\)</span></li>
+</ul>
+<h4 id="空格">空格</h4>
+<p><code>Latex</code>语法会忽略空格，需要使用转义字符：</p>
+<ul>
+<li>单空格：<code>a\ b</code>: <span class="math inline">\(a \ b\)</span></li>
+<li>四空格： <code>a \quad b</code> : <span class="math inline">\(a \quad b\)</span></li>
+</ul>
+<h4 id="多项式">多项式</h4>
+<ul>
+<li><p>起始以&nbsp;<code>\begin{cases}</code>&nbsp;声明，结束以&nbsp;<code>\end{cases}</code>&nbsp;声明</p></li>
+<li><p>下标可以使用： <code>a_1</code>: <span class="math inline">\(a_1\)</span></p></li>
+<li><p>换行：<code>\\</code> $ a \ b$</p></li>
+<li><p>公式编号(针对整体的公式)： <code>\tag{n}</code> <span class="math inline">\(f(x) = x \tag{1}\)</span></p></li>
 <li><p>eg:</p>
 <pre><code>$$
 \begin{cases}
@@ -952,19 +970,34 @@ a_1x + b_1x + c_1x = d_1 \\
 a_1x + b_1x + c_1x = d_1 \\
 a_1x + b_1x + c_1x = d_1 \\
 \end{cases}
-$$</code></pre><p>$$<br>\begin{cases}<br>a_1x + b_1x + c_1x = d_1 \tag{1} \<br>a_1x + b_1x + c_1x = d_1 \<br>a_1x + b_1x + c_1x = d_1 \<br>a_1x + b_1x + c_1x = d_1 \<br>\end{cases}<br>$$</p>
-</li>
+$$</code></pre>
+<p><span class="math display">\[
+\begin{cases}
+a_1x + b_1x + c_1x = d_1 \tag{1} \\
+a_1x + b_1x + c_1x = d_1 \\
+a_1x + b_1x + c_1x = d_1 \\
+a_1x + b_1x + c_1x = d_1 \\
+\end{cases}
+\]</span></p></li>
 </ul>
-<h4 id="字母上符号"><a href="#字母上符号" class="headerlink" title="字母上符号"></a>字母上符号</h4><p>加<code>^</code>号 输入<code>\hat</code>  或 <code>\widehat</code>: $\hat{a}$  $\widehat{a}$</p>
-<p>加横线 输入<code>\overline</code> $\overline{b}$</p>
-<p>加波浪线 输入 <code>\widetilde</code>$\widetilde{c}$</p>
-<p>加一个点<code>\dot</code>{要加点的字母}加两个点<code>\ddot</code>{要加点的字母}: $\dot{a}\quad \ddot{b}$</p>
-<h4 id="多行输入"><a href="#多行输入" class="headerlink" title="多行输入"></a>多行输入</h4><pre><code>$$
+<h4 id="字母上符号">字母上符号</h4>
+<p>加<code>^</code>号 输入<code>\hat</code> 或 <code>\widehat</code>: <span class="math inline">\(\hat{a}\)</span> <span class="math inline">\(\widehat{a}\)</span></p>
+<p>加横线 输入<code>\overline</code> <span class="math inline">\(\overline{b}\)</span></p>
+<p>加波浪线 输入 <code>\widetilde</code><span class="math inline">\(\widetilde{c}\)</span></p>
+<p>加一个点<code>\dot</code>{要加点的字母}加两个点<code>\ddot</code>{要加点的字母}: <span class="math inline">\(\dot{a}\quad \ddot{b}\)</span></p>
+<h4 id="多行输入">多行输入</h4>
+<pre><code>$$
 \begin{equation}
 f(x) = 1 \tag{1} \\ 
 g(x) = 2 \tag{2} \\
 \end{equation}
-$$</code></pre><p>$$<br>\begin{align}<br>f(x) = 1 \tag{1} \<br>g(x) = 2 \tag{2} \<br>\end{align}<br>$$</p>
+$$</code></pre>
+<p><span class="math display">\[
+\begin{align}
+f(x) = 1 \tag{1} \\ 
+g(x) = 2 \tag{2} \\
+\end{align}
+\]</span></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1255,7 +1288,9 @@ $$</code></pre><p>$$<br>\begin{align}<br>f(x) = 1 \tag{1} \<br>g(x) = 2 \tag{2} 
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            YOLO9000: Better, Faster, Stronger摘要&nbsp;&nbsp;&nbsp;&nbsp; 我们引入了一个先进的实时目标检测系统YOLO9000，可以检测超过9000个目标类别。首先，我们提出了对YOLO检测方
+                            YOLO9000: Better, Faster, Stronger
+摘要
+&nbsp;&nbsp;&nbsp;&nbsp; 我们引入了一个先进的实时目标检测系统YOLO9000，可以检测超过9000个目标类别。首先，我们提出了对YOLO检
                         
                     </div>
                     <div class="publish-info">
@@ -1311,11 +1346,11 @@ $$</code></pre><p>$$<br>\begin{align}<br>f(x) = 1 \tag{1} \<br>g(x) = 2 \tag{2} 
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如何解释召回率recall和准确率precsion以下是关于正类的召回率和准确率的结束：
+                            如何解释召回率recall和准确率precsion
+以下是关于正类的召回率和准确率的结束：
 精确率是针对我们预测结果而言的:
 
 它表示的是预测为正的样本中有多少是真正的正样本。
-
 那么预测为正就有两种可能:
 
 一种就是把正类预测为正类(TP)
@@ -1508,7 +1543,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">47.3k</span>&nbsp;字
+                class="white-color">47.4k</span>&nbsp;字
             
             
             

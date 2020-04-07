@@ -568,100 +568,111 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="VM的安装"><a href="#VM的安装" class="headerlink" title="VM的安装"></a>VM的安装</h2><ul>
+                <h2 id="vm的安装">VM的安装</h2>
+<ul>
 <li>网上软件+破解秘钥</li>
 </ul>
-<h2 id="Ubuntu的安装"><a href="#Ubuntu的安装" class="headerlink" title="Ubuntu的安装"></a>Ubuntu的安装</h2><p>待续…</p>
-<h2 id="系统软件更新"><a href="#系统软件更新" class="headerlink" title="系统软件更新"></a>系统软件更新</h2><h3 id="更新源"><a href="#更新源" class="headerlink" title="更新源"></a>更新源</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 进入目录</span>
-<span class="token function">cd</span> /etc/apt/
-<span class="token comment" spellcheck="true"># 备份文件</span>
-<span class="token function">cp</span> sources.list sources.list.backup
-<span class="token comment" spellcheck="true"># 修改文件</span>
-<span class="token function">sudo</span> gedit sources.list
-<span class="token comment" spellcheck="true"># 将文件里面的东西删除，且将下面链接中的文字复制进去</span>
-<span class="token comment" spellcheck="true"># 保存关闭</span>
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> update
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> upgrade
-<span class="token comment" spellcheck="true"># 如果出现锁的问题，看下面！！</span></code></pre>
+<h2 id="ubuntu的安装">Ubuntu的安装</h2>
+<p>待续...</p>
+<h2 id="系统软件更新">系统软件更新</h2>
+<h3 id="更新源">更新源</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># 进入目录</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="bu">cd</span> /etc/apt/</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co"># 备份文件</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="fu">cp</span> sources.list sources.list.backup</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co"># 修改文件</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="fu">sudo</span> gedit sources.list</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co"># 将文件里面的东西删除，且将下面链接中的文字复制进去</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co"># 保存关闭</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="fu">sudo</span> apt-get install update</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="fu">sudo</span> apt-get install upgrade</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="co"># 如果出现锁的问题，看下面！！</span></a></code></pre></div>
 <p><a href="https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/" target="_blank" rel="noopener">清华大学镜像</a></p>
 <p>###全屏铺满|与主机互通</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> open-vm*</code></pre>
-<h2 id="常见设置"><a href="#常见设置" class="headerlink" title="常见设置"></a>常见设置</h2><h3 id="1-修改主机名"><a href="#1-修改主机名" class="headerlink" title="1. 修改主机名"></a>1. 修改主机名</h3><p>在Ubuntu系统中，快速查看主机名有多种方法： </p>
-<p>其一：打开一个GNOME终端窗口，在命令提示符中可以看到主机名，主机名通常位于“@”符号后； </p>
-<p><strong>如下图所示： test表示用户名 machine表示主机名</strong> </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200404195220.png" alt=""></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="fu">sudo</span> apt-get install open-vm*</a></code></pre></div>
+<h2 id="常见设置">常见设置</h2>
+<h3 id="修改主机名">1. 修改主机名</h3>
+<p>在Ubuntu系统中，快速查看主机名有多种方法：</p>
+<p>其一：打开一个GNOME终端窗口，在命令提示符中可以看到主机名，主机名通常位于“@”符号后；</p>
+<p><strong>如下图所示： test表示用户名 machine表示主机名</strong></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200404195220.png"></p>
 <p>其二:在终端窗口中输入命令：hostname可以查看到当前主机的主机名。</p>
-<pre class=" language-bash"><code class="language-bash">test@machine:桌面$ <span class="token function">hostname</span>
-machine</code></pre>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200404195742.png" alt=""></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">test@machine</span>:桌面$ hostname</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="ex">machine</span></a></code></pre></div>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200404195742.png"></p>
 <p>永久修改主机名：</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;在Ubuntu系统中永久修改主机名也比较简单。主机名存放在<strong>/etc/hostname</strong>文件中，修改主机名时，编辑hostname文件，在文件中输入新的主机名并保存该文件即可。重启系统后，参照上面介绍的快速查看主机名的办法来确认主机名有没有修改成功。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 值的指出的是，在其它Linux发行版中，并非都存在/etc/hostname文件。如Fedora发行版将主机名存放在/etc/sysconfig/network文件中。所以，修改主机名时应注意区分是哪种Linux发行版。 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;在Ubuntu系统中永久修改主机名也比较简单。主机名存放在<strong>/etc/hostname</strong>文件中，修改主机名时，编辑hostname文件，在文件中输入新的主机名并保存该文件即可。重启系统后，参照上面介绍的快速查看主机名的办法来确认主机名有没有修改成功。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 值的指出的是，在其它Linux发行版中，并非都存在/etc/hostname文件。如Fedora发行版将主机名存放在/etc/sysconfig/network文件中。所以，修改主机名时应注意区分是哪种Linux发行版。</p>
 <p>第一步：</p>
-<pre class=" language-bash"><code class="language-bash">test@machine:桌面$ <span class="token function">sudo</span> vim /etc/hostname</code></pre>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200404200052.png" alt=""></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="ex">test@machine</span>:桌面$ sudo vim /etc/hostname</a></code></pre></div>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200404200052.png"></p>
 <p><strong>第二步：修改/etc/hosts配置文件（可选）</strong></p>
-<p> /etc/hosts存放的是域名与ip的对应关系，域名与主机名没有任何关系，你可以为任何一个IP指定任意一个名字。 </p>
-<pre class=" language-bash"><code class="language-bash">test@machine:桌面$ <span class="token function">sudo</span> vim /etc/hosts</code></pre>
-<p><img src="C:%5CUsers%5Casdw1%5CAppData%5CLocal%5CTemp%5C1586001700445.png" alt="1586001700445"></p>
-<h3 id="2-dash-gt-bash"><a href="#2-dash-gt-bash" class="headerlink" title="2. dash -> bash"></a>2. dash -&gt; bash</h3><p><code>linux shell</code>报错<code>Syntax error: Bad for loop variable:</code></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
-<span class="token comment" spellcheck="true">################################</span>
-<span class="token comment" spellcheck="true"># 9x9 multiplication</span>
-<span class="token comment" spellcheck="true">################################</span>
-
-<span class="token keyword">for</span> <span class="token variable"><span class="token punctuation">((</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">))</span></span>
-<span class="token keyword">do</span>
-    <span class="token keyword">for</span> <span class="token variable"><span class="token punctuation">((</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">&lt;=</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">))</span></span>
-    <span class="token keyword">do</span>
-        <span class="token keyword">echo</span> -ne <span class="token string">" <span class="token variable">${j}</span> * <span class="token variable">${i}</span> = <span class="token variable"><span class="token variable">$((</span> i<span class="token operator">*</span>j <span class="token variable">))</span></span> \t "</span>
-    <span class="token keyword">done</span>
-<span class="token keyword">echo</span>
-<span class="token keyword">done</span></code></pre>
-<p>执行：sh test.sh 报下面的错误． </p>
+<p>/etc/hosts存放的是域名与ip的对应关系，域名与主机名没有任何关系，你可以为任何一个IP指定任意一个名字。</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">test@machine</span>:桌面$ sudo vim /etc/hosts</a></code></pre></div>
+<figure>
+<img src="C:\Users\asdw1\AppData\Local\Temp\1586001700445.png" alt="1586001700445"><figcaption>1586001700445</figcaption>
+</figure>
+<h3 id="dash---bash">2. dash -&gt; bash</h3>
+<p><code>linux shell</code>报错<code>Syntax error: Bad for loop variable:</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">################################</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co"># 9x9 multiplication</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">################################</span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="kw">for</span> <span class="kw">((</span> i = 1; i &lt; 10; i++ <span class="kw">))</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="kw">do</span></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">    <span class="kw">for</span> <span class="kw">((</span> j=1; j&lt;= i; j++ <span class="kw">))</span></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9">    <span class="kw">do</span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">        <span class="bu">echo</span> -ne <span class="st">" </span><span class="va">${j}</span><span class="st"> * </span><span class="va">${i}</span><span class="st"> = </span><span class="va">$((</span> i*j <span class="va">))</span><span class="st"> \t "</span></a>
+<a class="sourceLine" id="cb6-11" data-line-number="11">    <span class="kw">done</span></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="bu">echo</span></a>
+<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="kw">done</span></a></code></pre></div>
+<p>执行：sh test.sh 报下面的错误．</p>
 <p><code>Syntax error: Bad for loop variable</code></p>
 <p>因为Ubuntu为了加快开机速度，用dash代替了传统的bash，所以我们这样执行就没问题．</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">bash</span> test.sh</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fu">bash</span> test.sh</a></code></pre></div>
 <p>那如果我们只想用sh test.sh 这样的方式执行，怎么办呢？</p>
 <p>解决方法：取消dash</p>
-<pre class=" language-bash"><code class="language-bash">dpkg-reconfigure dash</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="ex">dpkg-reconfigure</span> dash</a></code></pre></div>
 <p>出现弹框，选择NO</p>
-<h3 id="3-短路径显示"><a href="#3-短路径显示" class="headerlink" title="3. 短路径显示"></a>3. 短路径显示</h3><p>平时我们使用linux终端命令行的时候，常常会被一个问题困扰，那就是文件路径过长，有时候甚至超过了一行，这样看起来非常别扭，其实只要两步就可以解决这个问题： </p>
-<pre class=" language-bash"><code class="language-bash">test@machine:桌面$ vim ~/.bashrc</code></pre>
-<p>将上面这行代码中的小写w改为大写的W，保存退出(wq) </p>
-<p>vim的查找指令： </p>
-<pre class=" language-bash"><code class="language-bash">:/PS1    </code></pre>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200404200427.png" alt=""></p>
-<pre class=" language-bash"><code class="language-bash"> <span class="token function">source</span> .bashrc </code></pre>
-<p>完成上面两步操作之后，重新进入到一个目录，此时在终端下只显示当前文件所在目录名称。 </p>
-<p>\w ：完整的工作目录名称。家目录会以 ~代替</p>
-<p>\W ：利用basename取得工作目录名称，所以只会列出最后一个目录</p>
-<h3 id="4-vim配置"><a href="#4-vim配置" class="headerlink" title="4. vim配置"></a>4. vim配置</h3><p>Vim 的全局配置一般在<code>/etc/vim/vimrc</code>或者<code>/etc/vimrc</code>，对所有用户生效。用户个人的配置在<code>~/.vimrc</code>。</p>
+<h3 id="短路径显示">3. 短路径显示</h3>
+<p>平时我们使用linux终端命令行的时候，常常会被一个问题困扰，那就是文件路径过长，有时候甚至超过了一行，这样看起来非常别扭，其实只要两步就可以解决这个问题：</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="ex">test@machine</span>:桌面$ vim ~/.bashrc</a></code></pre></div>
+<p>将上面这行代码中的小写w改为大写的W，保存退出(wq)</p>
+<p>vim的查找指令：</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1">:<span class="ex">/PS1</span>   </a></code></pre></div>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200404200427.png"></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"> <span class="bu">source</span> .bashrc </a></code></pre></div>
+<p>完成上面两步操作之后，重新进入到一个目录，此时在终端下只显示当前文件所在目录名称。</p>
+<p>：完整的工作目录名称。家目录会以 ~代替</p>
+<p>：利用basename取得工作目录名称，所以只会列出最后一个目录</p>
+<h3 id="vim配置">4. vim配置</h3>
+<p>Vim 的全局配置一般在<code>/etc/vim/vimrc</code>或者<code>/etc/vimrc</code>，对所有用户生效。用户个人的配置在<code>~/.vimrc</code>。</p>
 <p>如果只对单次编辑启用某个配置项，可以在命令模式下，先输入一个冒号，再输入配置。举例来说，<code>set number</code>这个配置可以写在<code>.vimrc</code>里面，也可以在命令模式输入。</p>
 <p><a href="https://www.ruanyifeng.com/blog/2018/09/vimrc.html" target="_blank" rel="noopener">Vim 配置入门阮一峰</a></p>
-<h3 id="5-apt-get锁的问题"><a href="#5-apt-get锁的问题" class="headerlink" title="5.  apt-get锁的问题"></a>5.  apt-get锁的问题</h3><p>无法获得锁 /var/lib/apt/lists/lock - open (11: 资源暂时不可用)</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt-get</span> upgrade
-
-<span class="token comment" spellcheck="true">#</span>
-<span class="token comment" spellcheck="true"># E: 无法获得锁 /var/lib/apt/lists/lock - open (11: 资源暂时不可用)</span>
-<span class="token comment" spellcheck="true"># E: 无法对目录 /var/lib/apt/lists/ 加锁</span>
-<span class="token comment" spellcheck="true"># E: 无法获得锁 /var/lib/dpkg/lock - open (11: 资源暂时不可用)</span>
-<span class="token comment" spellcheck="true"># E: 无法锁定管理目录(/var/lib/dpkg/)，是否有其他进程正占用它？</span>
-</code></pre>
-<p>出现这个问题的原因可能是有另外一个程序正在运行，由于它在运行时，会占用软件源更新时的系统锁（以下称“系统更新锁”，此锁文件在“/var/lib/apt/lists/”目录下），而当有新的apt-get进程生成时，就会因为得不到系统更新锁而出现”E: 无法获得锁 /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)”错误提示！</p>
+<h3 id="apt-get锁的问题">5. apt-get锁的问题</h3>
+<p>无法获得锁 /var/lib/apt/lists/lock - open (11: 资源暂时不可用)</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="fu">sudo</span> apt-get update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt-get upgrade</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co">#</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="co"># E: 无法获得锁 /var/lib/apt/lists/lock - open (11: 资源暂时不可用)</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="co"># E: 无法对目录 /var/lib/apt/lists/ 加锁</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="co"># E: 无法获得锁 /var/lib/dpkg/lock - open (11: 资源暂时不可用)</span></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co"># E: 无法锁定管理目录(/var/lib/dpkg/)，是否有其他进程正占用它？</span></a></code></pre></div>
+<p>出现这个问题的原因可能是有另外一个程序正在运行，由于它在运行时，会占用软件源更新时的系统锁（以下称“系统更新锁”，此锁文件在“/var/lib/apt/lists/”目录下），而当有新的apt-get进程生成时，就会因为得不到系统更新锁而出现"E: 无法获得锁 /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)"错误提示！</p>
 <p>而导致资源被锁的原因，可能是上次安装时没正常完成，而导致出现此状况。</p>
 <p>因此，我们只要将原先的apt-get进程杀死，从新激活新的apt-get进程，就可以让新的软件管理器正常工作了</p>
 <p>方法一：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">ps</span> -e<span class="token operator">|</span><span class="token function">grep</span> apt</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="fu">ps</span> -e<span class="kw">|</span><span class="fu">grep</span> apt</a></code></pre></div>
 <p>结果：</p>
-<pre class=" language-bash"><code class="language-bash">11669 ?        00:00:02 aptd
-25379 ?        00:00:00 update-apt-xapi</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="ex">11669</span> ?        00:00:02 aptd</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="ex">25379</span> ?        00:00:00 update-apt-xapi</a></code></pre></div>
 <p>执行kill指令</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">kill</span> 25379
-<span class="token function">sudo</span> <span class="token function">apt-get</span> update</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="fu">sudo</span> kill 25379</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="fu">sudo</span> apt-get update</a></code></pre></div>
 <p>方法二：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">rm</span> /var/lib/apt/lists/lock
-<span class="token function">sudo</span> <span class="token function">rm</span> /var/lib/dpkg/lock</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="fu">sudo</span> rm /var/lib/apt/lists/lock</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="fu">sudo</span> rm /var/lib/dpkg/lock</a></code></pre></div>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -960,7 +971,9 @@ machine</code></pre>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            vi —— 终端中的编辑器目标
+                            vi —— 终端中的编辑器
+目标
+
 vi 简介
 打开和新建文件
 三种工作模式
@@ -968,8 +981,10 @@ vi 简介
 分屏命令
 常用命令速查图
 
-01. vi 简介1.1 学习 vi 的目的
-在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服
+01. vi 简介
+1.1 学习 vi 的目的
+
+在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程
                         
                     </div>
                     <div class="publish-info">
@@ -1021,7 +1036,9 @@ vi 简介
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            You Only Look Once: Unified, Real-Time Object Detection摘要&nbsp;&nbsp;&nbsp;&nbsp; 我们提出了YOLO，一种新的目标检测方法。以前的目标检测工作重新利用分类器来
+                            You Only Look Once: Unified, Real-Time Object Detection
+摘要
+&nbsp;&nbsp;&nbsp;&nbsp; 我们提出了YOLO，一种新的目标检测方法。以前的目标检测工作重新利用分类
                         
                     </div>
                     <div class="publish-info">
@@ -1211,7 +1228,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">47.3k</span>&nbsp;字
+                class="white-color">47.4k</span>&nbsp;字
             
             
             

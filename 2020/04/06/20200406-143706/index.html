@@ -568,55 +568,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="如何解释召回率recall和准确率precsion"><a href="#如何解释召回率recall和准确率precsion" class="headerlink" title="如何解释召回率recall和准确率precsion"></a>如何解释召回率<code>recall</code>和准确率<code>precsion</code></h2><p>以下是关于正类的召回率和准确率的结束：</p>
+                <h2 id="如何解释召回率recall和准确率precsion">如何解释召回率<code>recall</code>和准确率<code>precsion</code></h2>
+<p>以下是关于正类的召回率和准确率的结束：</p>
 <p><strong>精确率</strong>是针对我们<strong>预测结果</strong>而言的:</p>
 <ul>
-<li><p>它表示的是预测为正的样本中有多少是真正的正样本。</p>
-</li>
+<li><p>它表示的是预测为正的样本中有多少是真正的正样本。</p></li>
 <li><p>那么预测为正就有两种可能:</p>
 <ul>
 <li>一种就是把正类预测为正类(TP)</li>
 <li>另一种就是把负类预测为正类(FP)</li>
-</ul>
-</li>
-<li><p>公式：<br>$$<br>P ={（预测结果）} \frac{TP_{正类预测为正类}}{TP_{正类预测为正类}+FP_{负类预测为正类}}<br>$$</p>
+</ul></li>
+<li><p>公式： <span class="math display">\[
+P ={（预测结果）} \frac{TP_{正类预测为正类}}{TP_{正类预测为正类}+FP_{负类预测为正类}}
+\]</span></p>
 <ul>
 <li><code>T:True F:False P:positive n:negative</code></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <p><strong>召回率</strong>是针对我们<strong>原来的样本</strong>而言：</p>
 <ul>
-<li><p>它表示的是样本中的正例有多少被预测正确了。</p>
-</li>
+<li><p>它表示的是样本中的正例有多少被预测正确了。</p></li>
 <li><p>两种可能：</p>
 <ul>
 <li>原来的正类预测成正类(TP)</li>
 <li>原来的正类预测为负类(FN)</li>
+</ul></li>
+<li><p>公式： <span class="math display">\[
+R = {(原来样本)} \frac{TP_{正类预测为正类}}{TP_{正类预测为正类}+FN_{正类预测成负类}}
+\]</span></p></li>
 </ul>
-</li>
-<li><p>公式：<br>$$<br>R = {(原来样本)} \frac{TP_{正类预测为正类}}{TP_{正类预测为正类}+FN_{正类预测成负类}}<br>$$</p>
-</li>
-</ul>
-<p> 例子：</p>
+<p>例子：</p>
 <blockquote>
 <p>假设我们手上有60个正样本，40个负样本，</p>
 <p>我们要找出所有的正样本，</p>
 <p>系统查找出50个，其中只有40个是真正的正样本，</p>
-<p>计算上述各指标。 </p>
+<p>计算上述各指标。</p>
 </blockquote>
 <p>计算召回率：针对原来样本：</p>
 <ul>
-<li>$TP_{正类预测为正类}$: 40</li>
-<li>$FN_{正类预测为负类}$：20</li>
+<li><span class="math inline">\(TP_{正类预测为正类}\)</span>: 40</li>
+<li><span class="math inline">\(FN_{正类预测为负类}\)</span>：20</li>
 </ul>
-<p>$$<br>R = {(原来样本)} \frac{TP_{正类预测为正类}}{TP_{正类预测为正类}+FN_{正类预测成负类}} = \frac {40}{40+20} = \frac{2}{3}<br>$$</p>
+<p><span class="math display">\[
+R = {(原来样本)} \frac{TP_{正类预测为正类}}{TP_{正类预测为正类}+FN_{正类预测成负类}} = \frac {40}{40+20} = \frac{2}{3}
+\]</span></p>
 <p>计算准确率：</p>
 <ul>
-<li><p>$TP_{正类预测为正类}$：40</p>
-</li>
-<li><p>$FP_{正类预测为负类}$：10<br>$$<br>P ={（预测结果）} \frac{TP_{正类预测为正类}}{TP_{正类预测为正类}+FP_{负类预测为正类}} = \frac {40} {40+10} = \frac {4}{5}<br>$$</p>
-</li>
+<li><p><span class="math inline">\(TP_{正类预测为正类}\)</span>：40</p></li>
+<li><p><span class="math inline">\(FP_{正类预测为负类}\)</span>：10 <span class="math display">\[
+P ={（预测结果）} \frac{TP_{正类预测为正类}}{TP_{正类预测为正类}+FP_{负类预测为正类}} = \frac {40} {40+10} = \frac {4}{5}
+\]</span></p></li>
 </ul>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -916,8 +917,10 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MathJax 基本语法总结MathJax 简介MathJax 是一款运行在浏览器中的开源数学符号渲染引擎，使用 MathJax 可以方便的在浏览器中显示数学公式，在 Markdown 中输入数学公式需要 LaTeX 语法的支持。
-基本语法
+                            MathJax 基本语法总结
+MathJax 简介
+MathJax 是一款运行在浏览器中的开源数学符号渲染引擎，使用 MathJax 可以方便的在浏览器中显示数学公式，在 Markdown 中输入数学公式需要 LaTeX 语法的支持。
+基本
                         
                     </div>
                     <div class="publish-info">
@@ -965,10 +968,11 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Blog使用Github和coding双线用Hexo+Github搭建博客后，会发现网站的访问速度简直是龟速。为了摆脱GitHub的龟速暴击，我们选择把博客托管到Coding来提升访问速度。 
+                            Blog使用Github和coding双线
+用Hexo+Github搭建博客后，会发现网站的访问速度简直是龟速。为了摆脱GitHub的龟速暴击，我们选择把博客托管到Coding来提升访问速度。
 至于什么是Coding：
 
- Coding W
+Coding We
                         
                     </div>
                     <div class="publish-info">
@@ -1158,7 +1162,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">47.3k</span>&nbsp;字
+                class="white-color">47.4k</span>&nbsp;字
             
             
             

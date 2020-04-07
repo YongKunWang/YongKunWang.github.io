@@ -498,12 +498,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">深度学习</span>
-                            </a>
-                        
                             <a href="/tags/Yolov1/">
                                 <span class="chip bg-color">Yolov1</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">深度学习</span>
                             </a>
                         
                             <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">
@@ -556,7 +556,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 
@@ -572,67 +572,77 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a><a href="https://medium.com/@jonathan_hui/real-time-object-detection-with-yolo-yolov2-28b1b93e2088" target="_blank" rel="noopener">一个例子</a></h2><p>Let’s start with our own testing image below. </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407194616.png" alt=""></p>
-<p>The objects detected by YOLO: </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407194644.png" alt=""></p>
-<h2 id="Grid-cell"><a href="#Grid-cell" class="headerlink" title="Grid cell"></a><strong>Grid cell</strong></h2><p>For our discussion, we crop our original photo. YOLO divides the input image into an <strong>S</strong>×<strong>S</strong> grid. Each grid cell predicts only <strong>one</strong> object. For example, the yellow grid cell below tries to predict the “person” object whose center (the blue dot) falls inside the grid cell. </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407193259.png" alt=""></p>
-<p>Each grid cell predicts a fixed number of boundary boxes. In this example, the yellow grid cell makes two boundary box predictions (blue boxes) to locate where the person is. </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407193528.png" alt=""></p>
-<p>However, the one-object rule limits how close detected objects can be. For that, YOLO does have some limitations on how close objects can be. For the picture below, there are 9 Santas in the lower left corner but YOLO can detect 5 only. </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407193635.png" alt=""></p>
+                <h2 id="一个例子"><a href="https://medium.com/@jonathan_hui/real-time-object-detection-with-yolo-yolov2-28b1b93e2088" target="_blank" rel="noopener">一个例子</a></h2>
+<p>Let’s start with our own testing image below.</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407194616.png"></p>
+<p>The objects detected by YOLO:</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407194644.png"></p>
+<h2 id="grid-cell"><strong>Grid cell</strong></h2>
+<p>For our discussion, we crop our original photo. YOLO divides the input image into an&nbsp;<strong>S</strong>×<strong>S</strong>&nbsp;grid.&nbsp;Each grid cell predicts only&nbsp;<strong>one</strong>&nbsp;object. For example, the yellow grid cell below tries to predict the “person” object whose center (the blue dot) falls inside the grid cell.</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407193259.png"></p>
+<p>Each grid cell predicts a fixed number of boundary boxes. In this example, the yellow grid cell makes two boundary box predictions (blue boxes) to locate where the person is.</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407193528.png"></p>
+<p>However, the one-object rule limits how close detected objects can be. For that, YOLO does have some limitations on how close objects can be. For the picture below, there are 9 Santas in the lower left corner but YOLO can detect 5 only.</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407193635.png"></p>
 <p>For each grid cell,</p>
 <ul>
 <li>it predicts <strong>B</strong> boundary boxes and each box has one <strong>box confidence score</strong>,</li>
 <li>it detects <strong>one</strong> object only regardless of the number of boxes B,</li>
 <li>it predicts <strong>C</strong> <strong>conditional class probabilities</strong> (one per class for the likeliness of the object class).</li>
 </ul>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407193739.png" alt=""></p>
-<p>Let’s get into more details. Each boundary box contains 5 elements: (<em>x, y, w, h</em>) and a <strong>box confidence score</strong>. The confidence score reflects how likely the box contains an object (<strong>objectness</strong>) and how accurate is the boundary box. We normalize the bounding box width <em>w</em> and height <em>h</em> by the image width and height. <em>x</em> and <em>y</em> are offsets to the corresponding cell. Hence, <em>x, y, w</em> and <em>h</em> are all between 0 and 1. Each cell has 20 conditional class probabilities. The <strong>conditional class probability</strong> is the probability that the detected object belongs to a particular class (one probability per category for each cell). So, YOLO’s prediction has a shape of (S, S, B×5 + C) = (7, 7, 2×5 + 20) = (7, 7, 30). </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407194754.png" alt=""></p>
-<p>The major concept of YOLO is to build a CNN network to predict a (7, 7, 30) tensor. It uses a CNN network to reduce the spatial dimension to 7×7 with 1024 output channels at each location. YOLO performs a linear regression using two fully connected layers to make 7×7×2 boundary box predictions (the middle picture below). To make a final prediction, we keep those with high box confidence scores (greater than 0.25) as our final predictions (the right picture). </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407194923.png" alt=""></p>
-<p>The <strong>class confidence score</strong> for each prediction box is computed as: </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407194947.png" alt=""></p>
-<p>It measures the confidence on both the classification and the <strong>localization</strong> (where an object is located). </p>
-<p>We may mix up those scoring and probability terms easily. Here are the mathematical definitions for your future reference. </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407195044.png" alt=""></p>
-<h2 id="Network-design"><a href="#Network-design" class="headerlink" title="Network design"></a><strong>Network design</strong></h2><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407195248.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407193739.png"></p>
+<p>Let’s get into more details. Each boundary box contains 5 elements: (<em>x, y, w, h</em>) and a&nbsp;<strong>box confidence score</strong>. The confidence score reflects how likely the box contains an object (<strong>objectness</strong>) and how accurate is the boundary box. We normalize the bounding box width&nbsp;<em>w</em>&nbsp;and height&nbsp;<em>h</em>&nbsp;by the image width and height.&nbsp;<em>x</em>&nbsp;and&nbsp;<em>y</em>&nbsp;are offsets to the corresponding cell. Hence,&nbsp;<em>x, y, w</em>&nbsp;and&nbsp;<em>h</em>&nbsp;are all between 0 and 1. Each cell has 20 conditional class probabilities. The&nbsp;<strong>conditional class probability</strong>&nbsp;is the probability that the detected object belongs to a particular class (one probability per category for each cell). So, YOLO’s prediction has a shape of (S, S, B×5 + C) = (7, 7, 2×5 + 20) = (7, 7, 30).</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407194754.png"></p>
+<p>The major concept of YOLO is to build a CNN network to predict a (7, 7, 30) tensor. It uses a CNN network to reduce the spatial dimension to 7×7 with 1024 output channels at each location. YOLO performs a linear regression using two fully connected layers to make 7×7×2 boundary box predictions (the middle picture below). To make a final prediction, we keep those with high box confidence scores (greater than 0.25) as our final predictions (the right picture).</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407194923.png"></p>
+<p>The&nbsp;<strong>class confidence score</strong>&nbsp;for each prediction box is computed as:</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407194947.png"></p>
+<p>It measures the confidence on both the classification and the&nbsp;<strong>localization</strong>&nbsp;(where an object is located).</p>
+<p>We may mix up those scoring and probability terms easily. Here are the mathematical definitions for your future reference.</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407195044.png"></p>
+<h2 id="network-design"><strong>Network design</strong></h2>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407195248.png"></p>
 <p>YOLO has 24 convolutional layers followed by 2 fully connected layers (FC). Some convolution layers use 1 × 1 reduction layers alternatively to reduce the depth of the features maps. For the last convolution layer, it outputs a tensor with shape (7, 7, 1024). The tensor is then flattened. Using 2 fully connected layers as a form of linear regression, it outputs 7×7×30 parameters and then reshapes to (7, 7, 30), i.e. 2 boundary box predictions per location.</p>
 <p>A faster but less accurate version of YOLO, called Fast YOLO, uses only 9 convolutional layers with shallower feature maps.</p>
-<h2 id="Loss-function"><a href="#Loss-function" class="headerlink" title="Loss function"></a><strong>Loss function</strong></h2><p>YOLO predicts multiple bounding boxes per grid cell. To compute the loss for the true positive, we only want one of them to be <strong>responsible</strong> for the object. For this purpose, we select the one with the highest IoU (intersection over union) with the ground truth. This strategy leads to specialization among the bounding box predictions. Each prediction gets better at predicting certain sizes and aspect ratios. </p>
+<h2 id="loss-function"><strong>Loss function</strong></h2>
+<p>YOLO predicts multiple bounding boxes per grid cell. To compute the loss for the true positive, we only want one of them to be&nbsp;<strong>responsible</strong>&nbsp;for the object. For this purpose, we select the one with the highest IoU (intersection over union) with the ground truth. This strategy leads to specialization among the bounding box predictions. Each prediction gets better at predicting certain sizes and aspect ratios.</p>
 <p>YOLO uses sum-squared error between the predictions and the ground truth to calculate loss. The loss function composes of:</p>
 <ul>
 <li>the <strong>classification loss</strong>.</li>
 <li>the <strong>localization loss</strong> (errors between the predicted boundary box and the ground truth).</li>
 <li>the <strong>confidence loss</strong> (the objectness of the box).</li>
 </ul>
-<h3 id="Classification-loss"><a href="#Classification-loss" class="headerlink" title="Classification loss"></a><strong>Classification loss</strong></h3><p>f <em>an object is detected</em>, the classification loss at each cell is the squared error of the class conditional probabilities for each class: </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407200151.png" alt=""></p>
-<h3 id="Localization-loss"><a href="#Localization-loss" class="headerlink" title="Localization loss"></a><strong>Localization loss</strong></h3><p>The localization loss measures the errors in the predicted boundary box locations and sizes. We only count the box responsible for detecting the object.</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407200232.png" alt=""></p>
-<p>We do not want to weight absolute errors in large boxes and small boxes equally. i.e. a 2-pixel error in a large box is the same for a small box. To partially address this, YOLO predicts the square root of the bounding box width and height instead of the width and height. In addition, to put more emphasis on the boundary box accuracy, we multiply the loss by λ<em>coord</em> (default: 5). </p>
-<h3 id="Confidence-loss"><a href="#Confidence-loss" class="headerlink" title="Confidence loss"></a><strong>Confidence loss</strong></h3><p>If <em>an object is detected in the box</em>, the confidence loss (measuring the objectness of the box) is:</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407200331.png" alt=""></p>
+<h3 id="classification-loss"><strong>Classification loss</strong></h3>
+<p>f&nbsp;<em>an object is detected</em>, the classification loss at each cell is the squared error of the class conditional probabilities for each class:</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407200151.png"></p>
+<h3 id="localization-loss"><strong>Localization loss</strong></h3>
+<p>The localization loss measures the errors in the predicted boundary box locations and sizes. We only count the box responsible for detecting the object.</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407200232.png"></p>
+<p>We do not want to weight absolute errors in large boxes and small boxes equally. i.e. a 2-pixel error in a large box is the same for a small box. To partially address this, YOLO predicts the square root of the bounding box width and height instead of the width and height. In addition, to put more emphasis on the boundary box accuracy, we multiply the loss by λ<em>coord</em>&nbsp;(default: 5).</p>
+<h3 id="confidence-loss"><strong>Confidence loss</strong></h3>
+<p>If <em>an object is detected in the box</em>, the confidence loss (measuring the objectness of the box) is:</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407200331.png"></p>
 <p>If <em>an object is not detected in the box</em>, the confidence loss is:</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407200356.png" alt=""></p>
-<p>Most boxes do not contain any objects. This causes a class imbalance problem, i.e. we train the model to detect background more frequently than detecting objects. To remedy this, we weight this loss down by a factor λ<em>noobj</em> (default: 0.5). </p>
-<h3 id="Loss"><a href="#Loss" class="headerlink" title="Loss"></a><strong>Loss</strong></h3><p>The final loss adds localization, confidence and classification losses together.</p>
-<p> <img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407200518.png" alt=""></p>
-<h3 id="Inference-Non-maximal-suppression"><a href="#Inference-Non-maximal-suppression" class="headerlink" title="Inference: Non-maximal suppression"></a>Inference: Non-maximal suppression</h3><p>YOLO can make duplicate detections for the same object. To fix this, YOLO applies non-maximal suppression to remove duplications with lower confidence. Non-maximal suppression adds 2- 3% in mAP. </p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407200356.png"></p>
+<p>Most boxes do not contain any objects. This causes a class imbalance problem, i.e. we train the model to detect background more frequently than detecting objects. To remedy this, we weight this loss down by a factor λ<em>noobj</em>&nbsp;(default: 0.5).</p>
+<h3 id="loss"><strong>Loss</strong></h3>
+<p>The final loss adds localization, confidence and classification losses together.</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407200518.png"></p>
+<h3 id="inference-non-maximal-suppression">Inference: Non-maximal suppression</h3>
+<p>YOLO can make duplicate detections for the same object. To fix this, YOLO applies non-maximal suppression to remove duplications with lower confidence. Non-maximal suppression adds 2- 3% in mAP.</p>
 <p>Here is one of the possible non-maximal suppression implementation:</p>
-<ol>
+<ol type="1">
 <li>Sort the predictions by the confidence scores.</li>
 <li>Start from the top scores, ignore any current prediction if we find any previous predictions that have the same class and IoU &gt; 0.5 with the current prediction.</li>
 <li>Repeat step 2 until all predictions are checked.</li>
 </ol>
-<h1 id="Benefits-of-YOLO"><a href="#Benefits-of-YOLO" class="headerlink" title="Benefits of YOLO"></a><strong>Benefits of YOLO</strong></h1><ul>
+<h1 id="benefits-of-yolo"><strong>Benefits of YOLO</strong></h1>
+<ul>
 <li>Fast. Good for real-time processing.</li>
 <li>Predictions (object locations and classes) are made from one single network. Can be trained end-to-end to improve accuracy.</li>
 <li>YOLO is more generalized. It outperforms other methods when generalizing from natural images to other domains like artwork.</li>
 </ul>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407200655.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407200655.png"></p>
 <ul>
 <li>Region proposal methods limit the classifier to the specific region. YOLO accesses to the whole image in predicting boundaries. With the additional context, YOLO demonstrates fewer false positives in background areas.</li>
 <li>YOLO detects one object per grid cell. It enforces spatial diversity in making predictions.</li>
@@ -718,12 +728,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">深度学习</span>
-                                </a>
-                            
                                 <a href="/tags/Yolov1/">
                                     <span class="chip bg-color">Yolov1</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">深度学习</span>
                                 </a>
                             
                                 <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">
@@ -940,11 +950,13 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一个例子Let’s start with our own testing image below. 
+                            一个例子
+Let’s start with our own testing image below.
 
-The objects detected by YOLO: 
+The objects detected by YOLO:
 
-Grid cellFor our discussion, we crop
+Grid cell
+For our discussion, we crop
                         
                     </div>
                     <div class="publish-info">
@@ -967,12 +979,12 @@ Grid cellFor our discussion, we crop
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">深度学习</span>
-                    </a>
-                    
                     <a href="/tags/Yolov1/">
                         <span class="chip bg-color">Yolov1</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">深度学习</span>
                     </a>
                     
                     <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">
@@ -1007,12 +1019,15 @@ Grid cellFor our discussion, we crop
                         
                             
 第一章：导言
+
 跟着文档写一遍又如何！
 
-内容介绍经典算法题目
+内容介绍
+经典算法题目
+
 字符串匹配的问题：
 
-有一个字符串： str1 = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM",和一个子串：s
+有一个字符串： str1 = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM",和一个子
                         
                     </div>
                     <div class="publish-info">
@@ -1198,7 +1213,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">47.3k</span>&nbsp;字
+                class="white-color">47.4k</span>&nbsp;字
             
             
             
