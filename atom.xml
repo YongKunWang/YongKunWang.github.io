@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://homewyk.com/"/>
-  <updated>2020-04-07T01:51:43.950Z</updated>
+  <updated>2020-04-07T12:08:45.388Z</updated>
   <id>https://homewyk.com/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Yolov1算法举例</title>
+    <link href="https://homewyk.com/2020/04/07/20200407-194135/"/>
+    <id>https://homewyk.com/2020/04/07/20200407-194135/</id>
+    <published>2020-04-07T11:41:22.000Z</published>
+    <updated>2020-04-07T12:08:45.388Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一个例子&quot;&gt;&lt;a href=&quot;#一个例子&quot; class=&quot;headerlink&quot; title=&quot;一个例子&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="深度学习" scheme="https://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Yolov1" scheme="https://homewyk.com/tags/Yolov1/"/>
+    
+      <category term="目标检测" scheme="https://homewyk.com/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
+      <category term="论文解读" scheme="https://homewyk.com/tags/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>01_数据结结构Java版—_导言</title>
     <link href="https://homewyk.com/2020/04/07/20200407-093105/"/>
     <id>https://homewyk.com/2020/04/07/20200407-093105/</id>
     <published>2020-04-07T01:31:05.000Z</published>
-    <updated>2020-04-07T01:51:43.950Z</updated>
+    <updated>2020-04-07T05:48:33.167Z</updated>
     
     <summary type="html">
     
@@ -30,7 +63,7 @@
         
         
           &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;导言&quot;&gt;&lt;a href=&quot;#导言&quot; class=&quot;headerlink&quot;
+&lt;h2 id=&quot;第一章：导言&quot;&gt;&lt;a href=&quot;#第一章：导言&quot; class=&quot;headerlink&quot;
         
       
     
@@ -132,11 +165,11 @@
       <category term="深度学习" scheme="https://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Yolo" scheme="https://homewyk.com/tags/Yolo/"/>
-    
       <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="目标检测" scheme="https://homewyk.com/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
+      <category term="Yolo" scheme="https://homewyk.com/tags/Yolo/"/>
     
   </entry>
   
@@ -252,13 +285,13 @@
       <category term="Hexo" scheme="https://homewyk.com/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://homewyk.com/tags/Hexo/"/>
-    
       <category term="github" scheme="https://homewyk.com/tags/github/"/>
     
       <category term="gitee" scheme="https://homewyk.com/tags/gitee/"/>
     
       <category term="ssh" scheme="https://homewyk.com/tags/ssh/"/>
+    
+      <category term="Hexo" scheme="https://homewyk.com/tags/Hexo/"/>
     
   </entry>
   
@@ -454,7 +487,7 @@
     <link href="https://homewyk.com/2020/04/02/20200402-111922/"/>
     <id>https://homewyk.com/2020/04/02/20200402-111922/</id>
     <published>2020-04-02T02:57:05.000Z</published>
-    <updated>2020-04-05T05:24:16.452Z</updated>
+    <updated>2020-04-07T13:18:56.949Z</updated>
     
     <summary type="html">
     
@@ -462,21 +495,22 @@
       
         
         
-          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/20200407135602.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
     
-      <category term="目标检测" scheme="https://homewyk.com/categories/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+      <category term="深度学习" scheme="https://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
       <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="目标检测" scheme="https://homewyk.com/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    
       <category term="Yolov1" scheme="https://homewyk.com/tags/Yolov1/"/>
+    
+      <category term="目标检测" scheme="https://homewyk.com/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
       <category term="论文解读" scheme="https://homewyk.com/tags/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
     
@@ -597,34 +631,6 @@
     
     
       <category term="website" scheme="https://homewyk.com/tags/website/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ps技巧</title>
-    <link href="https://homewyk.com/2020/03/31/20200331-201841/"/>
-    <id>https://homewyk.com/2020/03/31/20200331-201841/</id>
-    <published>2020-03-31T12:18:41.000Z</published>
-    <updated>2020-04-05T05:25:16.262Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;PS技巧汇总&quot;&gt;&lt;a href=&quot;#PS技巧汇总&quot; class=&quot;headerlink&quot; title=&quot;PS技巧汇总&quot;&gt;&lt;/a&gt;PS技巧汇总&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 用到什么学什么，主要是没时间学啊…&lt;/p&gt;
-&lt;h3
-        
-      
-    
-    </summary>
-    
-    
-      <category term="ps" scheme="https://homewyk.com/categories/ps/"/>
-    
-    
-      <category term="ps" scheme="https://homewyk.com/tags/ps/"/>
     
   </entry>
   
