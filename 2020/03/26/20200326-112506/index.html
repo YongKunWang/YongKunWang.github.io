@@ -534,21 +534,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-06
+                    2020-04-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.1k
+                    5.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    20 分
+                    22 分
                 </div>
                 
 
@@ -808,7 +808,6 @@ subtitle:
 <a class="sourceLine" id="cb18-26" data-line-number="26">    <span class="co">// 每天切换 banner 图.  Switch banner image every day.</span></a>
 <a class="sourceLine" id="cb18-27" data-line-number="27">    <span class="at">$</span>(<span class="st">'.bg-cover'</span>).<span class="at">css</span>(<span class="st">'background-image'</span><span class="op">,</span> <span class="st">'url(/medias/banner/'</span> <span class="op">+</span> <span class="kw">new</span> <span class="at">Date</span>().<span class="at">getDay</span>() <span class="op">+</span> <span class="st">'.jpg)'</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb18-28" data-line-number="28"><span class="kw">&lt;/script&gt;</span></a></code></pre></div>
-<h3 id="嗷嗷">嗷嗷</h3>
 <h2 id="问题解决">问题解决</h2>
 <h3 id="hexo的网页的toc的目录显示">1. hexo的网页的TOC的目录显示</h3>
 <p>是从二级标题开始能够正常实现的，<code>##</code></p>
@@ -960,6 +959,26 @@ tags:
 permalink:
 ---</code></pre>
 <p>不过为了命名规范（同时也是为了方便记忆），我的做法是使用创建日期中的<code>月+日+时+分+秒</code>来定义一个id，比如使用<code>1230-205746</code>作为<code>id</code>。</p>
+<h3 id="解决mathjax的换行问题">7. 解决Mathjax的换行问题</h3>
+<p>我们平时使用markdown写文档的时候，免不了会碰到数学公式，好在有强大的<a href="https://www.mathjax.org/" target="_blank" rel="noopener">Mathjax</a>,可以解析网页上的数学公式，与hexo的结合也很简单，可以手动加入js，或者直接使用<a href="https://github.com/akfish/hexo-math" target="_blank" rel="noopener">hexo-math</a>插件.大部分情况下都是可以的，但是Markdwon本身的特殊符号与Latex中的符号会出现冲突的时候:</p>
+<ul>
+<li><code>—</code>的转义，在markdown中，<code>_</code>是斜体，但是在latex中，却有下标的意思，就会出现问题。</li>
+<li>，在markdown中，,这样也会影响影响mathjax对公式中的</li>
+</ul>
+<h4 id="原因">原因</h4>
+<p>hexo默认使用<code>marked.js</code>去解析我们写的markdown，比如一些符号，<code>_</code>代表斜体，会被处理为<code>&lt;em&gt;</code>标签， 比如<code>x_i</code>在开始被渲染的时候，处理为<code>x&lt;em&gt;i&lt;/em&gt;</code>，这个时候mathjax就无法渲染成下标了。 很多符号都有这个问题，比如粗体<code>*</code>,也是无法在mathjax渲染出来的，好在有替代的乘法等,包括<code>\\</code>同理。 所以说到底，是hexo使用的markdown引擎的锅，因为很多其它引擎在这方面处理的很好。</p>
+<h4 id="解决方法更换hexo的markdown引擎">解决方法：更换Hexo的markdown引擎</h4>
+<p>这个是我目前使用的方法，直接换发动机,就是把hexo默认的渲染markdown的引擎换掉。查到了有如下几个插件可以使用:</p>
+<p><a href="https://github.com/wzpan/hexo-renderer-pandoc" target="_blank" rel="noopener">hexo-renderer-pandoc</a>, 很强大的解析器，Pandoc的语法完全没有上述问题。</p>
+<p>下面说一下如何使用pandoc渲染。</p>
+<ol type="1">
+<li><p>首先安装Pandoc，官网提供了Ubuntu的deb安装包，按照官网教程就可以安装完成。</p></li>
+<li><p>就是卸载hexo默认的markd,再安装新的:</p>
+<pre><code>npm uninstall hexo-renderer-marked --save
+npm install hexo-renderer-pandoc --save</code></pre></li>
+</ol>
+<p>如果决定要换的话，还是更换为Pandoc吧，虽然比较笨重，需要首先安装Pandoc, 不过的确可以完美解决上述的不兼容问题，虽然它的语法与markdown有些微的差异，不过常用的几乎都一样。</p>
+<p><a href="https://segmentfault.com/a/1190000007261752" target="_blank" rel="noopener">解决Mathjax的换行问题</a></p>
 <h4 id="参考资料">参考资料</h4>
 <p><a href="https://blog.csdn.net/Likianta/article/details/79343427" target="_blank" rel="noopener">CSDN</a></p>
 <h2 id="参考资料-1">参考资料</h2>
@@ -1345,12 +1364,12 @@ pychar
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
                     <a href="/tags/Blog/">
                         <span class="chip bg-color">Blog</span>
+                    </a>
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -1509,7 +1528,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">47.4k</span>&nbsp;字
+                class="white-color">49.9k</span>&nbsp;字
             
             
             

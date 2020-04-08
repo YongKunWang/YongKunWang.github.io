@@ -1,0 +1,1572 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="03-数据结构Java版-稀疏数组, 永坤のBlog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>03-数据结构Java版-稀疏数组 | 永坤のBlog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="永坤のBlog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">永坤のBlog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="far fa-comment" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bars" style="zoom: 0.6;"></i>
+      
+      <span>学习导航</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/study/Java-Learning">
+          
+          <i class="fab fa-java" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Java Learning</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/study/Linux-Learning">
+          
+          <i class="fab fa-ubuntu" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Linux Learning</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">永坤のBlog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw far fa-comment"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bars"></i>
+			
+			学习导航
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/study/Java-Learning " style="margin-left:75px";>
+				  
+				   <i class="fa fab fa-java" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Java Learning</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/study/Linux-Learning " style="margin-left:75px";>
+				  
+				   <i class="fa fab fa-ubuntu" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Linux Learning</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/YongKunWang/YongKunWang.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/YongKunWang/YongKunWang.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/homewyk/cloudimg/raw/master/Data-Structure-tutorial-MSA-Technosoft.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">03-数据结构Java版-稀疏数组</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                数据结构
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-04-08
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-04-08
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    6 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/images.jpg"></p>
+<h2 id="二维数组和稀疏数组的相互转化">二维数组和稀疏数组的相互转化</h2>
+<h3 id="实际情况">实际情况</h3>
+<blockquote>
+<p>实际需求：</p>
+<p>五子棋程序的存盘和复盘操作</p>
+</blockquote>
+<p>棋盘大小：<span class="math inline">\(11\times 11\)</span></p>
+<p>棋盘黑子：用<span class="math inline">\(1\)</span>表示</p>
+<p>棋盘白子：用<span class="math inline">\(2\)</span>表示</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408094852.png"></p>
+<p>使用二维数组直接来保存棋盘数据：</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408095031.png"></p>
+<p><strong>问题：该二维数组的很多只都是默认为0的，因此记录了很多的无意义数据</strong></p>
+<p>可以使用稀疏数组进行解决</p>
+<h3 id="稀疏数组">稀疏数组</h3>
+<p>当一个数组中的元素大部分为0或者相同值很多的时候，可以使用稀疏数组来保存该数组</p>
+<h4 id="二维数组---稀疏数组">二维数组 -&gt; 稀疏数组</h4>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">row</th>
+<th style="text-align: center;">col</th>
+<th style="text-align: center;">val</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">二维数组的行数</td>
+<td style="text-align: center;">二维数组的列数</td>
+<td style="text-align: center;">有几个不相同的值</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">第1个不同值的row</td>
+<td style="text-align: center;">第1个不同值的col</td>
+<td style="text-align: center;">第1个不同值的val</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">第n个不同值的row</td>
+<td style="text-align: center;">第n个不同值的col</td>
+<td style="text-align: center;">第n个不同值的val</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>记录两大类信息：
+<ul>
+<li>二维数组一共有几行几列，有多少个不同的值</li>
+<li>具体不同的值的行列值</li>
+</ul></li>
+<li>缩小了程序的规模</li>
+</ul>
+<h4 id="例子">例子：</h4>
+<p>二维数组：</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408095852.png"></p>
+<p>相应的稀疏数组表示：</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408095921.png"></p>
+<h3 id="应用实例">应用实例</h3>
+<ol type="1">
+<li>使用稀疏数组，来保存棋盘信息</li>
+<li>把稀疏数组存盘，并且可以恢复为原来的二维数组</li>
+<li>整体思路分析：</li>
+</ol>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408100306.png"></p>
+<h4 id="实现代码">实现代码</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">package</span><span class="im"> com.homewyk.sparsearray;</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">import</span><span class="im"> org.junit.Test;</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">/***</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"> <span class="co">*</span> <span class="co">1. </span>棋盘的保存和复盘</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"> <span class="co">*</span> 二维数组 <span class="co">-&gt;</span> 稀疏数组 <span class="co">-&gt;</span> 二维数组</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"> <span class="co">*</span> <span class="kw">@author </span>asdw<span class="co">1</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"> <span class="co">*</span></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"> <span class="co">*/</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="kw">public</span> <span class="kw">class</span> SparseArray {</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">    </a>
+<a class="sourceLine" id="cb1-14" data-line-number="14">    <span class="at">@Test</span></a>
+<a class="sourceLine" id="cb1-15" data-line-number="15">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">testSparse</span>() {</a>
+<a class="sourceLine" id="cb1-16" data-line-number="16">        <span class="co">/* </span></a>
+<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">         * 1. 新建棋盘11*11，并设置2个黑白棋子 </span></a>
+<a class="sourceLine" id="cb1-18" data-line-number="18"><span class="co">         */</span></a>
+<a class="sourceLine" id="cb1-19" data-line-number="19">        <span class="dt">int</span>[][] chessArray1 = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">11</span>][<span class="dv">11</span>];</a>
+<a class="sourceLine" id="cb1-20" data-line-number="20">        chessArray1[<span class="dv">1</span>][<span class="dv">2</span>] = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb1-21" data-line-number="21">        chessArray1[<span class="dv">2</span>][<span class="dv">3</span>] = <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb1-22" data-line-number="22">        </a>
+<a class="sourceLine" id="cb1-23" data-line-number="23">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"输出原始棋盘布局"</span>);</a>
+<a class="sourceLine" id="cb1-24" data-line-number="24">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : chessArray1) {</a>
+<a class="sourceLine" id="cb1-25" data-line-number="25">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
+<a class="sourceLine" id="cb1-26" data-line-number="26">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
+<a class="sourceLine" id="cb1-27" data-line-number="27">            }</a>
+<a class="sourceLine" id="cb1-28" data-line-number="28">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb1-29" data-line-number="29">        }</a>
+<a class="sourceLine" id="cb1-30" data-line-number="30">        </a>
+<a class="sourceLine" id="cb1-31" data-line-number="31">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb1-32" data-line-number="32">        </a>
+<a class="sourceLine" id="cb1-33" data-line-number="33">        </a>
+<a class="sourceLine" id="cb1-34" data-line-number="34">        <span class="co">/*</span></a>
+<a class="sourceLine" id="cb1-35" data-line-number="35"><span class="co">         * 2. 转换为稀疏数组</span></a>
+<a class="sourceLine" id="cb1-36" data-line-number="36"><span class="co">         */</span></a>
+<a class="sourceLine" id="cb1-37" data-line-number="37">        <span class="co">//需要先得到稀疏数组的大小</span></a>
+<a class="sourceLine" id="cb1-38" data-line-number="38">        <span class="dt">int</span> sum = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb1-39" data-line-number="39">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : chessArray1) {</a>
+<a class="sourceLine" id="cb1-40" data-line-number="40">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
+<a class="sourceLine" id="cb1-41" data-line-number="41">                <span class="kw">if</span>(item != <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb1-42" data-line-number="42">                    sum ++;</a>
+<a class="sourceLine" id="cb1-43" data-line-number="43">            }</a>
+<a class="sourceLine" id="cb1-44" data-line-number="44">        }</a>
+<a class="sourceLine" id="cb1-45" data-line-number="45">        <span class="co">// 创建稀疏数组</span></a>
+<a class="sourceLine" id="cb1-46" data-line-number="46">        <span class="dt">int</span>[][] sparseArr = <span class="kw">new</span> <span class="dt">int</span>[sum+<span class="dv">1</span>][<span class="dv">3</span>];</a>
+<a class="sourceLine" id="cb1-47" data-line-number="47">        </a>
+<a class="sourceLine" id="cb1-48" data-line-number="48">        <span class="co">//稀疏数组第一行赋值</span></a>
+<a class="sourceLine" id="cb1-49" data-line-number="49">        sparseArr[<span class="dv">0</span>][<span class="dv">0</span>] = chessArray1.<span class="fu">length</span>;</a>
+<a class="sourceLine" id="cb1-50" data-line-number="50">        sparseArr[<span class="dv">0</span>][<span class="dv">1</span>] = chessArray1[<span class="dv">0</span>].<span class="fu">length</span>;</a>
+<a class="sourceLine" id="cb1-51" data-line-number="51">        sparseArr[<span class="dv">0</span>][<span class="dv">2</span>] = sum;</a>
+<a class="sourceLine" id="cb1-52" data-line-number="52">        </a>
+<a class="sourceLine" id="cb1-53" data-line-number="53">        <span class="co">//稀疏数组后续元素的赋值操作</span></a>
+<a class="sourceLine" id="cb1-54" data-line-number="54">        <span class="dt">int</span> count = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb1-55" data-line-number="55">        <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; chessArray1.<span class="fu">length</span>; i++) {</a>
+<a class="sourceLine" id="cb1-56" data-line-number="56">            <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; chessArray1[<span class="dv">0</span>].<span class="fu">length</span>; j++) {</a>
+<a class="sourceLine" id="cb1-57" data-line-number="57">                <span class="kw">if</span>(chessArray1[i][j]!= <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb1-58" data-line-number="58">                    count ++;</a>
+<a class="sourceLine" id="cb1-59" data-line-number="59">                    sparseArr[count][<span class="dv">0</span>] = i;</a>
+<a class="sourceLine" id="cb1-60" data-line-number="60">                    sparseArr[count][<span class="dv">1</span>] = j;</a>
+<a class="sourceLine" id="cb1-61" data-line-number="61">                    sparseArr[count][<span class="dv">2</span>] = chessArray1[i][j];</a>
+<a class="sourceLine" id="cb1-62" data-line-number="62">                }</a>
+<a class="sourceLine" id="cb1-63" data-line-number="63">            }</a>
+<a class="sourceLine" id="cb1-64" data-line-number="64">        }</a>
+<a class="sourceLine" id="cb1-65" data-line-number="65">        </a>
+<a class="sourceLine" id="cb1-66" data-line-number="66">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"二维数组转换成的稀疏数组"</span>);</a>
+<a class="sourceLine" id="cb1-67" data-line-number="67">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : sparseArr) {</a>
+<a class="sourceLine" id="cb1-68" data-line-number="68">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
+<a class="sourceLine" id="cb1-69" data-line-number="69">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
+<a class="sourceLine" id="cb1-70" data-line-number="70">            }</a>
+<a class="sourceLine" id="cb1-71" data-line-number="71">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb1-72" data-line-number="72">        }</a>
+<a class="sourceLine" id="cb1-73" data-line-number="73">        </a>
+<a class="sourceLine" id="cb1-74" data-line-number="74">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb1-75" data-line-number="75">        <span class="co">/*</span></a>
+<a class="sourceLine" id="cb1-76" data-line-number="76"><span class="co">         * 3. 稀疏数组转换为棋盘</span></a>
+<a class="sourceLine" id="cb1-77" data-line-number="77"><span class="co">         */</span></a>
+<a class="sourceLine" id="cb1-78" data-line-number="78">        <span class="dt">int</span>[][] chessArray2 = <span class="kw">new</span> <span class="dt">int</span>[sparseArr[<span class="dv">0</span>][<span class="dv">0</span>]][sparseArr[<span class="dv">0</span>][<span class="dv">1</span>]];</a>
+<a class="sourceLine" id="cb1-79" data-line-number="79">        <span class="co">//注意要从1开始</span></a>
+<a class="sourceLine" id="cb1-80" data-line-number="80">        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt; sparseArr.<span class="fu">length</span>; i++) {</a>
+<a class="sourceLine" id="cb1-81" data-line-number="81">            chessArray2[sparseArr[i][<span class="dv">0</span>]][sparseArr[i][<span class="dv">1</span>]] = sparseArr[i][<span class="dv">2</span>];</a>
+<a class="sourceLine" id="cb1-82" data-line-number="82">        }</a>
+<a class="sourceLine" id="cb1-83" data-line-number="83">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"稀疏数组转换成的二维数组"</span>);</a>
+<a class="sourceLine" id="cb1-84" data-line-number="84">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : chessArray2) {</a>
+<a class="sourceLine" id="cb1-85" data-line-number="85">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
+<a class="sourceLine" id="cb1-86" data-line-number="86">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
+<a class="sourceLine" id="cb1-87" data-line-number="87">            }</a>
+<a class="sourceLine" id="cb1-88" data-line-number="88">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb1-89" data-line-number="89">        }</a>
+<a class="sourceLine" id="cb1-90" data-line-number="90">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb1-91" data-line-number="91">        </a>
+<a class="sourceLine" id="cb1-92" data-line-number="92">    }</a>
+<a class="sourceLine" id="cb1-93" data-line-number="93">}</a></code></pre></div>
+<h4 id="保存和读取棋盘数据">保存和读取棋盘数据</h4>
+<ul>
+<li>存盘操作使用<code>bufferedWriter</code></li>
+<li>读取操作使用<code>bufferedReader</code></li>
+<li>字符串转换为整形<code>Integer.parseInt(String)</code></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">package</span><span class="im"> com.homewyk.sparsearray;</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw">import</span><span class="im"> java.io.BufferedReader;</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw">import</span><span class="im"> java.io.BufferedWriter;</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="kw">import</span><span class="im"> java.io.File;</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="kw">import</span><span class="im"> java.io.FileNotFoundException;</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="kw">import</span><span class="im"> java.io.FileOutputStream;</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="kw">import</span><span class="im"> java.io.FileReader;</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="kw">import</span><span class="im"> java.io.FileWriter;</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="kw">import</span><span class="im"> java.io.IOException;</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="kw">import</span><span class="im"> java.io.OutputStreamWriter;</span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="kw">import</span><span class="im"> org.junit.Test;</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">/***</span></a>
+<a class="sourceLine" id="cb2-16" data-line-number="16"> <span class="co">*</span> <span class="co">1. </span>棋盘的保存和复盘</a>
+<a class="sourceLine" id="cb2-17" data-line-number="17"> <span class="co">*</span> 二维数组 <span class="co">-&gt;</span> 稀疏数组 <span class="co">-&gt;</span> 二维数组</a>
+<a class="sourceLine" id="cb2-18" data-line-number="18"> <span class="co">*</span> 加入了从文件读取和保存到文件的操作</a>
+<a class="sourceLine" id="cb2-19" data-line-number="19"> <span class="co">*</span> <span class="kw">@author </span>asdw<span class="co">1</span></a>
+<a class="sourceLine" id="cb2-20" data-line-number="20"> <span class="co">*</span></a>
+<a class="sourceLine" id="cb2-21" data-line-number="21"> <span class="co">*/</span></a>
+<a class="sourceLine" id="cb2-22" data-line-number="22"></a>
+<a class="sourceLine" id="cb2-23" data-line-number="23"><span class="kw">public</span> <span class="kw">class</span> SaveAndLoad {</a>
+<a class="sourceLine" id="cb2-24" data-line-number="24">    </a>
+<a class="sourceLine" id="cb2-25" data-line-number="25">    <span class="at">@Test</span></a>
+<a class="sourceLine" id="cb2-26" data-line-number="26">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">testSparse</span>() <span class="kw">throws</span> <span class="bu">Exception</span> {</a>
+<a class="sourceLine" id="cb2-27" data-line-number="27">        <span class="co">/* </span></a>
+<a class="sourceLine" id="cb2-28" data-line-number="28"><span class="co">         * 1. 新建棋盘11*11，并设置2个黑白棋子 </span></a>
+<a class="sourceLine" id="cb2-29" data-line-number="29"><span class="co">         */</span></a>
+<a class="sourceLine" id="cb2-30" data-line-number="30">        <span class="dt">int</span>[][] chessArray1 = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">11</span>][<span class="dv">11</span>];</a>
+<a class="sourceLine" id="cb2-31" data-line-number="31">        chessArray1[<span class="dv">1</span>][<span class="dv">2</span>] = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb2-32" data-line-number="32">        chessArray1[<span class="dv">2</span>][<span class="dv">3</span>] = <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb2-33" data-line-number="33">        </a>
+<a class="sourceLine" id="cb2-34" data-line-number="34">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"输出原始棋盘布局"</span>);</a>
+<a class="sourceLine" id="cb2-35" data-line-number="35">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : chessArray1) {</a>
+<a class="sourceLine" id="cb2-36" data-line-number="36">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
+<a class="sourceLine" id="cb2-37" data-line-number="37">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
+<a class="sourceLine" id="cb2-38" data-line-number="38">            }</a>
+<a class="sourceLine" id="cb2-39" data-line-number="39">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb2-40" data-line-number="40">        }</a>
+<a class="sourceLine" id="cb2-41" data-line-number="41">        </a>
+<a class="sourceLine" id="cb2-42" data-line-number="42">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb2-43" data-line-number="43">        </a>
+<a class="sourceLine" id="cb2-44" data-line-number="44">        </a>
+<a class="sourceLine" id="cb2-45" data-line-number="45">        <span class="co">/*</span></a>
+<a class="sourceLine" id="cb2-46" data-line-number="46"><span class="co">         * 2. 转换为稀疏数组</span></a>
+<a class="sourceLine" id="cb2-47" data-line-number="47"><span class="co">         */</span></a>
+<a class="sourceLine" id="cb2-48" data-line-number="48">        <span class="co">//需要先得到稀疏数组的大小</span></a>
+<a class="sourceLine" id="cb2-49" data-line-number="49">        <span class="dt">int</span> sum = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb2-50" data-line-number="50">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : chessArray1) {</a>
+<a class="sourceLine" id="cb2-51" data-line-number="51">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
+<a class="sourceLine" id="cb2-52" data-line-number="52">                <span class="kw">if</span>(item != <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb2-53" data-line-number="53">                    sum ++;</a>
+<a class="sourceLine" id="cb2-54" data-line-number="54">            }</a>
+<a class="sourceLine" id="cb2-55" data-line-number="55">        }</a>
+<a class="sourceLine" id="cb2-56" data-line-number="56">        <span class="co">// 创建稀疏数组</span></a>
+<a class="sourceLine" id="cb2-57" data-line-number="57">        <span class="dt">int</span>[][] sparseArr = <span class="kw">new</span> <span class="dt">int</span>[sum+<span class="dv">1</span>][<span class="dv">3</span>];</a>
+<a class="sourceLine" id="cb2-58" data-line-number="58">        </a>
+<a class="sourceLine" id="cb2-59" data-line-number="59">        <span class="co">//稀疏数组第一行赋值</span></a>
+<a class="sourceLine" id="cb2-60" data-line-number="60">        sparseArr[<span class="dv">0</span>][<span class="dv">0</span>] = chessArray1.<span class="fu">length</span>;</a>
+<a class="sourceLine" id="cb2-61" data-line-number="61">        sparseArr[<span class="dv">0</span>][<span class="dv">1</span>] = chessArray1[<span class="dv">0</span>].<span class="fu">length</span>;</a>
+<a class="sourceLine" id="cb2-62" data-line-number="62">        sparseArr[<span class="dv">0</span>][<span class="dv">2</span>] = sum;</a>
+<a class="sourceLine" id="cb2-63" data-line-number="63">        </a>
+<a class="sourceLine" id="cb2-64" data-line-number="64">        <span class="co">//稀疏数组后续元素的赋值操作</span></a>
+<a class="sourceLine" id="cb2-65" data-line-number="65">        <span class="dt">int</span> count = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb2-66" data-line-number="66">        <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; chessArray1.<span class="fu">length</span>; i++) {</a>
+<a class="sourceLine" id="cb2-67" data-line-number="67">            <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; chessArray1[<span class="dv">0</span>].<span class="fu">length</span>; j++) {</a>
+<a class="sourceLine" id="cb2-68" data-line-number="68">                <span class="kw">if</span>(chessArray1[i][j]!= <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb2-69" data-line-number="69">                    count ++;</a>
+<a class="sourceLine" id="cb2-70" data-line-number="70">                    sparseArr[count][<span class="dv">0</span>] = i;</a>
+<a class="sourceLine" id="cb2-71" data-line-number="71">                    sparseArr[count][<span class="dv">1</span>] = j;</a>
+<a class="sourceLine" id="cb2-72" data-line-number="72">                    sparseArr[count][<span class="dv">2</span>] = chessArray1[i][j];</a>
+<a class="sourceLine" id="cb2-73" data-line-number="73">                }</a>
+<a class="sourceLine" id="cb2-74" data-line-number="74">            }</a>
+<a class="sourceLine" id="cb2-75" data-line-number="75">        }</a>
+<a class="sourceLine" id="cb2-76" data-line-number="76">        </a>
+<a class="sourceLine" id="cb2-77" data-line-number="77">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"二维数组转换成的稀疏数组"</span>);</a>
+<a class="sourceLine" id="cb2-78" data-line-number="78">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : sparseArr) {</a>
+<a class="sourceLine" id="cb2-79" data-line-number="79">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
+<a class="sourceLine" id="cb2-80" data-line-number="80">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
+<a class="sourceLine" id="cb2-81" data-line-number="81">            }</a>
+<a class="sourceLine" id="cb2-82" data-line-number="82">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb2-83" data-line-number="83">        }</a>
+<a class="sourceLine" id="cb2-84" data-line-number="84">        </a>
+<a class="sourceLine" id="cb2-85" data-line-number="85">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb2-86" data-line-number="86">        </a>
+<a class="sourceLine" id="cb2-87" data-line-number="87">        <span class="co">/*</span></a>
+<a class="sourceLine" id="cb2-88" data-line-number="88"><span class="co">         * 存盘操作</span></a>
+<a class="sourceLine" id="cb2-89" data-line-number="89"><span class="co">         */</span></a>
+<a class="sourceLine" id="cb2-90" data-line-number="90">        <span class="bu">File</span> file = <span class="kw">new</span> <span class="bu">File</span>(<span class="st">"map.dat"</span>);</a>
+<a class="sourceLine" id="cb2-91" data-line-number="91">        <span class="kw">if</span>(!file.<span class="fu">exists</span>()) {</a>
+<a class="sourceLine" id="cb2-92" data-line-number="92">            file.<span class="fu">createNewFile</span>();</a>
+<a class="sourceLine" id="cb2-93" data-line-number="93">        }</a>
+<a class="sourceLine" id="cb2-94" data-line-number="94">        <span class="bu">BufferedWriter</span> bw = <span class="kw">new</span> <span class="bu">BufferedWriter</span>(<span class="kw">new</span> <span class="bu">FileWriter</span>(file));</a>
+<a class="sourceLine" id="cb2-95" data-line-number="95">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : sparseArr) {</a>
+<a class="sourceLine" id="cb2-96" data-line-number="96">            bw.<span class="fu">write</span>(rows[<span class="dv">0</span>]+<span class="st">"</span><span class="sc">\t</span><span class="st">"</span> + rows[<span class="dv">1</span>]+<span class="st">"</span><span class="sc">\t</span><span class="st">"</span>+rows[<span class="dv">2</span>]);</a>
+<a class="sourceLine" id="cb2-97" data-line-number="97">            bw.<span class="fu">newLine</span>();</a>
+<a class="sourceLine" id="cb2-98" data-line-number="98">            bw.<span class="fu">flush</span>();</a>
+<a class="sourceLine" id="cb2-99" data-line-number="99">        }</a>
+<a class="sourceLine" id="cb2-100" data-line-number="100">        bw.<span class="fu">close</span>();</a>
+<a class="sourceLine" id="cb2-101" data-line-number="101">        <span class="co">/*</span></a>
+<a class="sourceLine" id="cb2-102" data-line-number="102"><span class="co">         * 3. 稀疏数组转换为棋盘</span></a>
+<a class="sourceLine" id="cb2-103" data-line-number="103"><span class="co">         * 从文件中得到稀疏数组</span></a>
+<a class="sourceLine" id="cb2-104" data-line-number="104"><span class="co">         */</span></a>
+<a class="sourceLine" id="cb2-105" data-line-number="105">        <span class="bu">BufferedReader</span> br = <span class="kw">new</span> <span class="bu">BufferedReader</span>(<span class="kw">new</span> <span class="bu">FileReader</span>(file));</a>
+<a class="sourceLine" id="cb2-106" data-line-number="106">        <span class="bu">String</span> str = <span class="kw">null</span>;</a>
+<a class="sourceLine" id="cb2-107" data-line-number="107">        <span class="dt">int</span> cnt = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb2-108" data-line-number="108">        <span class="dt">int</span>[][] sparseArr2 = <span class="kw">null</span>;</a>
+<a class="sourceLine" id="cb2-109" data-line-number="109">        <span class="kw">while</span>((str = br.<span class="fu">readLine</span>()) != <span class="kw">null</span>) {</a>
+<a class="sourceLine" id="cb2-110" data-line-number="110">            <span class="bu">String</span>[] arr = str.<span class="fu">split</span>(<span class="st">"</span><span class="sc">\t</span><span class="st">"</span>);</a>
+<a class="sourceLine" id="cb2-111" data-line-number="111">            <span class="kw">if</span>(cnt == <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb2-112" data-line-number="112">                <span class="co">//要注意这一步！！！arr[2]得到的是不同数据的个数，未算第0行</span></a>
+<a class="sourceLine" id="cb2-113" data-line-number="113">                sparseArr2 = <span class="kw">new</span> <span class="dt">int</span>[<span class="bu">Integer</span>.<span class="fu">parseInt</span>(arr[<span class="dv">2</span>])+<span class="dv">1</span>][<span class="dv">3</span>];</a>
+<a class="sourceLine" id="cb2-114" data-line-number="114">            }</a>
+<a class="sourceLine" id="cb2-115" data-line-number="115">            sparseArr2[cnt][<span class="dv">0</span>] = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(arr[<span class="dv">0</span>]);</a>
+<a class="sourceLine" id="cb2-116" data-line-number="116">            sparseArr2[cnt][<span class="dv">1</span>] = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(arr[<span class="dv">1</span>]);</a>
+<a class="sourceLine" id="cb2-117" data-line-number="117">            sparseArr2[cnt][<span class="dv">2</span>] = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(arr[<span class="dv">2</span>]);</a>
+<a class="sourceLine" id="cb2-118" data-line-number="118">            cnt ++;</a>
+<a class="sourceLine" id="cb2-119" data-line-number="119">        }</a>
+<a class="sourceLine" id="cb2-120" data-line-number="120">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"从文件中解析的稀疏数组"</span>);</a>
+<a class="sourceLine" id="cb2-121" data-line-number="121">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : sparseArr2) {</a>
+<a class="sourceLine" id="cb2-122" data-line-number="122">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
+<a class="sourceLine" id="cb2-123" data-line-number="123">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
+<a class="sourceLine" id="cb2-124" data-line-number="124">            }</a>
+<a class="sourceLine" id="cb2-125" data-line-number="125">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb2-126" data-line-number="126">        }</a>
+<a class="sourceLine" id="cb2-127" data-line-number="127">        </a>
+<a class="sourceLine" id="cb2-128" data-line-number="128">        </a>
+<a class="sourceLine" id="cb2-129" data-line-number="129">        <span class="dt">int</span>[][] chessArray2 = <span class="kw">new</span> <span class="dt">int</span>[sparseArr2[<span class="dv">0</span>][<span class="dv">0</span>]][sparseArr2[<span class="dv">0</span>][<span class="dv">1</span>]];</a>
+<a class="sourceLine" id="cb2-130" data-line-number="130">        <span class="co">//注意要从1开始</span></a>
+<a class="sourceLine" id="cb2-131" data-line-number="131">        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt; sparseArr2.<span class="fu">length</span>; i++) {</a>
+<a class="sourceLine" id="cb2-132" data-line-number="132">            chessArray2[sparseArr2[i][<span class="dv">0</span>]][sparseArr2[i][<span class="dv">1</span>]] = sparseArr2[i][<span class="dv">2</span>];</a>
+<a class="sourceLine" id="cb2-133" data-line-number="133">        }</a>
+<a class="sourceLine" id="cb2-134" data-line-number="134">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"稀疏数组转换成的二维数组"</span>);</a>
+<a class="sourceLine" id="cb2-135" data-line-number="135">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : chessArray2) {</a>
+<a class="sourceLine" id="cb2-136" data-line-number="136">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
+<a class="sourceLine" id="cb2-137" data-line-number="137">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
+<a class="sourceLine" id="cb2-138" data-line-number="138">            }</a>
+<a class="sourceLine" id="cb2-139" data-line-number="139">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb2-140" data-line-number="140">        }</a>
+<a class="sourceLine" id="cb2-141" data-line-number="141">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb2-142" data-line-number="142">        </a>
+<a class="sourceLine" id="cb2-143" data-line-number="143">    }</a>
+<a class="sourceLine" id="cb2-144" data-line-number="144">}</a></code></pre></div>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://homewyk.com" rel="external nofollow noreferrer">HomeWyk</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://homewyk.com/2020/04/08/20200408-093605/">https://homewyk.com/2020/04/08/20200408-093605/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://homewyk.com" target="_blank">HomeWyk</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '273aa9d828fa5a3064a1',
+        clientSecret: '0704811d43457e28bf6edca4a8bf93972ce963c3',
+        repo: 'YongKunWang.github.io',
+        owner: 'YongKunWang',
+        admin: "YongKunWang",
+        id: '2020-04-08T09-36-05',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/04/08/20200408-093605/">
+                    <div class="card-image">
+                        
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/Data-Structure-tutorial-MSA-Technosoft.jpg" class="responsive-img" alt="03-数据结构Java版-稀疏数组">
+                        
+                        <span class="card-title">03-数据结构Java版-稀疏数组</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+二维数组和稀疏数组的相互转化
+实际情况
+
+实际需求：
+五子棋程序的存盘和复盘操作
+
+棋盘大小：\(11\times 11\)
+棋盘黑子：用\(1\)表示
+棋盘白子：用\(2\)表示
+
+使用二维数组直接来保存棋盘数据：
+
+问题：该二维数组的
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/04/08/20200408-082903/">
+                    <div class="card-image">
+                        
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/Data-Structure-tutorial-MSA-Technosoft.jpg" class="responsive-img" alt="02-数据结构Java版-数据结构与算法概述">
+                        
+                        <span class="card-title">02-数据结构Java版-数据结构与算法概述</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+数据结构与算法的概述
+
+数据结构是一门研究组织数据方式的学科，有了编程语言便有了数据结构，学好数据结构可以编写出比较高效率的代码
+要学好数据结构，需要考虑如何用之解决实际问题
+程序 = 数据结构+算法
+数据结构是算法的基础
+
+实际的编程案
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5, h6'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5, h6').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="https://homewyk.com" target="_blank">HomeWyk</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">49.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="" target="_blank"></a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/YongKunWang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wang_yongkun@yeah.net" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=364576957" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 364576957" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
