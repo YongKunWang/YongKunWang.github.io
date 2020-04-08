@@ -538,7 +538,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-06
+                    2020-04-08
                 </div>
                 
 
@@ -608,7 +608,7 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;平方和误差也可以在大盒子和小盒子中同样加权误差。我们的错误指标应该反映出，大盒子小偏差的重要性不如小盒子小偏差的重要性。为了部分解决这个问题，我们直接预测边界框宽度和高度的平方根，而不是宽度和高度。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;YOLO每个网格单元预测多个边界框。在训练时，每个目标我们只需要一个边界框预测器来负责。我们指定一个预测器“负责”根据哪个预测与真实值之间具有当前最高的IOU来预测目标。这导致边界框预测器之间的专业化。每个预测器可以更好地预测特定大小，方向角，或目标的类别，从而改善整体召回率。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;在训练期间，我们优化以下多部分损失函数：</p>
-<p>$$<br>\begin{align}<br>\lambda{coord} &amp; \sum\limits_{i=0}^{s^2}  \sum\limits_{j=0}^{B} \mathbb{1}_{i,j}^{obj}[(x_{i} - \hat{x}_{i})^2 + (y_{i} -\hat{y}_{i})^2]  \<br>&amp;+ \lambda{coord} \sum\limits_{i=0}^{s^2}  \sum\limits_{j=0}^{B} \mathbb{1}_{i,j}^{obj}[(\sqrt{w_{i}} - \sqrt{\hat{w}_{i}})^2 + \sqrt{h_{i}} - \sqrt{\hat{h}_{i}})^2]  \<br>&amp;+ \sum\limits_{i=0}^{s^2}\sum\limits_{j=0}^{B}\mathbb{1}_{i,j}^{obj}(C_{i} - \hat{C_{i}})^2 \<br>&amp;+  \lambda_{noobj}\sum\limits_{i=0}^{s^2}\sum\limits_{j=0}^{B}\mathbb{1}_{i,j}^{obj}(C_{i} - \hat{C_{i}})^2 \<br>&amp;+ \sum\limits_{i=0}^{s^2}\mathbb{1}_{i}^{obj} \sum\limits_{c\in classes}(p_{i}(c) - \hat{p}_{i}(c))^2<br>\end{align}<br>$$</p>
+<p>$$<br>\begin{align}<br>\lambda{coord} &amp; \sum\limits_{i=0}^{s^2}  \sum\limits_{j=0}^{B} \mathbb{1}_{i,j}^{obj}[(x_{i} - \hat{x}_{i})^2 + (y_{i} -\hat{y}_{i})^2]  \\\<br>&amp;+ \lambda{coord} \sum\limits_{i=0}^{s^2}  \sum\limits_{j=0}^{B} \mathbb{1}_{i,j}^{obj}[(\sqrt{w_{i}} - \sqrt{\hat{w}_{i}})^2 + \sqrt{h_{i}} - \sqrt{\hat{h}_{i}})^2]  \\\<br>&amp;+ \sum\limits_{i=0}^{s^2}\sum\limits_{j=0}^{B}\mathbb{1}_{i,j}^{obj}(C_{i} - \hat{C_{i}})^2 \\\<br>&amp;+  \lambda_{noobj}\sum\limits_{i=0}^{s^2}\sum\limits_{j=0}^{B}\mathbb{1}_{i,j}^{obj}(C_{i} - \hat{C_{i}})^2 \\\<br>&amp;+ \sum\limits_{i=0}^{s^2}\mathbb{1}_{i}^{obj} \sum\limits_{c\in classes}(p_{i}(c) - \hat{p}_{i}(c))^2<br>\end{align}<br>$$</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;其中$1^{obj}_{i}$表示目标是否出现在网格单元ii中，$1^{obj}_{ij}$表示网格单元i中的第j个边界框预测器“负责”该预测 </p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;注意，如果目标存在于该网格单元中（前面讨论的条件类别概率），则损失函数仅惩罚分类错误。如果预测器“负责”实际边界框（即该网格单元中具有最高IOU的预测器），则它也仅惩罚边界框坐标错误。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;我们对Pascal VOC 2007和2012的训练和验证数据集进行了大约135个迭代周期的网络训练。在Pascal VOC 2012上进行测试时，我们的训练包含了Pascal VOC 2007的测试数据。在整个训练过程中，我们使用了64的批大小，0.9的动量和0.0005的衰减。</p>
@@ -638,8 +638,8 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;减去R的R-CNN用静态边界框提出取代选择性搜索[20]。虽然速度比R-CNN更快，但仍然不能实时，并且由于没有好的边界框提出，准确性受到了严重影响。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;快速R-CNN加快了R-CNN的分类阶段，但是仍然依赖选择性搜索，每张图像需要花费大约2秒来生成边界框提出。因此，它具有很高的mAP，但是0.50的fps仍离实时性很远。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;最近更快的R-CNN用神经网络替代了选择性搜索来提出边界框，类似于Szegedy等[8]。在我们的测试中，他们最精确的模型达到了7fps，而较小的，不太精确的模型以18fps运行。VGG-16版本的Faster R-CNN要高出10mAP，但比YOLO慢6倍。Zeiler-Fergus的Faster R-CNN只比YOLO慢了2.5倍，但也不太准确。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;最近更快的R-CNN用神经网络替代了选择性搜索来提出边界框，类似于Szegedy等[8]。在我们的测试中，他们最精确的模型达到了7fps，而较小的，不太精确的模型以18fps运行。VGG-16版本的Faster R-CNN要高出10mAP，但比YOLO慢6倍。Zeiler-Fergus的Faster R-CNN只比YOLO慢了2.5倍，但也不太准确。</p>
-<p><a href="http://upload-images.jianshu.io/upload_images/3232548-5166a535a45e96bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener"><img src="http://upload-images.jianshu.io/upload_images/3232548-5166a535a45e96bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Table 1"></a></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;最近更快的R-CNN用神经网络替代了选择性搜索来提出边界框，类似于Szegedy等[8]。在我们的测试中，他们最精确的模型达到了7fps，而较小的，不太精确的模型以18fps运行。VGG-16版本的Faster R-CNN要高出10mAP，但比YOLO慢6倍。Zeiler-Fergus的Faster R-CNN只比YOLO慢了2.5倍，但也不U太准确。</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408232152.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>表1：Pascal VOC 2007上的实时系统。</strong>比较快速检测器的性能和速度。快速YOLO是Pascal VOC检测记录中速度最快的检测器，其精度仍然是其它实时检测器的两倍。YOLO比快速版本更精确10mAP，同时在速度上仍保持实时性。</p>
 <h3 id="4-2-VOC-2007错误率分析"><a href="#4-2-VOC-2007错误率分析" class="headerlink" title="4.2. VOC 2007错误率分析"></a>4.2. VOC 2007错误率分析</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;为了进一步检查YOLO和最先进的检测器之间的差异，我们详细分析了VOC 2007的结果。我们将YOLO与Fast R-CNN进行比较，因为Fast R-CNN是PASCAL上性能最高的检测器之一并且它的检测代码是可公开得到的。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;我们使用Hoiem等人[19]的方法和工具。对于测试时的每个类别，我们看这个类别的前N个预测。每个预测或者是正确的，或者根据错误类型进行分类：</p>
@@ -651,7 +651,7 @@
 <li>Background：任何IOU &lt;0.1的目标。</li>
 </ul>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;图4显示了在所有的20个类别上每种错误类型平均值的分解图。</p>
-<p><img src="C:%5CUsers%5Casdw1%5CAppData%5CLocal%5CTemp%5C1586144897132.png" alt="1586144897132"></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408232126.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>图4，误差分析：Fast R-CNN vs. YOLO。</strong>这些图显示了各种类别的前N个预测中定位错误和背景错误的百分比（N = #表示目标在那个类别中）。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;YOLO努力地正确定位目标。定位错误占YOLO错误的大多数，比其它错误源加起来都多。Fast R-CNN使定位错误少得多，但背景错误更多。它的检测的13.6%13.6%是不包含任何目标的误报。Fast R-CNN比YOLO预测背景检测的可能性高出近3倍。</p>
 <h3 id="4-3-结合Fast-R-CNN和YOLO"><a href="#4-3-结合Fast-R-CNN和YOLO" class="headerlink" title="4.3. 结合Fast R-CNN和YOLO"></a>4.3. 结合Fast R-CNN和YOLO</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;YOLO比Fast R-CNN的背景误检要少得多。通过使用YOLO消除Fast R-CNN的背景检测，我们获得了显著的性能提升。对于R-CNN预测的每个边界框，我们检查YOLO是否预测一个类似的框。如果是这样，我们根据YOLO预测的概率和两个盒子之间的重叠来对这个预测进行提升。</p>
@@ -1282,7 +1282,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.1k</span>&nbsp;字
+                class="white-color">48.8k</span>&nbsp;字
             
             
             

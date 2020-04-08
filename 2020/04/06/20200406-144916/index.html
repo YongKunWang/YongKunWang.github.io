@@ -538,7 +538,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-06
+                    2020-04-08
                 </div>
                 
 
@@ -596,11 +596,11 @@
 <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200406152406.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>图2：VOC和COCO的聚类边界框尺寸</strong>。我们对边界框的维度进行k-means聚类，以获得我们模型的良好先验。左图显示了我们通过对k的各种选择得到的平均IOU。我们发现k=5给出了一个很好的召回率与模型复杂度的权衡。右图显示了VOC和COCO的相对中心。这两种先验都赞成更薄更高的边界框，而COCO比VOC在尺寸上有更大的变化。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;在表1中我们将平均IOU与我们聚类策略中最接近的先验以及手工选取的锚盒进行了比较。仅有5个先验中心的平均IOU为61.0，其性能类似于9个锚盒的60.9。如果我们使用9个中心，我们会看到更高的平均IOU。这表明使用k-means来生成我们的边界框会以更好的表示开始训练模型，并使得任务更容易学习。</p>
-<p><a href="http://upload-images.jianshu.io/upload_images/3232548-2bcc892861fb0b0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener"><img src="http://upload-images.jianshu.io/upload_images/3232548-2bcc892861fb0b0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Table 1"></a></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408230156.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>表1：VOC 2007上最接近先验的边界框平均IOU</strong>。VOC 2007上目标的平均IOU与其最接近的，使用不同生成方法之前未经修改的平均值。聚类结果比使用手工选择的先验结果要更好。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>直接位置预测</strong>。当YOLO使用锚盒时，我们会遇到第二个问题：模型不稳定，特别是在早期的迭代过程中。大部分的不稳定来自预测边界框的(x,y)位置。在区域提出网络中，网络预测值$t_{x}$ 和$t_{y}$，(x,y)中心坐标计算如下：<br>$$<br>\begin{cases}<br>x = (t_x <em> w_a) -x_a \<br>y = (t_y </em> h_a) - y_a<br>\end{cases}<br>$$<br>&nbsp;&nbsp;&nbsp;&nbsp;这个公式是不受限制的，所以任何锚盒都可以在图像任一点结束，而不管在哪个位置预测该边界框。随机初始化模型需要很长时间才能稳定以预测合理的偏移量。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;我们没有预测偏移量，而是按照YOLO的方法预测相对于网格单元位置的位置坐标。这限制了落到00和11之间的真实值。我们使用逻辑激活来限制网络的预测落在这个范围内。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;网络预测输出特征映射中每个单元的5个边界框。网络预测每个边界框的5个坐标，$t_x$，$t_y$，$t_w$，$t_h$和$t_o$。如果单元从图像的左上角偏移了($c_x$,$c_y$)，并且边界框先验的宽度和高度为$p_w$，$p_h$，那么预测对应：<br>$$<br>b_x=σ(t_x)+c_x \\ b_y=σ(t_y)+c_y \\ b_w=p_we^{tw} \\ b_h=p_he^{th} \\P_r(object)∗IOU(b,object)=σ(t_o)<br>$$</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>直接位置预测</strong>。当YOLO使用锚盒时，我们会遇到第二个问题：模型不稳定，特别是在早期的迭代过程中。大部分的不稳定来自预测边界框的(x,y)位置。在区域提出网络中，网络预测值$t_{x}$ 和$t_{y}$，(x,y)中心坐标计算如下：<br>$$<br>x = (t_x <em> w_a) -x_a  \\ y = (t_y </em> h_a) - y_a<br>$$<br>&nbsp;&nbsp;&nbsp;&nbsp;这个公式是不受限制的，所以任何锚盒都可以在图像任一点结束，而不管在哪个位置预测该边界框。随机初始化模型需要很长时间才能稳定以预测合理的偏移量。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;我们没有预测偏移量，而是按照YOLO的方法预测相对于网格单元位置的位置坐标。这限制了落到0和1之间的真实值。我们使用逻辑激活来限制网络的预测落在这个范围内。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;网络预测输出特征映射中每个单元的5个边界框。网络预测每个边界框的5个坐标，$t_x$，$t_y$，$t_w$，$t_h$和$t_o$。如果单元从图像的左上角偏移了( $c_x$ , $c_y$ )，并且边界框先验的宽度和高度为$p_w$，$p_h$，那么预测对应：<br>$$<br>b_x=σ(t_x)+c_x \\ b_y=σ(t_y)+c_y \\ b_w=p_we^{tw} \\ b_h=p_he^{th} \\P_r(object)∗IOU(b,object)=σ(t_o)<br>$$</p>
 <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200406153122.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>图3：具有维度先验和位置预测的边界框</strong>。我们预测边界框的宽度和高度作为聚类中心的偏移量。我们使用sigmoid函数预测边界框相对于滤波器应用位置的中心坐标。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;由于我们限制位置预测参数化更容易学习，使网络更稳定。使用维度聚类以及直接预测边界框中心位置的方式比使用锚盒的版本将YOLO提高了近5%5%。</p>
@@ -637,7 +637,7 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>分层分类</strong>。ImageNet标签是从WordNet中提取的，这是一个构建概念及其相互关系的语言数据库[12]。在WordNet中，<code>Norfolk terrier</code>和<code>Yorkshire terrier</code>都是<code>terrier</code>的下义词，<code>terrier</code>是一种<code>hunting dog</code>，<code>hunting dog</code>是<code>dog</code>，<code>dog</code>是<code>canine</code>等。分类的大多数方法为标签假设一个扁平结构，但是对于组合数据集，结构正是我们所需要的。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;WordNet的结构是有向图，而不是树，因为语言是复杂的。例如，<code>dog</code>既是一种<code>canine</code>，也是一种<code>domestic animal</code>，它们都是WordNet中的同义词。我们不是使用完整的图结构，而是通过从ImageNet的概念中构建分层树来简化问题。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;为了构建这棵树，我们检查了ImageNet中的视觉名词，并查看它们通过WordNet图到根节点的路径，在这种情况下是“物理对象”。许多同义词通过图只有一条路径，所以首先我们将所有这些路径添加到我们的树中。然后我们反复检查我们留下的概念，并尽可能少地添加生长树的路径。所以如果一个概念有两条路径到一个根，一条路径会给我们的树增加三条边，另一条只增加一条边，我们选择更短的路径。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;最终的结果是WordTree，一个视觉概念的分层模型。为了使用WordTree进行分类，我们预测每个节点的条件概率，以得到同义词集合中每个同义词下义词的概率。例如，在<code>terrier</code>节点我们预测：<br>$$<br>Pr(Norfolk terrier|terrier) \\<br>Pr(Yorkshire terrier|terrier) \<br>Pr(Bedlington terrier|terrier) \<br>…<br>$$<br>&nbsp;&nbsp;&nbsp;&nbsp;如果我们想要计算一个特定节点的绝对概率，我们只需沿着通过树到达根节点的路径，再乘以条件概率。所以如果我们想知道一张图片是否是<code>Norfolk terrier</code>，我们计算：<br>$$<br>Pr(Norfolk terrier)=Pr(Norfolk terrier|terrier) \<br>∗Pr(terrier|hunting dog) \\<br>∗…∗\<br>∗Pr(mammal|Pr(animal)\<br>∗Pr(animal|physical object)<br>$$<br>&nbsp;&nbsp;&nbsp;&nbsp;为了分类目的，我们假定图像包含一个目标：$Pr(physical object)=1$</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;最终的结果是WordTree，一个视觉概念的分层模型。为了使用WordTree进行分类，我们预测每个节点的条件概率，以得到同义词集合中每个同义词下义词的概率。例如，在<code>terrier</code>节点我们预测：<br>$$<br>Pr(Norfolk terrier|terrier) \\\<br>Pr(Yorkshire terrier|terrier) \\\<br>Pr(Bedlington terrier|terrier) \\\<br>…<br>$$<br>&nbsp;&nbsp;&nbsp;&nbsp;如果我们想要计算一个特定节点的绝对概率，我们只需沿着通过树到达根节点的路径，再乘以条件概率。所以如果我们想知道一张图片是否是<code>Norfolk terrier</code>，我们计算：<br>$$<br>Pr(Norfolk terrier)=Pr(Norfolk terrier|terrier) \\\<br>∗Pr(terrier|hunting dog) \\ \<br>∗…∗\\\<br>∗Pr(mammal|Pr(animal)\\\<br>∗Pr(animal|physical object)\\\<br>$$<br>&nbsp;&nbsp;&nbsp;&nbsp;为了分类目的，我们假定图像包含一个目标：$Pr(physical object)=1$</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;为了验证这种方法，我们在使用1000类ImageNet构建的WordTree上训练Darknet-19模型。为了构建WordTree1k，我们添加了所有将标签空间从1000扩展到1369的中间节点。在训练过程中，我们将真实标签向树上面传播，以便如果图像被标记为<code>Norfolk terrier</code>，则它也被标记为<code>dog</code>和<code>mammal</code>等。为了计算条件概率，我们的模型预测了具有1369个值的向量，并且我们计算了相同概念的下义词在所有同义词集上的softmax，见图5。</p>
 <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200406154053.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>图5：在ImageNet与WordTree上的预测</strong>。大多数ImageNet模型使用一个较大的softmax来预测概率分布。使用WordTree，我们可以在共同的下义词上执行多次softmax操作。</p>
@@ -952,8 +952,8 @@
                     <div class="summary block-with-text">
                         
                             YOLO的参考资料[Meetup5_2019] YOLOv2 - 陳穗碧(Mora chen) youtube
-[Meetup5_2019YOLOv2 - 陳穗碧(Mora chen) bilibili]已上传
-Meetup5_2019YO
+Meetup5_2019YOLOv2 - 陳穗碧(Mora chen) bilibili
+Meetup5_2019YOLOv2 
                         
                     </div>
                     <div class="publish-info">
@@ -1192,7 +1192,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.1k</span>&nbsp;字
+                class="white-color">48.8k</span>&nbsp;字
             
             
             

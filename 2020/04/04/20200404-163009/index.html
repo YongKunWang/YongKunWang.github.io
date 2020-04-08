@@ -538,21 +538,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-05
+                    2020-04-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -584,8 +584,7 @@
 <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> upgrade
 <span class="token comment" spellcheck="true"># 如果出现锁的问题，看下面！！</span></code></pre>
 <p><a href="https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/" target="_blank" rel="noopener">清华大学镜像</a></p>
-<p>###全屏铺满|与主机互通</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> open-vm*</code></pre>
+<h3 id="全屏铺满-与主机互通"><a href="#全屏铺满-与主机互通" class="headerlink" title="全屏铺满|与主机互通"></a>全屏铺满|与主机互通</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> open-vm*</code></pre>
 <h2 id="常见设置"><a href="#常见设置" class="headerlink" title="常见设置"></a>常见设置</h2><h3 id="1-修改主机名"><a href="#1-修改主机名" class="headerlink" title="1. 修改主机名"></a>1. 修改主机名</h3><p>在Ubuntu系统中，快速查看主机名有多种方法： </p>
 <p>其一：打开一个GNOME终端窗口，在命令提示符中可以看到主机名，主机名通常位于“@”符号后； </p>
 <p><strong>如下图所示： test表示用户名 machine表示主机名</strong> </p>
@@ -603,7 +602,7 @@ machine</code></pre>
 <p><strong>第二步：修改/etc/hosts配置文件（可选）</strong></p>
 <p> /etc/hosts存放的是域名与ip的对应关系，域名与主机名没有任何关系，你可以为任何一个IP指定任意一个名字。 </p>
 <pre class=" language-bash"><code class="language-bash">test@machine:桌面$ <span class="token function">sudo</span> vim /etc/hosts</code></pre>
-<p><img src="C:%5CUsers%5Casdw1%5CAppData%5CLocal%5CTemp%5C1586001700445.png" alt="1586001700445"></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408231920.png" alt=""></p>
 <h3 id="2-dash-gt-bash"><a href="#2-dash-gt-bash" class="headerlink" title="2. dash -&gt; bash"></a>2. dash -&gt; bash</h3><p><code>linux shell</code>报错<code>Syntax error: Bad for loop variable:</code></p>
 <pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
 <span class="token comment" spellcheck="true">################################</span>
@@ -662,6 +661,17 @@ machine</code></pre>
 <p>方法二：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">rm</span> /var/lib/apt/lists/lock
 <span class="token function">sudo</span> <span class="token function">rm</span> /var/lib/dpkg/lock</code></pre>
+<h3 id="6-关于Linux中使用vim打开文件出现-M的解决方法"><a href="#6-关于Linux中使用vim打开文件出现-M的解决方法" class="headerlink" title="6. 关于Linux中使用vim打开文件出现^M的解决方法"></a>6. 关于Linux中使用vim打开文件出现^M的解决方法</h3><p>在linux下，不可避免的会用VIM打开一些windows下编辑过的文本文件。我们会发现文件的每行结尾都会有一个^M符号，这是因为 DOS下的编辑器和Linux编辑器对文件行末的回车符处理不一致：</p>
+<p>  对于回车符的定义：<br>       windows：0D0A<br>       unix\linux: 0A<br>       MAC: 0D</p>
+<p>解决：</p>
+<p>在终端下敲命令： </p>
+<pre class=" language-bansh"><code class="language-bansh">$ dos2unix filename</code></pre>
+<p> 直接转换成unix格式，就OK了</p>
+<p>Ubuntu下默认没有安装dos2unix工具，而且也没有一个叫这个名字的工具。但是有一个替代工具——tofrodos , 下面就说一下它的安装和使用： </p>
+<p>安装tofrodos :</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> tofrodos</code></pre>
+<p>实际上它安装了两个工具：todos(相当于unix2dos)，和fromdos(相当于dos2unix) </p>
+<pre class=" language-bash"><code class="language-bash">fromdos filename</code></pre>
 
             </div>
             <hr/>
@@ -1193,7 +1203,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.1k</span>&nbsp;字
+                class="white-color">48.8k</span>&nbsp;字
             
             
             

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://homewyk.com/"/>
-  <updated>2020-04-08T07:09:44.506Z</updated>
+  <updated>2020-04-08T14:58:54.430Z</updated>
   <id>https://homewyk.com/</id>
   
   <author>
@@ -17,36 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="https://homewyk.com/2020/04/08/20200408-150610/"/>
-    <id>https://homewyk.com/2020/04/08/20200408-150610/</id>
-    <published>2020-04-08T07:06:10.000Z</published>
-    <updated>2020-04-08T07:09:44.506Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre class=&quot; language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;//server&lt;/span&gt;
-
-&lt;span class=&quot;token
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>03-数据结构Java版-稀疏数组</title>
     <link href="https://homewyk.com/2020/04/08/20200408-093605/"/>
     <id>https://homewyk.com/2020/04/08/20200408-093605/</id>
     <published>2020-04-08T01:36:05.000Z</published>
-    <updated>2020-04-08T03:15:10.557Z</updated>
+    <updated>2020-04-08T14:58:54.430Z</updated>
     
     <summary type="html">
     
@@ -76,7 +51,7 @@
     <link href="https://homewyk.com/2020/04/08/20200408-082903/"/>
     <id>https://homewyk.com/2020/04/08/20200408-082903/</id>
     <published>2020-04-08T00:29:03.000Z</published>
-    <updated>2020-04-08T01:35:40.607Z</updated>
+    <updated>2020-04-08T14:58:44.348Z</updated>
     
     <summary type="html">
     
@@ -139,7 +114,7 @@
     <link href="https://homewyk.com/2020/04/07/20200407-093105/"/>
     <id>https://homewyk.com/2020/04/07/20200407-093105/</id>
     <published>2020-04-07T01:31:05.000Z</published>
-    <updated>2020-04-08T01:35:18.071Z</updated>
+    <updated>2020-04-08T14:58:33.049Z</updated>
     
     <summary type="html">
     
@@ -201,7 +176,7 @@
     <link href="https://homewyk.com/2020/04/06/20200406-165623/"/>
     <id>https://homewyk.com/2020/04/06/20200406-165623/</id>
     <published>2020-04-06T08:56:08.000Z</published>
-    <updated>2020-04-07T01:54:39.998Z</updated>
+    <updated>2020-04-08T15:00:55.894Z</updated>
     
     <summary type="html">
     
@@ -232,7 +207,7 @@
     <link href="https://homewyk.com/2020/04/06/20200406-144916/"/>
     <id>https://homewyk.com/2020/04/06/20200406-144916/</id>
     <published>2020-04-06T06:48:42.000Z</published>
-    <updated>2020-04-06T15:43:19.323Z</updated>
+    <updated>2020-04-08T15:16:24.084Z</updated>
     
     <summary type="html">
     
@@ -263,7 +238,7 @@
     <link href="https://homewyk.com/2020/04/06/20200406-120619/"/>
     <id>https://homewyk.com/2020/04/06/20200406-120619/</id>
     <published>2020-04-06T04:05:37.000Z</published>
-    <updated>2020-04-06T06:31:13.239Z</updated>
+    <updated>2020-04-08T15:09:43.843Z</updated>
     
     <summary type="html">
     
@@ -385,7 +360,7 @@
     <link href="https://homewyk.com/2020/04/05/20200405-092916/"/>
     <id>https://homewyk.com/2020/04/05/20200405-092916/</id>
     <published>2020-04-05T01:29:16.000Z</published>
-    <updated>2020-04-05T05:39:07.007Z</updated>
+    <updated>2020-04-08T15:18:13.828Z</updated>
     
     <summary type="html">
     
@@ -445,7 +420,7 @@
     <link href="https://homewyk.com/2020/04/04/20200404-163009/"/>
     <id>https://homewyk.com/2020/04/04/20200404-163009/</id>
     <published>2020-04-04T08:28:13.000Z</published>
-    <updated>2020-04-05T05:25:02.675Z</updated>
+    <updated>2020-04-08T15:19:40.402Z</updated>
     
     <summary type="html">
     
@@ -479,7 +454,7 @@
     <link href="https://homewyk.com/2020/04/04/20200404-104201/"/>
     <id>https://homewyk.com/2020/04/04/20200404-104201/</id>
     <published>2020-04-04T02:31:25.000Z</published>
-    <updated>2020-04-06T04:02:56.488Z</updated>
+    <updated>2020-04-08T15:21:57.987Z</updated>
     
     <summary type="html">
     
@@ -629,6 +604,39 @@
       <category term="blog工具" scheme="https://homewyk.com/tags/blog%E5%B7%A5%E5%85%B7/"/>
     
       <category term="质量网站" scheme="https://homewyk.com/tags/%E8%B4%A8%E9%87%8F%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于TensorFolw2的Yolov1程序实现</title>
+    <link href="https://homewyk.com/2020/04/01/20200401-100427/"/>
+    <id>https://homewyk.com/2020/04/01/20200401-100427/</id>
+    <published>2020-04-01T02:04:27.000Z</published>
+    <updated>2020-04-05T05:23:59.972Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;完整程序实现&quot;&gt;&lt;a href=&quot;#完整程序实现&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="深度学习" scheme="https://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Yolov1" scheme="https://homewyk.com/tags/Yolov1/"/>
+    
+      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="tensorflow" scheme="https://homewyk.com/tags/tensorflow/"/>
+    
+      <category term="Yolov1Programing" scheme="https://homewyk.com/tags/Yolov1Programing/"/>
     
   </entry>
   
