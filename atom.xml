@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://homewyk.com/"/>
-  <updated>2020-04-08T03:15:10.557Z</updated>
+  <updated>2020-04-08T07:09:44.506Z</updated>
   <id>https://homewyk.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://homewyk.com/2020/04/08/20200408-150610/"/>
+    <id>https://homewyk.com/2020/04/08/20200408-150610/</id>
+    <published>2020-04-08T07:06:10.000Z</published>
+    <updated>2020-04-08T07:09:44.506Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot; language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;//server&lt;/span&gt;
+
+&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>03-数据结构Java版-稀疏数组</title>
@@ -29,9 +54,8 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;二维数组和稀疏数组的相互转化&quot;&gt;二维数组和稀疏数组的相互转化&lt;/h2&gt;
-&lt;h3
+          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;二维数组和稀疏数组的相互转化&quot;&gt;&lt;a href=&quot;#二维数组和稀疏数组的相互转化&quot;
         
       
     
@@ -60,9 +84,8 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;数据结构与算法的概述&quot;&gt;数据结构与算法的概述&lt;/h2&gt;
-&lt;ol
+          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;数据结构与算法的概述&quot;&gt;&lt;a href=&quot;#数据结构与算法的概述&quot;
         
       
     
@@ -91,7 +114,7 @@
       
         
         
-          &lt;h2 id=&quot;一个例子&quot;&gt;&lt;a href=&quot;https://medium.com/@jonathan_hui/real-time-object-detection-with-yolo-yolov2-28b1b93e2088&quot; target=&quot;_blank&quot;
+          &lt;h2 id=&quot;一个例子&quot;&gt;&lt;a href=&quot;#一个例子&quot; class=&quot;headerlink&quot; title=&quot;一个例子&quot;&gt;&lt;/a&gt;&lt;a
         
       
     
@@ -124,8 +147,8 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot;&gt;&lt;/p&gt;
-&lt;h2
+          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第一章：导言&quot;&gt;&lt;a href=&quot;#第一章：导言&quot; class=&quot;headerlink&quot;
         
       
     
@@ -154,9 +177,8 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/cover.png&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;过滤器fliter&quot;&gt;过滤器Fliter&lt;/h2&gt;
-&lt;h3
+          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/cover.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;过滤器Fliter&quot;&gt;&lt;a href=&quot;#过滤器Fliter&quot;
         
       
     
@@ -187,8 +209,7 @@
       
         
         
-          &lt;h2 id=&quot;yolo的参考资料&quot;&gt;YOLO的参考资料&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xo_iUBjz0F4&amp;amp;t=177s&quot; target=&quot;_blank&quot;
+          &lt;h2 id=&quot;YOLO的参考资料&quot;&gt;&lt;a href=&quot;#YOLO的参考资料&quot; class=&quot;headerlink&quot; title=&quot;YOLO的参考资料&quot;&gt;&lt;/a&gt;YOLO的参考资料&lt;/h2&gt;&lt;p&gt;&lt;a
         
       
     
@@ -219,9 +240,7 @@
       
         
         
-          &lt;h2 id=&quot;yolo9000-better-faster-stronger&quot;&gt;YOLO9000: Better, Faster, Stronger&lt;/h2&gt;
-&lt;h2 id=&quot;摘要&quot;&gt;摘要&lt;/h2&gt;
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+          &lt;h2 id=&quot;YOLO9000-Better-Faster-Stronger&quot;&gt;&lt;a href=&quot;#YOLO9000-Better-Faster-Stronger&quot; class=&quot;headerlink&quot; title=&quot;YOLO9000: Better, Faster,
         
       
     
@@ -252,9 +271,7 @@
       
         
         
-          &lt;h2 id=&quot;mathjax-基本语法总结&quot;&gt;MathJax 基本语法总结&lt;/h2&gt;
-&lt;h2 id=&quot;mathjax-简介&quot;&gt;MathJax 简介&lt;/h2&gt;
-&lt;p&gt;MathJax 是一款运行在浏览器中的开源数学符号渲染引擎，使用 MathJax
+          &lt;h2 id=&quot;MathJax-基本语法总结&quot;&gt;&lt;a href=&quot;#MathJax-基本语法总结&quot; class=&quot;headerlink&quot; title=&quot;MathJax 基本语法总结&quot;&gt;&lt;/a&gt;MathJax 基本语法总结&lt;/h2&gt;&lt;h2 id=&quot;MathJax-简介&quot;&gt;&lt;a
         
       
     
@@ -281,7 +298,7 @@
       
         
         
-          &lt;h2
+          &lt;h2 id=&quot;如何解释召回率recall和准确率precsion&quot;&gt;&lt;a href=&quot;#如何解释召回率recall和准确率precsion&quot; class=&quot;headerlink&quot;
         
       
     
@@ -312,7 +329,7 @@
       
         
         
-          &lt;h2
+          &lt;h2 id=&quot;Blog使用Github和coding双线&quot;&gt;&lt;a href=&quot;#Blog使用Github和coding双线&quot; class=&quot;headerlink&quot;
         
       
     
@@ -322,9 +339,9 @@
       <category term="Hexo" scheme="https://homewyk.com/categories/Hexo/"/>
     
     
-      <category term="Blog" scheme="https://homewyk.com/tags/Blog/"/>
-    
       <category term="Hexo" scheme="https://homewyk.com/tags/Hexo/"/>
+    
+      <category term="Blog" scheme="https://homewyk.com/tags/Blog/"/>
     
       <category term="coding" scheme="https://homewyk.com/tags/coding/"/>
     
@@ -343,9 +360,7 @@
       
         
         
-          &lt;h1 id=&quot;gitee码云githubcoding同时配置ssh-key&quot;&gt;Gitee(码云)、Github、coding同时配置ssh key&lt;/h1&gt;
-&lt;h4 id=&quot;一cd-.ssh&quot;&gt;一、&lt;code&gt;cd ~/.ssh&lt;/code&gt;&lt;/h4&gt;
-&lt;h4
+          &lt;h1 id=&quot;Gitee-码云-、Github、coding同时配置ssh-key&quot;&gt;&lt;a href=&quot;#Gitee-码云-、Github、coding同时配置ssh-key&quot; class=&quot;headerlink&quot;
         
       
     
@@ -378,9 +393,7 @@
       
         
         
-          &lt;h3 id=&quot;为何使用gitee而不是github&quot;&gt;为何使用Gitee而不是GitHub&lt;/h3&gt;
-&lt;p&gt;目前国内访问GitHub速度慢，还可能被墙，所以Gitee来构建个人博客。Gitee类似国内版的GitHub，访问速度有保证。&lt;/p&gt;
-&lt;h3
+          &lt;h3 id=&quot;为何使用Gitee而不是GitHub&quot;&gt;&lt;a href=&quot;#为何使用Gitee而不是GitHub&quot; class=&quot;headerlink&quot;
         
       
     
@@ -411,10 +424,7 @@
       
         
         
-          &lt;h1 id=&quot;vi-终端中的编辑器&quot;&gt;&lt;code&gt;vi&lt;/code&gt; —— 终端中的编辑器&lt;/h1&gt;
-&lt;h2 id=&quot;目标&quot;&gt;目标&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;vi&lt;/code&gt;
+          &lt;h1 id=&quot;vi-——-终端中的编辑器&quot;&gt;&lt;a href=&quot;#vi-——-终端中的编辑器&quot; class=&quot;headerlink&quot; title=&quot;vi —— 终端中的编辑器&quot;&gt;&lt;/a&gt;&lt;code&gt;vi&lt;/code&gt; —— 终端中的编辑器&lt;/h1&gt;&lt;h2 id=&quot;目标&quot;&gt;&lt;a
         
       
     
@@ -443,14 +453,10 @@
       
         
         
-          &lt;h2 id=&quot;vm的安装&quot;&gt;VM的安装&lt;/h2&gt;
-&lt;ul&gt;
+          &lt;h2 id=&quot;VM的安装&quot;&gt;&lt;a href=&quot;#VM的安装&quot; class=&quot;headerlink&quot; title=&quot;VM的安装&quot;&gt;&lt;/a&gt;VM的安装&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;网上软件+破解秘钥&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;ubuntu的安装&quot;&gt;Ubuntu的安装&lt;/h2&gt;
-&lt;p&gt;待续...&lt;/p&gt;
-&lt;h2 id=&quot;系统软件更新&quot;&gt;系统软件更新&lt;/h2&gt;
-&lt;h3
+&lt;h2 id=&quot;Ubuntu的安装&quot;&gt;&lt;a
         
       
     
@@ -481,8 +487,7 @@
       
         
         
-          &lt;h1 id=&quot;you-only-look-once-unified-real-time-object-detection&quot;&gt;You Only Look Once: Unified, Real-Time Object Detection&lt;/h1&gt;
-&lt;h2
+          &lt;h1 id=&quot;You-Only-Look-Once-Unified-Real-Time-Object-Detection&quot;&gt;&lt;a href=&quot;#You-Only-Look-Once-Unified-Real-Time-Object-Detection&quot;
         
       
     
@@ -545,7 +550,7 @@
         
         
           &lt;p&gt;视频资源：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=26U_seo0a1g&amp;amp;t=7s&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;youtube&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=26U_seo0a1g&amp;t=7s&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;youtube&lt;/a&gt;&lt;/p&gt;
 &lt;video
         
       
@@ -575,8 +580,8 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/20200407135602.png&quot;&gt;&lt;/p&gt;
-&lt;h2
+          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/20200407135602.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
         
       
     
@@ -609,8 +614,7 @@
       
         
         
-          &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
         
       
     
@@ -625,42 +629,6 @@
       <category term="blog工具" scheme="https://homewyk.com/tags/blog%E5%B7%A5%E5%85%B7/"/>
     
       <category term="质量网站" scheme="https://homewyk.com/tags/%E8%B4%A8%E9%87%8F%E7%BD%91%E7%AB%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于TensorFolw2的Yolov1程序实现</title>
-    <link href="https://homewyk.com/2020/04/01/20200401-100427/"/>
-    <id>https://homewyk.com/2020/04/01/20200401-100427/</id>
-    <published>2020-04-01T02:04:27.000Z</published>
-    <updated>2020-04-05T05:23:59.972Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;完整程序实现&quot;&gt;完整程序实现&lt;/h2&gt;
-&lt;p&gt;本编程环境使用&lt;code&gt;anaconda&lt;/code&gt;+&lt;code&gt;pycharm&lt;/code&gt;进行搭建。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;python 版本
-        
-      
-    
-    </summary>
-    
-    
-      <category term="深度学习" scheme="https://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Yolov1" scheme="https://homewyk.com/tags/Yolov1/"/>
-    
-      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="tensorflow" scheme="https://homewyk.com/tags/tensorflow/"/>
-    
-      <category term="Yolov1Programing" scheme="https://homewyk.com/tags/Yolov1Programing/"/>
     
   </entry>
   

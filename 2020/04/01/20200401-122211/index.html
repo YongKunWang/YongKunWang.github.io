@@ -545,7 +545,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.2k
                 </div>
                 
 
@@ -568,48 +568,40 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言">前言</h2>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 想使用七牛云作为自己的图床工具，但是域名只给使用1个月，而我自己的域名并没有备案遂放弃。也查询过使用百度云网盘做图床，并不可行，最后便想使用<code>github</code>作为自己的图床，经过配置发现了一个不大好的问题，<code>github</code>的服务器在国外，访问速度时好时慢，这不是自己能够控制的了，还有一个是，使用<code>github</code>做图床，需要频繁的上传<code>image</code>,这就造成了<code>commit</code>的此时太多，会造成一种<code>github</code>十分红火的假象。思来想去，为什么不用国内的码云作为自己的图床,<code>Gitee</code>和国内的<code>github</code>差不多，是代码托管软件,也是国内最大的代码系统。由于服务器在国内，速度也是杠杠的，且只把<code>Gitee</code>作为图床使用，不做他用。</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&nbsp;&nbsp;&nbsp;&nbsp; 想使用七牛云作为自己的图床工具，但是域名只给使用1个月，而我自己的域名并没有备案遂放弃。也查询过使用百度云网盘做图床，并不可行，最后便想使用<code>github</code>作为自己的图床，经过配置发现了一个不大好的问题，<code>github</code>的服务器在国外，访问速度时好时慢，这不是自己能够控制的了，还有一个是，使用<code>github</code>做图床，需要频繁的上传<code>image</code>,这就造成了<code>commit</code>的此时太多，会造成一种<code>github</code>十分红火的假象。思来想去，为什么不用国内的码云作为自己的图床,<code>Gitee</code>和国内的<code>github</code>差不多，是代码托管软件,也是国内最大的代码系统。由于服务器在国内，速度也是杠杠的，且只把<code>Gitee</code>作为图床使用，不做他用。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; <code>Markdown</code>是一门易于上手能帮助作者专心写作的文档编辑语言，好处多多，十分建议日常写作使用这种方法，简答易学。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; <code>Markdown</code>编辑器推荐使用<code>Typora</code>,可以编写完毕后立即看到效果。</p>
 <p>本文的重点在<code>Markdown</code>如何插入图片</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 图床是一个便于在博文中插入在线图片连接的个人图片仓库。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 设置图床之后，在自己博客中插入的图片链接就可以随时随地在线预览了，并且不会因为任何意外原因无法查看，除非自己亲自删除。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  图床是一个便于在博文中插入在线图片连接的个人图片仓库。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 设置图床之后，在自己博客中插入的图片链接就可以随时随地在线预览了，并且不会因为任何意外原因无法查看，除非自己亲自删除。 </p>
 <p><code>PicGo</code>就是为了解决本地图片上传图片仓库这个问题诞生的，它可以将本地图片上传到指定的图床上，然后返回<code>markdown</code>链接，直接粘贴到你的文档中，就搞定啦。</p>
-<h3 id="安装">1. 安装</h3>
-<h4 id="安装picgo">安装<code>picgo</code></h4>
-<p><a href="https://link.zhihu.com/?target=https%3A//github.com/Molunerfinn/PicGo">picgo仓库</a></p>
+<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><h4 id="安装picgo"><a href="#安装picgo" class="headerlink" title="安装picgo"></a>安装<code>picgo</code></h4><p><a href="https://link.zhihu.com/?target=https%3A//github.com/Molunerfinn/PicGo">picgo仓库</a></p>
 <p><a href="https://molunerfinn.com/PicGo/" target="_blank" rel="noopener">picgo官网</a>，下载<code>.exe</code>执行文件即可</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401185537.png"></p>
-<h4 id="picgo主界面"><code>picgo</code>主界面</h4>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401185653.png"></p>
-<h4 id="安装gitee插件">2. 安装gitee插件</h4>
-<h5 id="安装node.js">安装Node.js</h5>
-<p>首先下载稳定版<a href="https://nodejs.org/dist/v9.11.1/node-v9.11.1-x64.msi" target="_blank" rel="noopener">Node.js</a>，我这里给的是64位的。</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401185537.png" alt=""></p>
+<h4 id="picgo主界面"><a href="#picgo主界面" class="headerlink" title="picgo主界面"></a><code>picgo</code>主界面</h4><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401185653.png" alt=""></p>
+<h4 id="2-安装gitee插件"><a href="#2-安装gitee插件" class="headerlink" title="2. 安装gitee插件"></a>2. 安装gitee插件</h4><h5 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h5><p>首先下载稳定版<a href="https://nodejs.org/dist/v9.11.1/node-v9.11.1-x64.msi" target="_blank" rel="noopener">Node.js</a>，我这里给的是64位的。</p>
 <p>安装选项全部默认，一路点击<code>Next</code>。</p>
 <p>最后安装好之后，按<code>Win+R</code>打开命令提示符，输入<code>node -v</code>和<code>npm -v</code>，如果出现版本号，那么就安装成功了</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401185856.png"></p>
-<h5 id="安装picgo插件">安装picgo插件</h5>
-<p>选择最底下的插件设置，搜索<strong>gitee</strong>，点击右边的gitee-uploader 1.1.2开始安装。</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401190044.png"></p>
-<h3 id="配置gitee图片仓库">2. 配置Gitee图片仓库</h3>
-<ol type="1">
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401185856.png" alt=""></p>
+<h5 id="安装picgo插件"><a href="#安装picgo插件" class="headerlink" title="安装picgo插件"></a>安装picgo插件</h5><p>选择最底下的插件设置，搜索<strong>gitee</strong>，点击右边的gitee-uploader 1.1.2开始安装。</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401190044.png" alt=""></p>
+<h3 id="2-配置Gitee图片仓库"><a href="#2-配置Gitee图片仓库" class="headerlink" title="2. 配置Gitee图片仓库"></a>2. 配置Gitee图片仓库</h3><ol>
 <li>新建仓库</li>
 </ol>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401190319.png"></p>
-<ol start="2" type="1">
-<li>新建仓库要点
-<ul>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401190319.png" alt=""></p>
+<ol start="2">
+<li>新建仓库要点<ul>
 <li>输入一个仓库名称</li>
 <li>其次将仓库设为公开</li>
-<li>勾选使用Readme文件初始化这个仓库
-<ul>
-<li><strong>这个选项勾上，这样码云会自动给你的仓库建立master分支，这点很重要!!!</strong></li>
-</ul></li>
-</ul></li>
+<li>勾选使用Readme文件初始化这个仓库<ul>
+<li><strong>这个选项勾上，这样码云会自动给你的仓库建立master分支，这点很重要!!!</strong> </li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401190542.png"></p>
-<ol start="3" type="1">
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401190542.png" alt=""></p>
+<ol start="3">
 <li><p>配置<code>picgo</code>的<code>gitee</code>插件</p>
 <ul>
 <li><p><code>repo</code>: 仓库名称</p>
@@ -617,77 +609,64 @@
 <li><code>gitee</code>用户名/仓库名</li>
 <li>最开始前面没有<code>/</code></li>
 </ul>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191157.png"></p></li>
-<li><p><code>banch</code>: <code>master</code></p></li>
-<li><p><code>token</code>: 见第4点</p></li>
-</ul></li>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191157.png" alt=""></p>
+</li>
+<li><p><code>banch</code>: <code>master</code></p>
+</li>
+<li><p><code>token</code>: 见第4点</p>
+</li>
+</ul>
+</li>
 </ol>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191005.png"></p>
-<ol start="4" type="1">
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191005.png" alt=""></p>
+<ol start="4">
 <li><p>获取token</p>
 <ul>
-<li><p>点击头像，进入设置</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191545.png"></p></li>
+<li><p>点击头像，进入设置 </p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191545.png" alt=""></p>
+</li>
 <li><p>找到右边安全设置里面的私人令牌</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191619.png"></p></li>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191619.png" alt=""></p>
+</li>
 <li><p>点击<code>生成新令牌</code>，把<strong>projects</strong>这一项勾上，其他的不用勾，然后提交</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191713.png"></p></li>
-<li><p>这里需要验证一下密码，验证密码之后会出来一串数字，这一串数字就是你的<code>token</code>，将这串数字复制到刚才的配置里面去。</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191750.png"></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191713.png" alt=""></p>
+</li>
+<li><p>这里需要验证一下密码，验证密码之后会出来一串数字，这一串数字就是你的<code>token</code>，将这串数字复制到刚才的配置里面去。 </p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191750.png" alt=""></p>
 <ul>
 <li>注意：这个令牌只会明文显示一次，建议在配置插件的时候再来生成令牌，直接复制进去，搞丢了又要重新生成一个。 可以将这个<code>token</code>收藏到微信中</li>
 <li>现在保存你刚才的配置，然后将它设置为默认图床，大功告成</li>
-</ul></li>
-</ul></li>
-</ol>
-<h3 id="关于gitee-1.2.2.beta插件的设置有点区别">3. 关于Gitee 1.2.2.beta插件的设置有点区别</h3>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191912.png"></p>
-<p>配置界面：</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401192127.png"></p>
-<ul>
-<li>url：图床网站，这里写码云的主页&nbsp;<a href="https://link.zhihu.com/?target=https%3A//gitee.com">https://gitee.com</a></li>
-<li>owner：所有者，写上你的码云账号名</li>
-<li>repo：仓库名称，只要写上仓库名称就行，比如我自己的仓库blogImage</li>
-<li>path：写上路径，一般是img，<strong>这几个项都不用加“ / “符号</strong></li>
-<li>token：刚才你获取的个人令牌，两个插件是通用的，如果你用了另一个再来用这个，它会自动读取另一个插件的部分配置，不用重新申请</li>
-<li>message：不用填</li>
 </ul>
-<h2 id="测试">2. 测试</h2>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-关于Gitee-1-2-2-beta插件的设置有点区别"><a href="#3-关于Gitee-1-2-2-beta插件的设置有点区别" class="headerlink" title="3. 关于Gitee 1.2.2.beta插件的设置有点区别"></a>3. 关于Gitee 1.2.2.beta插件的设置有点区别</h3><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191912.png" alt=""></p>
+<p>配置界面：</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401192127.png" alt=""></p>
 <ul>
+<li>url：图床网站，这里写码云的主页 <a href="https://link.zhihu.com/?target=https%3A//gitee.com">https://gitee.com</a> </li>
+<li>owner：所有者，写上你的码云账号名 </li>
+<li>repo：仓库名称，只要写上仓库名称就行，比如我自己的仓库blogImage </li>
+<li>path：写上路径，一般是img，<strong>这几个项都不用加“ / “符号</strong> </li>
+<li>token：刚才你获取的个人令牌，两个插件是通用的，如果你用了另一个再来用这个，它会自动读取另一个插件的部分配置，不用重新申请 </li>
+<li>message：不用填 </li>
+</ul>
+<h2 id="2-测试"><a href="#2-测试" class="headerlink" title="2. 测试"></a>2. 测试</h2><ul>
 <li><code>picgo</code>支持剪切板直接上传</li>
-<li><code>win10</code>的<code>Snipaste</code>是截图神器</li>
+<li><code>win10</code>的<code>Snipaste</code>是截图神器 </li>
 </ul>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 很快！比<code>github</code>快很多，0.1秒上传，而且导入到你的<code>markdown</code>编辑器里面也是秒识别你的图片内容，而如果是github图床上传太慢不说可能还会出现下面这样识别不出来的问题！</p>
-<h2 id="总结">3. 总结</h2>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 博客写作套件<code>Typora + PicGo + Snipaste：</code></p>
+<h2 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. 总结</h2><p>&nbsp;&nbsp;&nbsp;&nbsp; 博客写作套件<code>Typora + PicGo + Snipaste：</code></p>
 <ul>
 <li><code>Typora</code>写文档</li>
 <li><code>Snipaste</code>一键截图</li>
-<li><code>PicGo</code>一键上传图片返回链接。</li>
+<li><code>PicGo</code>一键上传图片返回链接。 </li>
 </ul>
-<h2 id="参考">4. 参考</h2>
-<ul>
+<h2 id="4-参考"><a href="#4-参考" class="headerlink" title="4. 参考"></a>4. 参考</h2><ul>
 <li><a href="https://zhuanlan.zhihu.com/p/102594554" target="_blank" rel="noopener">LeonG:PicGo + Gitee(码云) 实现markdown图床</a></li>
 </ul>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+
             </div>
             <hr/>
 
@@ -968,11 +947,10 @@
                     <div class="summary block-with-text">
                         
                             
-前言
-&nbsp;&nbsp;&nbsp;&nbsp;将自己这段时间以来的关于Yolov1算法知识做一个总结。
+前言&nbsp;&nbsp;&nbsp;&nbsp;将自己这段时间以来的关于Yolov1算法知识做一个总结。
 &nbsp;&nbsp;&nbsp;&nbsp; 这篇文章是YOLO的开山之作，理解其思想是十分重要的。
 论文原文请移步
-基于
+基于T
                         
                     </div>
                     <div class="publish-info">
@@ -1032,14 +1010,15 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            完整程序实现
-本编程环境使用anaconda+pycharm进行搭建。
+                            完整程序实现本编程环境使用anaconda+pycharm进行搭建。
 
 python 版本 3.6.1
-tensorflow版本：2.0.0
 
+tensorflow版本：2.0.0
 本文给出了Yolov1算法的TensoFlow实现代码。
-&nbsp;&nbsp;&nbsp;
+
+
+&nbsp;&nbsp;&nbsp
                         
                     </div>
                     <div class="publish-info">
@@ -1233,7 +1212,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.9k</span>&nbsp;字
+                class="white-color">49.1k</span>&nbsp;字
             
             
             

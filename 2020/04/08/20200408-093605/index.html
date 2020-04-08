@@ -564,338 +564,310 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/images.jpg"></p>
-<h2 id="二维数组和稀疏数组的相互转化">二维数组和稀疏数组的相互转化</h2>
-<h3 id="实际情况">实际情况</h3>
-<blockquote>
+                <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/images.jpg" alt=""></p>
+<h2 id="二维数组和稀疏数组的相互转化"><a href="#二维数组和稀疏数组的相互转化" class="headerlink" title="二维数组和稀疏数组的相互转化"></a>二维数组和稀疏数组的相互转化</h2><h3 id="实际情况"><a href="#实际情况" class="headerlink" title="实际情况"></a>实际情况</h3><blockquote>
 <p>实际需求：</p>
 <p>五子棋程序的存盘和复盘操作</p>
 </blockquote>
-<p>棋盘大小：<span class="math inline">\(11\times 11\)</span></p>
-<p>棋盘黑子：用<span class="math inline">\(1\)</span>表示</p>
-<p>棋盘白子：用<span class="math inline">\(2\)</span>表示</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408094852.png"></p>
+<p>棋盘大小：$11\times 11$</p>
+<p>棋盘黑子：用$1$表示</p>
+<p>棋盘白子：用$2$表示</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408094852.png" alt=""></p>
 <p>使用二维数组直接来保存棋盘数据：</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408095031.png"></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408095031.png" alt=""></p>
 <p><strong>问题：该二维数组的很多只都是默认为0的，因此记录了很多的无意义数据</strong></p>
 <p>可以使用稀疏数组进行解决</p>
-<h3 id="稀疏数组">稀疏数组</h3>
-<p>当一个数组中的元素大部分为0或者相同值很多的时候，可以使用稀疏数组来保存该数组</p>
-<h4 id="二维数组---稀疏数组">二维数组 -&gt; 稀疏数组</h4>
-<table>
+<h3 id="稀疏数组"><a href="#稀疏数组" class="headerlink" title="稀疏数组"></a>稀疏数组</h3><p>当一个数组中的元素大部分为0或者相同值很多的时候，可以使用稀疏数组来保存该数组</p>
+<h4 id="二维数组-gt-稀疏数组"><a href="#二维数组-gt-稀疏数组" class="headerlink" title="二维数组 -&gt; 稀疏数组"></a>二维数组 -&gt; 稀疏数组</h4><table>
 <thead>
-<tr class="header">
-<th style="text-align: center;">row</th>
-<th style="text-align: center;">col</th>
-<th style="text-align: center;">val</th>
+<tr>
+<th align="center">row</th>
+<th align="center">col</th>
+<th align="center">val</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">二维数组的行数</td>
-<td style="text-align: center;">二维数组的列数</td>
-<td style="text-align: center;">有几个不相同的值</td>
+<tbody><tr>
+<td align="center">二维数组的行数</td>
+<td align="center">二维数组的列数</td>
+<td align="center">有几个不相同的值</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">第1个不同值的row</td>
-<td style="text-align: center;">第1个不同值的col</td>
-<td style="text-align: center;">第1个不同值的val</td>
+<tr>
+<td align="center">第1个不同值的row</td>
+<td align="center">第1个不同值的col</td>
+<td align="center">第1个不同值的val</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">...</td>
-<td style="text-align: center;">...</td>
-<td style="text-align: center;">...</td>
+<tr>
+<td align="center">…</td>
+<td align="center">…</td>
+<td align="center">…</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">第n个不同值的row</td>
-<td style="text-align: center;">第n个不同值的col</td>
-<td style="text-align: center;">第n个不同值的val</td>
+<tr>
+<td align="center">第n个不同值的row</td>
+<td align="center">第n个不同值的col</td>
+<td align="center">第n个不同值的val</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
-<li>记录两大类信息：
-<ul>
+<li>记录两大类信息：<ul>
 <li>二维数组一共有几行几列，有多少个不同的值</li>
 <li>具体不同的值的行列值</li>
-</ul></li>
+</ul>
+</li>
 <li>缩小了程序的规模</li>
 </ul>
-<h4 id="例子">例子：</h4>
-<p>二维数组：</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408095852.png"></p>
+<h4 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h4><p>二维数组：</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408095852.png" alt=""></p>
 <p>相应的稀疏数组表示：</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408095921.png"></p>
-<h3 id="应用实例">应用实例</h3>
-<ol type="1">
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408095921.png" alt=""></p>
+<h3 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h3><ol>
 <li>使用稀疏数组，来保存棋盘信息</li>
 <li>把稀疏数组存盘，并且可以恢复为原来的二维数组</li>
 <li>整体思路分析：</li>
 </ol>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408100306.png"></p>
-<h4 id="实现代码">实现代码</h4>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">package</span><span class="im"> com.homewyk.sparsearray;</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">import</span><span class="im"> org.junit.Test;</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">/***</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"> <span class="co">*</span> <span class="co">1. </span>棋盘的保存和复盘</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"> <span class="co">*</span> 二维数组 <span class="co">-&gt;</span> 稀疏数组 <span class="co">-&gt;</span> 二维数组</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"> <span class="co">*</span> <span class="kw">@author </span>asdw<span class="co">1</span></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"> <span class="co">*</span></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="kw">public</span> <span class="kw">class</span> SparseArray {</a>
-<a class="sourceLine" id="cb1-13" data-line-number="13">    </a>
-<a class="sourceLine" id="cb1-14" data-line-number="14">    <span class="at">@Test</span></a>
-<a class="sourceLine" id="cb1-15" data-line-number="15">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">testSparse</span>() {</a>
-<a class="sourceLine" id="cb1-16" data-line-number="16">        <span class="co">/* </span></a>
-<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">         * 1. 新建棋盘11*11，并设置2个黑白棋子 </span></a>
-<a class="sourceLine" id="cb1-18" data-line-number="18"><span class="co">         */</span></a>
-<a class="sourceLine" id="cb1-19" data-line-number="19">        <span class="dt">int</span>[][] chessArray1 = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">11</span>][<span class="dv">11</span>];</a>
-<a class="sourceLine" id="cb1-20" data-line-number="20">        chessArray1[<span class="dv">1</span>][<span class="dv">2</span>] = <span class="dv">1</span>;</a>
-<a class="sourceLine" id="cb1-21" data-line-number="21">        chessArray1[<span class="dv">2</span>][<span class="dv">3</span>] = <span class="dv">2</span>;</a>
-<a class="sourceLine" id="cb1-22" data-line-number="22">        </a>
-<a class="sourceLine" id="cb1-23" data-line-number="23">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"输出原始棋盘布局"</span>);</a>
-<a class="sourceLine" id="cb1-24" data-line-number="24">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : chessArray1) {</a>
-<a class="sourceLine" id="cb1-25" data-line-number="25">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
-<a class="sourceLine" id="cb1-26" data-line-number="26">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
-<a class="sourceLine" id="cb1-27" data-line-number="27">            }</a>
-<a class="sourceLine" id="cb1-28" data-line-number="28">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb1-29" data-line-number="29">        }</a>
-<a class="sourceLine" id="cb1-30" data-line-number="30">        </a>
-<a class="sourceLine" id="cb1-31" data-line-number="31">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb1-32" data-line-number="32">        </a>
-<a class="sourceLine" id="cb1-33" data-line-number="33">        </a>
-<a class="sourceLine" id="cb1-34" data-line-number="34">        <span class="co">/*</span></a>
-<a class="sourceLine" id="cb1-35" data-line-number="35"><span class="co">         * 2. 转换为稀疏数组</span></a>
-<a class="sourceLine" id="cb1-36" data-line-number="36"><span class="co">         */</span></a>
-<a class="sourceLine" id="cb1-37" data-line-number="37">        <span class="co">//需要先得到稀疏数组的大小</span></a>
-<a class="sourceLine" id="cb1-38" data-line-number="38">        <span class="dt">int</span> sum = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb1-39" data-line-number="39">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : chessArray1) {</a>
-<a class="sourceLine" id="cb1-40" data-line-number="40">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
-<a class="sourceLine" id="cb1-41" data-line-number="41">                <span class="kw">if</span>(item != <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb1-42" data-line-number="42">                    sum ++;</a>
-<a class="sourceLine" id="cb1-43" data-line-number="43">            }</a>
-<a class="sourceLine" id="cb1-44" data-line-number="44">        }</a>
-<a class="sourceLine" id="cb1-45" data-line-number="45">        <span class="co">// 创建稀疏数组</span></a>
-<a class="sourceLine" id="cb1-46" data-line-number="46">        <span class="dt">int</span>[][] sparseArr = <span class="kw">new</span> <span class="dt">int</span>[sum+<span class="dv">1</span>][<span class="dv">3</span>];</a>
-<a class="sourceLine" id="cb1-47" data-line-number="47">        </a>
-<a class="sourceLine" id="cb1-48" data-line-number="48">        <span class="co">//稀疏数组第一行赋值</span></a>
-<a class="sourceLine" id="cb1-49" data-line-number="49">        sparseArr[<span class="dv">0</span>][<span class="dv">0</span>] = chessArray1.<span class="fu">length</span>;</a>
-<a class="sourceLine" id="cb1-50" data-line-number="50">        sparseArr[<span class="dv">0</span>][<span class="dv">1</span>] = chessArray1[<span class="dv">0</span>].<span class="fu">length</span>;</a>
-<a class="sourceLine" id="cb1-51" data-line-number="51">        sparseArr[<span class="dv">0</span>][<span class="dv">2</span>] = sum;</a>
-<a class="sourceLine" id="cb1-52" data-line-number="52">        </a>
-<a class="sourceLine" id="cb1-53" data-line-number="53">        <span class="co">//稀疏数组后续元素的赋值操作</span></a>
-<a class="sourceLine" id="cb1-54" data-line-number="54">        <span class="dt">int</span> count = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb1-55" data-line-number="55">        <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; chessArray1.<span class="fu">length</span>; i++) {</a>
-<a class="sourceLine" id="cb1-56" data-line-number="56">            <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; chessArray1[<span class="dv">0</span>].<span class="fu">length</span>; j++) {</a>
-<a class="sourceLine" id="cb1-57" data-line-number="57">                <span class="kw">if</span>(chessArray1[i][j]!= <span class="dv">0</span>) {</a>
-<a class="sourceLine" id="cb1-58" data-line-number="58">                    count ++;</a>
-<a class="sourceLine" id="cb1-59" data-line-number="59">                    sparseArr[count][<span class="dv">0</span>] = i;</a>
-<a class="sourceLine" id="cb1-60" data-line-number="60">                    sparseArr[count][<span class="dv">1</span>] = j;</a>
-<a class="sourceLine" id="cb1-61" data-line-number="61">                    sparseArr[count][<span class="dv">2</span>] = chessArray1[i][j];</a>
-<a class="sourceLine" id="cb1-62" data-line-number="62">                }</a>
-<a class="sourceLine" id="cb1-63" data-line-number="63">            }</a>
-<a class="sourceLine" id="cb1-64" data-line-number="64">        }</a>
-<a class="sourceLine" id="cb1-65" data-line-number="65">        </a>
-<a class="sourceLine" id="cb1-66" data-line-number="66">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"二维数组转换成的稀疏数组"</span>);</a>
-<a class="sourceLine" id="cb1-67" data-line-number="67">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : sparseArr) {</a>
-<a class="sourceLine" id="cb1-68" data-line-number="68">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
-<a class="sourceLine" id="cb1-69" data-line-number="69">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
-<a class="sourceLine" id="cb1-70" data-line-number="70">            }</a>
-<a class="sourceLine" id="cb1-71" data-line-number="71">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb1-72" data-line-number="72">        }</a>
-<a class="sourceLine" id="cb1-73" data-line-number="73">        </a>
-<a class="sourceLine" id="cb1-74" data-line-number="74">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb1-75" data-line-number="75">        <span class="co">/*</span></a>
-<a class="sourceLine" id="cb1-76" data-line-number="76"><span class="co">         * 3. 稀疏数组转换为棋盘</span></a>
-<a class="sourceLine" id="cb1-77" data-line-number="77"><span class="co">         */</span></a>
-<a class="sourceLine" id="cb1-78" data-line-number="78">        <span class="dt">int</span>[][] chessArray2 = <span class="kw">new</span> <span class="dt">int</span>[sparseArr[<span class="dv">0</span>][<span class="dv">0</span>]][sparseArr[<span class="dv">0</span>][<span class="dv">1</span>]];</a>
-<a class="sourceLine" id="cb1-79" data-line-number="79">        <span class="co">//注意要从1开始</span></a>
-<a class="sourceLine" id="cb1-80" data-line-number="80">        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt; sparseArr.<span class="fu">length</span>; i++) {</a>
-<a class="sourceLine" id="cb1-81" data-line-number="81">            chessArray2[sparseArr[i][<span class="dv">0</span>]][sparseArr[i][<span class="dv">1</span>]] = sparseArr[i][<span class="dv">2</span>];</a>
-<a class="sourceLine" id="cb1-82" data-line-number="82">        }</a>
-<a class="sourceLine" id="cb1-83" data-line-number="83">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"稀疏数组转换成的二维数组"</span>);</a>
-<a class="sourceLine" id="cb1-84" data-line-number="84">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : chessArray2) {</a>
-<a class="sourceLine" id="cb1-85" data-line-number="85">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
-<a class="sourceLine" id="cb1-86" data-line-number="86">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
-<a class="sourceLine" id="cb1-87" data-line-number="87">            }</a>
-<a class="sourceLine" id="cb1-88" data-line-number="88">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb1-89" data-line-number="89">        }</a>
-<a class="sourceLine" id="cb1-90" data-line-number="90">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb1-91" data-line-number="91">        </a>
-<a class="sourceLine" id="cb1-92" data-line-number="92">    }</a>
-<a class="sourceLine" id="cb1-93" data-line-number="93">}</a></code></pre></div>
-<h4 id="保存和读取棋盘数据">保存和读取棋盘数据</h4>
-<ul>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200408100306.png" alt=""></p>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>homewyk<span class="token punctuation">.</span>sparsearray<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>Test<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/***
+ * 1. 棋盘的保存和复盘
+ * 二维数组 -> 稀疏数组 -> 二维数组
+ * @author asdw1
+ *
+ */</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SparseArray</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSparse</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">/* 
+         * 1. 新建棋盘11*11，并设置2个黑白棋子 
+         */</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> chessArray1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        chessArray1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        chessArray1<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"输出原始棋盘布局"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> rows <span class="token operator">:</span> chessArray1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> item <span class="token operator">:</span> rows<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\t"</span><span class="token punctuation">,</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token comment" spellcheck="true">/*
+         * 2. 转换为稀疏数组
+         */</span>
+        <span class="token comment" spellcheck="true">//需要先得到稀疏数组的大小</span>
+        <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> rows <span class="token operator">:</span> chessArray1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> item <span class="token operator">:</span> rows<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>item <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+                    sum <span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 创建稀疏数组</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> sparseArr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>sum<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//稀疏数组第一行赋值</span>
+        sparseArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> chessArray1<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        sparseArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> chessArray1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        sparseArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> sum<span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//稀疏数组后续元素的赋值操作</span>
+        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> chessArray1<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> chessArray1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>chessArray1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    count <span class="token operator">++</span><span class="token punctuation">;</span>
+                    sparseArr<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+                    sparseArr<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> j<span class="token punctuation">;</span>
+                    sparseArr<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> chessArray1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"二维数组转换成的稀疏数组"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> rows <span class="token operator">:</span> sparseArr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> item <span class="token operator">:</span> rows<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\t"</span><span class="token punctuation">,</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/*
+         * 3. 稀疏数组转换为棋盘
+         */</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> chessArray2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>sparseArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>sparseArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//注意要从1开始</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> sparseArr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            chessArray2<span class="token punctuation">[</span>sparseArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>sparseArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> sparseArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"稀疏数组转换成的二维数组"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> rows <span class="token operator">:</span> chessArray2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> item <span class="token operator">:</span> rows<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\t"</span><span class="token punctuation">,</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="保存和读取棋盘数据"><a href="#保存和读取棋盘数据" class="headerlink" title="保存和读取棋盘数据"></a>保存和读取棋盘数据</h4><ul>
 <li>存盘操作使用<code>bufferedWriter</code></li>
 <li>读取操作使用<code>bufferedReader</code></li>
 <li>字符串转换为整形<code>Integer.parseInt(String)</code></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">package</span><span class="im"> com.homewyk.sparsearray;</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw">import</span><span class="im"> java.io.BufferedReader;</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw">import</span><span class="im"> java.io.BufferedWriter;</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="kw">import</span><span class="im"> java.io.File;</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="kw">import</span><span class="im"> java.io.FileNotFoundException;</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="kw">import</span><span class="im"> java.io.FileOutputStream;</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="kw">import</span><span class="im"> java.io.FileReader;</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="kw">import</span><span class="im"> java.io.FileWriter;</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="kw">import</span><span class="im"> java.io.IOException;</span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="kw">import</span><span class="im"> java.io.OutputStreamWriter;</span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="kw">import</span><span class="im"> org.junit.Test;</span></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">/***</span></a>
-<a class="sourceLine" id="cb2-16" data-line-number="16"> <span class="co">*</span> <span class="co">1. </span>棋盘的保存和复盘</a>
-<a class="sourceLine" id="cb2-17" data-line-number="17"> <span class="co">*</span> 二维数组 <span class="co">-&gt;</span> 稀疏数组 <span class="co">-&gt;</span> 二维数组</a>
-<a class="sourceLine" id="cb2-18" data-line-number="18"> <span class="co">*</span> 加入了从文件读取和保存到文件的操作</a>
-<a class="sourceLine" id="cb2-19" data-line-number="19"> <span class="co">*</span> <span class="kw">@author </span>asdw<span class="co">1</span></a>
-<a class="sourceLine" id="cb2-20" data-line-number="20"> <span class="co">*</span></a>
-<a class="sourceLine" id="cb2-21" data-line-number="21"> <span class="co">*/</span></a>
-<a class="sourceLine" id="cb2-22" data-line-number="22"></a>
-<a class="sourceLine" id="cb2-23" data-line-number="23"><span class="kw">public</span> <span class="kw">class</span> SaveAndLoad {</a>
-<a class="sourceLine" id="cb2-24" data-line-number="24">    </a>
-<a class="sourceLine" id="cb2-25" data-line-number="25">    <span class="at">@Test</span></a>
-<a class="sourceLine" id="cb2-26" data-line-number="26">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">testSparse</span>() <span class="kw">throws</span> <span class="bu">Exception</span> {</a>
-<a class="sourceLine" id="cb2-27" data-line-number="27">        <span class="co">/* </span></a>
-<a class="sourceLine" id="cb2-28" data-line-number="28"><span class="co">         * 1. 新建棋盘11*11，并设置2个黑白棋子 </span></a>
-<a class="sourceLine" id="cb2-29" data-line-number="29"><span class="co">         */</span></a>
-<a class="sourceLine" id="cb2-30" data-line-number="30">        <span class="dt">int</span>[][] chessArray1 = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">11</span>][<span class="dv">11</span>];</a>
-<a class="sourceLine" id="cb2-31" data-line-number="31">        chessArray1[<span class="dv">1</span>][<span class="dv">2</span>] = <span class="dv">1</span>;</a>
-<a class="sourceLine" id="cb2-32" data-line-number="32">        chessArray1[<span class="dv">2</span>][<span class="dv">3</span>] = <span class="dv">2</span>;</a>
-<a class="sourceLine" id="cb2-33" data-line-number="33">        </a>
-<a class="sourceLine" id="cb2-34" data-line-number="34">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"输出原始棋盘布局"</span>);</a>
-<a class="sourceLine" id="cb2-35" data-line-number="35">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : chessArray1) {</a>
-<a class="sourceLine" id="cb2-36" data-line-number="36">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
-<a class="sourceLine" id="cb2-37" data-line-number="37">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
-<a class="sourceLine" id="cb2-38" data-line-number="38">            }</a>
-<a class="sourceLine" id="cb2-39" data-line-number="39">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb2-40" data-line-number="40">        }</a>
-<a class="sourceLine" id="cb2-41" data-line-number="41">        </a>
-<a class="sourceLine" id="cb2-42" data-line-number="42">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb2-43" data-line-number="43">        </a>
-<a class="sourceLine" id="cb2-44" data-line-number="44">        </a>
-<a class="sourceLine" id="cb2-45" data-line-number="45">        <span class="co">/*</span></a>
-<a class="sourceLine" id="cb2-46" data-line-number="46"><span class="co">         * 2. 转换为稀疏数组</span></a>
-<a class="sourceLine" id="cb2-47" data-line-number="47"><span class="co">         */</span></a>
-<a class="sourceLine" id="cb2-48" data-line-number="48">        <span class="co">//需要先得到稀疏数组的大小</span></a>
-<a class="sourceLine" id="cb2-49" data-line-number="49">        <span class="dt">int</span> sum = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb2-50" data-line-number="50">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : chessArray1) {</a>
-<a class="sourceLine" id="cb2-51" data-line-number="51">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
-<a class="sourceLine" id="cb2-52" data-line-number="52">                <span class="kw">if</span>(item != <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb2-53" data-line-number="53">                    sum ++;</a>
-<a class="sourceLine" id="cb2-54" data-line-number="54">            }</a>
-<a class="sourceLine" id="cb2-55" data-line-number="55">        }</a>
-<a class="sourceLine" id="cb2-56" data-line-number="56">        <span class="co">// 创建稀疏数组</span></a>
-<a class="sourceLine" id="cb2-57" data-line-number="57">        <span class="dt">int</span>[][] sparseArr = <span class="kw">new</span> <span class="dt">int</span>[sum+<span class="dv">1</span>][<span class="dv">3</span>];</a>
-<a class="sourceLine" id="cb2-58" data-line-number="58">        </a>
-<a class="sourceLine" id="cb2-59" data-line-number="59">        <span class="co">//稀疏数组第一行赋值</span></a>
-<a class="sourceLine" id="cb2-60" data-line-number="60">        sparseArr[<span class="dv">0</span>][<span class="dv">0</span>] = chessArray1.<span class="fu">length</span>;</a>
-<a class="sourceLine" id="cb2-61" data-line-number="61">        sparseArr[<span class="dv">0</span>][<span class="dv">1</span>] = chessArray1[<span class="dv">0</span>].<span class="fu">length</span>;</a>
-<a class="sourceLine" id="cb2-62" data-line-number="62">        sparseArr[<span class="dv">0</span>][<span class="dv">2</span>] = sum;</a>
-<a class="sourceLine" id="cb2-63" data-line-number="63">        </a>
-<a class="sourceLine" id="cb2-64" data-line-number="64">        <span class="co">//稀疏数组后续元素的赋值操作</span></a>
-<a class="sourceLine" id="cb2-65" data-line-number="65">        <span class="dt">int</span> count = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb2-66" data-line-number="66">        <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; chessArray1.<span class="fu">length</span>; i++) {</a>
-<a class="sourceLine" id="cb2-67" data-line-number="67">            <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; chessArray1[<span class="dv">0</span>].<span class="fu">length</span>; j++) {</a>
-<a class="sourceLine" id="cb2-68" data-line-number="68">                <span class="kw">if</span>(chessArray1[i][j]!= <span class="dv">0</span>) {</a>
-<a class="sourceLine" id="cb2-69" data-line-number="69">                    count ++;</a>
-<a class="sourceLine" id="cb2-70" data-line-number="70">                    sparseArr[count][<span class="dv">0</span>] = i;</a>
-<a class="sourceLine" id="cb2-71" data-line-number="71">                    sparseArr[count][<span class="dv">1</span>] = j;</a>
-<a class="sourceLine" id="cb2-72" data-line-number="72">                    sparseArr[count][<span class="dv">2</span>] = chessArray1[i][j];</a>
-<a class="sourceLine" id="cb2-73" data-line-number="73">                }</a>
-<a class="sourceLine" id="cb2-74" data-line-number="74">            }</a>
-<a class="sourceLine" id="cb2-75" data-line-number="75">        }</a>
-<a class="sourceLine" id="cb2-76" data-line-number="76">        </a>
-<a class="sourceLine" id="cb2-77" data-line-number="77">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"二维数组转换成的稀疏数组"</span>);</a>
-<a class="sourceLine" id="cb2-78" data-line-number="78">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : sparseArr) {</a>
-<a class="sourceLine" id="cb2-79" data-line-number="79">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
-<a class="sourceLine" id="cb2-80" data-line-number="80">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
-<a class="sourceLine" id="cb2-81" data-line-number="81">            }</a>
-<a class="sourceLine" id="cb2-82" data-line-number="82">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb2-83" data-line-number="83">        }</a>
-<a class="sourceLine" id="cb2-84" data-line-number="84">        </a>
-<a class="sourceLine" id="cb2-85" data-line-number="85">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb2-86" data-line-number="86">        </a>
-<a class="sourceLine" id="cb2-87" data-line-number="87">        <span class="co">/*</span></a>
-<a class="sourceLine" id="cb2-88" data-line-number="88"><span class="co">         * 存盘操作</span></a>
-<a class="sourceLine" id="cb2-89" data-line-number="89"><span class="co">         */</span></a>
-<a class="sourceLine" id="cb2-90" data-line-number="90">        <span class="bu">File</span> file = <span class="kw">new</span> <span class="bu">File</span>(<span class="st">"map.dat"</span>);</a>
-<a class="sourceLine" id="cb2-91" data-line-number="91">        <span class="kw">if</span>(!file.<span class="fu">exists</span>()) {</a>
-<a class="sourceLine" id="cb2-92" data-line-number="92">            file.<span class="fu">createNewFile</span>();</a>
-<a class="sourceLine" id="cb2-93" data-line-number="93">        }</a>
-<a class="sourceLine" id="cb2-94" data-line-number="94">        <span class="bu">BufferedWriter</span> bw = <span class="kw">new</span> <span class="bu">BufferedWriter</span>(<span class="kw">new</span> <span class="bu">FileWriter</span>(file));</a>
-<a class="sourceLine" id="cb2-95" data-line-number="95">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : sparseArr) {</a>
-<a class="sourceLine" id="cb2-96" data-line-number="96">            bw.<span class="fu">write</span>(rows[<span class="dv">0</span>]+<span class="st">"</span><span class="sc">\t</span><span class="st">"</span> + rows[<span class="dv">1</span>]+<span class="st">"</span><span class="sc">\t</span><span class="st">"</span>+rows[<span class="dv">2</span>]);</a>
-<a class="sourceLine" id="cb2-97" data-line-number="97">            bw.<span class="fu">newLine</span>();</a>
-<a class="sourceLine" id="cb2-98" data-line-number="98">            bw.<span class="fu">flush</span>();</a>
-<a class="sourceLine" id="cb2-99" data-line-number="99">        }</a>
-<a class="sourceLine" id="cb2-100" data-line-number="100">        bw.<span class="fu">close</span>();</a>
-<a class="sourceLine" id="cb2-101" data-line-number="101">        <span class="co">/*</span></a>
-<a class="sourceLine" id="cb2-102" data-line-number="102"><span class="co">         * 3. 稀疏数组转换为棋盘</span></a>
-<a class="sourceLine" id="cb2-103" data-line-number="103"><span class="co">         * 从文件中得到稀疏数组</span></a>
-<a class="sourceLine" id="cb2-104" data-line-number="104"><span class="co">         */</span></a>
-<a class="sourceLine" id="cb2-105" data-line-number="105">        <span class="bu">BufferedReader</span> br = <span class="kw">new</span> <span class="bu">BufferedReader</span>(<span class="kw">new</span> <span class="bu">FileReader</span>(file));</a>
-<a class="sourceLine" id="cb2-106" data-line-number="106">        <span class="bu">String</span> str = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb2-107" data-line-number="107">        <span class="dt">int</span> cnt = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb2-108" data-line-number="108">        <span class="dt">int</span>[][] sparseArr2 = <span class="kw">null</span>;</a>
-<a class="sourceLine" id="cb2-109" data-line-number="109">        <span class="kw">while</span>((str = br.<span class="fu">readLine</span>()) != <span class="kw">null</span>) {</a>
-<a class="sourceLine" id="cb2-110" data-line-number="110">            <span class="bu">String</span>[] arr = str.<span class="fu">split</span>(<span class="st">"</span><span class="sc">\t</span><span class="st">"</span>);</a>
-<a class="sourceLine" id="cb2-111" data-line-number="111">            <span class="kw">if</span>(cnt == <span class="dv">0</span>) {</a>
-<a class="sourceLine" id="cb2-112" data-line-number="112">                <span class="co">//要注意这一步！！！arr[2]得到的是不同数据的个数，未算第0行</span></a>
-<a class="sourceLine" id="cb2-113" data-line-number="113">                sparseArr2 = <span class="kw">new</span> <span class="dt">int</span>[<span class="bu">Integer</span>.<span class="fu">parseInt</span>(arr[<span class="dv">2</span>])+<span class="dv">1</span>][<span class="dv">3</span>];</a>
-<a class="sourceLine" id="cb2-114" data-line-number="114">            }</a>
-<a class="sourceLine" id="cb2-115" data-line-number="115">            sparseArr2[cnt][<span class="dv">0</span>] = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(arr[<span class="dv">0</span>]);</a>
-<a class="sourceLine" id="cb2-116" data-line-number="116">            sparseArr2[cnt][<span class="dv">1</span>] = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(arr[<span class="dv">1</span>]);</a>
-<a class="sourceLine" id="cb2-117" data-line-number="117">            sparseArr2[cnt][<span class="dv">2</span>] = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(arr[<span class="dv">2</span>]);</a>
-<a class="sourceLine" id="cb2-118" data-line-number="118">            cnt ++;</a>
-<a class="sourceLine" id="cb2-119" data-line-number="119">        }</a>
-<a class="sourceLine" id="cb2-120" data-line-number="120">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"从文件中解析的稀疏数组"</span>);</a>
-<a class="sourceLine" id="cb2-121" data-line-number="121">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : sparseArr2) {</a>
-<a class="sourceLine" id="cb2-122" data-line-number="122">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
-<a class="sourceLine" id="cb2-123" data-line-number="123">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
-<a class="sourceLine" id="cb2-124" data-line-number="124">            }</a>
-<a class="sourceLine" id="cb2-125" data-line-number="125">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb2-126" data-line-number="126">        }</a>
-<a class="sourceLine" id="cb2-127" data-line-number="127">        </a>
-<a class="sourceLine" id="cb2-128" data-line-number="128">        </a>
-<a class="sourceLine" id="cb2-129" data-line-number="129">        <span class="dt">int</span>[][] chessArray2 = <span class="kw">new</span> <span class="dt">int</span>[sparseArr2[<span class="dv">0</span>][<span class="dv">0</span>]][sparseArr2[<span class="dv">0</span>][<span class="dv">1</span>]];</a>
-<a class="sourceLine" id="cb2-130" data-line-number="130">        <span class="co">//注意要从1开始</span></a>
-<a class="sourceLine" id="cb2-131" data-line-number="131">        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt; sparseArr2.<span class="fu">length</span>; i++) {</a>
-<a class="sourceLine" id="cb2-132" data-line-number="132">            chessArray2[sparseArr2[i][<span class="dv">0</span>]][sparseArr2[i][<span class="dv">1</span>]] = sparseArr2[i][<span class="dv">2</span>];</a>
-<a class="sourceLine" id="cb2-133" data-line-number="133">        }</a>
-<a class="sourceLine" id="cb2-134" data-line-number="134">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">"稀疏数组转换成的二维数组"</span>);</a>
-<a class="sourceLine" id="cb2-135" data-line-number="135">        <span class="kw">for</span> (<span class="dt">int</span>[] rows : chessArray2) {</a>
-<a class="sourceLine" id="cb2-136" data-line-number="136">            <span class="kw">for</span> (<span class="dt">int</span> item : rows) {</a>
-<a class="sourceLine" id="cb2-137" data-line-number="137">                <span class="bu">System</span>.<span class="fu">out.printf</span>(<span class="st">"</span><span class="sc">%d\t</span><span class="st">"</span>,item);</a>
-<a class="sourceLine" id="cb2-138" data-line-number="138">            }</a>
-<a class="sourceLine" id="cb2-139" data-line-number="139">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb2-140" data-line-number="140">        }</a>
-<a class="sourceLine" id="cb2-141" data-line-number="141">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
-<a class="sourceLine" id="cb2-142" data-line-number="142">        </a>
-<a class="sourceLine" id="cb2-143" data-line-number="143">    }</a>
-<a class="sourceLine" id="cb2-144" data-line-number="144">}</a></code></pre></div>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>homewyk<span class="token punctuation">.</span>sparsearray<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>BufferedReader<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>BufferedWriter<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileNotFoundException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileOutputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileReader<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileWriter<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>OutputStreamWriter<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>Test<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/***
+ * 1. 棋盘的保存和复盘
+ * 二维数组 -> 稀疏数组 -> 二维数组
+ * 加入了从文件读取和保存到文件的操作
+ * @author asdw1
+ *
+ */</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SaveAndLoad</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSparse</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">/* 
+         * 1. 新建棋盘11*11，并设置2个黑白棋子 
+         */</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> chessArray1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        chessArray1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        chessArray1<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"输出原始棋盘布局"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> rows <span class="token operator">:</span> chessArray1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> item <span class="token operator">:</span> rows<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\t"</span><span class="token punctuation">,</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token comment" spellcheck="true">/*
+         * 2. 转换为稀疏数组
+         */</span>
+        <span class="token comment" spellcheck="true">//需要先得到稀疏数组的大小</span>
+        <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> rows <span class="token operator">:</span> chessArray1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> item <span class="token operator">:</span> rows<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>item <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+                    sum <span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 创建稀疏数组</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> sparseArr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>sum<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//稀疏数组第一行赋值</span>
+        sparseArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> chessArray1<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        sparseArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> chessArray1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        sparseArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> sum<span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//稀疏数组后续元素的赋值操作</span>
+        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> chessArray1<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> chessArray1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>chessArray1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    count <span class="token operator">++</span><span class="token punctuation">;</span>
+                    sparseArr<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+                    sparseArr<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> j<span class="token punctuation">;</span>
+                    sparseArr<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> chessArray1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"二维数组转换成的稀疏数组"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> rows <span class="token operator">:</span> sparseArr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> item <span class="token operator">:</span> rows<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\t"</span><span class="token punctuation">,</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">/*
+         * 存盘操作
+         */</span>
+        File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"map.dat"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            file<span class="token punctuation">.</span><span class="token function">createNewFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        BufferedWriter bw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedWriter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> rows <span class="token operator">:</span> sparseArr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            bw<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>rows<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">"\t"</span> <span class="token operator">+</span> rows<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span>rows<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            bw<span class="token punctuation">.</span><span class="token function">newLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            bw<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        bw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/*
+         * 3. 稀疏数组转换为棋盘
+         * 从文件中得到稀疏数组
+         */</span>
+        BufferedReader br <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String str <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> sparseArr2 <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>str <span class="token operator">=</span> br<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            String<span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"\t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>cnt <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//要注意这一步！！！arr[2]得到的是不同数据的个数，未算第0行</span>
+                sparseArr2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            sparseArr2<span class="token punctuation">[</span>cnt<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            sparseArr2<span class="token punctuation">[</span>cnt<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            sparseArr2<span class="token punctuation">[</span>cnt<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            cnt <span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"从文件中解析的稀疏数组"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> rows <span class="token operator">:</span> sparseArr2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> item <span class="token operator">:</span> rows<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\t"</span><span class="token punctuation">,</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> chessArray2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>sparseArr2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>sparseArr2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//注意要从1开始</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> sparseArr2<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            chessArray2<span class="token punctuation">[</span>sparseArr2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>sparseArr2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> sparseArr2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"稀疏数组转换成的二维数组"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> rows <span class="token operator">:</span> chessArray2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> item <span class="token operator">:</span> rows<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\t"</span><span class="token punctuation">,</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
             </div>
             <hr/>
 
@@ -1156,66 +1128,40 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/08/20200408-093605/">
+                <a href="/2020/04/08/20200408-150610/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/Data-Structure-tutorial-MSA-Technosoft.jpg" class="responsive-img" alt="03-数据结构Java版-稀疏数组">
                         
-                        <span class="card-title">03-数据结构Java版-稀疏数组</span>
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
+                        
+                        <span class="card-title">test</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-二维数组和稀疏数组的相互转化
-实际情况
+                            //server
 
-实际需求：
-五子棋程序的存盘和复盘操作
-
-棋盘大小：\(11\times 11\)
-棋盘黑子：用\(1\)表示
-棋盘白子：用\(2\)表示
-
-使用二维数组直接来保存棋盘数据：
-
-问题：该二维数组的
+/*
+****************************************Copyright (c)**************************************************
+** 
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-08
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-08
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                    数据结构
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            HomeWyk
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                        <span class="chip bg-color">数据结构</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1240,13 +1186,12 @@
                         
                             
 数据结构与算法的概述
-
 数据结构是一门研究组织数据方式的学科，有了编程语言便有了数据结构，学好数据结构可以编写出比较高效率的代码
 要学好数据结构，需要考虑如何用之解决实际问题
 程序 = 数据结构+算法
 数据结构是算法的基础
 
-实际的编程案
+实际的编程案例
                         
                     </div>
                     <div class="publish-info">
@@ -1432,7 +1377,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.9k</span>&nbsp;字
+                class="white-color">49.1k</span>&nbsp;字
             
             
             
