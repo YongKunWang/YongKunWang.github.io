@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://homewyk.com/"/>
-  <updated>2020-04-08T14:58:54.430Z</updated>
+  <updated>2020-04-08T15:45:18.912Z</updated>
   <id>https://homewyk.com/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于socket的简单编程</title>
+    <link href="https://homewyk.com/2020/04/08/20200408-232750/"/>
+    <id>https://homewyk.com/2020/04/08/20200408-232750/</id>
+    <published>2020-04-08T15:27:25.000Z</published>
+    <updated>2020-04-08T15:45:18.912Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;只是实现相应的要求，未经过程序改良：&lt;/p&gt;
+&lt;p&gt;改良方向：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;实现单服务器多客户端聊天&lt;/li&gt;
+&lt;li&gt;实现并发池&lt;/li&gt;
+&lt;li&gt;实现功能向qq的功能实现靠近&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux学习" scheme="https://homewyk.com/categories/Linux%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="socket" scheme="https://homewyk.com/tags/socket/"/>
+    
+  </entry>
   
   <entry>
     <title>03-数据结构Java版-稀疏数组</title>
@@ -604,39 +640,6 @@
       <category term="blog工具" scheme="https://homewyk.com/tags/blog%E5%B7%A5%E5%85%B7/"/>
     
       <category term="质量网站" scheme="https://homewyk.com/tags/%E8%B4%A8%E9%87%8F%E7%BD%91%E7%AB%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于TensorFolw2的Yolov1程序实现</title>
-    <link href="https://homewyk.com/2020/04/01/20200401-100427/"/>
-    <id>https://homewyk.com/2020/04/01/20200401-100427/</id>
-    <published>2020-04-01T02:04:27.000Z</published>
-    <updated>2020-04-05T05:23:59.972Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;完整程序实现&quot;&gt;&lt;a href=&quot;#完整程序实现&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="深度学习" scheme="https://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Yolov1" scheme="https://homewyk.com/tags/Yolov1/"/>
-    
-      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="tensorflow" scheme="https://homewyk.com/tags/tensorflow/"/>
-    
-      <category term="Yolov1Programing" scheme="https://homewyk.com/tags/Yolov1Programing/"/>
     
   </entry>
   
