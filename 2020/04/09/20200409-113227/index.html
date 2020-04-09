@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="写Blog四剑客：PicGo + Gitee(码云)+Snipaste 实现markdown图床, 永坤のBlog">
+    <meta name="keywords" content="05-据结构Javaa版-环形队列, 永坤のBlog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>写Blog四剑客：PicGo + Gitee(码云)+Snipaste 实现markdown图床 | 永坤のBlog</title>
+    <title>05-据结构Javaa版-环形队列 | 永坤のBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -376,12 +376,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/homewyk/cloudimg/raw/master/road-between-mountains-1036371.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/homewyk/cloudimg/raw/master/screen-web-design-developing-codes-1936299.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">写Blog四剑客：PicGo + Gitee(码云)+Snipaste 实现markdown图床</h1>
+                    <h1 class="description center-align post-title">05-据结构Javaa版-环形队列</h1>
                 </div>
             </div>
         </div>
@@ -498,16 +498,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/blog%E5%B7%A5%E5%85%B7/">
-                                <span class="chip bg-color">blog工具</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%B4%A8%E9%87%8F%E7%BD%91%E7%AB%99/">
-                                <span class="chip bg-color">质量网站</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
                             </a>
                         
                     </div>
@@ -518,8 +514,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Hexo/" class="post-category">
-                                Hexo
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                数据结构
                             </a>
                         
                     </div>
@@ -531,28 +527,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-01
+                    2020-04-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-06
+                    2020-04-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    838
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -568,104 +564,215 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&nbsp;&nbsp;&nbsp;&nbsp; 想使用七牛云作为自己的图床工具，但是域名只给使用1个月，而我自己的域名并没有备案遂放弃。也查询过使用百度云网盘做图床，并不可行，最后便想使用<code>github</code>作为自己的图床，经过配置发现了一个不大好的问题，<code>github</code>的服务器在国外，访问速度时好时慢，这不是自己能够控制的了，还有一个是，使用<code>github</code>做图床，需要频繁的上传<code>image</code>,这就造成了<code>commit</code>的此时太多，会造成一种<code>github</code>十分红火的假象。思来想去，为什么不用国内的码云作为自己的图床,<code>Gitee</code>和国内的<code>github</code>差不多，是代码托管软件,也是国内最大的代码系统。由于服务器在国内，速度也是杠杠的，且只把<code>Gitee</code>作为图床使用，不做他用。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; <code>Markdown</code>是一门易于上手能帮助作者专心写作的文档编辑语言，好处多多，十分建议日常写作使用这种方法，简答易学。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; <code>Markdown</code>编辑器推荐使用<code>Typora</code>,可以编写完毕后立即看到效果。</p>
-<p>本文的重点在<code>Markdown</code>如何插入图片</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;  图床是一个便于在博文中插入在线图片连接的个人图片仓库。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 设置图床之后，在自己博客中插入的图片链接就可以随时随地在线预览了，并且不会因为任何意外原因无法查看，除非自己亲自删除。 </p>
-<p><code>PicGo</code>就是为了解决本地图片上传图片仓库这个问题诞生的，它可以将本地图片上传到指定的图床上，然后返回<code>markdown</code>链接，直接粘贴到你的文档中，就搞定啦。</p>
-<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><h4 id="安装picgo"><a href="#安装picgo" class="headerlink" title="安装picgo"></a>安装<code>picgo</code></h4><p><a href="https://link.zhihu.com/?target=https%3A//github.com/Molunerfinn/PicGo">picgo仓库</a></p>
-<p><a href="https://molunerfinn.com/PicGo/" target="_blank" rel="noopener">picgo官网</a>，下载<code>.exe</code>执行文件即可</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401185537.png" alt=""></p>
-<h4 id="picgo主界面"><a href="#picgo主界面" class="headerlink" title="picgo主界面"></a><code>picgo</code>主界面</h4><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401185653.png" alt=""></p>
-<h4 id="2-安装gitee插件"><a href="#2-安装gitee插件" class="headerlink" title="2. 安装gitee插件"></a>2. 安装gitee插件</h4><h5 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h5><p>首先下载稳定版<a href="https://nodejs.org/dist/v9.11.1/node-v9.11.1-x64.msi" target="_blank" rel="noopener">Node.js</a>，我这里给的是64位的。</p>
-<p>安装选项全部默认，一路点击<code>Next</code>。</p>
-<p>最后安装好之后，按<code>Win+R</code>打开命令提示符，输入<code>node -v</code>和<code>npm -v</code>，如果出现版本号，那么就安装成功了</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401185856.png" alt=""></p>
-<h5 id="安装picgo插件"><a href="#安装picgo插件" class="headerlink" title="安装picgo插件"></a>安装picgo插件</h5><p>选择最底下的插件设置，搜索<strong>gitee</strong>，点击右边的gitee-uploader 1.1.2开始安装。</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401190044.png" alt=""></p>
-<h3 id="2-配置Gitee图片仓库"><a href="#2-配置Gitee图片仓库" class="headerlink" title="2. 配置Gitee图片仓库"></a>2. 配置Gitee图片仓库</h3><ol>
-<li>新建仓库</li>
+                <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/images.jpg" alt=""></p>
+<h2 id="环形队列结构"><a href="#环形队列结构" class="headerlink" title="环形队列结构"></a>环形队列结构</h2><blockquote>
+<p>对数组模拟队列的不足点进行改造</p>
+</blockquote>
+<p>将数组看作是一个环形的（可以通过取模的方法实现）</p>
+<h3 id="环形队列分析"><a href="#环形队列分析" class="headerlink" title="环形队列分析"></a>环形队列分析</h3><p>所需要的变量定义：</p>
+<ul>
+<li>一个数组<code>int[] arr</code></li>
+<li>最大容量：<code>int[] arr = new int[maxsize]</code></li>
+<li>一个指针指向队列头部，（包含） <code>int front = 0</code></li>
+<li>一个指针指向队列尾部的下一个 （不包含）<code>int rear = 0</code></li>
+</ul>
+<p>注意：</p>
+<p>上述的两个指针的含义发生了很大的变化！！</p>
+<p>发生变化的原因是通过使用队列尾部的下一个元素,空出一个空间出来，作为约定</p>
+<h3 id="环形思路分析"><a href="#环形思路分析" class="headerlink" title="环形思路分析"></a>环形思路分析</h3><ol>
+<li><p>创建一个<code>class</code>，并实现上述变量的定义以及初始化</p>
+</li>
+<li><p>实现2个判断：</p>
+<ul>
+<li><p><code>isFull</code>   -&gt; <code>（rear +1）% maxsize = front</code> </p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200409143943.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200409144109.png" alt=""></p>
+<p>兼顾上述两种情况，统一使用取模来计算</p>
+</li>
+<li><p><code>isEmpty</code> -&gt; <code>front == rear</code></p>
+<ul>
+<li><p>一个数据未添加时空<code>front = 0, rear = 0;</code>  -&gt; <code>front == rear</code></p>
+</li>
+<li><p>当取出数据空： <code>rear = front</code></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200409144332.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>添加数据：</p>
+<ul>
+<li>判断是否满</li>
+<li>添加操作</li>
+<li>指针变化</li>
+</ul>
+</li>
+<li><p>取出数据：</p>
+<ul>
+<li>判断是否空</li>
+<li>取出数据</li>
+<li>指针变化</li>
+</ul>
+</li>
+<li><p>得到队列头部数据：</p>
+<ul>
+<li>判断是否为空</li>
+<li>使用<code>front</code>来获得队列头部数据</li>
+</ul>
+</li>
+<li><p>获得队列容量</p>
+<ul>
+<li><p><code>(rear+maxsize -front)%maxsize</code></p>
+<p>我们一般计算容量都是<strong>结尾坐标减去开始坐标</strong>；</p>
+<ul>
+<li>比如下面的常规情况：</li>
+<li>针对于：<code>rear</code>在<code>front</code>之后的情况，其实可以直接计算：<code>rear - front</code></li>
+</ul>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200409150922.png" alt=""></p>
+<ul>
+<li>非常规情况：</li>
+<li>针对于：<code>rear</code>在<code>front</code>之前的情况，计算容量其实也是<strong>结束坐标减去开始坐标</strong>，但是这里的结尾坐标是加上一个容量，变为一个大数，最后在取余</li>
+</ul>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200409150735.png" alt=""></p>
+</li>
+</ul>
+</li>
 </ol>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401190319.png" alt=""></p>
-<ol start="2">
-<li>新建仓库要点<ul>
-<li>输入一个仓库名称</li>
-<li>其次将仓库设为公开</li>
-<li>勾选使用Readme文件初始化这个仓库<ul>
-<li><strong>这个选项勾上，这样码云会自动给你的仓库建立master分支，这点很重要!!!</strong> </li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401190542.png" alt=""></p>
-<ol start="3">
-<li><p>配置<code>picgo</code>的<code>gitee</code>插件</p>
-<ul>
-<li><p><code>repo</code>: 仓库名称</p>
-<ul>
-<li><code>gitee</code>用户名/仓库名</li>
-<li>最开始前面没有<code>/</code></li>
-</ul>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191157.png" alt=""></p>
-</li>
-<li><p><code>banch</code>: <code>master</code></p>
-</li>
-<li><p><code>token</code>: 见第4点</p>
-</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191005.png" alt=""></p>
-<ol start="4">
-<li><p>获取token</p>
-<ul>
-<li><p>点击头像，进入设置 </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191545.png" alt=""></p>
-</li>
-<li><p>找到右边安全设置里面的私人令牌</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191619.png" alt=""></p>
-</li>
-<li><p>点击<code>生成新令牌</code>，把<strong>projects</strong>这一项勾上，其他的不用勾，然后提交</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191713.png" alt=""></p>
-</li>
-<li><p>这里需要验证一下密码，验证密码之后会出来一串数字，这一串数字就是你的<code>token</code>，将这串数字复制到刚才的配置里面去。 </p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191750.png" alt=""></p>
-<ul>
-<li>注意：这个令牌只会明文显示一次，建议在配置插件的时候再来生成令牌，直接复制进去，搞丢了又要重新生成一个。 可以将这个<code>token</code>收藏到微信中</li>
-<li>现在保存你刚才的配置，然后将它设置为默认图床，大功告成</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="3-关于Gitee-1-2-2-beta插件的设置有点区别"><a href="#3-关于Gitee-1-2-2-beta插件的设置有点区别" class="headerlink" title="3. 关于Gitee 1.2.2.beta插件的设置有点区别"></a>3. 关于Gitee 1.2.2.beta插件的设置有点区别</h3><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401191912.png" alt=""></p>
-<p>配置界面：</p>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200401192127.png" alt=""></p>
-<ul>
-<li>url：图床网站，这里写码云的主页 <a href="https://link.zhihu.com/?target=https%3A//gitee.com">https://gitee.com</a> </li>
-<li>owner：所有者，写上你的码云账号名 </li>
-<li>repo：仓库名称，只要写上仓库名称就行，比如我自己的仓库blogImage </li>
-<li>path：写上路径，一般是img，<strong>这几个项都不用加“ / “符号</strong> </li>
-<li>token：刚才你获取的个人令牌，两个插件是通用的，如果你用了另一个再来用这个，它会自动读取另一个插件的部分配置，不用重新申请 </li>
-<li>message：不用填 </li>
-</ul>
-<h2 id="2-测试"><a href="#2-测试" class="headerlink" title="2. 测试"></a>2. 测试</h2><ul>
-<li><code>picgo</code>支持剪切板直接上传</li>
-<li><code>win10</code>的<code>Snipaste</code>是截图神器 </li>
-</ul>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 很快！比<code>github</code>快很多，0.1秒上传，而且导入到你的<code>markdown</code>编辑器里面也是秒识别你的图片内容，而如果是github图床上传太慢不说可能还会出现下面这样识别不出来的问题！</p>
-<h2 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. 总结</h2><p>&nbsp;&nbsp;&nbsp;&nbsp; 博客写作套件<code>Typora + PicGo + Snipaste：</code></p>
-<ul>
-<li><code>Typora</code>写文档</li>
-<li><code>Snipaste</code>一键截图</li>
-<li><code>PicGo</code>一键上传图片返回链接。 </li>
-</ul>
-<h2 id="4-参考"><a href="#4-参考" class="headerlink" title="4. 参考"></a>4. 参考</h2><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/102594554" target="_blank" rel="noopener">LeonG:PicGo + Gitee(码云) 实现markdown图床</a></li>
-</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>homewyk<span class="token punctuation">.</span>queue<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Scanner<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>Test<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CircleQueue</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        MyCircleQueue queue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyCircleQueue</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">char</span> key <span class="token operator">=</span> <span class="token string">' '</span><span class="token punctuation">;</span>
+        Scanner in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">boolean</span> loop <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>loop<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"s: 显示队列"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"e: 退出程序"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a: 添加数据"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"g: 取出数据"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"h: 查看数据"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//接收字符串的第一个字符</span>
+            key <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">switch</span> <span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token string">'s'</span><span class="token operator">:</span>
+                queue<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">'e'</span><span class="token operator">:</span>
+                in<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                loop <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">'a'</span><span class="token operator">:</span>
+                <span class="token keyword">int</span> item <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">'g'</span><span class="token operator">:</span>
+                queue<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">'h'</span><span class="token operator">:</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"队列头部元素为："</span> <span class="token operator">+</span> queue<span class="token punctuation">.</span><span class="token function">head</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">default</span><span class="token operator">:</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"程序退出~~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyCircleQueue</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> maxsize <span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//注意此时的含义变了</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> front<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> rear<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/***
+     * 构造函数，定义时确定队列容量
+     * @param maxsize 队列容量
+     */</span>
+    <span class="token keyword">public</span> <span class="token function">MyCircleQueue</span><span class="token punctuation">(</span><span class="token keyword">int</span> maxsize<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>maxsize <span class="token operator">=</span> maxsize<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>maxsize<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//指向当前元素</span>
+        front <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//指向队列的最后一个元素的后一个位置，留一个空位置</span>
+        rear <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">/***
+     * 判断队列是否满
+     * 3 x 1 2
+     * front:2
+     * rear:1
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isFull</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>rear<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">%</span>maxsize <span class="token operator">==</span> front<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">/***
+     * 判断队列是否空
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> rear <span class="token operator">==</span> front<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">/***
+     * 添加队列
+     * @param item
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isFull</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"队列容量已满~~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        arr<span class="token punctuation">[</span>rear<span class="token punctuation">]</span> <span class="token operator">=</span> item<span class="token punctuation">;</span>
+        rear <span class="token operator">=</span> <span class="token punctuation">(</span>rear<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">%</span>maxsize<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">/**
+     * 取出队列元素
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token string">"队列空，不能取数据"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>front<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        front <span class="token operator">=</span> <span class="token punctuation">(</span>front<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">%</span>maxsize<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">/***
+     * 显示队列元素
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"队列空，没有数据~~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> front<span class="token punctuation">;</span> i <span class="token operator">&lt;</span>front <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"arr[%d] = %d\n"</span><span class="token punctuation">,</span> i<span class="token operator">%</span>maxsize<span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token operator">%</span>maxsize<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>rear <span class="token operator">+</span> maxsize <span class="token operator">-</span> front<span class="token punctuation">)</span> <span class="token operator">%</span> maxsize<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">/***
+     * 显示队列头部，非取出
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">head</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token string">"队列空，没有数据~~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> arr<span class="token punctuation">[</span>front<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
@@ -691,7 +798,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://homewyk.com/2020/04/01/20200401-122211/">https://homewyk.com/2020/04/01/20200401-122211/</a>
+                    <a href="https://homewyk.com/2020/04/09/20200409-113227/">https://homewyk.com/2020/04/09/20200409-113227/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -729,16 +836,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
-                                <a href="/tags/blog%E5%B7%A5%E5%85%B7/">
-                                    <span class="chip bg-color">blog工具</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%B4%A8%E9%87%8F%E7%BD%91%E7%AB%99/">
-                                    <span class="chip bg-color">质量网站</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
                                 </a>
                             
                         </div>
@@ -909,7 +1012,7 @@
         repo: 'YongKunWang.github.io',
         owner: 'YongKunWang',
         admin: "YongKunWang",
-        id: '2020-04-01T12-22-11',
+        id: '2020-04-09T11-32-27',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -931,61 +1034,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/04/02/20200402-111922/">
+                <a href="/2020/04/09/20200409-113227/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/20200407202309.png" class="responsive-img" alt="Yolov1算法解读及其详细实现">
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/screen-web-design-developing-codes-1936299.jpg" class="responsive-img" alt="05-据结构Javaa版-环形队列">
                         
-                        <span class="card-title">Yolov1算法解读及其详细实现</span>
+                        <span class="card-title">05-据结构Javaa版-环形队列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-前言&nbsp;&nbsp;&nbsp;&nbsp;将自己这段时间以来的关于Yolov1算法知识做一个总结。
-&nbsp;&nbsp;&nbsp;&nbsp; 这篇文章是YOLO的开山之作，理解其思想是十分重要的。
-论文原文请移步
-基于T
+环形队列结构
+对数组模拟队列的不足点进行改造
+
+将数组看作是一个环形的（可以通过取模的方法实现）
+环形队列分析所需要的变量定义：
+
+一个数组int[] arr
+最大容量：int[] arr = new int[maxsize]
+一个指针指
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    深度学习
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Yolov1/">
-                        <span class="chip bg-color">Yolov1</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">深度学习</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">
-                        <span class="chip bg-color">目标检测</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/">
-                        <span class="chip bg-color">论文解读</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
@@ -999,38 +1101,46 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/01/20200401-100427/">
+                <a href="/2020/04/09/20200409-103227/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/photo-of-mountain-with-ice-covered-with-black-and-gray-cloud-640781.jpg" class="responsive-img" alt="基于TensorFolw2的Yolov1程序实现">
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/screen-web-design-developing-codes-1936299.jpg" class="responsive-img" alt="04-据结构Javaa版-顺序队列">
                         
-                        <span class="card-title">基于TensorFolw2的Yolov1程序实现</span>
+                        <span class="card-title">04-据结构Javaa版-顺序队列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            完整程序实现本编程环境使用anaconda+pycharm进行搭建。
+                            
+顺序队列结构队列介绍
+有序队列
 
-python 版本 3.6.1
-
-tensorflow版本：2.0.0
-本文给出了Yolov1算法的TensoFlow实现代码。
+数组实现- 顺序结构
+链表实现 - 链式结构
 
 
-&nbsp;&nbsp;&nbsp
+先进先出
+
+
+
+数组模拟队列所需要的变量定义：
+
+一个数组 int[]
+一个最大容量int[] arr = new nt[maxsize]
+一个指针指向队
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    深度学习
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
                                 </a>
                             
                             
@@ -1040,20 +1150,12 @@ tensorflow版本：2.0.0
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Yolov1/">
-                        <span class="chip bg-color">Yolov1</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">深度学习</span>
-                    </a>
-                    
-                    <a href="/tags/tensorflow/">
-                        <span class="chip bg-color">tensorflow</span>
-                    </a>
-                    
-                    <a href="/tags/Yolov1Programing/">
-                        <span class="chip bg-color">Yolov1Programing</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
