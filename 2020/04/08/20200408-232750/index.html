@@ -530,7 +530,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-08
+                    2020-04-12
                 </div>
                 
 
@@ -571,74 +571,74 @@
 </blockquote>
 <p><strong>client：</strong></p>
 <pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">//客户端程序</span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;errno.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;sys/types.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;sys/socket.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;netinet/in.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;arpa/inet.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;fcntl.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span>  </span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span>  </span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string.h></span>  </span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;errno.h></span>  </span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;sys/types.h></span>  </span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;sys/socket.h></span>  </span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;netinet/in.h></span>  </span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;arpa/inet.h></span>  </span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;fcntl.h></span>  </span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;unistd.h></span>  </span>
 
-<span class="token operator">/</span>缓冲区大小<span class="token operator">/</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> MAXLINE 4096</span>
+<span class="token operator">/</span>缓冲区大小<span class="token operator">/</span>  
+<span class="token macro property">#<span class="token directive keyword">define</span> MAXLINE 4096  </span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">int</span> sockfd<span class="token punctuation">,</span> n<span class="token punctuation">,</span>rec_len<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+    <span class="token keyword">int</span> sockfd<span class="token punctuation">,</span> n<span class="token punctuation">,</span>rec_len<span class="token punctuation">;</span>  
 
-<span class="token keyword">char</span> recvline<span class="token punctuation">[</span><span class="token number">4096</span><span class="token punctuation">]</span><span class="token punctuation">,</span> sendline<span class="token punctuation">[</span><span class="token number">4096</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  
+    <span class="token keyword">char</span> recvline<span class="token punctuation">[</span><span class="token number">4096</span><span class="token punctuation">]</span><span class="token punctuation">,</span> sendline<span class="token punctuation">[</span><span class="token number">4096</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    
 
-<span class="token keyword">char</span> buf<span class="token punctuation">[</span>MAXLINE<span class="token punctuation">]</span><span class="token punctuation">;</span>  
+    <span class="token keyword">char</span> buf<span class="token punctuation">[</span>MAXLINE<span class="token punctuation">]</span><span class="token punctuation">;</span>    
 
-<span class="token keyword">struct</span> sockaddr_in servaddr<span class="token punctuation">;</span>  
+    <span class="token keyword">struct</span> sockaddr_in servaddr<span class="token punctuation">;</span>    
 
-<span class="token keyword">if</span><span class="token punctuation">(</span> argc <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"usage: ./client &lt;ipaddress> &lt;port>\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token punctuation">}</span>  
+    <span class="token keyword">if</span><span class="token punctuation">(</span> argc <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"usage: ./client &lt;ipaddress> &lt;port>\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
 
-<span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token punctuation">(</span>sockfd <span class="token operator">=</span> <span class="token function">socket</span><span class="token punctuation">(</span>AF_INET<span class="token punctuation">,</span> SOCK_STREAM<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"create socket error: %s(errno: %d)\n"</span><span class="token punctuation">,</span> <span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token punctuation">}</span>  
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token punctuation">(</span>sockfd <span class="token operator">=</span> <span class="token function">socket</span><span class="token punctuation">(</span>AF_INET<span class="token punctuation">,</span> SOCK_STREAM<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"create socket error: %s(errno: %d)\n"</span><span class="token punctuation">,</span> <span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
 
-<span class="token function">memset</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>servaddr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>servaddr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token function">memset</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>servaddr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>servaddr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
 
-servaddr<span class="token punctuation">.</span>sin_family <span class="token operator">=</span> AF_INET<span class="token punctuation">;</span>  
-servaddr<span class="token punctuation">.</span>sin_port <span class="token operator">=</span> <span class="token function">htons</span><span class="token punctuation">(</span><span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    servaddr<span class="token punctuation">.</span>sin_family <span class="token operator">=</span> AF_INET<span class="token punctuation">;</span>    
+    servaddr<span class="token punctuation">.</span>sin_port <span class="token operator">=</span> <span class="token function">htons</span><span class="token punctuation">(</span><span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token comment" spellcheck="true">//inet_pton是Linux下IP地址转换函数，将IP地址在“点分十进制”和“整数”之间转换  </span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">inet_pton</span><span class="token punctuation">(</span>AF_INET<span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>servaddr<span class="token punctuation">.</span>sin_addr<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>   
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"inet_pton error for %s\n"</span><span class="token punctuation">,</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
 
-<span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">inet_pton</span><span class="token punctuation">(</span>AF_INET<span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>servaddr<span class="token punctuation">.</span>sin_addr<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//inet_pton是Linux下IP地址转换函数，将IP地址在“点分十进制”和“整数”之间转换</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"inet_pton error for %s\n"</span><span class="token punctuation">,</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token punctuation">}</span>  
-
-<span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">connect</span><span class="token punctuation">(</span>sockfd<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> sockaddr<span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>servaddr<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>servaddr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"connect error: %s(errno: %d)\n"</span><span class="token punctuation">,</span><span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token punctuation">}</span>  
-<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"send msg to server: \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-    <span class="token function">fgets</span><span class="token punctuation">(</span>sendline<span class="token punctuation">,</span> <span class="token number">4096</span><span class="token punctuation">,</span> <span class="token constant">stdin</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">send</span><span class="token punctuation">(</span>sockfd<span class="token punctuation">,</span> sendline<span class="token punctuation">,</span> <span class="token function">strlen</span><span class="token punctuation">(</span>sendline<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>  
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"send msg error: %s(errno: %d)\n"</span><span class="token punctuation">,</span> <span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span> errno<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">connect</span><span class="token punctuation">(</span>sockfd<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> sockaddr<span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>servaddr<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>servaddr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"connect error: %s(errno: %d)\n"</span><span class="token punctuation">,</span><span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  
+    <span class="token punctuation">{</span>  
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"send msg to server: \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token function">fgets</span><span class="token punctuation">(</span>sendline<span class="token punctuation">,</span> <span class="token number">4096</span><span class="token punctuation">,</span> <span class="token constant">stdin</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">send</span><span class="token punctuation">(</span>sockfd<span class="token punctuation">,</span> sendline<span class="token punctuation">,</span> <span class="token function">strlen</span><span class="token punctuation">(</span>sendline<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>    
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"send msg error: %s(errno: %d)\n"</span><span class="token punctuation">,</span> <span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span> errno<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+            <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token punctuation">}</span>    
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>rec_len <span class="token operator">=</span> <span class="token function">recv</span><span class="token punctuation">(</span>sockfd<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> MAXLINE<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+           <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"recv error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+           <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token punctuation">}</span>    
+        buf<span class="token punctuation">[</span>rec_len<span class="token punctuation">]</span>  <span class="token operator">=</span> <span class="token string">'\0'</span><span class="token punctuation">;</span>   
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Received : %s\n"</span><span class="token punctuation">,</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>buf<span class="token punctuation">,</span><span class="token string">"quit"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>  
+            <span class="token keyword">break</span><span class="token punctuation">;</span>  
     <span class="token punctuation">}</span>  
-    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>rec_len <span class="token operator">=</span> <span class="token function">recv</span><span class="token punctuation">(</span>sockfd<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> MAXLINE<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
-       <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"recv error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-       <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-    <span class="token punctuation">}</span>  
-    buf<span class="token punctuation">[</span>rec_len<span class="token punctuation">]</span>  <span class="token operator">=</span> <span class="token string">'\0'</span><span class="token punctuation">;</span> 
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Received : %s\n"</span><span class="token punctuation">,</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>buf<span class="token punctuation">,</span><span class="token string">"quit"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
-        <span class="token keyword">break</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token function">close</span><span class="token punctuation">(</span>sockfd<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token punctuation">}</span></code></pre>
+    <span class="token function">close</span><span class="token punctuation">(</span>sockfd<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+<span class="token punctuation">}</span>  </code></pre>
 <p><strong>server:</strong></p>
 <pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">//服务器程序</span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
@@ -655,63 +655,64 @@ servaddr<span class="token punctuation">.</span>sin_port <span class="token oper
 <span class="token macro property">#<span class="token directive keyword">define</span> DEFAULT_PORT 8000</span>
 <span class="token macro property">#<span class="token directive keyword">define</span> MAXLINE 4096</span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span><span class="token punctuation">{</span>
-<span class="token keyword">int</span> socket_fd<span class="token punctuation">,</span> connect_fd<span class="token punctuation">;</span>
-<span class="token keyword">struct</span> sockaddr_in servaddr<span class="token punctuation">;</span>
-<span class="token keyword">char</span> buff<span class="token punctuation">[</span><span class="token number">4096</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> n<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//初始化Socket</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token punctuation">(</span>socket_fd <span class="token operator">=</span> <span class="token function">socket</span><span class="token punctuation">(</span>AF_INET<span class="token punctuation">,</span> SOCK_STREAM<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
-<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"create socket error: %s(errno: %d)\n"</span><span class="token punctuation">,</span><span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">//初始化</span>
-<span class="token function">memset</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>servaddr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>servaddr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-servaddr<span class="token punctuation">.</span>sin_family <span class="token operator">=</span> AF_INET<span class="token punctuation">;</span>
-servaddr<span class="token punctuation">.</span>sin_addr<span class="token punctuation">.</span>s_addr <span class="token operator">=</span> <span class="token function">htonl</span><span class="token punctuation">(</span>INADDR_ANY<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//IP地址设置成INADDR_ANY,让系统自动获取本机的IP地址。</span>
-servaddr<span class="token punctuation">.</span>sin_port <span class="token operator">=</span> <span class="token function">htons</span><span class="token punctuation">(</span>DEFAULT_PORT<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//设置的端口为DEFAULT_PORT</span>
-
-<span class="token comment" spellcheck="true">//将本地地址绑定到所创建的套接字上  </span>
-<span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">bind</span><span class="token punctuation">(</span>socket_fd<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> sockaddr<span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>servaddr<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>servaddr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"bind socket error: %s(errno: %d)\n"</span><span class="token punctuation">,</span><span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token punctuation">}</span>  
-<span class="token comment" spellcheck="true">//开始监听是否有客户端连接  </span>
-<span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">listen</span><span class="token punctuation">(</span>socket_fd<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"listen socket error: %s(errno: %d)\n"</span><span class="token punctuation">,</span><span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token punctuation">}</span>  
-<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"======waiting for client's request======\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
-    <span class="token comment" spellcheck="true">//阻塞直到有客户端连接，不然多浪费CPU资源。  </span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token punctuation">(</span>connect_fd <span class="token operator">=</span> <span class="token function">accept</span><span class="token punctuation">(</span>socket_fd<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> sockaddr<span class="token operator">*</span><span class="token punctuation">)</span><span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"accept socket error: %s(errno: %d)"</span><span class="token punctuation">,</span><span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-        <span class="token keyword">continue</span><span class="token punctuation">;</span>  
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> socket_fd<span class="token punctuation">,</span> connect_fd<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> sockaddr_in servaddr<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> buff<span class="token punctuation">[</span><span class="token number">4096</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//初始化Socket</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token punctuation">(</span>socket_fd <span class="token operator">=</span> <span class="token function">socket</span><span class="token punctuation">(</span>AF_INET<span class="token punctuation">,</span> SOCK_STREAM<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"create socket error: %s(errno: %d)\n"</span><span class="token punctuation">,</span><span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-           <span class="token comment" spellcheck="true">//接受客户端传过来的数据  </span>
-        n <span class="token operator">=</span> <span class="token function">recv</span><span class="token punctuation">(</span>connect_fd<span class="token punctuation">,</span> buff<span class="token punctuation">,</span> MAXLINE<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"client close\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token function">close</span><span class="token punctuation">(</span>connect_fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">break</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">else</span>
-        <span class="token punctuation">{</span>
-            buff<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'\0'</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">send</span><span class="token punctuation">(</span>connect_fd<span class="token punctuation">,</span> buff<span class="token punctuation">,</span> n<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>  
-                <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"send error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-        <span class="token punctuation">}</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"recv msg from client: %s\n"</span><span class="token punctuation">,</span> buff<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token comment" spellcheck="true">//初始化</span>
+    <span class="token function">memset</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>servaddr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>servaddr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    servaddr<span class="token punctuation">.</span>sin_family <span class="token operator">=</span> AF_INET<span class="token punctuation">;</span>
+    servaddr<span class="token punctuation">.</span>sin_addr<span class="token punctuation">.</span>s_addr <span class="token operator">=</span> <span class="token function">htonl</span><span class="token punctuation">(</span>INADDR_ANY<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//IP地址设置成INADDR_ANY,让系统自动获取本机的IP地址。</span>
+    servaddr<span class="token punctuation">.</span>sin_port <span class="token operator">=</span> <span class="token function">htons</span><span class="token punctuation">(</span>DEFAULT_PORT<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//设置的端口为DEFAULT_PORT</span>
 
-
+    <span class="token comment" spellcheck="true">//将本地地址绑定到所创建的套接字上  </span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">bind</span><span class="token punctuation">(</span>socket_fd<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> sockaddr<span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>servaddr<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>servaddr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"bind socket error: %s(errno: %d)\n"</span><span class="token punctuation">,</span><span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
     <span class="token punctuation">}</span>  
-    <span class="token function">close</span><span class="token punctuation">(</span>connect_fd<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token punctuation">}</span>
-<span class="token function">close</span><span class="token punctuation">(</span>socket_fd<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//开始监听是否有客户端连接  </span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">listen</span><span class="token punctuation">(</span>socket_fd<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"listen socket error: %s(errno: %d)\n"</span><span class="token punctuation">,</span><span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"======waiting for client's request======\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+        <span class="token comment" spellcheck="true">//阻塞直到有客户端连接，不然多浪费CPU资源。  </span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token punctuation">(</span>connect_fd <span class="token operator">=</span> <span class="token function">accept</span><span class="token punctuation">(</span>socket_fd<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> sockaddr<span class="token operator">*</span><span class="token punctuation">)</span><span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"accept socket error: %s(errno: %d)"</span><span class="token punctuation">,</span><span class="token function">strerror</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">,</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token keyword">continue</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//接受客户端传过来的数据  </span>
+            n <span class="token operator">=</span> <span class="token function">recv</span><span class="token punctuation">(</span>connect_fd<span class="token punctuation">,</span> buff<span class="token punctuation">,</span> MAXLINE<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"client close\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token function">close</span><span class="token punctuation">(</span>connect_fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                buff<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'\0'</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">send</span><span class="token punctuation">(</span>connect_fd<span class="token punctuation">,</span> buff<span class="token punctuation">,</span> n<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>  
+                    <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"send error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token punctuation">}</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"recv msg from client: %s\n"</span><span class="token punctuation">,</span> buff<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+
+
+        <span class="token punctuation">}</span>  
+        <span class="token function">close</span><span class="token punctuation">(</span>connect_fd<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>
+    <span class="token function">close</span><span class="token punctuation">(</span>socket_fd<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p>效果：</p>
 <ul>
@@ -1282,7 +1283,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">63.6k</span>&nbsp;字
+                class="white-color">66.7k</span>&nbsp;字
             
             
             

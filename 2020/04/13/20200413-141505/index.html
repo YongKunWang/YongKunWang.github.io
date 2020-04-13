@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Yolov3代码详细讲解, 永坤のBlog">
+    <meta name="keywords" content="01-pytorch-初见pytorch, 永坤のBlog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Yolov3代码详细讲解 | 永坤のBlog</title>
+    <title>01-pytorch-初见pytorch | 永坤のBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -376,12 +376,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/homewyk/cloudimg/raw/master/1506385965920504(1).jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Yolov3代码详细讲解</h1>
+                    <h1 class="description center-align post-title">01-pytorch-初见pytorch</h1>
                 </div>
             </div>
         </div>
@@ -496,12 +496,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">深度学习</span>
+                            </a>
+                        
+                            <a href="/tags/pytorch/">
+                                <span class="chip bg-color">pytorch</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/pytorch/" class="post-category">
+                                pytorch
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -510,21 +527,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-11
+                    2020-04-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-11
+                    2020-04-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    349
+                    395
                 </div>
                 
 
@@ -547,39 +564,79 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>网上资料太多了，先列参考资料！！</p>
-<p><a href="https://blog.csdn.net/lilai619/article/details/79695109" target="_blank" rel="noopener">目标检测：YOLOv3: 训练自己的数据-未看</a></p>
-<p><a href="https://blog.csdn.net/qq_36076110/article/details/80534982?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2" target="_blank" rel="noopener">YOLOv3-Pytorch学习笔记-正在看</a></p>
-<p><a href="https://github.com/ayooshkathuria/pytorch-yolo-v3" target="_blank" rel="noopener">pytorch实现的yolov3</a></p>
-<p><a href="https://www.zhihu.com/people/wang-ruo-xiao-83/posts" target="_blank" rel="noopener">逍遥王可爱4部</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/62772142" target="_blank" rel="noopener">小绿叶</a></p>
-<p><a href="https://blog.csdn.net/qq_24739717/article/details/97166266" target="_blank" rel="noopener">强大的流程图解释详细</a></p>
-<p><a href="https://github.com/bobo0810/PyTorch-YOLOv3-master" target="_blank" rel="noopener">加注释的仓库</a></p>
-<p><a href="https://blog.csdn.net/z649431508/article/details/100161318" target="_blank" rel="noopener">利用PyTorch自己动手从零实现YOLOv3（详细注释）主看这个！！</a></p>
-<p><a href="https://www.codeleading.com/article/84442039641/" target="_blank" rel="noopener">代码先锋网</a></p>
-<p><a href="https://blog.csdn.net/DaVinciL/article/details/100519392" target="_blank" rel="noopener">yolov3源码tf版本</a></p>
-<h2 id="运行Demo"><a href="#运行Demo" class="headerlink" title="运行Demo"></a>运行Demo</h2><p>Demo地址：<a href="https://github.com/ayooshkathuria/pytorch-yolo-v3" target="_blank" rel="noopener">https://github.com/ayooshkathuria/pytorch-yolo-v3</a> </p>
-<p>要求：</p>
-<ol>
-<li>Python 3.5</li>
-<li>OpenCV</li>
-<li>PyTorch 0.4</li>
-<li>yolov3的权重 文件</li>
-</ol>
-<p>Using PyTorch 0.3 will break the detector.</p>
-<p>安装好package之后，运行<code>python cam_demo.py</code>既可以看到检测效果！</p>
-<h2 id="darknet-py"><a href="#darknet-py" class="headerlink" title="darknet.py"></a><code>darknet.py</code></h2><p>文件<code>darknet.py</code>(Darknet是YOLO基础架构的名称)。 该文件将包含创建YOLO网络的代码。</p>
-<p> 我们将用一个名为<em>util.py</em>的文件作为补充，它将包含各种帮助函数的代码。 </p>
-<p>将这两个文件保存在检测器文件夹中。 您可以使用git来跟踪更改记录。 </p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 在py2.x中导入py3.x的导入特性的语句，是为了区分绝对导入和现对导入</span>
-<span class="token comment" spellcheck="true"># 在py3中默认使用的是精确除法，而py2中默认的是截断式除法</span>
-<span class="token comment" spellcheck="true"># 对于所有的from __future__ import _，则意味着在新旧版本的兼容性方面存在差异，处理方法是按照最新的特性来处理</span>
-<span class="token comment" spellcheck="true"># 这句话放在这没什么用哎</span>
-<span class="token keyword">from</span> __future__ <span class="token keyword">import</span> division
+                <h2 id="第一章：初见pytorch"><a href="#第一章：初见pytorch" class="headerlink" title="第一章：初见pytorch"></a>第一章：初见pytorch</h2><blockquote>
+<p>学习资料：龙良曲 深度学习与pytorch入门实战</p>
+</blockquote>
+<h3 id="pytorch的发展"><a href="#pytorch的发展" class="headerlink" title="pytorch的发展"></a>pytorch的发展</h3><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413142203.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413142356.png" alt=""></p>
+<h3 id="同类框架"><a href="#同类框架" class="headerlink" title="同类框架"></a>同类框架</h3><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413142518.png" alt=""></p>
+<p><img src="C:%5CUsers%5Casdw1%5CAppData%5CLocal%5CTemp%5C1586759138837.png" alt="1586759138837"></p>
+<h3 id="动态图与静态图"><a href="#动态图与静态图" class="headerlink" title="动态图与静态图"></a>动态图与静态图</h3><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413142621.png" alt=""></p>
+<p>动态图：直观，容易理解，一步一步计算</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413142717.png" alt=""></p>
+<p>静态图：先创建一个公式模型，然后在运行时<code>feed</code>参数,不好调试！</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413142756.png" alt=""></p>
+<p>这两种语言的综合评价：</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413142927.png" alt=""></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>这两种框架都要进行学习，因为公司写东西的话不确定使用哪种框架。初学的话推荐使用pytorch，简单易用，调试方便，可以将精力放在算法的研究上去。</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413143031.png" alt=""></p>
+<p>pytorch的生态：需要注逐一学习</p>
+<p><img src="C:%5CUsers%5Casdw1%5CAppData%5CLocal%5CTemp%5C1586759561780.png" alt="1586759561780"></p>
+<h3 id="pytorch的举例"><a href="#pytorch的举例" class="headerlink" title="pytorch的举例"></a>pytorch的举例</h3><h4 id="GPU加速"><a href="#GPU加速" class="headerlink" title="GPU加速"></a>GPU加速</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">import</span> torchvision
+<span class="token keyword">import</span> time
 
+<span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span>
 
-</code></pre>
+<span class="token comment" spellcheck="true"># CPU计算举例子</span>
+a <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span>
 
+t0 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> torch<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+t1 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>device<span class="token punctuation">,</span> t1 <span class="token operator">-</span> t0<span class="token punctuation">,</span> c<span class="token punctuation">.</span>norm<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># GPU计算举例子</span>
+<span class="token comment" spellcheck="true">## 首次计算需要进行一些初始化操作，花费的时间比CPU长</span>
+device <span class="token operator">=</span> torch<span class="token punctuation">.</span>device<span class="token punctuation">(</span><span class="token string">'cuda'</span><span class="token punctuation">)</span>
+a <span class="token operator">=</span>a<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span>
+b <span class="token operator">=</span> b<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span>
+t0 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> torch<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+t1 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>device<span class="token punctuation">,</span> t1 <span class="token operator">-</span> t0<span class="token punctuation">,</span> c<span class="token punctuation">.</span>norm<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">## 第二次使用GPU计算时将会加速，大约为GPU的50倍</span>
+t0 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> torch<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+t1 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>device<span class="token punctuation">,</span> t1 <span class="token operator">-</span> t0<span class="token punctuation">,</span> c<span class="token punctuation">.</span>norm<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h4 id="自动求导"><a href="#自动求导" class="headerlink" title="自动求导"></a>自动求导</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">import</span>  torchvision
+<span class="token keyword">from</span> torch <span class="token keyword">import</span> autograd
+
+x <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+a <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">,</span>requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">.</span><span class="token punctuation">,</span>requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+y <span class="token operator">=</span> a<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">*</span> x <span class="token operator">+</span> b<span class="token operator">*</span>x <span class="token operator">+</span> c
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'before:'</span><span class="token punctuation">,</span> a<span class="token punctuation">.</span>grad<span class="token punctuation">,</span> b<span class="token punctuation">.</span>grad<span class="token punctuation">,</span> c<span class="token punctuation">.</span>grad<span class="token punctuation">)</span>
+grads <span class="token operator">=</span> autograd<span class="token punctuation">.</span>grad<span class="token punctuation">(</span>y<span class="token punctuation">,</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'after:'</span><span class="token punctuation">,</span> grads<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> grads<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> grads<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">"""
+before: None None None
+after: tensor(2.) tensor(1.) tensor(1.)
+
+"""</span></code></pre>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413145657.png" alt=""></p>
+<h4 id="常用的网络层"><a href="#常用的网络层" class="headerlink" title="常用的网络层"></a>常用的网络层</h4><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413145810.png" alt=""></p>
+<h2 id="pytorch的开发环境"><a href="#pytorch的开发环境" class="headerlink" title="pytorch的开发环境"></a>pytorch的开发环境</h2><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413144023.png" alt=""></p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
             </div>
             <hr/>
 
@@ -604,7 +661,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://homewyk.com/2020/04/11/20200411-163708/">https://homewyk.com/2020/04/11/20200411-163708/</a>
+                    <a href="https://homewyk.com/2020/04/13/20200413-141505/">https://homewyk.com/2020/04/13/20200413-141505/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -641,7 +698,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">深度学习</span>
+                                </a>
+                            
+                                <a href="/tags/pytorch/">
+                                    <span class="chip bg-color">pytorch</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -810,7 +875,7 @@
         repo: 'YongKunWang.github.io',
         owner: 'YongKunWang',
         admin: "YongKunWang",
-        id: '2020-04-11T16-37-08',
+        id: '2020-04-13T14-15-05',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -836,34 +901,91 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/12/20200412-120227/">
+                <a href="/2020/04/13/20200413-150000/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/screen-web-design-developing-codes-1936299.jpg" class="responsive-img" alt="07-数据结构Java版-单向链表题目">
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/1506385965920504(1).jpg" class="responsive-img" alt="02-pytorch-线性回归">
                         
-                        <span class="card-title">07-数据结构Java版-单向链表题目</span>
+                        <span class="card-title">02-pytorch-线性回归</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            第二章：线性回归实际理论明天使用numpy手动梯度下降import numpy as np
+
+
+def computer_error(b,w,points):
+    """
+    计算当前的b和w所造成的的平均误差
+    :param
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/pytorch/" class="post-category">
+                                    pytorch
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/pytorch/">
+                        <span class="chip bg-color">pytorch</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/04/13/20200413-114027/">
+                    <div class="card-image">
+                        
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/screen-web-design-developing-codes-1936299.jpg" class="responsive-img" alt="08-数据结构Java版-双向链表">
+                        
+                        <span class="card-title">08-数据结构Java版-双向链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-单链表题目
-实现菜单操作（主函数部分）
-实现单链表的增删改查操作&amp;按顺序增加操作
-实现计算单链表的大小
-实现单链表的逆序输出
-实现查找倒数第K个节点
-实现单链表结构不变，逆序打印
+package com.homewyk.linked;
 
-部分题目主要思路
-计算单链表的大小：与单链表的显
+import java.util.Scanner;
+
+// 明天整理
+
+public class DoubleLinkedListDemo {
+
+    public static
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -885,64 +1007,6 @@
                     
                     <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                         <span class="chip bg-color">数据结构</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/04/11/20200411-150055/">
-                    <div class="card-image">
-                        
-                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/20200409155807.png" class="responsive-img" alt="03-pyTorch-ResNet">
-                        
-                        <span class="card-title">03-pyTorch-ResNet</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-ResNet网络
-掌握ResNet的原理和实现
-了解ResNet的系列模型
-
-深度残差网络（Deep residual network, ResNet）的提出是CNN图像史上的一件里程碑事件 。
-那么ResNet为什么会有如此优异的表现呢
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-11
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    深度学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">深度学习</span>
-                    </a>
-                    
-                    <a href="/tags/pyTorch/">
-                        <span class="chip bg-color">pyTorch</span>
                     </a>
                     
                 </div>
@@ -1101,7 +1165,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">63.6k</span>&nbsp;字
+                class="white-color">66.7k</span>&nbsp;字
             
             
             

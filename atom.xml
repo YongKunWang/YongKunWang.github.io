@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://homewyk.com/"/>
-  <updated>2020-04-12T04:05:36.580Z</updated>
+  <updated>2020-04-13T15:40:23.035Z</updated>
   <id>https://homewyk.com/</id>
   
   <author>
@@ -15,6 +15,161 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>类加载器|注解|动态代理</title>
+    <link href="https://homewyk.com/2020/04/13/20200413-211247/"/>
+    <id>https://homewyk.com/2020/04/13/20200413-211247/</id>
+    <published>2020-04-13T13:12:47.000Z</published>
+    <updated>2020-04-13T15:40:23.035Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/cover.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;动态代理&quot;&gt;&lt;a href=&quot;#动态代理&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaWeb" scheme="https://homewyk.com/categories/JavaWeb/"/>
+    
+    
+      <category term="JavaWeb" scheme="https://homewyk.com/tags/JavaWeb/"/>
+    
+      <category term="类加载器" scheme="https://homewyk.com/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/"/>
+    
+      <category term="动态代理" scheme="https://homewyk.com/tags/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"/>
+    
+      <category term="注解" scheme="https://homewyk.com/tags/%E6%B3%A8%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Yolov3代码详细讲解</title>
+    <link href="https://homewyk.com/2020/04/13/20200413-171508/"/>
+    <id>https://homewyk.com/2020/04/13/20200413-171508/</id>
+    <published>2020-04-13T09:15:08.000Z</published>
+    <updated>2020-04-13T09:20:08.439Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;网上资料太多了，先列参考资料！！&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/lilai619/article/details/79695109&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;目标检测：YOLOv3:
+        
+      
+    
+    </summary>
+    
+    
+      <category term="深度学习" scheme="https://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="目标检测" scheme="https://homewyk.com/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
+      <category term="YOLO" scheme="https://homewyk.com/tags/YOLO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>02-pytorch-线性回归</title>
+    <link href="https://homewyk.com/2020/04/13/20200413-150000/"/>
+    <id>https://homewyk.com/2020/04/13/20200413-150000/</id>
+    <published>2020-04-13T07:00:05.000Z</published>
+    <updated>2020-04-13T08:02:12.829Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;第二章：线性回归&quot;&gt;&lt;a href=&quot;#第二章：线性回归&quot; class=&quot;headerlink&quot; title=&quot;第二章：线性回归&quot;&gt;&lt;/a&gt;第二章：线性回归&lt;/h2&gt;&lt;h3 id=&quot;实际理论明天&quot;&gt;&lt;a href=&quot;#实际理论明天&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="pytorch" scheme="https://homewyk.com/categories/pytorch/"/>
+    
+    
+      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="pytorch" scheme="https://homewyk.com/tags/pytorch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01-pytorch-初见pytorch</title>
+    <link href="https://homewyk.com/2020/04/13/20200413-141505/"/>
+    <id>https://homewyk.com/2020/04/13/20200413-141505/</id>
+    <published>2020-04-13T06:15:05.000Z</published>
+    <updated>2020-04-13T06:58:19.794Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;第一章：初见pytorch&quot;&gt;&lt;a href=&quot;#第一章：初见pytorch&quot; class=&quot;headerlink&quot; title=&quot;第一章：初见pytorch&quot;&gt;&lt;/a&gt;第一章：初见pytorch&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;学习资料：龙良曲
+        
+      
+    
+    </summary>
+    
+    
+      <category term="pytorch" scheme="https://homewyk.com/categories/pytorch/"/>
+    
+    
+      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="pytorch" scheme="https://homewyk.com/tags/pytorch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>08-数据结构Java版-双向链表</title>
+    <link href="https://homewyk.com/2020/04/13/20200413-114027/"/>
+    <id>https://homewyk.com/2020/04/13/20200413-114027/</id>
+    <published>2020-04-13T03:40:27.000Z</published>
+    <updated>2020-04-13T03:41:45.125Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;pre class=&quot; language-java&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="https://homewyk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
+    
+      <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>07-数据结构Java版-单向链表题目</title>
@@ -43,30 +198,6 @@
       <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
     
       <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Yolov3代码详细讲解</title>
-    <link href="https://homewyk.com/2020/04/11/20200411-163708/"/>
-    <id>https://homewyk.com/2020/04/11/20200411-163708/</id>
-    <published>2020-04-11T08:37:08.000Z</published>
-    <updated>2020-04-11T15:09:09.474Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;网上资料太多了，先列参考资料！！&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/lilai619/article/details/79695109&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;目标检测：YOLOv3:
-        
-      
-    
-    </summary>
-    
-    
     
   </entry>
   
@@ -254,7 +385,7 @@
     <link href="https://homewyk.com/2020/04/08/20200408-232750/"/>
     <id>https://homewyk.com/2020/04/08/20200408-232750/</id>
     <published>2020-04-08T15:27:25.000Z</published>
-    <updated>2020-04-08T15:45:18.912Z</updated>
+    <updated>2020-04-12T09:42:01.993Z</updated>
     
     <summary type="html">
     
@@ -499,128 +630,6 @@
       <category term="目标检测" scheme="https://homewyk.com/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
       <category term="Yolo" scheme="https://homewyk.com/tags/Yolo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常见的Latex语法</title>
-    <link href="https://homewyk.com/2020/04/06/20200406-120619/"/>
-    <id>https://homewyk.com/2020/04/06/20200406-120619/</id>
-    <published>2020-04-06T04:05:37.000Z</published>
-    <updated>2020-04-08T15:09:43.843Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;MathJax-基本语法总结&quot;&gt;&lt;a href=&quot;#MathJax-基本语法总结&quot; class=&quot;headerlink&quot; title=&quot;MathJax 基本语法总结&quot;&gt;&lt;/a&gt;MathJax 基本语法总结&lt;/h2&gt;&lt;h2 id=&quot;MathJax-简介&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="学习工具" scheme="https://homewyk.com/categories/%E5%AD%A6%E4%B9%A0%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="latex" scheme="https://homewyk.com/tags/latex/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于YOLOV1算法的思考</title>
-    <link href="https://homewyk.com/2020/04/06/20200406-143706/"/>
-    <id>https://homewyk.com/2020/04/06/20200406-143706/</id>
-    <published>2020-04-06T04:05:11.000Z</published>
-    <updated>2020-04-06T15:45:08.803Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;如何解释召回率recall和准确率precsion&quot;&gt;&lt;a href=&quot;#如何解释召回率recall和准确率precsion&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="深度学习" scheme="https://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="目标检测" scheme="https://homewyk.com/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    
-      <category term="YOLO" scheme="https://homewyk.com/tags/YOLO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Blog使用Github和coding双线</title>
-    <link href="https://homewyk.com/2020/04/05/20200405-150842/"/>
-    <id>https://homewyk.com/2020/04/05/20200405-150842/</id>
-    <published>2020-04-05T07:08:02.000Z</published>
-    <updated>2020-04-05T08:41:39.228Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Blog使用Github和coding双线&quot;&gt;&lt;a href=&quot;#Blog使用Github和coding双线&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="https://homewyk.com/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="https://homewyk.com/tags/Hexo/"/>
-    
-      <category term="Blog" scheme="https://homewyk.com/tags/Blog/"/>
-    
-      <category term="coding" scheme="https://homewyk.com/tags/coding/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>gitee、github、coding同时配置ssh key</title>
-    <link href="https://homewyk.com/2020/04/05/20200405-103148/"/>
-    <id>https://homewyk.com/2020/04/05/20200405-103148/</id>
-    <published>2020-04-05T02:31:48.000Z</published>
-    <updated>2020-04-06T15:35:07.040Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Gitee-码云-、Github、coding同时配置ssh-key&quot;&gt;&lt;a href=&quot;#Gitee-码云-、Github、coding同时配置ssh-key&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="https://homewyk.com/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="https://homewyk.com/tags/Hexo/"/>
-    
-      <category term="github" scheme="https://homewyk.com/tags/github/"/>
-    
-      <category term="gitee" scheme="https://homewyk.com/tags/gitee/"/>
-    
-      <category term="ssh" scheme="https://homewyk.com/tags/ssh/"/>
     
   </entry>
   
