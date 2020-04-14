@@ -534,21 +534,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    340
+                    646
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -564,7 +564,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="第二章：线性回归"><a href="#第二章：线性回归" class="headerlink" title="第二章：线性回归"></a>第二章：线性回归</h2><h3 id="实际理论明天"><a href="#实际理论明天" class="headerlink" title="实际理论明天"></a>实际理论明天</h3><h3 id="使用numpy手动梯度下降"><a href="#使用numpy手动梯度下降" class="headerlink" title="使用numpy手动梯度下降"></a>使用numpy手动梯度下降</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+                <h2 id="第二章：线性回归"><a href="#第二章：线性回归" class="headerlink" title="第二章：线性回归"></a>第二章：线性回归</h2><blockquote>
+<p>深度学习就是梯度下降来支撑起来的</p>
+</blockquote>
+<h3 id="Grandient-Descent"><a href="#Grandient-Descent" class="headerlink" title="Grandient Descent"></a>Grandient Descent</h3><p>求解函数的极值，就是对函数进行求导，然后不断进行迭代！</p>
+<ul>
+<li><p>梯度下降的直观演示</p>
+<ul>
+<li>找到下降方法</li>
+<li>求一次导</li>
+<li>走一步： $x^* = x - \bigtriangleup x$</li>
+</ul>
+</li>
+<li><p>不同学习速率$learning~rate$的区别</p>
+</li>
+<li><p>不同求解器的梯度下降</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200414111212.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200414112908.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/dsdasdd.gif" alt=""></p>
+<h3 id="如何得到一个线性方程"><a href="#如何得到一个线性方程" class="headerlink" title="如何得到一个线性方程"></a>如何得到一个线性方程</h3><ul>
+<li>变量消元法</li>
+</ul>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200414111430.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200414113426.png" alt=""></p>
+<p>点数据在处理的时候，会出现高斯噪声的现象$ \epsilon \cdot N(0.01,1)$</p>
+<p>处理大量数据样本，得到整体表现较好时的参数：使得$loss$最小</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200414111719.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200414113546.png" alt=""></p>
+<h3 id="一个线性回归的例子"><a href="#一个线性回归的例子" class="headerlink" title="一个线性回归的例子"></a>一个线性回归的例子</h3><p>真实数据：如图红色点</p>
+<p>真实方程：$y = 1.477 \times x + 0.089 + \epsilon$</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200414113652.png" alt=""></p>
+<p>求解参数$w,b$实质得到一条表现较好的线性方程</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200414113713.png" alt=""></p>
+<p>我们在进行线性回归的时候需要优化参数：这个参数就是损失函数</p>
+<p>损失函数使用平方和损失</p>
+<p>就是：</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200414112041.png" alt=""></p>
+<p>我们的神经网络是如何进行优化的：</p>
+<p>处于最凹处或者局部最凹处</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200414112216.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200414113952.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/assdsa.gif" alt=""></p>
+<p>线性回归<code>Linear Regression</code>：</p>
+<p>取值为<strong>无穷</strong></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200414114242.png" alt=""></p>
+<p>逻辑回归<code>Logistic Regression</code></p>
+<p>在<code>Linear Regression</code>基础上添加了激活函数<code>sigmode</code>函数</p>
+<p>取值范围在[0,1]</p>
+<h3 id="使用numpy手动梯度下降"><a href="#使用numpy手动梯度下降" class="headerlink" title="使用numpy手动梯度下降"></a>使用numpy手动梯度下降</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 
 
 <span class="token keyword">def</span> <span class="token function">computer_error</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span>w<span class="token punctuation">,</span>points<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -1194,7 +1243,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.7k</span>&nbsp;字
+                class="white-color">68k</span>&nbsp;字
             
             
             
