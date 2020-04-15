@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://homewyk.com/"/>
-  <updated>2020-04-14T04:06:04.716Z</updated>
+  <updated>2020-04-15T14:49:58.011Z</updated>
   <id>https://homewyk.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>03-pytorch-分类问题</title>
-    <link href="https://homewyk.com/2020/04/14/20200414-120000/"/>
-    <id>https://homewyk.com/2020/04/14/20200414-120000/</id>
-    <published>2020-04-14T04:00:05.000Z</published>
-    <updated>2020-04-14T04:06:04.716Z</updated>
+    <link href="https://homewyk.com/2020/04/15/20200415-160000/"/>
+    <id>https://homewyk.com/2020/04/15/20200415-160000/</id>
+    <published>2020-04-15T08:00:05.000Z</published>
+    <updated>2020-04-15T14:49:58.011Z</updated>
     
     <summary type="html">
     
@@ -29,8 +29,39 @@
       
         
         
-          &lt;h2 id=&quot;分类问题&quot;&gt;&lt;a href=&quot;#分类问题&quot; class=&quot;headerlink&quot; title=&quot;分类问题&quot;&gt;&lt;/a&gt;分类问题&lt;/h2&gt;&lt;p&gt;手写数字识别&lt;/p&gt;
-&lt;p&gt;&lt;img
+          &lt;h2 id=&quot;基本数据类型&quot;&gt;&lt;a href=&quot;#基本数据类型&quot; class=&quot;headerlink&quot; title=&quot;基本数据类型&quot;&gt;&lt;/a&gt;基本数据类型&lt;/h2&gt;&lt;h3 id=&quot;python与pyTorch的数据类型：&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="pytorch" scheme="https://homewyk.com/categories/pytorch/"/>
+    
+    
+      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="pytorch" scheme="https://homewyk.com/tags/pytorch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>03-pytorch-分类问题</title>
+    <link href="https://homewyk.com/2020/04/14/20200414-120000/"/>
+    <id>https://homewyk.com/2020/04/14/20200414-120000/</id>
+    <published>2020-04-14T04:00:05.000Z</published>
+    <updated>2020-04-15T07:50:46.188Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;分类问题流程&quot;&gt;&lt;a href=&quot;#分类问题流程&quot; class=&quot;headerlink&quot; title=&quot;分类问题流程&quot;&gt;&lt;/a&gt;分类问题流程&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt; 手写数字识别&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3
         
       
     
@@ -51,7 +82,7 @@
     <link href="https://homewyk.com/2020/04/14/20200414-095027/"/>
     <id>https://homewyk.com/2020/04/14/20200414-095027/</id>
     <published>2020-04-14T01:50:27.000Z</published>
-    <updated>2020-04-14T03:00:36.899Z</updated>
+    <updated>2020-04-15T02:59:05.158Z</updated>
     
     <summary type="html">
     
@@ -115,7 +146,7 @@
     <link href="https://homewyk.com/2020/04/13/20200413-171508/"/>
     <id>https://homewyk.com/2020/04/13/20200413-171508/</id>
     <published>2020-04-13T09:15:08.000Z</published>
-    <updated>2020-04-13T09:20:08.439Z</updated>
+    <updated>2020-04-14T13:55:40.340Z</updated>
     
     <summary type="html">
     
@@ -559,11 +590,11 @@
       <category term="深度学习" scheme="https://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
+      <category term="Yolov1" scheme="https://homewyk.com/tags/Yolov1/"/>
+    
       <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="目标检测" scheme="https://homewyk.com/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    
-      <category term="Yolov1" scheme="https://homewyk.com/tags/Yolov1/"/>
     
       <category term="论文解读" scheme="https://homewyk.com/tags/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
     
@@ -596,38 +627,6 @@
       <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
     
       <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Servlet-Filter</title>
-    <link href="https://homewyk.com/2020/04/06/20200406-190747/"/>
-    <id>https://homewyk.com/2020/04/06/20200406-190747/</id>
-    <published>2020-04-06T11:05:27.000Z</published>
-    <updated>2020-04-09T08:02:47.944Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/cover.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;过滤器Fliter&quot;&gt;&lt;a href=&quot;#过滤器Fliter&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="JavaWeb" scheme="https://homewyk.com/categories/JavaWeb/"/>
-    
-    
-      <category term="JavaWeb" scheme="https://homewyk.com/tags/JavaWeb/"/>
-    
-      <category term="Servlet" scheme="https://homewyk.com/tags/Servlet/"/>
-    
-      <category term="Filter" scheme="https://homewyk.com/tags/Filter/"/>
     
   </entry>
   
