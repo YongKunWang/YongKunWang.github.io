@@ -534,21 +534,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-16
+                    2020-04-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    534
+                    854
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -565,7 +565,32 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/images.jpg" alt=""></p>
-<h2 id="数组模拟栈"><a href="#数组模拟栈" class="headerlink" title="数组模拟栈"></a>数组模拟栈</h2><h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><ol>
+<h2 id="栈-Stack"><a href="#栈-Stack" class="headerlink" title="栈(Stack)"></a>栈(Stack)</h2><ol>
+<li><p>栈的英文为(stack)</p>
+</li>
+<li><p>栈是一个先入后出(FILO-First In Last Out)的有序列表。</p>
+</li>
+<li><p>栈(stack)是限制线性表中元素的插入和删除只能在线性表的同一端进行的一种特殊线性表。允许插入和删除的一端，为变化的一端，称为栈顶(Top)，另一端为固定的一端，称为栈底(Bottom)。</p>
+</li>
+<li><p>根据栈的定义可知，最先放入栈中元素在栈底，最后放入的元素在栈顶，而删除元素刚好相反，最后放入的元素最先删除，最先放入的元素最后删除</p>
+</li>
+<li><p>出栈和入栈的概念</p>
+<blockquote>
+<p>始终指向栈顶元素</p>
+</blockquote>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200419095944.png" alt=""></p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200419100013.png" alt=""></p>
+</li>
+</ol>
+<h3 id="栈的应用场景"><a href="#栈的应用场景" class="headerlink" title="栈的应用场景"></a>栈的应用场景</h3><ol>
+<li>子程序的调用：在跳往子程序前，会先将下个指令的地址存到堆栈中，直到子程序执行完后再将地址取出，以回到原来的程序中。   </li>
+<li>处理递归调用：和子程序的调用类似，只是除了储存下一个指令的地址外，也将参数、区域变量等数据存入堆栈中。</li>
+<li>表达式的转换[中缀表达式转后缀表达式]与求值(实际解决)。</li>
+<li>二叉树的遍历。</li>
+<li>图形的深度优先(depth一first)搜索法。</li>
+</ol>
+<h2 id="数组模拟栈"><a href="#数组模拟栈" class="headerlink" title="数组模拟栈"></a>数组模拟栈</h2><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200419100256.png" alt=""></p>
+<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><ol>
 <li>定义1个变量指向栈顶：<code>top</code></li>
 <li>赋初值<code>top = -1</code></li>
 <li>元素入栈操作：<code>top ++; stack[top] = xx</code></li>
@@ -1016,13 +1041,15 @@
                     <div class="summary block-with-text">
                         
                             
-单链表模拟栈待续~
-详细代码实现package com.homewyk.stack;
+单链表模拟栈最主要的思路实现：
 
-import java.util.Scanner;
+就是push的节点放在头结点后的位置，pop的时候直接把头结点的next连接到后面，jvm会启动垃圾回收机制回收pop的node
+详细思路
+结点定义：
 
-public class LinkedListStackDemo {
-    public st
+data：
+在头结点中表示入栈的节点总数 
+在后续
                         
                     </div>
                     <div class="publish-info">
@@ -1268,7 +1295,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">73.7k</span>&nbsp;字
+                class="white-color">82.2k</span>&nbsp;字
             
             
             

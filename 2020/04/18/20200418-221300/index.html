@@ -1,0 +1,1638 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="09-pytorch-StartWithCoab, 永坤のBlog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>09-pytorch-StartWithCoab | 永坤のBlog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="永坤のBlog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">永坤のBlog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="far fa-comment" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bars" style="zoom: 0.6;"></i>
+      
+      <span>学习导航</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/study/Java-Learning">
+          
+          <i class="fab fa-java" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Java Learning</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/study/Linux-Learning">
+          
+          <i class="fab fa-ubuntu" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Linux Learning</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">永坤のBlog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw far fa-comment"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bars"></i>
+			
+			学习导航
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/study/Java-Learning " style="margin-left:75px";>
+				  
+				   <i class="fa fab fa-java" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Java Learning</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/study/Linux-Learning " style="margin-left:75px";>
+				  
+				   <i class="fa fab fa-ubuntu" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Linux Learning</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/YongKunWang/YongKunWang.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/YongKunWang/YongKunWang.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/homewyk/cloudimg/raw/master/1506385965920504(1).jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">09-pytorch-StartWithCoab</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">深度学习</span>
+                            </a>
+                        
+                            <a href="/tags/pytorch/">
+                                <span class="chip bg-color">pytorch</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/pytorch/" class="post-category">
+                                pytorch
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-04-18
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-04-18
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    32 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="使用Google-Colab-实现关于Yolov3的训练检测"><a href="#使用Google-Colab-实现关于Yolov3的训练检测" class="headerlink" title="使用Google Colab 实现关于Yolov3的训练检测"></a>使用Google Colab 实现关于Yolov3的训练检测</h1><blockquote>
+<p>jupyter -&gt; md :<code>jupyter nbconvert --to md notebook.ipynb</code><br>苦于自己的电脑没有GPU加速，无法进行yolov3的训练，所以查找资料，发现了这个！<br>免费12小时也足够了<br>使用时间：2020年4月18日21:21:50<br>突然发现自己每个月25大洋花的还算可以，哈哈</p>
+</blockquote>
+<p>整体界面<br><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200418212504.png" alt=""><br>界面类似于jupyter，感觉挺好上手的  </p>
+<ul>
+<li>执行<code>Linux</code>的相关终端命令,需要在前面添加<code>%</code>,<code>%ls</code> <code>%pwd</code>  </li>
+<li>执行程序的时候，需要在前面添加<code>!</code>  <code>!./a.out</code>  </li>
+</ul>
+<hr>
+<h2 id="相关配置"><a href="#相关配置" class="headerlink" title="相关配置"></a>相关配置</h2><h3 id="连接到托管代码执行程序"><a href="#连接到托管代码执行程序" class="headerlink" title="连接到托管代码执行程序"></a>连接到托管代码执行程序</h3><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200418212257.png" alt="">  </p>
+<h3 id="设置GPU加速"><a href="#设置GPU加速" class="headerlink" title="设置GPU加速"></a>设置GPU加速</h3><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200418212819.png" alt=""><br><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200418212854.png" alt="">  </p>
+<h2 id="此时基本的环境已经配置完成了，开工了"><a href="#此时基本的环境已经配置完成了，开工了" class="headerlink" title="此时基本的环境已经配置完成了，开工了  "></a>此时基本的环境已经配置完成了，开工了  </h2><h2 id="开始Demo"><a href="#开始Demo" class="headerlink" title="开始Demo"></a>开始Demo</h2><h3 id="加载网络，开启GPU和OPENCV"><a href="#加载网络，开启GPU和OPENCV" class="headerlink" title="加载网络，开启GPU和OPENCV"></a>加载网络，开启GPU和OPENCV</h3><pre><code>!git clone https://github.com/AlexeyAB/darknet</code></pre><pre><code>fatal: destination path &#39;darknet&#39; already exists and is not an empty directory.</code></pre><pre><code>%cd darknet
+!sed -i &#39;s/OPENCV=0/OPENCV=1/&#39; Makefile
+!sed -i &#39;s/GPU=0/GPU=1/&#39; Makefile
+!sed -i &#39;s/CUDNN=0/CUDNN=1/&#39; Makefile</code></pre><pre><code>[Errno 20] Not a directory: &#39;darknet&#39;
+/content/darknet</code></pre><h3 id="查看CUDA的信息"><a href="#查看CUDA的信息" class="headerlink" title="查看CUDA的信息"></a>查看CUDA的信息</h3><pre><code># 看下CUDA
+! /usr/local/cuda/bin/nvcc --version</code></pre><pre><code>nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2019 NVIDIA Corporation
+Built on Sun_Jul_28_19:07:16_PDT_2019
+Cuda compilation tools, release 10.1, V10.1.243</code></pre><h3 id="编译Dartnet"><a href="#编译Dartnet" class="headerlink" title="编译Dartnet"></a>编译Dartnet</h3><pre><code># 编译Darket
+!make</code></pre><h3 id="下载预训练权重"><a href="#下载预训练权重" class="headerlink" title="下载预训练权重"></a>下载预训练权重</h3><p>YOLOv3 在COCO数据集上已经训练的很好了，我们不需要花大力气去训练，加载预训练的权重能够帮助我们更快的训练模型。</p>
+<p><strong>下过一次就不要再运行这个代码块了！</strong></p>
+<p>执行一次下载一次</p>
+<pre><code># 下载预训练的权重
+!wget https://pjreddie.com/media/files/yolov3.weights</code></pre><pre><code>--2020-04-18 13:47:44--  https://pjreddie.com/media/files/yolov3.weights
+Resolving pjreddie.com (pjreddie.com)... 128.208.4.108
+Connecting to pjreddie.com (pjreddie.com)|128.208.4.108|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 248007048 (237M) [application/octet-stream]
+Saving to: âyolov3.weights.1â
+
+yolov3.weights.1    100%[===================&gt;] 236.52M   751KB/s    in 4m 29s  
+
+2020-04-18 13:52:15 (900 KB/s) - âyolov3.weights.1â saved [248007048/248007048]</code></pre><p>​    </p>
+<h3 id="定义几个函数"><a href="#定义几个函数" class="headerlink" title="定义几个函数"></a>定义几个函数</h3><ul>
+<li>显示预测图像  </li>
+<li>从本地上传文件  </li>
+<li>从终端下载文件</li>
+</ul>
+<pre><code>def imShow(path):
+  import cv2
+  import matplotlib.pyplot as plt
+  %matplotlib inline
+
+  image = cv2.imread(path)
+  height, width = image.shape[:2]
+  resized_image = cv2.resize(image,(3*width, 3*height), interpolation = cv2.INTER_CUBIC)
+
+  fig = plt.gcf()
+  fig.set_size_inches(18, 10)
+  plt.axis(&quot;off&quot;)
+  plt.imshow(cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB))
+  plt.show()
+
+# 上传文件
+def upload():
+  from google.colab import files
+  uploaded = files.upload() 
+  for name, data in uploaded.items():
+    with open(name, &#39;wb&#39;) as f:
+      f.write(data)
+      print (&#39;saved file&#39;, name)
+
+# 下载文件  
+def download(path):
+  from google.colab import files
+  files.download(path)</code></pre><h3 id="切换到工作目录-检测实例"><a href="#切换到工作目录-检测实例" class="headerlink" title="切换到工作目录|检测实例"></a>切换到工作目录|检测实例</h3><p>现在其实就有一个好的YOLOv3了，你可以很好的使用这个构建好的网络去检测COCO数据集里面的类别<br>用下面的命令进行检测</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">!</span>./darknet detect <span class="token operator">&lt;</span>path to config<span class="token operator">></span> <span class="token operator">&lt;</span>path to weights<span class="token operator">></span> <span class="token operator">&lt;</span>path to image<span class="token operator">></span>
+</code></pre>
+<p><code>Darknet</code> 自带了一些示例图片</p>
+<p><strong>注意: 检测完成，我们需要显示一下</strong></p>
+<pre class=" language-bash"><code class="language-bash">imShow<span class="token punctuation">(</span><span class="token string">'predictions.jpg'</span><span class="token punctuation">)</span></code></pre>
+<p>OK了，可以显示出来</p>
+<pre><code>%cd /content/darknet
+!./darknet detect ./cfg/yolov3.cfg yolov3.weights data/dog.jpg
+imShow(&#39;predictions.jpg&#39;)</code></pre><pre><code>/content/darknet
+ CUDA-version: 10010 (10010), cuDNN: 7.6.5, GPU count: 1  
+ OpenCV version: 3.2.0
+ compute_capability = 600, cudnn_half = 0 
+net.optimized_memory = 0 
+mini_batch = 1, batch = 1, time_steps = 1, train = 0 
+   layer   filters  size/strd(dil)      input                output
+   0 conv     32       3 x 3/ 1    416 x 416 x   3 -&gt;  416 x 416 x  32 0.299 BF
+   1 conv     64       3 x 3/ 2    416 x 416 x  32 -&gt;  208 x 208 x  64 1.595 BF
+   2 conv     32       1 x 1/ 1    208 x 208 x  64 -&gt;  208 x 208 x  32 0.177 BF
+   3 conv     64       3 x 3/ 1    208 x 208 x  32 -&gt;  208 x 208 x  64 1.595 BF
+   4 Shortcut Layer: 1,  wt = 0, wn = 0, outputs: 208 x 208 x  64 0.003 BF
+   5 conv    128       3 x 3/ 2    208 x 208 x  64 -&gt;  104 x 104 x 128 1.595 BF
+   6 conv     64       1 x 1/ 1    104 x 104 x 128 -&gt;  104 x 104 x  64 0.177 BF
+   7 conv    128       3 x 3/ 1    104 x 104 x  64 -&gt;  104 x 104 x 128 1.595 BF
+   8 Shortcut Layer: 5,  wt = 0, wn = 0, outputs: 104 x 104 x 128 0.001 BF
+   9 conv     64       1 x 1/ 1    104 x 104 x 128 -&gt;  104 x 104 x  64 0.177 BF
+  10 conv    128       3 x 3/ 1    104 x 104 x  64 -&gt;  104 x 104 x 128 1.595 BF
+  11 Shortcut Layer: 8,  wt = 0, wn = 0, outputs: 104 x 104 x 128 0.001 BF
+  12 conv    256       3 x 3/ 2    104 x 104 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  13 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  14 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  15 Shortcut Layer: 12,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  16 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  17 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  18 Shortcut Layer: 15,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  19 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  20 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  21 Shortcut Layer: 18,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  22 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  23 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  24 Shortcut Layer: 21,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  25 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  26 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  27 Shortcut Layer: 24,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  28 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  29 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  30 Shortcut Layer: 27,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  31 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  32 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  33 Shortcut Layer: 30,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  34 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  35 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  36 Shortcut Layer: 33,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  37 conv    512       3 x 3/ 2     52 x  52 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  38 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  39 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  40 Shortcut Layer: 37,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  41 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  42 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  43 Shortcut Layer: 40,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  44 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  45 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  46 Shortcut Layer: 43,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  47 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  48 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  49 Shortcut Layer: 46,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  50 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  51 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  52 Shortcut Layer: 49,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  53 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  54 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  55 Shortcut Layer: 52,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  56 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  57 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  58 Shortcut Layer: 55,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  59 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  60 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  61 Shortcut Layer: 58,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  62 conv   1024       3 x 3/ 2     26 x  26 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  63 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  64 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  65 Shortcut Layer: 62,  wt = 0, wn = 0, outputs:  13 x  13 x1024 0.000 BF
+  66 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  67 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  68 Shortcut Layer: 65,  wt = 0, wn = 0, outputs:  13 x  13 x1024 0.000 BF
+  69 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  70 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  71 Shortcut Layer: 68,  wt = 0, wn = 0, outputs:  13 x  13 x1024 0.000 BF
+  72 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  73 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  74 Shortcut Layer: 71,  wt = 0, wn = 0, outputs:  13 x  13 x1024 0.000 BF
+  75 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  76 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  77 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  78 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  79 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  80 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  81 conv    255       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 255 0.088 BF
+  82 yolo
+[yolo] params: iou loss: mse (2), iou_norm: 0.75, cls_norm: 1.00, scale_x_y: 1.00
+  83 route  79                                    -&gt;   13 x  13 x 512 
+  84 conv    256       1 x 1/ 1     13 x  13 x 512 -&gt;   13 x  13 x 256 0.044 BF
+  85 upsample                 2x    13 x  13 x 256 -&gt;   26 x  26 x 256
+  86 route  85 61                                -&gt;   26 x  26 x 768 
+  87 conv    256       1 x 1/ 1     26 x  26 x 768 -&gt;   26 x  26 x 256 0.266 BF
+  88 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  89 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  90 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  91 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  92 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  93 conv    255       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 255 0.177 BF
+  94 yolo
+[yolo] params: iou loss: mse (2), iou_norm: 0.75, cls_norm: 1.00, scale_x_y: 1.00
+  95 route  91                                    -&gt;   26 x  26 x 256 
+  96 conv    128       1 x 1/ 1     26 x  26 x 256 -&gt;   26 x  26 x 128 0.044 BF
+  97 upsample                 2x    26 x  26 x 128 -&gt;   52 x  52 x 128
+  98 route  97 36                                -&gt;   52 x  52 x 384 
+  99 conv    128       1 x 1/ 1     52 x  52 x 384 -&gt;   52 x  52 x 128 0.266 BF
+ 100 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+ 101 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+ 102 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+ 103 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+ 104 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+ 105 conv    255       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 255 0.353 BF
+ 106 yolo
+[yolo] params: iou loss: mse (2), iou_norm: 0.75, cls_norm: 1.00, scale_x_y: 1.00
+Total BFLOPS 65.879 
+avg_outputs = 532444 
+ Allocate additional workspace_size = 52.43 MB 
+Loading weights from yolov3.weights...
+ seen 64, trained: 32013 K-images (500 Kilo-batches_64) 
+Done! Loaded 107 layers from weights-file 
+data/dog.jpg: Predicted in 18.457000 milli-seconds.
+bicycle: 99%
+dog: 100%
+truck: 94%
+Unable to init server: Could not connect: Connection refused
+
+(predictions:3921): Gtk-[1;33mWARNING[0m **: [34m13:52:20.479[0m: cannot open display: </code></pre><p><img src="StartUseCoLab_files/StartUseCoLab_13_1.png" alt="png"></p>
+<p>这里是为了代码块全部运行的时候能够停在这里</p>
+<p>上面的执行素对贼快！！ </p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200418215333.png" alt=""></p>
+<pre><code># 到这里抛出一个异常
+assert False</code></pre><pre><code>---------------------------------------------------------------------------
+
+AssertionError                            Traceback (most recent call last)
+
+&lt;ipython-input-49-a871fdc9ebee&gt; in &lt;module&gt;()
+----&gt; 1 assert False
+
+
+AssertionError: </code></pre><h3 id="通过上传照片进行检测"><a href="#通过上传照片进行检测" class="headerlink" title="通过上传照片进行检测"></a>通过上传照片进行检测</h3><p>本地文件下面写好了upload()函数，可以运行上传文件。</p>
+<p>也可以点击左边功能框的 【上传】 选择图片上传到服务器</p>
+<p>但是注意，上传的文件默认在根目录，不再上述工作目录</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">!</span>./darknet detect cfg/yolov3.cfg yolov3.weights <span class="token punctuation">..</span>/<span class="token operator">&lt;</span>your image name<span class="token operator">></span></code></pre>
+<pre><code>#上传文件
+%cd ..
+%pwd
+
+upload()
+</code></pre><pre><code># 进入工作路径
+%pwd 
+%cd /content/darknet
+!./darknet detect cfg/yolov3.cfg yolov3.weights /messi.jpg
+imShow(&#39;predictions.jpg&#39;)</code></pre><pre><code>/content/darknet
+ CUDA-version: 10010 (10010), cuDNN: 7.6.5, GPU count: 1  
+ OpenCV version: 3.2.0
+ compute_capability = 600, cudnn_half = 0 
+net.optimized_memory = 0 
+mini_batch = 1, batch = 1, time_steps = 1, train = 0 
+   layer   filters  size/strd(dil)      input                output
+   0 conv     32       3 x 3/ 1    416 x 416 x   3 -&gt;  416 x 416 x  32 0.299 BF
+   1 conv     64       3 x 3/ 2    416 x 416 x  32 -&gt;  208 x 208 x  64 1.595 BF
+   2 conv     32       1 x 1/ 1    208 x 208 x  64 -&gt;  208 x 208 x  32 0.177 BF
+   3 conv     64       3 x 3/ 1    208 x 208 x  32 -&gt;  208 x 208 x  64 1.595 BF
+   4 Shortcut Layer: 1,  wt = 0, wn = 0, outputs: 208 x 208 x  64 0.003 BF
+   5 conv    128       3 x 3/ 2    208 x 208 x  64 -&gt;  104 x 104 x 128 1.595 BF
+   6 conv     64       1 x 1/ 1    104 x 104 x 128 -&gt;  104 x 104 x  64 0.177 BF
+   7 conv    128       3 x 3/ 1    104 x 104 x  64 -&gt;  104 x 104 x 128 1.595 BF
+   8 Shortcut Layer: 5,  wt = 0, wn = 0, outputs: 104 x 104 x 128 0.001 BF
+   9 conv     64       1 x 1/ 1    104 x 104 x 128 -&gt;  104 x 104 x  64 0.177 BF
+  10 conv    128       3 x 3/ 1    104 x 104 x  64 -&gt;  104 x 104 x 128 1.595 BF
+  11 Shortcut Layer: 8,  wt = 0, wn = 0, outputs: 104 x 104 x 128 0.001 BF
+  12 conv    256       3 x 3/ 2    104 x 104 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  13 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  14 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  15 Shortcut Layer: 12,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  16 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  17 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  18 Shortcut Layer: 15,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  19 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  20 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  21 Shortcut Layer: 18,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  22 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  23 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  24 Shortcut Layer: 21,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  25 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  26 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  27 Shortcut Layer: 24,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  28 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  29 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  30 Shortcut Layer: 27,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  31 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  32 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  33 Shortcut Layer: 30,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  34 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+  35 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+  36 Shortcut Layer: 33,  wt = 0, wn = 0, outputs:  52 x  52 x 256 0.001 BF
+  37 conv    512       3 x 3/ 2     52 x  52 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  38 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  39 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  40 Shortcut Layer: 37,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  41 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  42 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  43 Shortcut Layer: 40,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  44 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  45 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  46 Shortcut Layer: 43,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  47 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  48 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  49 Shortcut Layer: 46,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  50 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  51 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  52 Shortcut Layer: 49,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  53 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  54 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  55 Shortcut Layer: 52,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  56 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  57 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  58 Shortcut Layer: 55,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  59 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  60 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  61 Shortcut Layer: 58,  wt = 0, wn = 0, outputs:  26 x  26 x 512 0.000 BF
+  62 conv   1024       3 x 3/ 2     26 x  26 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  63 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  64 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  65 Shortcut Layer: 62,  wt = 0, wn = 0, outputs:  13 x  13 x1024 0.000 BF
+  66 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  67 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  68 Shortcut Layer: 65,  wt = 0, wn = 0, outputs:  13 x  13 x1024 0.000 BF
+  69 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  70 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  71 Shortcut Layer: 68,  wt = 0, wn = 0, outputs:  13 x  13 x1024 0.000 BF
+  72 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  73 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  74 Shortcut Layer: 71,  wt = 0, wn = 0, outputs:  13 x  13 x1024 0.000 BF
+  75 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  76 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  77 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  78 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  79 conv    512       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 512 0.177 BF
+  80 conv   1024       3 x 3/ 1     13 x  13 x 512 -&gt;   13 x  13 x1024 1.595 BF
+  81 conv    255       1 x 1/ 1     13 x  13 x1024 -&gt;   13 x  13 x 255 0.088 BF
+  82 yolo
+[yolo] params: iou loss: mse (2), iou_norm: 0.75, cls_norm: 1.00, scale_x_y: 1.00
+  83 route  79                                    -&gt;   13 x  13 x 512 
+  84 conv    256       1 x 1/ 1     13 x  13 x 512 -&gt;   13 x  13 x 256 0.044 BF
+  85 upsample                 2x    13 x  13 x 256 -&gt;   26 x  26 x 256
+  86 route  85 61                                -&gt;   26 x  26 x 768 
+  87 conv    256       1 x 1/ 1     26 x  26 x 768 -&gt;   26 x  26 x 256 0.266 BF
+  88 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  89 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  90 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  91 conv    256       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 256 0.177 BF
+  92 conv    512       3 x 3/ 1     26 x  26 x 256 -&gt;   26 x  26 x 512 1.595 BF
+  93 conv    255       1 x 1/ 1     26 x  26 x 512 -&gt;   26 x  26 x 255 0.177 BF
+  94 yolo
+[yolo] params: iou loss: mse (2), iou_norm: 0.75, cls_norm: 1.00, scale_x_y: 1.00
+  95 route  91                                    -&gt;   26 x  26 x 256 
+  96 conv    128       1 x 1/ 1     26 x  26 x 256 -&gt;   26 x  26 x 128 0.044 BF
+  97 upsample                 2x    26 x  26 x 128 -&gt;   52 x  52 x 128
+  98 route  97 36                                -&gt;   52 x  52 x 384 
+  99 conv    128       1 x 1/ 1     52 x  52 x 384 -&gt;   52 x  52 x 128 0.266 BF
+ 100 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+ 101 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+ 102 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+ 103 conv    128       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 128 0.177 BF
+ 104 conv    256       3 x 3/ 1     52 x  52 x 128 -&gt;   52 x  52 x 256 1.595 BF
+ 105 conv    255       1 x 1/ 1     52 x  52 x 256 -&gt;   52 x  52 x 255 0.353 BF
+ 106 yolo
+[yolo] params: iou loss: mse (2), iou_norm: 0.75, cls_norm: 1.00, scale_x_y: 1.00
+Total BFLOPS 65.879 
+avg_outputs = 532444 
+ Allocate additional workspace_size = 52.43 MB 
+Loading weights from yolov3.weights...
+ seen 64, trained: 32013 K-images (500 Kilo-batches_64) 
+Done! Loaded 107 layers from weights-file 
+/messi.jpg: Predicted in 18.397000 milli-seconds.
+person: 100%
+frisbee: 37%
+person: 43%
+person: 100%
+person: 99%
+Unable to init server: Could not connect: Connection refused
+
+(predictions:3939): Gtk-[1;33mWARNING[0m **: [34m13:52:46.487[0m: cannot open display: </code></pre><p><img src="StartUseCoLab_files/StartUseCoLab_18_1.png" alt="png"></p>
+<h3 id="Google-Drive"><a href="#Google-Drive" class="headerlink" title="Google Drive"></a>Google Drive</h3><p>链接Drive，使用以下命令</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">!</span>./darknet detect cfg/yolov3.cfg yolov3.weights /mydrive/<span class="token operator">&lt;</span>path to image<span class="token operator">></span>
+</code></pre>
+<p>就OK了</p>
+<p>建议在Google Drive里面搞一个 ‘images’文件夹</p>
+<p>当输入以下命令后，需要点击网址，确认信息，并且还要将秘钥复制到下面的框中</p>
+<pre class=" language-bash"><code class="language-bash">%cd <span class="token punctuation">..</span>
+from google.colab <span class="token function">import</span> drive
+drive.mount<span class="token punctuation">(</span><span class="token string">'/content/gdrive'</span><span class="token punctuation">)</span></code></pre>
+<pre><code>%cd ..
+from google.colab import drive
+drive.mount(&#39;/content/gdrive&#39;)</code></pre><h3 id="建立软连接"><a href="#建立软连接" class="headerlink" title="建立软连接"></a>建立软连接</h3><pre><code># 这其实就是一个连接
+!ln -s /content/gdrive/My\ Drive/ /mydrive
+!ls /mydrive</code></pre><pre><code>%pwd
+%cd /
+%cd /mydrive/
+%ls
+%cd images/
+%ls
+%cd samples/
+%ls
+%pwd</code></pre><h3 id="使用自己的image进行检测"><a href="#使用自己的image进行检测" class="headerlink" title="使用自己的image进行检测"></a>使用自己的image进行检测</h3><pre><code># 进入工作路径
+%pwd 
+%cd /content/darknet
+%pwd
+!./darknet detect cfg/yolov3.cfg yolov3.weights /mydrive/images/samples/eagle.jpg
+imShow(&#39;predictions.jpg&#39;)</code></pre><h3 id="文件转储"><a href="#文件转储" class="headerlink" title="文件转储"></a>文件转储</h3><p>因为colab每次免费使用12小时，所以最好将文件转储到别的地方  </p>
+<ul>
+<li>下载到本地 <code>download</code></li>
+<li>复制到Google Driver 中</li>
+</ul>
+<pre><code># 下载文件到本地
+download(&#39;predictions.jpg&#39;)</code></pre><pre><code># GOOGLE DRIVE
+!cp predictions.jpg /mydrive/det.jpg</code></pre><p>参考：<br><a href="https://github.com/ZhangYouyi-Lab/ZhangYouyi-Lab/blob/master/YOLOv3_Colab.ipynb" target="_blank" rel="noopener">https://github.com/ZhangYouyi-Lab/ZhangYouyi-Lab/blob/master/YOLOv3_Colab.ipynb</a></p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://homewyk.com" rel="external nofollow noreferrer">HomeWyk</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://homewyk.com/2020/04/18/20200418-221300/">https://homewyk.com/2020/04/18/20200418-221300/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://homewyk.com" target="_blank">HomeWyk</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">深度学习</span>
+                                </a>
+                            
+                                <a href="/tags/pytorch/">
+                                    <span class="chip bg-color">pytorch</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '273aa9d828fa5a3064a1',
+        clientSecret: '0704811d43457e28bf6edca4a8bf93972ce963c3',
+        repo: 'YongKunWang.github.io',
+        owner: 'YongKunWang',
+        admin: "YongKunWang",
+        id: '2020-04-18T22-13-05',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/04/19/20200419-100027/">
+                    <div class="card-image">
+                        
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/screen-web-design-developing-codes-1936299.jpg" class="responsive-img" alt="12-数据结构Java版-中缀表达式">
+                        
+                        <span class="card-title">12-数据结构Java版-中缀表达式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+中缀表达式栈的实际需求：
+请输入一个表达式
+计算式:[722-5+1-5+3-3] 点击计算【如下图】
+
+请问: 计算机底层是如何运算得到结果的？
+ 注意不是简单的把算式列出运算,因为我们看这个算式 7  2  2 - 5,
+ 但是计算机
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/04/17/20200417-134000/">
+                    <div class="card-image">
+                        
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/1506385965920504(1).jpg" class="responsive-img" alt="08-pytorch-循环神经网络">
+                        
+                        <span class="card-title">08-pytorch-循环神经网络</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            时间序列表示
+pytorch中不支持String的表示
+
+
+
+
+
+不好之处：稀疏矩阵！！维度太高
+基本不适用了
+NLP常用的编码方法:
+
+word2vel
+glove
+
+
+
+
+比如：一句话有100个单词，一共有3句话，时间戳每移动一次，输入
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/pytorch/" class="post-category">
+                                    pytorch
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/pytorch/">
+                        <span class="chip bg-color">pytorch</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5, h6'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5, h6').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="https://homewyk.com" target="_blank">HomeWyk</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">82.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="" target="_blank"></a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/YongKunWang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wang_yongkun@yeah.net" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=364576957" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 364576957" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

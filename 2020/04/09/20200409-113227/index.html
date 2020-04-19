@@ -534,14 +534,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-11
+                    2020-04-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    838
+                    873
                 </div>
                 
 
@@ -585,6 +585,10 @@
 <li><p>实现2个判断：</p>
 <ul>
 <li><p><code>isFull</code>   -&gt; <code>（rear +1）% maxsize = front</code> </p>
+</li>
+<li><p>因为添加元素是<code>rear</code>在动作，此时<code>front</code>处于队列头部</p>
+</li>
+<li><p>又因为是环形的，当满的时候<code>rear+1 = front</code></p>
 <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200409143943.png" alt=""></p>
 <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200409144109.png" alt=""></p>
 <p>兼顾上述两种情况，统一使用取模来计算</p>
@@ -1316,7 +1320,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">73.7k</span>&nbsp;字
+                class="white-color">82.2k</span>&nbsp;字
             
             
             

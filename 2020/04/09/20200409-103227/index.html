@@ -534,21 +534,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-09
+                    2020-04-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    660
+                    725
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -592,8 +592,8 @@
 <ul>
 <li><code>isFull</code>   -&gt; <code>rear == maxsize-1</code> </li>
 <li><code>isEmpty</code> -&gt; <code>front == rear</code><ul>
-<li>一个数据未添加时空<code>front = -1, rear = -1;</code>  -&gt; <code>front == rear</code></li>
-<li>当取出数据空： <code>rear = maxsize -1, front = maxsize -1</code>  -&gt; <code>front == rear</code></li>
+<li>队列中无数据时：<code>front = -1, rear = -1;</code>  -&gt; <code>front == rear</code></li>
+<li>队列中有数据，当取出数据空： <code>rear = maxsize -1, front = maxsize -1</code>  -&gt; <code>front == rear</code></li>
 </ul>
 </li>
 </ul>
@@ -622,8 +622,11 @@
 </li>
 </ol>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>homewyk<span class="token punctuation">.</span>queue<span class="token punctuation">;</span>
+
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Scanner<span class="token punctuation">;</span>
+
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>Test<span class="token punctuation">;</span>
+
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">arraryQueue</span> <span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@Test</span>
@@ -653,7 +656,7 @@
                 queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
                 <span class="token keyword">break</span><span class="token punctuation">;</span>
             <span class="token keyword">case</span> <span class="token string">'g'</span><span class="token operator">:</span>
-                queue<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"get data:"</span> <span class="token operator">+</span>queue<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                 <span class="token keyword">break</span><span class="token punctuation">;</span>
             <span class="token keyword">case</span> <span class="token string">'h'</span><span class="token operator">:</span>
                 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"队列头部元素为："</span> <span class="token operator">+</span> queue<span class="token punctuation">.</span><span class="token function">head</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -687,7 +690,7 @@
      * @return
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isFull</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> rear <span class="token operator">==</span> maxsize<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> rear <span class="token operator">==</span> maxsize<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     <span class="token comment" spellcheck="true">/***
      * 判断队列是否空
@@ -710,6 +713,7 @@
     <span class="token punctuation">}</span>
     <span class="token comment" spellcheck="true">/**
      * 取出队列元素
+     *  
      * @return
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -721,13 +725,27 @@
     <span class="token punctuation">}</span>
     <span class="token comment" spellcheck="true">/***
      * 显示队列元素
+     * error
+     */</span>
+<span class="token comment" spellcheck="true">//    public void show() {</span>
+<span class="token comment" spellcheck="true">//        if (isEmpty()) {</span>
+<span class="token comment" spellcheck="true">//            System.out.println("队列空，没有数据~~");</span>
+<span class="token comment" spellcheck="true">//            return;</span>
+<span class="token comment" spellcheck="true">//        }</span>
+<span class="token comment" spellcheck="true">//        for (int i = 0; i &lt; maxsize; i++) {</span>
+<span class="token comment" spellcheck="true">//            System.out.printf("arr[%d] = %d\n", i, arr[i]);</span>
+<span class="token comment" spellcheck="true">//        }</span>
+<span class="token comment" spellcheck="true">//    }</span>
+    <span class="token comment" spellcheck="true">/***
+     * 显示队列元素
+     * 修改过：从 front + 1 到rear才是真正的
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"队列空，没有数据~~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">return</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> maxsize<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> front<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> rear<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"arr[%d] = %d\n"</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
@@ -1279,7 +1297,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">73.7k</span>&nbsp;字
+                class="white-color">82.2k</span>&nbsp;字
             
             
             
