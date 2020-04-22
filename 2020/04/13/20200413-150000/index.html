@@ -534,21 +534,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-18
+                    2020-04-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    650
+                    939
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -613,7 +613,79 @@
 <p>逻辑回归<code>Logistic Regression</code></p>
 <p>在<code>Linear Regression</code>基础上添加了激活函数<code>sigmode</code>函数</p>
 <p>取值范围在[0,1]</p>
-<h3 id="使用numpy手动梯度下降"><a href="#使用numpy手动梯度下降" class="headerlink" title="使用numpy手动梯度下降"></a>使用numpy手动梯度下降</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<h3 id="使用numpy手动梯度下降"><a href="#使用numpy手动梯度下降" class="headerlink" title="使用numpy手动梯度下降"></a>使用numpy手动梯度下降</h3><p>一组数据拟合为线性函数  </p>
+<p>$y = wx + b$  </p>
+<p>$loss = \sum_i^n(y-(wx+b))^2$  </p>
+<p>$\frac{\partial loss}{\partial w_i} = - \frac{2\times x}{n}(y-(wx+b)) $  </p>
+<p>$\frac{\partial loss}{\partial b_i} = - \frac{2}{n}(y-(wx+b)) $  </p>
+<hr>
+<p>思路:</p>
+<ol>
+<li>加载数据</li>
+<li>定义变量，赋初值</li>
+<li>计算MSE</li>
+<li>梯度下降函数</li>
+<li>迭代</li>
+<li>编写主函数</li>
+</ol>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200421154043.png" alt=""></p>
+<h4 id="自己实现"><a href="#自己实现" class="headerlink" title="自己实现"></a>自己实现</h4><blockquote>
+<p>使用coLab</p>
+</blockquote>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1. 加载数据集</span>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">def</span> <span class="token function">load_data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  points <span class="token operator">=</span> np<span class="token punctuation">.</span>genfromtxt<span class="token punctuation">(</span><span class="token string">'/content/drive/My Drive/data.csv'</span><span class="token punctuation">,</span>delimiter<span class="token operator">=</span><span class="token string">','</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> points
+<span class="token keyword">print</span><span class="token punctuation">(</span>points<span class="token punctuation">.</span>shape<span class="token punctuation">)</span></code></pre>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200421153156.png" alt=""></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 梯度下降</span>
+<span class="token keyword">def</span> <span class="token function">gradient_desent</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> w<span class="token punctuation">,</span> b<span class="token punctuation">,</span> lr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  gradient_w <span class="token operator">=</span> <span class="token number">0.0</span>
+  gradient_b <span class="token operator">=</span> <span class="token number">0.0</span>
+  n <span class="token operator">=</span> float<span class="token punctuation">(</span>len<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x1 <span class="token operator">=</span> x<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    y1 <span class="token operator">=</span> y<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    gradient_w <span class="token operator">+=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>x1<span class="token operator">/</span>n<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>y1 <span class="token operator">-</span> <span class="token punctuation">(</span>w<span class="token operator">*</span>x1 <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    gradient_b <span class="token operator">+=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">/</span>n<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>y1 <span class="token operator">-</span> <span class="token punctuation">(</span>w<span class="token operator">*</span>x1 <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  new_w <span class="token operator">=</span> w <span class="token operator">-</span> lr<span class="token operator">*</span>gradient_w
+  new_b <span class="token operator">=</span> b <span class="token operator">-</span> lr<span class="token operator">*</span>gradient_b
+
+  <span class="token keyword">return</span> <span class="token punctuation">[</span>new_w<span class="token punctuation">,</span> new_b<span class="token punctuation">]</span></code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># MSE</span>
+<span class="token keyword">def</span> <span class="token function">mse</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> w<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  total_loss <span class="token operator">=</span> <span class="token number">0.0</span>
+  <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x1 <span class="token operator">=</span> x<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    y1 <span class="token operator">=</span> y<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    total_loss <span class="token operator">+=</span> <span class="token punctuation">(</span>y1 <span class="token operator">-</span> <span class="token punctuation">(</span>w<span class="token operator">*</span>x1 <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span>
+  <span class="token keyword">return</span> total_loss<span class="token operator">/</span>float<span class="token punctuation">(</span>len<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 2. 定义函数</span>
+<span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token triple-quoted-string string">"""定义运行函数"""</span>
+  <span class="token comment" spellcheck="true"># 加载数据集</span>
+  points <span class="token operator">=</span> load_data<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token comment" spellcheck="true"># 参数初始化</span>
+  initial_w <span class="token operator">=</span> <span class="token number">0.0</span>
+  initial_b <span class="token operator">=</span> <span class="token number">0.0</span>
+  x <span class="token operator">=</span> points<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span>
+  y <span class="token operator">=</span> points<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+  <span class="token comment" spellcheck="true"># print(x.dtype,x.shape, y.shape)</span>
+  learning_rate <span class="token operator">=</span> <span class="token number">0.0001</span>
+  num_iterator <span class="token operator">=</span> <span class="token number">1000</span>
+  <span class="token comment" spellcheck="true"># 迭代</span>
+  w <span class="token operator">=</span> initial_w
+  b <span class="token operator">=</span> initial_b
+  <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>num_iterator<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">[</span>w<span class="token punctuation">,</span> b<span class="token punctuation">]</span> <span class="token operator">=</span> gradient_desent<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> w<span class="token punctuation">,</span> b<span class="token punctuation">,</span> learning_rate<span class="token punctuation">)</span>
+    total_loss <span class="token operator">=</span> mse<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> w<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'current loss:'</span><span class="token punctuation">,</span>total_loss<span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+run<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200421153336.png" alt=""></p>
+<h4 id="课程实现"><a href="#课程实现" class="headerlink" title="课程实现"></a>课程实现</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 
 
 <span class="token keyword">def</span> <span class="token function">computer_error</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span>w<span class="token punctuation">,</span>points<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -1243,7 +1315,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">82.2k</span>&nbsp;字
+                class="white-color">84.5k</span>&nbsp;字
             
             
             

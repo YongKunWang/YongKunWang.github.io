@@ -534,21 +534,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    395
+                    520
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -581,59 +581,81 @@
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>这两种框架都要进行学习，因为公司写东西的话不确定使用哪种框架。初学的话推荐使用pytorch，简单易用，调试方便，可以将精力放在算法的研究上去。</p>
 <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413143031.png" alt=""></p>
 <p>pytorch的生态：需要注逐一学习</p>
-<p><img src="C:%5CUsers%5Casdw1%5CAppData%5CLocal%5CTemp%5C1586759561780.png" alt="1586759561780"></p>
-<h3 id="pytorch的举例"><a href="#pytorch的举例" class="headerlink" title="pytorch的举例"></a>pytorch的举例</h3><h4 id="GPU加速"><a href="#GPU加速" class="headerlink" title="GPU加速"></a>GPU加速</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> torch
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200421111357.png" alt=""></p>
+<h3 id="pytorch的举例"><a href="#pytorch的举例" class="headerlink" title="pytorch的举例"></a>pytorch的举例</h3><blockquote>
+<p>使用平台 coLab</p>
+</blockquote>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 深度学习pytorch</span>
+<span class="token comment" spellcheck="true">## example</span>
+
+<span class="token comment" spellcheck="true">### GPU加速</span></code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 查看版本</span>
+<span class="token comment" spellcheck="true"># 判断GPU是否可用</span>
+<span class="token keyword">import</span> torch 
 <span class="token keyword">import</span> torchvision
 <span class="token keyword">import</span> time
-
 <span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200421120023.png" alt=""></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># ---测试CPU的运行时间---</span>
+<span class="token comment" spellcheck="true">## [0,1)</span>
+a <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">,</span><span class="token number">10000</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">,</span><span class="token number">10000</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
 
-<span class="token comment" spellcheck="true"># CPU计算举例子</span>
-a <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span>
-b <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span>
-
-t0 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+to <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
 c <span class="token operator">=</span> torch<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
 t1 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>device<span class="token punctuation">,</span> t1 <span class="token operator">-</span> t0<span class="token punctuation">,</span> c<span class="token punctuation">.</span>norm<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># GPU计算举例子</span>
-<span class="token comment" spellcheck="true">## 首次计算需要进行一些初始化操作，花费的时间比CPU长</span>
-device <span class="token operator">=</span> torch<span class="token punctuation">.</span>device<span class="token punctuation">(</span><span class="token string">'cuda'</span><span class="token punctuation">)</span>
-a <span class="token operator">=</span>a<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span>
-b <span class="token operator">=</span> b<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span>
-t0 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>device<span class="token punctuation">,</span>t1<span class="token operator">-</span>to<span class="token punctuation">)</span></code></pre>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200421120052.png" alt=""></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># ---测试CPU的运行时间---</span>
+<span class="token comment" spellcheck="true">## [0,1)</span>
+a <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">,</span><span class="token number">10000</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">,</span><span class="token number">10000</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  a <span class="token operator">=</span> a<span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  b <span class="token operator">=</span> b<span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span>
+to <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
 c <span class="token operator">=</span> torch<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
 t1 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>device<span class="token punctuation">,</span> t1 <span class="token operator">-</span> t0<span class="token punctuation">,</span> c<span class="token punctuation">.</span>norm<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">## 第二次使用GPU计算时将会加速，大约为GPU的50倍</span>
-t0 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-c <span class="token operator">=</span> torch<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
-t1 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>device<span class="token punctuation">,</span> t1 <span class="token operator">-</span> t0<span class="token punctuation">,</span> c<span class="token punctuation">.</span>norm<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<h4 id="自动求导"><a href="#自动求导" class="headerlink" title="自动求导"></a>自动求导</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> torch
-<span class="token keyword">import</span>  torchvision
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>device<span class="token punctuation">,</span>t1<span class="token operator">-</span>to<span class="token punctuation">)</span></code></pre>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200421120137.png" alt=""></p>
+<p>目标函数为： $y = a^2 \times x + b \times x + c$</p>
+<p>在程序中:</p>
+<ul>
+<li><p>$x$的初值为$1.0$</p>
+</li>
+<li><p>$a$的初值为$1.0$</p>
+</li>
+<li><p>$b$的初值为$2.0$</p>
+</li>
+<li><p>$c$的初值为$3.0$</p>
+</li>
+</ul>
+<p>$\frac{\partial y}{\partial a} = 2ax = 2.0 $</p>
+<p>$\frac{\partial y}{\partial b} = x = 1.0$</p>
+<p>$\frac{\partial y}{\partial c} = 1 = 1$</p>
+<hr>
+<p>注意：</p>
+<p>Tensor变量的requires_grad的属性默认为False,</p>
+<p>若一个节点requires_grad被设置为True，那么所有依赖它的节点的requires_grad都为True</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># ---自动求导---</span>
+<span class="token comment" spellcheck="true">## 1. 设置被求导数的标志位</span>
+<span class="token comment" spellcheck="true">## 2. 求导函数 autograd.grad(y,[a,b,c])</span>
+<span class="token comment" spellcheck="true">## 3. 导数的值组成梯度，梯度值在autograd.grad(y,[a,b,c])的返回值中</span>
 <span class="token keyword">from</span> torch <span class="token keyword">import</span> autograd
+x <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">## 默认requires_grad = False</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span>requires_grad<span class="token punctuation">)</span>
+a <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span> requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">,</span> requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">.</span><span class="token punctuation">,</span> requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 
-x <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
-a <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-b <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">,</span>requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-c <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">.</span><span class="token punctuation">,</span>requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-
-y <span class="token operator">=</span> a<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">*</span> x <span class="token operator">+</span> b<span class="token operator">*</span>x <span class="token operator">+</span> c
+y <span class="token operator">=</span> a<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">*</span> x <span class="token operator">+</span> b <span class="token operator">*</span> x <span class="token operator">+</span> c
 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'before:'</span><span class="token punctuation">,</span> a<span class="token punctuation">.</span>grad<span class="token punctuation">,</span> b<span class="token punctuation">.</span>grad<span class="token punctuation">,</span> c<span class="token punctuation">.</span>grad<span class="token punctuation">)</span>
 grads <span class="token operator">=</span> autograd<span class="token punctuation">.</span>grad<span class="token punctuation">(</span>y<span class="token punctuation">,</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'after:'</span><span class="token punctuation">,</span> grads<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> grads<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> grads<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-<span class="token triple-quoted-string string">"""
-before: None None None
-after: tensor(2.) tensor(1.) tensor(1.)
-
-"""</span></code></pre>
-<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413145657.png" alt=""></p>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'after:'</span><span class="token punctuation">,</span> grads<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> grads<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> grads<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200421120247.png" alt=""></p>
 <h4 id="常用的网络层"><a href="#常用的网络层" class="headerlink" title="常用的网络层"></a>常用的网络层</h4><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413145810.png" alt=""></p>
 <h2 id="pytorch的开发环境"><a href="#pytorch的开发环境" class="headerlink" title="pytorch的开发环境"></a>pytorch的开发环境</h2><p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200413144023.png" alt=""></p>
 <h3 id=""><a href="#" class="headerlink" title=""></a></h3>
@@ -1165,7 +1187,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">82.2k</span>&nbsp;字
+                class="white-color">84.5k</span>&nbsp;字
             
             
             
