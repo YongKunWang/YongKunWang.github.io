@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="关于YOLOV1算法的思考, 永坤のBlog">
+    <meta name="keywords" content="14-数据结构Java版-中缀转后缀表达式并实现计算, 永坤のBlog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>关于YOLOV1算法的思考 | 永坤のBlog</title>
+    <title>14-数据结构Java版-中缀转后缀表达式并实现计算 | 永坤のBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -376,12 +376,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/homewyk/cloudimg/raw/master/aerial-photography-of-mid-rise-and-high-rise-buildings-1697358.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/homewyk/cloudimg/raw/master/screen-web-design-developing-codes-1936299.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">关于YOLOV1算法的思考</h1>
+                    <h1 class="description center-align post-title">14-数据结构Java版-中缀转后缀表达式并实现计算</h1>
                 </div>
             </div>
         </div>
@@ -498,16 +498,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">深度学习</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">
-                                <span class="chip bg-color">目标检测</span>
-                            </a>
-                        
-                            <a href="/tags/YOLO/">
-                                <span class="chip bg-color">YOLO</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
                             </a>
                         
                     </div>
@@ -518,8 +514,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                深度学习
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                数据结构
                             </a>
                         
                     </div>
@@ -531,28 +527,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-06
+                    2020-04-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-06
+                    2020-04-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    423
+                    396
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -568,56 +564,135 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="如何解释召回率recall和准确率precsion"><a href="#如何解释召回率recall和准确率precsion" class="headerlink" title="如何解释召回率recall和准确率precsion"></a>如何解释召回率<code>recall</code>和准确率<code>precsion</code></h2><p>以下是关于正类的召回率和准确率的结束：</p>
-<p><strong>精确率</strong>是针对我们<strong>预测结果</strong>而言的:</p>
-<ul>
-<li><p>它表示的是预测为正的样本中有多少是真正的正样本。</p>
-</li>
-<li><p>那么预测为正就有两种可能:</p>
-<ul>
-<li>一种就是把正类预测为正类(TP)</li>
-<li>另一种就是把负类预测为正类(FP)</li>
-</ul>
-</li>
-<li><p>公式：<br>$$<br>P ={（预测结果）} \frac{TP_{正类预测为正类}}{TP_{正类预测为正类}+FP_{负类预测为正类}}<br>$$</p>
-<ul>
-<li><code>T:True F:False P:positive n:negative</code></li>
-</ul>
-</li>
-</ul>
-<p><strong>召回率</strong>是针对我们<strong>原来的样本</strong>而言：</p>
-<ul>
-<li><p>它表示的是样本中的正例有多少被预测正确了。</p>
-</li>
-<li><p>两种可能：</p>
-<ul>
-<li>原来的正类预测成正类(TP)</li>
-<li>原来的正类预测为负类(FN)</li>
-</ul>
-</li>
-<li><p>公式：<br>$$<br>R = {(原来样本)} \frac{TP_{正类预测为正类}}{TP_{正类预测为正类}+FN_{正类预测成负类}}<br>$$</p>
-</li>
-</ul>
-<p> 例子：</p>
-<blockquote>
-<p>假设我们手上有60个正样本，40个负样本，</p>
-<p>我们要找出所有的正样本，</p>
-<p>系统查找出50个，其中只有40个是真正的正样本，</p>
-<p>计算上述各指标。 </p>
-</blockquote>
-<p>计算召回率：针对原来样本：</p>
-<ul>
-<li>$TP_{正类预测为正类}$: 40</li>
-<li>$FN_{正类预测为负类}$：20</li>
-</ul>
-<p>$$<br>R = {(原来样本)} \frac{TP_{正类预测为正类}}{TP_{正类预测为正类}+FN_{正类预测成负类}} = \frac {40}{40+20} = \frac{2}{3}<br>$$</p>
-<p>计算准确率：</p>
-<ul>
-<li><p>$TP_{正类预测为正类}$：40</p>
-</li>
-<li><p>$FP_{正类预测为负类}$：10<br>$$<br>P ={（预测结果）} \frac{TP_{正类预测为正类}}{TP_{正类预测为正类}+FP_{负类预测为正类}} = \frac {40} {40+10} = \frac {4}{5}<br>$$</p>
-</li>
-</ul>
+                <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/images.jpg" alt=""></p>
+<p>明天进行总结···</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre class=" language-python"><code class="language-python">package com<span class="token punctuation">.</span>homewyk<span class="token punctuation">.</span>stack<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Iterator<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Stack<span class="token punctuation">;</span>
+
+public <span class="token keyword">class</span> <span class="token class-name">suffixExpression</span> <span class="token punctuation">{</span>
+    public static void main<span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span>println<span class="token punctuation">(</span><span class="token string">"逆波兰计算器的简单实现"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String  suffixExpressionString <span class="token operator">=</span> <span class="token string">"1 2 3 + 4 x + 5 -"</span><span class="token punctuation">;</span>
+        SuffixCalculator calc <span class="token operator">=</span> new SuffixCalculator<span class="token punctuation">(</span>suffixExpressionString<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span>println<span class="token punctuation">(</span>calc<span class="token punctuation">.</span>calc<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        String infixExpressionString <span class="token operator">=</span> <span class="token string">"1+((2+3)x4)-5"</span><span class="token punctuation">;</span>
+        InfixConvertSufix ics <span class="token operator">=</span> new InfixConvertSufix<span class="token punctuation">(</span>infixExpressionString<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ics<span class="token punctuation">.</span>StringConvertList<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ics<span class="token punctuation">.</span>showInfixList<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">InfixConvertSufix</span> <span class="token punctuation">{</span>
+
+    private String infixExpressionString<span class="token punctuation">;</span>
+
+    private List<span class="token operator">&lt;</span>String<span class="token operator">></span> infixList <span class="token operator">=</span> new ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+    private int index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    private boolean loop <span class="token operator">=</span> true<span class="token punctuation">;</span>
+    StringBuilder sb <span class="token operator">=</span> new StringBuilder<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    public InfixConvertSufix<span class="token punctuation">(</span>String infixExpressionString<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        this<span class="token punctuation">.</span>infixExpressionString <span class="token operator">=</span> infixExpressionString<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    public void StringConvertList<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>loop<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            char ch <span class="token operator">=</span> infixExpressionString<span class="token punctuation">.</span>substring<span class="token punctuation">(</span>index<span class="token punctuation">,</span> index<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>charAt<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'+'</span><span class="token punctuation">)</span><span class="token operator">|</span><span class="token operator">|</span><span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'-'</span><span class="token punctuation">)</span><span class="token operator">|</span><span class="token operator">|</span><span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'*'</span><span class="token punctuation">)</span><span class="token operator">|</span><span class="token operator">|</span>
+                <span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'/'</span><span class="token punctuation">)</span><span class="token operator">|</span><span class="token operator">|</span><span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'x'</span><span class="token punctuation">)</span><span class="token operator">|</span><span class="token operator">|</span><span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'('</span><span class="token punctuation">)</span> <span class="token operator">|</span><span class="token operator">|</span> <span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">')'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                infixList<span class="token punctuation">.</span>add<span class="token punctuation">(</span>ch<span class="token operator">+</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ch <span class="token operator">>=</span> <span class="token number">48</span><span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token operator">&amp;</span><span class="token punctuation">(</span>ch <span class="token operator">&lt;=</span> <span class="token number">57</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                sb<span class="token punctuation">.</span>append<span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>index <span class="token operator">==</span> infixExpressionString<span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    infixList<span class="token punctuation">.</span>add<span class="token punctuation">(</span>sb<span class="token punctuation">.</span>toString<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    sb<span class="token punctuation">.</span>delete<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> sb<span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>infixExpressionString<span class="token punctuation">.</span>substring<span class="token punctuation">(</span>index<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> index<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>charAt<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">48</span> <span class="token operator">|</span><span class="token operator">|</span> 
+                         infixExpressionString<span class="token punctuation">.</span>substring<span class="token punctuation">(</span>index<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> index<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>charAt<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">57</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    infixList<span class="token punctuation">.</span>add<span class="token punctuation">(</span>sb<span class="token punctuation">.</span>toString<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    sb<span class="token punctuation">.</span>delete<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> sb<span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            index <span class="token operator">+</span><span class="token operator">+</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>index <span class="token operator">>=</span> infixExpressionString<span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                loop <span class="token operator">=</span> false<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    public void showInfixList<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String string <span class="token punctuation">:</span> infixList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token keyword">print</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+
+<span class="token operator">/</span><span class="token operator">**</span>
+ <span class="token operator">*</span> <span class="token number">1</span><span class="token punctuation">.</span> 直接计算后缀表达式
+ <span class="token operator">*</span> @author asdw1
+ <span class="token operator">*</span>
+ <span class="token operator">*</span><span class="token operator">/</span>
+<span class="token keyword">class</span> <span class="token class-name">SuffixCalculator</span><span class="token punctuation">{</span>
+    private String suffixExpressionString<span class="token punctuation">;</span>
+
+    private List<span class="token operator">&lt;</span>String<span class="token operator">></span> suffixListExpression <span class="token operator">=</span> new ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+    Stack<span class="token operator">&lt;</span>String<span class="token operator">></span> stack <span class="token operator">=</span> new Stack<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    public SuffixCalculator<span class="token punctuation">(</span>String suffixExpressionString<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        this<span class="token punctuation">.</span>suffixExpressionString <span class="token operator">=</span> suffixExpressionString<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    private void StringConvertList<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String<span class="token punctuation">[</span><span class="token punctuation">]</span> expresses <span class="token operator">=</span> suffixExpressionString<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String string <span class="token punctuation">:</span> expresses<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            suffixListExpression<span class="token punctuation">.</span>add<span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    public int calc<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        StringConvertList<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span><span class="token punctuation">(</span>Iterator<span class="token operator">&lt;</span>String<span class="token operator">></span> it <span class="token operator">=</span> suffixListExpression<span class="token punctuation">.</span>iterator<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token punctuation">.</span>hasNext<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            String ch <span class="token operator">=</span> it<span class="token punctuation">.</span>next<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token operator">//</span><span class="token operator">/</span>  如果是数字，入栈
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ch<span class="token punctuation">.</span>charAt<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">48</span><span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token operator">&amp;</span><span class="token punctuation">(</span>ch<span class="token punctuation">.</span>charAt<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">57</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                stack<span class="token punctuation">.</span>push<span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token operator">//</span> 如果是操作符，则抛出<span class="token number">2</span>个数字，并且进行计算将结果入栈
+                int num2 <span class="token operator">=</span> Integer<span class="token punctuation">.</span>parseInt<span class="token punctuation">(</span>stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+                int num1 <span class="token operator">=</span> Integer<span class="token punctuation">.</span>parseInt<span class="token punctuation">(</span>stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                int result <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                switch <span class="token punctuation">(</span>ch<span class="token punctuation">.</span>charAt<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                case <span class="token string">'+'</span><span class="token punctuation">:</span>
+                    result <span class="token operator">=</span> num1 <span class="token operator">+</span> num2<span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                case <span class="token string">'-'</span><span class="token punctuation">:</span>
+                    result <span class="token operator">=</span> num1 <span class="token operator">-</span> num2<span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                case <span class="token string">'x'</span><span class="token punctuation">:</span>
+                    result <span class="token operator">=</span> num1 <span class="token operator">*</span> num2<span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                case <span class="token string">'/'</span><span class="token punctuation">:</span>
+                    result <span class="token operator">=</span> num1 <span class="token operator">/</span> num2<span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                default<span class="token punctuation">:</span>
+                    throw new RuntimeException<span class="token punctuation">(</span><span class="token string">"无效操作符"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+                stack<span class="token punctuation">.</span>push<span class="token punctuation">(</span>result <span class="token operator">+</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> Integer<span class="token punctuation">.</span>parseInt<span class="token punctuation">(</span>stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
 
             </div>
             <hr/>
@@ -643,7 +718,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://homewyk.com/2020/04/06/20200406-143706/">https://homewyk.com/2020/04/06/20200406-143706/</a>
+                    <a href="https://homewyk.com/2020/04/22/20200422-110027/">https://homewyk.com/2020/04/22/20200422-110027/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -681,16 +756,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">深度学习</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
-                                <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">
-                                    <span class="chip bg-color">目标检测</span>
-                                </a>
-                            
-                                <a href="/tags/YOLO/">
-                                    <span class="chip bg-color">YOLO</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
                                 </a>
                             
                         </div>
@@ -861,7 +932,7 @@
         repo: 'YongKunWang.github.io',
         owner: 'YongKunWang',
         admin: "YongKunWang",
-        id: '2020-04-06T12-05-11',
+        id: '2020-04-22T11-00-27',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -887,31 +958,32 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/06/20200406-120619/">
+                <a href="/2020/04/22/20200422-172916/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/architecture-buildings-city-cityscape-366283.jpg" class="responsive-img" alt="常见的Latex语法">
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/white-and-black-mountain-wallpaper-933054.jpg" class="responsive-img" alt="学习习总书记给北大援鄂医疗队回信精神">
                         
-                        <span class="card-title">常见的Latex语法</span>
+                        <span class="card-title">学习习总书记给北大援鄂医疗队回信精神</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MathJax 基本语法总结MathJax 简介MathJax 是一款运行在浏览器中的开源数学符号渲染引擎，使用 MathJax 可以方便的在浏览器中显示数学公式，在 Markdown 中输入数学公式需要 LaTeX 语法的支持。
-基本语法
+                            习近平回信勉励北京大学援鄂医疗队全体“90后”党员 让青春在党和人民最需要的地方绽放绚丽之花
+
+&nbsp;&nbsp;&nbsp;&nbsp; 就今天的座谈会和此次座谈会的相关主题《学习习近平总书记给北京大学援鄂医疗队全体“90后”党员的
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-06
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    学习工具
+                            <a href="/categories/website/" class="post-category">
+                                    website
                                 </a>
                             
                             
@@ -921,8 +993,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/latex/">
-                        <span class="chip bg-color">latex</span>
+                    <a href="/tags/website/">
+                        <span class="chip bg-color">website</span>
                     </a>
                     
                 </div>
@@ -936,33 +1008,34 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/05/20200405-150842/">
+                <a href="/2020/04/21/20200421-100027/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/technology-computer-display-text-330771.jpg" class="responsive-img" alt="Blog使用Github和coding双线">
+                        <img src="https://gitee.com/homewyk/cloudimg/raw/master/screen-web-design-developing-codes-1936299.jpg" class="responsive-img" alt="13-数据结构Java版-中缀表达式解决多位数和括号问题">
                         
-                        <span class="card-title">Blog使用Github和coding双线</span>
+                        <span class="card-title">13-数据结构Java版-中缀表达式解决多位数和括号问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Blog使用Github和coding双线用Hexo+Github搭建博客后，会发现网站的访问速度简直是龟速。为了摆脱GitHub的龟速暴击，我们选择把博客托管到Coding来提升访问速度。 
-至于什么是Coding：
-
- Coding W
+                            
+解决中缀表达式的多位数输入和小括号问题实现多位数输入思路：
+1.1 index的自加一直是最后的部分进行控制的
+ *               1.2 这个多位数的判断部分就进行2个判断
+ *                   1.2
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category">
-                                    Hexo
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
                                 </a>
                             
                             
@@ -972,16 +1045,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/Blog/">
-                        <span class="chip bg-color">Blog</span>
-                    </a>
-                    
-                    <a href="/tags/coding/">
-                        <span class="chip bg-color">coding</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
