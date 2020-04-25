@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://homewyk.com/"/>
-  <updated>2020-04-22T11:46:48.066Z</updated>
+  <updated>2020-04-24T04:36:09.138Z</updated>
   <id>https://homewyk.com/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>手写神经网络</title>
+    <link href="https://homewyk.com/2020/04/24/20200424-111023/"/>
+    <id>https://homewyk.com/2020/04/24/20200424-111023/</id>
+    <published>2020-04-24T03:10:23.000Z</published>
+    <updated>2020-04-24T04:36:09.138Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;vim的常用编辑技巧&quot;&gt;&lt;a href=&quot;#vim的常用编辑技巧&quot; class=&quot;headerlink&quot; title=&quot;vim的常用编辑技巧&quot;&gt;&lt;/a&gt;vim的常用编辑技巧&lt;/h2&gt;&lt;h3 id=&quot;自动对齐&quot;&gt;&lt;a href=&quot;#自动对齐&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="vim" scheme="https://homewyk.com/categories/vim/"/>
+    
+    
+      <category term="vim" scheme="https://homewyk.com/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux系统下OpenCV(C++)开发环境搭建</title>
+    <link href="https://homewyk.com/2020/04/24/20200424-100023/"/>
+    <id>https://homewyk.com/2020/04/24/20200424-100023/</id>
+    <published>2020-04-24T02:00:23.000Z</published>
+    <updated>2020-04-24T03:25:00.822Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Linux系统下OpenCV-C-开发环境搭建&quot;&gt;&lt;a href=&quot;#Linux系统下OpenCV-C-开发环境搭建&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="软件安装" scheme="https://homewyk.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+    
+      <category term="软件安装" scheme="https://homewyk.com/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+      <category term="OpenCV" scheme="https://homewyk.com/tags/OpenCV/"/>
+    
+  </entry>
   
   <entry>
     <title>学习习总书记给北大援鄂医疗队回信精神</title>
@@ -48,7 +104,7 @@
     <link href="https://homewyk.com/2020/04/22/20200422-110027/"/>
     <id>https://homewyk.com/2020/04/22/20200422-110027/</id>
     <published>2020-04-22T03:00:27.000Z</published>
-    <updated>2020-04-22T03:20:25.276Z</updated>
+    <updated>2020-04-23T05:29:46.774Z</updated>
     
     <summary type="html">
     
@@ -57,8 +113,7 @@
         
         
           &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;明天进行总结···&lt;/p&gt;
-&lt;h2 id=&quot;代码实现&quot;&gt;&lt;a href=&quot;#代码实现&quot;
+&lt;h2 id=&quot;逆波兰计算器的实现&quot;&gt;&lt;a href=&quot;#逆波兰计算器的实现&quot;
         
       
     
@@ -101,6 +156,30 @@
       <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
     
       <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>手写神经网络</title>
+    <link href="https://homewyk.com/2020/04/20/20200420-133123/"/>
+    <id>https://homewyk.com/2020/04/20/20200420-133123/</id>
+    <published>2020-04-20T05:31:23.000Z</published>
+    <updated>2020-04-25T13:28:44.328Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;待续，正在学习中&lt;del&gt;~&lt;/del&gt;&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
     
   </entry>
   
@@ -521,95 +600,6 @@
       <category term="目标检测" scheme="https://homewyk.com/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
       <category term="YOLO" scheme="https://homewyk.com/tags/YOLO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>02-pytorch-线性回归</title>
-    <link href="https://homewyk.com/2020/04/13/20200413-150000/"/>
-    <id>https://homewyk.com/2020/04/13/20200413-150000/</id>
-    <published>2020-04-13T07:00:05.000Z</published>
-    <updated>2020-04-21T07:41:14.800Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;第二章：线性回归&quot;&gt;&lt;a href=&quot;#第二章：线性回归&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="pytorch" scheme="https://homewyk.com/categories/pytorch/"/>
-    
-    
-      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://homewyk.com/tags/pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>01-pytorch-初见pytorch</title>
-    <link href="https://homewyk.com/2020/04/13/20200413-141505/"/>
-    <id>https://homewyk.com/2020/04/13/20200413-141505/</id>
-    <published>2020-04-13T06:15:05.000Z</published>
-    <updated>2020-04-22T03:27:47.125Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;第一章：初见pytorch&quot;&gt;&lt;a href=&quot;#第一章：初见pytorch&quot; class=&quot;headerlink&quot; title=&quot;第一章：初见pytorch&quot;&gt;&lt;/a&gt;第一章：初见pytorch&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;学习资料：龙良曲
-        
-      
-    
-    </summary>
-    
-    
-      <category term="pytorch" scheme="https://homewyk.com/categories/pytorch/"/>
-    
-    
-      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://homewyk.com/tags/pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>08-数据结构Java版-双向链表</title>
-    <link href="https://homewyk.com/2020/04/13/20200413-114027/"/>
-    <id>https://homewyk.com/2020/04/13/20200413-114027/</id>
-    <published>2020-04-13T03:40:27.000Z</published>
-    <updated>2020-04-16T02:25:52.143Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;双向链表&quot;&gt;&lt;a href=&quot;#双向链表&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="数据结构" scheme="https://homewyk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
-    
-      <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
