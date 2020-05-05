@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://homewyk.com/"/>
-  <updated>2020-04-30T01:06:17.381Z</updated>
+  <updated>2020-05-03T02:46:40.996Z</updated>
   <id>https://homewyk.com/</id>
   
   <author>
@@ -17,11 +17,68 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>LSTM-C++版本实现</title>
+    <link href="https://homewyk.com/2020/05/03/20200503-094544/"/>
+    <id>https://homewyk.com/2020/05/03/20200503-094544/</id>
+    <published>2020-05-03T01:45:38.000Z</published>
+    <updated>2020-05-03T02:46:40.996Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;在实现过程中的C-语法问题&quot;&gt;&lt;a href=&quot;#在实现过程中的C-语法问题&quot; class=&quot;headerlink&quot; title=&quot;在实现过程中的C++语法问题&quot;&gt;&lt;/a&gt;在实现过程中的C++语法问题&lt;/h2&gt;&lt;h3 id=&quot;初始化随机数种子&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="https://homewyk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
+    
+      <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>知网的免费入口</title>
+    <link href="https://homewyk.com/2020/05/01/20200501-110000/"/>
+    <id>https://homewyk.com/2020/05/01/20200501-110000/</id>
+    <published>2020-05-01T03:00:00.000Z</published>
+    <updated>2020-05-05T02:42:56.405Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;知网免费入口&quot;&gt;&lt;a href=&quot;#知网免费入口&quot; class=&quot;headerlink&quot; title=&quot;知网免费入口&quot;&gt;&lt;/a&gt;知网免费入口&lt;/h2&gt;&lt;p&gt;在做相关论文综述的时候，使用学校的VPN登录不上去，在网上搜索了下！&lt;/p&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="website" scheme="https://homewyk.com/categories/website/"/>
+    
+    
+      <category term="website" scheme="https://homewyk.com/tags/website/"/>
+    
+  </entry>
+  
+  <entry>
     <title>01-JavaSE练习题-线程</title>
     <link href="https://homewyk.com/2020/04/29/2020429-082107/"/>
     <id>https://homewyk.com/2020/04/29/2020429-082107/</id>
     <published>2020-04-29T00:20:59.000Z</published>
-    <updated>2020-04-30T01:06:17.381Z</updated>
+    <updated>2020-05-02T01:37:59.171Z</updated>
     
     <summary type="html">
     
@@ -74,7 +131,7 @@
     <link href="https://homewyk.com/2020/04/27/20200427-090027/"/>
     <id>https://homewyk.com/2020/04/27/20200427-090027/</id>
     <published>2020-04-27T01:00:27.000Z</published>
-    <updated>2020-04-27T03:06:24.205Z</updated>
+    <updated>2020-04-30T02:52:49.805Z</updated>
     
     <summary type="html">
     
@@ -526,67 +583,6 @@
       <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
     
       <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>04-pytorch-基础知识</title>
-    <link href="https://homewyk.com/2020/04/15/20200415-160000/"/>
-    <id>https://homewyk.com/2020/04/15/20200415-160000/</id>
-    <published>2020-04-15T08:00:05.000Z</published>
-    <updated>2020-04-16T06:58:13.678Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;基本数据类型&quot;&gt;&lt;a href=&quot;#基本数据类型&quot; class=&quot;headerlink&quot; title=&quot;基本数据类型&quot;&gt;&lt;/a&gt;基本数据类型&lt;/h2&gt;&lt;h3 id=&quot;python与pyTorch的数据类型：&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="pytorch" scheme="https://homewyk.com/categories/pytorch/"/>
-    
-    
-      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://homewyk.com/tags/pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>03-pytorch-分类问题</title>
-    <link href="https://homewyk.com/2020/04/14/20200414-120000/"/>
-    <id>https://homewyk.com/2020/04/14/20200414-120000/</id>
-    <published>2020-04-14T04:00:05.000Z</published>
-    <updated>2020-04-21T13:26:57.610Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;分类问题流程&quot;&gt;&lt;a href=&quot;#分类问题流程&quot; class=&quot;headerlink&quot; title=&quot;分类问题流程&quot;&gt;&lt;/a&gt;分类问题流程&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt; 手写数字识别&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3
-        
-      
-    
-    </summary>
-    
-    
-      <category term="pytorch" scheme="https://homewyk.com/categories/pytorch/"/>
-    
-    
-      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://homewyk.com/tags/pytorch/"/>
     
   </entry>
   
