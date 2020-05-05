@@ -534,21 +534,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-03
+                    2020-05-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    79
+                    938
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -564,26 +564,147 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="在实现过程中的C-语法问题"><a href="#在实现过程中的C-语法问题" class="headerlink" title="在实现过程中的C++语法问题"></a>在实现过程中的C++语法问题</h2><h3 id="初始化随机数种子"><a href="#初始化随机数种子" class="headerlink" title="初始化随机数种子"></a>初始化随机数种子</h3><p>C++新标准，有一个叫随机数引擎的东西 </p>
-<p>包含于头文件<code>&lt;random&gt;</code></p>
-<pre class=" language-c++"><code class="language-c++">#include<random>
-#include<iostream>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>嵌入式系统与应用的课程设计是用C\C++写一个简单的RNN网络，于是通过查找资料，终于完成了两个较为简单的c++实现版本</p>
+<p>参考资料集合：</p>
+<ol>
+<li><p><a href="https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/79017786" target="_blank" rel="noopener">C++从零实现神经网络（收藏版：两万字长文）</a></p>
+<p>这篇文章详细的讲述了神经网络如何使用c++进行搭建</p>
+<p>我没有全部写完，主要是因为时间的问题，只是完成了bp神经网络的前向和反向的搭建，从中学习到了不少的东西，C++没有矩阵运算库，遂搭建Opencv环境，使用Opencv的Mat类来进行矩阵操作，使用vector来做为矩阵容器</p>
+<p>这篇文章有个错误的地方，就是sigmoid的导函数的实现是错误的！！因为导函数的输入矩阵已经是经过激化函数的了，所以在实现中没有必要再次sigmoid</p>
+</li>
+<li><p><a href="https://wohugb.github.io/chatbot/33.lstm-rnn/" target="_blank" rel="noopener">LSTM-RNN—有记忆的神经网络</a></p>
+<p>这篇文章对本人的帮助极大！</p>
+<p>我就是使用这篇文章的两个numpy程序来进行C++的复现。</p>
+<p>这个复现过程是十分痛苦的！鬼知道我经过了多少时间进行调整参数</p>
+<p>初步编写完C++代码后，然后通过使用vs2013和pycharm两个IDE进行逐行比对，一些随机生成的矩阵先进行固化，达到程序和数据的完全一致，在将C++版本的程序中的矩阵随机化，但是很有可能效果不是特别好！</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200505111625.png" alt=""></p>
+</li>
+</ol>
+<p>下面将一些复现过程中的问题记录下来！</p>
+<p>有的可能记不住了，毕竟是在程序完结后记录的！</p>
+<h3 id="C-相关问题"><a href="#C-相关问题" class="headerlink" title="C++相关问题"></a>C++相关问题</h3><h4 id="C-的快速注释"><a href="#C-的快速注释" class="headerlink" title="C++的快速注释"></a>C++的快速注释</h4><pre class=" language-c++"><code class="language-c++">// 注释
+#if 0
+#endif
+
+//取消注释
+#if 1
+#endif</code></pre>
+<h4 id="C-的随机初始化"><a href="#C-的随机初始化" class="headerlink" title="C++的随机初始化"></a>C++的随机初始化</h4><p>在 C++ 程序中，在新标准出现之前，C 和 C++ 都依赖一个简单的 C 库函数 <code>rand</code> 来生成随机数，但是，这个函数生成的是均匀分布的伪随机数，每个随机数的范围在 0 和一个系统相关的最大值（至少为 32767）之间。 </p>
+<p><code>rand</code> 函数有一些问题：即使不是大多数，也有很多程序需要不通范围的随机数。一些应用需要随机浮点数。一些程序需要非均匀分布的随机数。而在编写程序为了解决这些通常会转换 <code>rand</code> 生成的随机数的范围、类型或者是分布时，常常会引入非随机性。 </p>
+<p> 在 C++ 11 标准中，定义在头文件 <code>random</code> 中的随机数库通过一组协作的类来解决这些问题，主要用到的是两个类： </p>
+<ul>
+<li>随机数引擎类（random-number engines）</li>
+<li>随机数分布类（random-number distribution)</li>
+</ul>
+<p>其中，一个引擎类可以生成 <code>unsigned</code> 随机数列，一个分布使用一个引擎类生成指定类型的，在给定范围内的，服从指定概率分布的随机数。 </p>
+<pre class=" language-c++"><code class="language-c++">default_random_engine e1(time(0));  // 稍微随机些的种子
+//由于 time 返回以秒计的时间，因此这种方式只适用于生成种子的间隔为秒级或更长的应用。
+//生成 0 到 9 之间（包含）均匀分布的随机数
+uniform_int_distribution<unsigned> u(0,9);
+for (size_t i =0;i<10; i++)
+    // 将 u 作为随机数源
+    // 每个调用返回在指定范围内并服从均匀分布的值
+    cout<<u(e)<<" ";
+cout<< endl;</code></pre>
+<p>更详细的设置可百度查询！</p>
+<p>生成指定数值范围内的矩阵：</p>
+<pre class=" language-c++"><code class="language-c++">cv::Mat rand_arr(float low, float high, int s_w, int s_h){
+
+    // initialization rand engine and set seed
+    std::default_random_engine e(time(0));
+    // Specified random distribution 
+    std::uniform_real_distribution<float> u(low, high);
+
+    // initial matrix 
+    cv::Mat res = cv::Mat::zeros(s_w, s_h, CV_32F);
+
+    for (int i = 0; i < res.rows; i++)
+    {
+        for (int j = 0; j < res.cols; j++)
+        {
+            res.at<float>(i, j) = u(e);
+        }
+    }
+    return res;
+}</code></pre>
+<h4 id="Mat的相关矩阵运算"><a href="#Mat的相关矩阵运算" class="headerlink" title="Mat的相关矩阵运算"></a>Mat的相关矩阵运算</h4><p><code>*</code>：是真正的乘法</p>
+<p><code>dot</code>:点乘</p>
+<p><code>size(cols,rows)</code> 与正常认知相反</p>
+<h4 id="c-的vector基本操作"><a href="#c-的vector基本操作" class="headerlink" title="c++的vector基本操作"></a>c++的vector基本操作</h4><pre class=" language-c++"><code class="language-c++">#include <string.h>
+#include <vector>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-    default_random_engine e;
-    // set seed
-    //default_random_engine e(time(0));
-    uniform_real_distribution<double> u(-1.2,3.5);
-    for(int i = 0; i < 10; ++i)
-        cout << u(e) << endl;
+    vector<int>obj;//创建一个向量存储容器 int
+    for(int i=0;i<10;i++) // push_back(elem)在数组最后添加数据 
+    {
+        obj.push_back(i);
+        cout<<obj[i]<<",";    
+    }
+
+    for(int i=0;i<5;i++)//去掉数组最后一个数据 
+    {
+        obj.pop_back();
+    }
+
+    cout<<"\n"<<endl;
+
+    for(int i=0;i<obj.size();i++)//size()容器中实际数据个数 
+    {
+        cout<<obj[i]<<",";
+    }
+
     return 0;
-}</code></pre>
-<p>上面的代码中:</p>
-<p>第一行就是【引擎】，生成随机序列</p>
-<p>第二行就是【分布】，如果把“real”替换成 int， &lt;&gt;里写成unsigned，就是生成整数。</p>
-<p>u里面的参数就是你想生成的数的范围。 </p>
+}
+
+/*
+0,1,2,3,4,5,6,7,8,9,
+
+0,1,2,3,4,
+*/</code></pre>
+<h3 id="numpy相关问题"><a href="#numpy相关问题" class="headerlink" title="numpy相关问题"></a>numpy相关问题</h3><h4 id="numpy的各种乘法"><a href="#numpy的各种乘法" class="headerlink" title="numpy的各种乘法"></a>numpy的各种乘法</h4><p><code>np.dot</code>: 维度&gt;= 2维，真正的矩阵乘法，一维向量的内积</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token number">12</span>
+<span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token number">20</span>
+
+<span class="token operator">>></span><span class="token operator">></span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p><code>np.outer</code>:计算外积</p>
+<p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200505114557.png" alt=""></p>
+<p><code>np.multiply()</code>:对应元素的乘机</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span><span class="token number">2.0</span><span class="token punctuation">,</span> <span class="token number">4.0</span><span class="token punctuation">)</span>
+<span class="token number">8.0</span>
+
+<span class="token operator">>></span><span class="token operator">></span> x1 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> x2 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span>  <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p><code>*</code>:类型为数组是：为对应元素相乘；类型为矩阵时，表示矩阵相乘</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> x1 <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">9.0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> x2 <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">3.0</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> x1 <span class="token operator">*</span> x2
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>   <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>   <span class="token number">4</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+     <span class="token punctuation">[</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>   <span class="token number">4</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">10</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+     <span class="token punctuation">[</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>   <span class="token number">7</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">16</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+
+<span class="token operator">>></span><span class="token operator">></span> x1 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> x2 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> a <span class="token operator">=</span> np<span class="token punctuation">.</span>mat<span class="token punctuation">(</span>x1<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> b <span class="token operator">=</span> np<span class="token punctuation">.</span>mat<span class="token punctuation">(</span>x2<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> a<span class="token operator">*</span>b
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">37</span><span class="token punctuation">,</span> <span class="token number">52</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span><span class="token number">37</span><span class="token punctuation">,</span> <span class="token number">52</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
 
             </div>
             <hr/>
@@ -861,15 +982,11 @@ int main()
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在实现过程中的C++语法问题初始化随机数种子C++新标准，有一个叫随机数引擎的东西 
-包含于头文件&lt;random&gt;
-#include
-#include
-using namespace std;
+                            前言嵌入式系统与应用的课程设计是用C\C++写一个简单的RNN网络，于是通过查找资料，终于完成了两个较为简单的c++实现版本
+参考资料集合：
 
-int main()
-{
-   
+C++从零实现神经网络（收藏版：两万字长文）
+这篇文章详细的讲述了神经网络如何使用c++进行搭建
                         
                     </div>
                     <div class="publish-info">
@@ -926,8 +1043,8 @@ int main()
 参考资料
 1.广西壮族自治区图书馆http://wap.gxlib.org.cn:9080/ermsLogin/view.do
 1.简介
-详细使用步骤
-进入网
+2. 详细使用步骤
+
                         
                     </div>
                     <div class="publish-info">
@@ -1109,7 +1226,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">92.2k</span>&nbsp;字
+                class="white-color">93k</span>&nbsp;字
             
             
             
