@@ -537,14 +537,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    398
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    9 分
                 </div>
                 
 
@@ -596,94 +596,94 @@
 <p>数据类型 U:uchar F:float</p>
 <p>通道数： C1:单通道 C3:3通道 C4:4通道</p>
 </blockquote>
-<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><h4 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h4><pre class=" language-c++"><code class="language-c++">    //1.读入一张图片
-    Mat image = imread("../../../images/1.jpg",0);
-    Mat imagec = imread("../../../images/1.jpg");
-    //2.在窗口显示载入的图片
-    imshow("image", imagec);
-    waitKey();
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><h4 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h4><pre class=" language-c"><code class="language-c">    <span class="token comment" spellcheck="true">//1.读入一张图片</span>
+    Mat image <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">"../../../images/1.jpg"</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Mat imagec <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">"../../../images/1.jpg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//2.在窗口显示载入的图片</span>
+    <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"image"</span><span class="token punctuation">,</span> imagec<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    printf("创建矩阵的集中方法");
-    cv::Mat a(cv::Size(5, 5), CV_8UC1);
-    cout << a << endl;
-    /*
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"创建矩阵的集中方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat <span class="token function">a</span><span class="token punctuation">(</span>cv<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">Size</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> CV_8UC1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> a <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*
     [205, 205, 205, 205, 205;
     205, 205, 205, 205, 205;
     205, 205, 205, 205, 205;
     205, 205, 205, 205, 205;
     205, 205, 205, 205, 205]
-    */
+    */</span>
 
-    cv::Mat b = cv::Mat(cv::Size(5, 5), CV_8UC3);
-    cout << b << endl;
-    cout << b.size() << endl;
-    /*
+    cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat b <span class="token operator">=</span> cv<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">Mat</span><span class="token punctuation">(</span>cv<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">Size</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> CV_8UC3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> b <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> b<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*
     [205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205;
      205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205;
      205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205;
      205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205;
      205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205]
     [5 x 5]
-    */
+    */</span>
 
-    //2行2列对角矩阵
-    cv::Mat c = cv::Mat::eye(2, 2, CV_64F);
-    cout << c << endl;
-    /*
+    <span class="token comment" spellcheck="true">//2行2列对角矩阵</span>
+    cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat c <span class="token operator">=</span> cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">eye</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> CV_64F<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> c <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*
     [1, 0;
      0, 1]
-    */
-    //2行2列单位矩阵
-    cv::Mat o = cv::Mat::ones(2, 2, CV_32F);
-    cout << o << endl;
-    /*
+    */</span>
+    <span class="token comment" spellcheck="true">//2行2列单位矩阵</span>
+    cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat o <span class="token operator">=</span> cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">ones</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> CV_32F<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> o <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*
     [1, 1;
      1, 1]
-    */
-    //3行 3列 0matrix
-    cv::Mat z = cv::Mat::zeros(3, 3, CV_8UC1);
-    cout << z << endl;
-    /*
+    */</span>
+    <span class="token comment" spellcheck="true">//3行 3列 0matrix</span>
+    cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat z <span class="token operator">=</span> cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">zeros</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> CV_8UC1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> z <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*
     [  0,   0,   0;
        0,   0,   0;
        0,   0,   0]
-    */
-    cv::Mat img;
-    img.create(4,4,CV_8UC2);
-    cout << img << endl;
-    /*
+    */</span>
+    cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat img<span class="token punctuation">;</span>
+    img<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span>CV_8UC2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> img <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*
     [205, 205, 205, 205, 205, 205, 205, 205;
      205, 205, 205, 205, 205, 205, 205, 205;
      205, 205, 205, 205, 205, 205, 205, 205;
      205, 205, 205, 205, 205, 205, 205, 205]
-    */</code></pre>
+    */</span></code></pre>
 <h4 id="矩阵的基本运算"><a href="#矩阵的基本运算" class="headerlink" title="矩阵的基本运算"></a>矩阵的基本运算</h4><p><code>*</code>:是矩阵乘法</p>
 <p><code>Size(col,row)</code>!!</p>
 <p><code>dot()</code>是点乘</p>
-<pre class=" language-c++"><code class="language-c++">printf("\n计算加减法\n");
-    //Size（col, row）
-    cv::Mat a1 = Mat::eye(Size(3, 2), CV_32F);
-    cv::Mat b1 = Mat::ones(Size(3, 2), CV_32F);
-    cv::Mat c1 = a1 + b1;
-    cv::Mat d1 = a1 - b1;
-    cout << c1 << endl;
-    cout << d1 << endl;
-    /*
+<pre class=" language-c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n计算加减法\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//Size（col, row）</span>
+    cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat a1 <span class="token operator">=</span> Mat<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">eye</span><span class="token punctuation">(</span><span class="token function">Size</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> CV_32F<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat b1 <span class="token operator">=</span> Mat<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">ones</span><span class="token punctuation">(</span><span class="token function">Size</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> CV_32F<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat c1 <span class="token operator">=</span> a1 <span class="token operator">+</span> b1<span class="token punctuation">;</span>
+    cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat d1 <span class="token operator">=</span> a1 <span class="token operator">-</span> b1<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> c1 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> d1 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*
     [2, 1, 1;
      1, 2, 1]
     [0, -1, -1;
      -1, 0, -1]
-    */
-    printf("\n计算矩阵乘法|转置\n");
-    Mat m1 = Mat::eye(2, 3, CV_32F); //使用cv命名空间可省略cv::前缀，下同  
-    Mat m2 = Mat::ones(3, 2, CV_32F);
+    */</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n计算矩阵乘法|转置\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Mat m1 <span class="token operator">=</span> Mat<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">eye</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> CV_32F<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//使用cv命名空间可省略cv::前缀，下同  </span>
+    Mat m2 <span class="token operator">=</span> Mat<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">ones</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> CV_32F<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    cout << "m1  = " << m1.size() << endl << m1 << endl << endl;
-    cout << "m2  = " <<m2.size() << endl << m2 << endl << endl;
-    cout << "\nm1.*2 = " << (m1*2).size() <<endl << m1 * 2 << endl;
-    cout << "\n(m1+2).*(m1+3) = " << ((m1+1).mul(m1+3)).size() << endl<< (m1+1).mul(m1+3) << endl;  
-    cout << "\nm1*m2 = " << (m1*m2).size()<< endl << m1*m2 << endl;
-    /*
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"m1  = "</span> <span class="token operator">&lt;&lt;</span> m1<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl <span class="token operator">&lt;&lt;</span> m1 <span class="token operator">&lt;&lt;</span> endl <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"m2  = "</span> <span class="token operator">&lt;&lt;</span>m2<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl <span class="token operator">&lt;&lt;</span> m2 <span class="token operator">&lt;&lt;</span> endl <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\nm1.*2 = "</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>m1<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span>endl <span class="token operator">&lt;&lt;</span> m1 <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n(m1+2).*(m1+3) = "</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>m1<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mul</span><span class="token punctuation">(</span>m1<span class="token operator">+</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>m1<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mul</span><span class="token punctuation">(</span>m1<span class="token operator">+</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>  
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\nm1*m2 = "</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>m1<span class="token operator">*</span>m2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span> endl <span class="token operator">&lt;&lt;</span> m1<span class="token operator">*</span>m2 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*
     m1  = [3 x 2]
     [1, 0, 0;
     0, 1, 0]
@@ -706,12 +706,12 @@
     [1, 1;
      1, 1]
 
-    */</code></pre>
-<h4 id="矩阵的转置"><a href="#矩阵的转置" class="headerlink" title="矩阵的转置"></a>矩阵的转置</h4><pre class=" language-c++"><code class="language-c++">Mat m3= Mat::eye(2,3, CV_32F);    
-    Mat m3t = m3.t();  
-    cout<<"m3  = "<<endl<<m3<<endl<<endl;  
-    cout<<"m3t  = "<<endl<<m3t<<endl<<endl; 
-    /*
+    */</span></code></pre>
+<h4 id="矩阵的转置"><a href="#矩阵的转置" class="headerlink" title="矩阵的转置"></a>矩阵的转置</h4><pre class=" language-c"><code class="language-c">Mat m3<span class="token operator">=</span> Mat<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">eye</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span> CV_32F<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    Mat m3t <span class="token operator">=</span> m3<span class="token punctuation">.</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    cout<span class="token operator">&lt;&lt;</span><span class="token string">"m3  = "</span><span class="token operator">&lt;&lt;</span>endl<span class="token operator">&lt;&lt;</span>m3<span class="token operator">&lt;&lt;</span>endl<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>  
+    cout<span class="token operator">&lt;&lt;</span><span class="token string">"m3t  = "</span><span class="token operator">&lt;&lt;</span>endl<span class="token operator">&lt;&lt;</span>m3t<span class="token operator">&lt;&lt;</span>endl<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+    <span class="token comment" spellcheck="true">/*
     矩阵的转置
     m3  =
     [1, 0, 0;
@@ -722,14 +722,14 @@
      0, 1;
      0, 0]
 
-    */</code></pre>
-<h4 id="矩阵求逆"><a href="#矩阵求逆" class="headerlink" title="矩阵求逆"></a>矩阵求逆</h4><pre class=" language-c++"><code class="language-c++">printf("\n矩阵求逆\n");
-    printf("必须为方阵");
-    Mat m4= Mat::eye(3,3, CV_32F); 
-    Mat meinv = m4.inv();  
-    cout<<"m4  = "<<endl<<m4<<endl<<endl;  
-    cout<<"meinv = "<<endl<<meinv<<endl<<endl; 
-    /*
+    */</span></code></pre>
+<h4 id="矩阵求逆"><a href="#矩阵求逆" class="headerlink" title="矩阵求逆"></a>矩阵求逆</h4><pre class=" language-c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n矩阵求逆\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"必须为方阵"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Mat m4<span class="token operator">=</span> Mat<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">eye</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span> CV_32F<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    Mat meinv <span class="token operator">=</span> m4<span class="token punctuation">.</span><span class="token function">inv</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    cout<span class="token operator">&lt;&lt;</span><span class="token string">"m4  = "</span><span class="token operator">&lt;&lt;</span>endl<span class="token operator">&lt;&lt;</span>m4<span class="token operator">&lt;&lt;</span>endl<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>  
+    cout<span class="token operator">&lt;&lt;</span><span class="token string">"meinv = "</span><span class="token operator">&lt;&lt;</span>endl<span class="token operator">&lt;&lt;</span>meinv<span class="token operator">&lt;&lt;</span>endl<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+    <span class="token comment" spellcheck="true">/*
     [1, 0, 0;
      0, 1, 0;
      0, 0, 1]
@@ -738,29 +738,29 @@
     [1, 0, 0;
      0, 1, 0;
      0, 0, 1]
-    */</code></pre>
-<h4 id="统计矩阵中非零个数"><a href="#统计矩阵中非零个数" class="headerlink" title="统计矩阵中非零个数"></a>统计矩阵中非零个数</h4><pre class=" language-c++"><code class="language-c++">printf("统计矩阵中非0的个数\n");
-cout << countNonZero(m4) << endl;</code></pre>
-<h4 id="矩阵的均值和标准差"><a href="#矩阵的均值和标准差" class="headerlink" title="矩阵的均值和标准差"></a>矩阵的均值和标准差</h4><pre class=" language-c++"><code class="language-c++">printf("\n均值和标准差\n");
+    */</span></code></pre>
+<h4 id="统计矩阵中非零个数"><a href="#统计矩阵中非零个数" class="headerlink" title="统计矩阵中非零个数"></a>统计矩阵中非零个数</h4><pre class=" language-c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"统计矩阵中非0的个数\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token function">countNonZero</span><span class="token punctuation">(</span>m4<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span></code></pre>
+<h4 id="矩阵的均值和标准差"><a href="#矩阵的均值和标准差" class="headerlink" title="矩阵的均值和标准差"></a>矩阵的均值和标准差</h4><pre class=" language-c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n均值和标准差\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    Mat mean;
-    Mat std;
-    meanStdDev(m4, mean, std);
-    cout << "mean = " << mean << endl;
-    cout << "std = " << std << endl;
-    /*
+    Mat mean<span class="token punctuation">;</span>
+    Mat std<span class="token punctuation">;</span>
+    <span class="token function">meanStdDev</span><span class="token punctuation">(</span>m4<span class="token punctuation">,</span> mean<span class="token punctuation">,</span> std<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"mean = "</span> <span class="token operator">&lt;&lt;</span> mean <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"std = "</span> <span class="token operator">&lt;&lt;</span> std <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*
     mean = [0.3333333333333333]
     std = [0.4714045207910317]
-    */
-    printf("\n多通道的均值和方差\n");
-    Mat mean3;
-    Mat stddev3;
-    Mat m5(cv::Size(5, 5), CV_8UC3, Scalar(255, 200, 100));
-    cout << "m5  = " << endl << m5 << endl << endl;
-    meanStdDev(m5, mean3, stddev3);
-    cout << "mean3 = " << mean3 << endl;
-    cout << "stddev3 = " << stddev3 << endl;
-    /*
+    */</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n多通道的均值和方差\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Mat mean3<span class="token punctuation">;</span>
+    Mat stddev3<span class="token punctuation">;</span>
+    Mat <span class="token function">m5</span><span class="token punctuation">(</span>cv<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">Size</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> CV_8UC3<span class="token punctuation">,</span> <span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"m5  = "</span> <span class="token operator">&lt;&lt;</span> endl <span class="token operator">&lt;&lt;</span> m5 <span class="token operator">&lt;&lt;</span> endl <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token function">meanStdDev</span><span class="token punctuation">(</span>m5<span class="token punctuation">,</span> mean3<span class="token punctuation">,</span> stddev3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"mean3 = "</span> <span class="token operator">&lt;&lt;</span> mean3 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"stddev3 = "</span> <span class="token operator">&lt;&lt;</span> stddev3 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*
     m5  =
     [255, 200, 100, 255, 200, 100, 255, 200, 100, 255, 200, 100, 255, 200, 100;
      255, 200, 100, 255, 200, 100, 255, 200, 100, 255, 200, 100, 255, 200, 100;
@@ -775,85 +775,85 @@ cout << countNonZero(m4) << endl;</code></pre>
                0;
                0]
 
-    */</code></pre>
-<h4 id="矩阵元素的访问"><a href="#矩阵元素的访问" class="headerlink" title="矩阵元素的访问"></a>矩阵元素的访问</h4><pre class=" language-c++"><code class="language-c++">#include <opencv2/opencv.hpp>
+    */</span></code></pre>
+<h4 id="矩阵元素的访问"><a href="#矩阵元素的访问" class="headerlink" title="矩阵元素的访问"></a>矩阵元素的访问</h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/opencv.hpp></span></span>
 
-using namespace cv;
-using namespace std;
+using namespace cv<span class="token punctuation">;</span>
+using namespace std<span class="token punctuation">;</span>
 
-int main(int argc, char **argv){
-    printf("得到元素的值\n");
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>argv<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"得到元素的值\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    Mat img(5, 3, CV_8UC3, Scalar(50, 40, 30));
-    cout << img.rows << endl; //5
-    cout << img.cols << endl; //3
-    cout << img.channels() << endl; //3
-    cout << img.depth() << endl;    //0
-    cout << img.dims << endl;       //2
-    cout << img.elemSize() << endl; //3
-    cout << img.elemSize1() << endl;//1
-    cout << img.size[0] << endl;    //5
-    cout << img.size[1] << endl;    //3
-    cout << img.size() << endl;     //[3x5]
-    cout << img << endl;   
-    /*
+    Mat <span class="token function">img</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> CV_8UC3<span class="token punctuation">,</span> <span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> img<span class="token punctuation">.</span>rows <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//5</span>
+    cout <span class="token operator">&lt;&lt;</span> img<span class="token punctuation">.</span>cols <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//3</span>
+    cout <span class="token operator">&lt;&lt;</span> img<span class="token punctuation">.</span><span class="token function">channels</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//3</span>
+    cout <span class="token operator">&lt;&lt;</span> img<span class="token punctuation">.</span><span class="token function">depth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//0</span>
+    cout <span class="token operator">&lt;&lt;</span> img<span class="token punctuation">.</span>dims <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>       <span class="token comment" spellcheck="true">//2</span>
+    cout <span class="token operator">&lt;&lt;</span> img<span class="token punctuation">.</span><span class="token function">elemSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//3</span>
+    cout <span class="token operator">&lt;&lt;</span> img<span class="token punctuation">.</span><span class="token function">elemSize1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//1</span>
+    cout <span class="token operator">&lt;&lt;</span> img<span class="token punctuation">.</span>size<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//5</span>
+    cout <span class="token operator">&lt;&lt;</span> img<span class="token punctuation">.</span>size<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//3</span>
+    cout <span class="token operator">&lt;&lt;</span> img<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//[3x5]</span>
+    cout <span class="token operator">&lt;&lt;</span> img <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>   
+    <span class="token comment" spellcheck="true">/*
     对于三通道元素彩色图像来说，那么可以这样
-    image.at<cv::Vec3b>(j,i)[channel]= value;
+    image.at&lt;cv::Vec3b>(j,i)[channel]= value;
     使用数组赋值
-    image.at<cv::Vec3b>(j,i) = cv::Vec3b(a,b,c);
+    image.at&lt;cv::Vec3b>(j,i) = cv::Vec3b(a,b,c);
     Vec3b表示3个unsigned char组成的向量
-    */
-    for (int row = 0; row < img.rows; row++)
-    {
-        for (int col = 0; col < img.cols; col++)
-        {
-            int r = img.at<Vec3b>(row, col)[0];
-            int g = img.at<Vec3b>(row, col)[1];
-            int b = img.at<Vec3b>(row, col)[2];
-            cout << r << " : " << g << " : " << b << endl;
-        }
-        cout << endl;
-    }
+    */</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> row <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> row <span class="token operator">&lt;</span> img<span class="token punctuation">.</span>rows<span class="token punctuation">;</span> row<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> col <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> col <span class="token operator">&lt;</span> img<span class="token punctuation">.</span>cols<span class="token punctuation">;</span> col<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> r <span class="token operator">=</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>Vec3b<span class="token operator">></span><span class="token punctuation">(</span>row<span class="token punctuation">,</span> col<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> g <span class="token operator">=</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>Vec3b<span class="token operator">></span><span class="token punctuation">(</span>row<span class="token punctuation">,</span> col<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> b <span class="token operator">=</span> img<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>Vec3b<span class="token operator">></span><span class="token punctuation">(</span>row<span class="token punctuation">,</span> col<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            cout <span class="token operator">&lt;&lt;</span> r <span class="token operator">&lt;&lt;</span> <span class="token string">" : "</span> <span class="token operator">&lt;&lt;</span> g <span class="token operator">&lt;&lt;</span> <span class="token string">" : "</span> <span class="token operator">&lt;&lt;</span> b <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    Mat img1(5, 3, CV_8UC1);
-    cout << img1 << endl;
-    for (int row = 0; row < img1.rows; row++)
-    {
-        for (int col = 0; col < img1.cols; col++)
-        {
-            int val = img1.at<uchar>(row, col);
-            cout << val << endl;
-        }
-        cout << endl;
-    }
+    Mat <span class="token function">img1</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> CV_8UC1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> img1 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> row <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> row <span class="token operator">&lt;</span> img1<span class="token punctuation">.</span>rows<span class="token punctuation">;</span> row<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> col <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> col <span class="token operator">&lt;</span> img1<span class="token punctuation">.</span>cols<span class="token punctuation">;</span> col<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> val <span class="token operator">=</span> img1<span class="token punctuation">.</span>at<span class="token operator">&lt;</span>uchar<span class="token operator">></span><span class="token punctuation">(</span>row<span class="token punctuation">,</span> col<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            cout <span class="token operator">&lt;&lt;</span> val <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    system("pause");
-}</code></pre>
-<h4 id="求矩阵的最大最小值-最大值坐标最小值坐标"><a href="#求矩阵的最大最小值-最大值坐标最小值坐标" class="headerlink" title="求矩阵的最大最小值|最大值坐标最小值坐标"></a>求矩阵的最大最小值|最大值坐标最小值坐标</h4><pre class=" language-c++"><code class="language-c++">printf("求最大最小值\n");
-    printf("图像必须得是单通道！！\n");
-    cout << "image" << image.size() << endl;
-    double minVal = 0.0;
-    double maxVal = 0.0;
-    Point minPt;
-    Point maxPt;
-    minMaxLoc(image, &minVal, &maxVal, &minPt, &maxPt);
-    cout << "min value  = " << minVal << endl;
-    cout << "max value  = " << maxVal << endl;
-    cout << "minPt = (" << minPt.x << "," << minPt.y << ")" << endl;
-    cout << "maxPt = (" << maxPt.x << "," << maxPt.y << ")" << endl;
-    cout << endl;
-    /*
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="求矩阵的最大最小值-最大值坐标最小值坐标"><a href="#求矩阵的最大最小值-最大值坐标最小值坐标" class="headerlink" title="求矩阵的最大最小值|最大值坐标最小值坐标"></a>求矩阵的最大最小值|最大值坐标最小值坐标</h4><pre class=" language-c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"求最大最小值\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"图像必须得是单通道！！\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"image"</span> <span class="token operator">&lt;&lt;</span> image<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> minVal <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> maxVal <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+    Point minPt<span class="token punctuation">;</span>
+    Point maxPt<span class="token punctuation">;</span>
+    <span class="token function">minMaxLoc</span><span class="token punctuation">(</span>image<span class="token punctuation">,</span> <span class="token operator">&amp;</span>minVal<span class="token punctuation">,</span> <span class="token operator">&amp;</span>maxVal<span class="token punctuation">,</span> <span class="token operator">&amp;</span>minPt<span class="token punctuation">,</span> <span class="token operator">&amp;</span>maxPt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"min value  = "</span> <span class="token operator">&lt;&lt;</span> minVal <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"max value  = "</span> <span class="token operator">&lt;&lt;</span> maxVal <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"minPt = ("</span> <span class="token operator">&lt;&lt;</span> minPt<span class="token punctuation">.</span>x <span class="token operator">&lt;&lt;</span> <span class="token string">","</span> <span class="token operator">&lt;&lt;</span> minPt<span class="token punctuation">.</span>y <span class="token operator">&lt;&lt;</span> <span class="token string">")"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"maxPt = ("</span> <span class="token operator">&lt;&lt;</span> maxPt<span class="token punctuation">.</span>x <span class="token operator">&lt;&lt;</span> <span class="token string">","</span> <span class="token operator">&lt;&lt;</span> maxPt<span class="token punctuation">.</span>y <span class="token operator">&lt;&lt;</span> <span class="token string">")"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*
     image[658 x 439]
     min value  = 0
     max value  = 255
     minPt = (36,217)
     maxPt = (124,220)
-    */
-    Rect rectMin(minPt.x - 10, minPt.y - 10, 20, 20);
-    Rect rectMax(maxPt.x - 10, maxPt.y - 10, 20, 20);
-    rectangle(imagec, rectMin, Scalar(0, 0, 0), 2);
-    rectangle(imagec, rectMax, Scalar(100, 100, 100), 2);
-    imshow("image with min max location", imagec);</code></pre>
+    */</span>
+    Rect <span class="token function">rectMin</span><span class="token punctuation">(</span>minPt<span class="token punctuation">.</span>x <span class="token operator">-</span> <span class="token number">10</span><span class="token punctuation">,</span> minPt<span class="token punctuation">.</span>y <span class="token operator">-</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Rect <span class="token function">rectMax</span><span class="token punctuation">(</span>maxPt<span class="token punctuation">.</span>x <span class="token operator">-</span> <span class="token number">10</span><span class="token punctuation">,</span> maxPt<span class="token punctuation">.</span>y <span class="token operator">-</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">rectangle</span><span class="token punctuation">(</span>imagec<span class="token punctuation">,</span> rectMin<span class="token punctuation">,</span> <span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">rectangle</span><span class="token punctuation">(</span>imagec<span class="token punctuation">,</span> rectMax<span class="token punctuation">,</span> <span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"image with min max location"</span><span class="token punctuation">,</span> imagec<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>效果：</p>
 <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200420174812.png" alt=""></p>
 <p><img src="https://gitee.com/homewyk/cloudimg/raw/master/20200420174837.png" alt=""></p>
@@ -1360,7 +1360,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">93k</span>&nbsp;字
+                class="white-color">94.6k</span>&nbsp;字
             
             
             

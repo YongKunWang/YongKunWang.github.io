@@ -541,14 +541,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    938
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -582,13 +582,13 @@
 </ol>
 <p>下面将一些复现过程中的问题记录下来！</p>
 <p>有的可能记不住了，毕竟是在程序完结后记录的！</p>
-<h3 id="C-相关问题"><a href="#C-相关问题" class="headerlink" title="C++相关问题"></a>C++相关问题</h3><h4 id="C-的快速注释"><a href="#C-的快速注释" class="headerlink" title="C++的快速注释"></a>C++的快速注释</h4><pre class=" language-c++"><code class="language-c++">// 注释
-#if 0
-#endif
+<h3 id="C-相关问题"><a href="#C-相关问题" class="headerlink" title="C++相关问题"></a>C++相关问题</h3><h4 id="C-的快速注释"><a href="#C-的快速注释" class="headerlink" title="C++的快速注释"></a>C++的快速注释</h4><pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">// 注释</span>
+<span class="token macro property">#<span class="token directive keyword">if</span> 0</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
 
-//取消注释
-#if 1
-#endif</code></pre>
+<span class="token comment" spellcheck="true">//取消注释</span>
+<span class="token macro property">#<span class="token directive keyword">if</span> 1</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span></code></pre>
 <h4 id="C-的随机初始化"><a href="#C-的随机初始化" class="headerlink" title="C++的随机初始化"></a>C++的随机初始化</h4><p>在 C++ 程序中，在新标准出现之前，C 和 C++ 都依赖一个简单的 C 库函数 <code>rand</code> 来生成随机数，但是，这个函数生成的是均匀分布的伪随机数，每个随机数的范围在 0 和一个系统相关的最大值（至少为 32767）之间。 </p>
 <p><code>rand</code> 函数有一些问题：即使不是大多数，也有很多程序需要不通范围的随机数。一些应用需要随机浮点数。一些程序需要非均匀分布的随机数。而在编写程序为了解决这些通常会转换 <code>rand</code> 生成的随机数的范围、类型或者是分布时，常常会引入非随机性。 </p>
 <p> 在 C++ 11 标准中，定义在头文件 <code>random</code> 中的随机数库通过一组协作的类来解决这些问题，主要用到的是两个类： </p>
@@ -597,73 +597,73 @@
 <li>随机数分布类（random-number distribution)</li>
 </ul>
 <p>其中，一个引擎类可以生成 <code>unsigned</code> 随机数列，一个分布使用一个引擎类生成指定类型的，在给定范围内的，服从指定概率分布的随机数。 </p>
-<pre class=" language-c++"><code class="language-c++">default_random_engine e1(time(0));  // 稍微随机些的种子
-//由于 time 返回以秒计的时间，因此这种方式只适用于生成种子的间隔为秒级或更长的应用。
-//生成 0 到 9 之间（包含）均匀分布的随机数
-uniform_int_distribution<unsigned> u(0,9);
-for (size_t i =0;i<10; i++)
-    // 将 u 作为随机数源
-    // 每个调用返回在指定范围内并服从均匀分布的值
-    cout<<u(e)<<" ";
-cout<< endl;</code></pre>
+<pre class=" language-c"><code class="language-c">default_random_engine <span class="token function">e1</span><span class="token punctuation">(</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 稍微随机些的种子</span>
+<span class="token comment" spellcheck="true">//由于 time 返回以秒计的时间，因此这种方式只适用于生成种子的间隔为秒级或更长的应用。</span>
+<span class="token comment" spellcheck="true">//生成 0 到 9 之间（包含）均匀分布的随机数</span>
+uniform_int_distribution<span class="token operator">&lt;</span><span class="token keyword">unsigned</span><span class="token operator">></span> <span class="token function">u</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// 将 u 作为随机数源</span>
+    <span class="token comment" spellcheck="true">// 每个调用返回在指定范围内并服从均匀分布的值</span>
+    cout<span class="token operator">&lt;&lt;</span><span class="token function">u</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>
+cout<span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span></code></pre>
 <p>更详细的设置可百度查询！</p>
 <p>生成指定数值范围内的矩阵：</p>
-<pre class=" language-c++"><code class="language-c++">cv::Mat rand_arr(float low, float high, int s_w, int s_h){
+<pre class=" language-c"><code class="language-c">cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat <span class="token function">rand_arr</span><span class="token punctuation">(</span><span class="token keyword">float</span> low<span class="token punctuation">,</span> <span class="token keyword">float</span> high<span class="token punctuation">,</span> <span class="token keyword">int</span> s_w<span class="token punctuation">,</span> <span class="token keyword">int</span> s_h<span class="token punctuation">)</span><span class="token punctuation">{</span>
 
-    // initialization rand engine and set seed
-    std::default_random_engine e(time(0));
-    // Specified random distribution 
-    std::uniform_real_distribution<float> u(low, high);
+    <span class="token comment" spellcheck="true">// initialization rand engine and set seed</span>
+    std<span class="token punctuation">:</span><span class="token punctuation">:</span>default_random_engine <span class="token function">e</span><span class="token punctuation">(</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// Specified random distribution </span>
+    std<span class="token punctuation">:</span><span class="token punctuation">:</span>uniform_real_distribution<span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span> <span class="token function">u</span><span class="token punctuation">(</span>low<span class="token punctuation">,</span> high<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    // initial matrix 
-    cv::Mat res = cv::Mat::zeros(s_w, s_h, CV_32F);
+    <span class="token comment" spellcheck="true">// initial matrix </span>
+    cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat res <span class="token operator">=</span> cv<span class="token punctuation">:</span><span class="token punctuation">:</span>Mat<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">zeros</span><span class="token punctuation">(</span>s_w<span class="token punctuation">,</span> s_h<span class="token punctuation">,</span> CV_32F<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    for (int i = 0; i < res.rows; i++)
-    {
-        for (int j = 0; j < res.cols; j++)
-        {
-            res.at<float>(i, j) = u(e);
-        }
-    }
-    return res;
-}</code></pre>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> res<span class="token punctuation">.</span>rows<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> res<span class="token punctuation">.</span>cols<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            res<span class="token punctuation">.</span>at<span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">u</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <h4 id="Mat的相关矩阵运算"><a href="#Mat的相关矩阵运算" class="headerlink" title="Mat的相关矩阵运算"></a>Mat的相关矩阵运算</h4><p><code>*</code>：是真正的乘法</p>
 <p><code>dot</code>:点乘</p>
 <p><code>size(cols,rows)</code> 与正常认知相反</p>
-<h4 id="c-的vector基本操作"><a href="#c-的vector基本操作" class="headerlink" title="c++的vector基本操作"></a>c++的vector基本操作</h4><pre class=" language-c++"><code class="language-c++">#include <string.h>
-#include <vector>
-#include <iostream>
-using namespace std;
+<h4 id="c-的vector基本操作"><a href="#c-的vector基本操作" class="headerlink" title="c++的vector基本操作"></a>c++的vector基本操作</h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+using namespace std<span class="token punctuation">;</span>
 
-int main()
-{
-    vector<int>obj;//创建一个向量存储容器 int
-    for(int i=0;i<10;i++) // push_back(elem)在数组最后添加数据 
-    {
-        obj.push_back(i);
-        cout<<obj[i]<<",";    
-    }
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span>obj<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建一个向量存储容器 int</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// push_back(elem)在数组最后添加数据 </span>
+    <span class="token punctuation">{</span>
+        obj<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span>obj<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token string">","</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>
 
-    for(int i=0;i<5;i++)//去掉数组最后一个数据 
-    {
-        obj.pop_back();
-    }
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//去掉数组最后一个数据 </span>
+    <span class="token punctuation">{</span>
+        obj<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    cout<<"\n"<<endl;
+    cout<span class="token operator">&lt;&lt;</span><span class="token string">"\n"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
 
-    for(int i=0;i<obj.size();i++)//size()容器中实际数据个数 
-    {
-        cout<<obj[i]<<",";
-    }
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>obj<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//size()容器中实际数据个数 </span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span>obj<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token string">","</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    return 0;
-}
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-/*
+<span class="token comment" spellcheck="true">/*
 0,1,2,3,4,5,6,7,8,9,
 
 0,1,2,3,4,
-*/</code></pre>
+*/</span></code></pre>
 <h3 id="numpy相关问题"><a href="#numpy相关问题" class="headerlink" title="numpy相关问题"></a>numpy相关问题</h3><h4 id="numpy的各种乘法"><a href="#numpy的各种乘法" class="headerlink" title="numpy的各种乘法"></a>numpy的各种乘法</h4><p><code>np.dot</code>: 维度&gt;= 2维，真正的矩阵乘法，一维向量的内积</p>
 <pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
 <span class="token number">12</span>
@@ -1226,7 +1226,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">93k</span>&nbsp;字
+                class="white-color">94.6k</span>&nbsp;字
             
             
             
