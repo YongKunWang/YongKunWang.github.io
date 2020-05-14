@@ -538,21 +538,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-08
+                    2020-05-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -672,6 +672,19 @@ machine</code></pre>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> tofrodos</code></pre>
 <p>实际上它安装了两个工具：todos(相当于unix2dos)，和fromdos(相当于dos2unix) </p>
 <pre class=" language-bash"><code class="language-bash">fromdos filename</code></pre>
+<h3 id="中文乱码的问题"><a href="#中文乱码的问题" class="headerlink" title="中文乱码的问题"></a>中文乱码的问题</h3><p><strong>iconv命令</strong>是用来转换文件的编码方式的，比如它可以将UTF8编码的转换成GB18030的编码，反过来也行。JDK中也提供了类似的工具native2ascii。Linux下的iconv开发库包括iconv_open,iconv_close,iconv等C函数，可以用来在C/C++程序中很方便的转换字符编码，这在抓取网页的程序中很有用处，而iconv命令在调试此类程序时用得着。 </p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">iconv</span> -f encoding <span class="token punctuation">[</span>-t encoding<span class="token punctuation">]</span> <span class="token punctuation">[</span>inputfile<span class="token punctuation">]</span><span class="token punctuation">..</span>. </code></pre>
+<blockquote>
+<pre><code>-f encoding :把字符从encoding编码开始转换。 
+-t encoding :把字符转换到encoding编码。 
+-l :列出已知的编码字符集合 
+-o file :指定输出文件 
+-c :忽略输出的非法字符 
+-s :禁止警告信息，但不是错误信息 
+--verbose :显示进度信息 
+-f和-t所能指定的合法字符在-l选项的命令里面都列出来了。 </code></pre></blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">iconv</span> file1 -f GBK -t UTF-8 -o file2 </code></pre>
+<p>这里，没<code>-o</code>那么会输出到标准输出。 </p>
 
             </div>
             <hr/>
@@ -983,12 +996,12 @@ vi 简介
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vim/">
-                        <span class="chip bg-color">vim</span>
-                    </a>
-                    
                     <a href="/tags/Linux/">
                         <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/vim/">
+                        <span class="chip bg-color">vim</span>
                     </a>
                     
                 </div>
@@ -1203,7 +1216,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">94.6k</span>&nbsp;字
+                class="white-color">101.8k</span>&nbsp;字
             
             
             

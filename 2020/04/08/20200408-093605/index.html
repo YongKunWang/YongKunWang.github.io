@@ -534,21 +534,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-09
+                    2020-05-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 
@@ -607,6 +607,8 @@
 <td align="center">第n个不同值的val</td>
 </tr>
 </tbody></table>
+<p><strong>可以这么理解：</strong></p>
+<p>第一行的row和cols这个意义很明确的，第一行的最后一个数字，可以代表一共多少个不同的值，也可以作为稀疏矩阵的校验，确认稀疏矩阵的行数一共这些行！</p>
 <ul>
 <li>记录两大类信息：<ul>
 <li>二维数组一共有几行几列，有多少个不同的值</li>
@@ -642,7 +644,26 @@
 <li>在编程是特别要注意对于第一行的处理</li>
 <li>在使用<code>eclipse</code>做编码的时候，最好也不要出现警告！</li>
 </ol>
-<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>homewyk<span class="token punctuation">.</span>sparsearray<span class="token punctuation">;</span>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><ol>
+<li><p>先创建一个棋盘，设置几个黑白子</p>
+</li>
+<li><p>二维数组 =》变为稀疏数组</p>
+<ol>
+<li>稀疏数组一共3列</li>
+<li>第一行为二维数组的行数和列数，通过遍历得到不同的元素数</li>
+<li>再给后续的行赋值</li>
+<li>校验 稀疏数组的行数 = 第一行第三列的value + 1</li>
+</ol>
+</li>
+<li><p>稀疏数组存储到文件中</p>
+</li>
+<li><p>从文件中读取稀疏数组</p>
+<p>还是要注意稀疏数组的格式，在得到第一行的时候，要创建一个二维数组</p>
+</li>
+<li><p>稀疏数组还原为二维数组</p>
+</li>
+</ol>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>homewyk<span class="token punctuation">.</span>sparsearray<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>Test<span class="token punctuation">;</span>
 
@@ -1409,7 +1430,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">94.6k</span>&nbsp;字
+                class="white-color">101.8k</span>&nbsp;字
             
             
             

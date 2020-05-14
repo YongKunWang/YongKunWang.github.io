@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://homewyk.com/"/>
-  <updated>2020-05-05T04:04:17.970Z</updated>
+  <updated>2020-05-14T06:28:54.135Z</updated>
   <id>https://homewyk.com/</id>
   
   <author>
@@ -17,11 +17,253 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>NG-Machine Learning Week1</title>
+    <link href="https://homewyk.com/2020/05/14/20200514-115257/"/>
+    <id>https://homewyk.com/2020/05/14/20200514-115257/</id>
+    <published>2020-05-14T03:52:53.000Z</published>
+    <updated>2020-05-14T06:28:54.135Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;目前存在几种不同类型的学习算法，主要的两种类型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;监督学习&lt;ul&gt;
+&lt;li&gt;我们将教计算机如何去完成任务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;无监督学习&lt;ul&gt;
+&lt;li&gt;我们打算让它自己进行学习&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://homewyk.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://homewyk.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习资料整理</title>
+    <link href="https://homewyk.com/2020/05/14/20200514-112816/"/>
+    <id>https://homewyk.com/2020/05/14/20200514-112816/</id>
+    <published>2020-05-14T03:28:12.000Z</published>
+    <updated>2020-05-14T03:31:19.860Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;学习资料整理&quot;&gt;&lt;a href=&quot;#学习资料整理&quot; class=&quot;headerlink&quot; title=&quot;学习资料整理&quot;&gt;&lt;/a&gt;学习资料整理&lt;/h2&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="深度学习" scheme="https://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20-数据结构Java版-插入排序</title>
+    <link href="https://homewyk.com/2020/05/14/20200514-104616/"/>
+    <id>https://homewyk.com/2020/05/14/20200514-104616/</id>
+    <published>2020-05-14T02:46:11.000Z</published>
+    <updated>2020-05-14T03:10:42.344Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;插入排序&quot;&gt;&lt;a href=&quot;#插入排序&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="https://homewyk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
+    
+      <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>19-数据结构Java版-选择排序</title>
+    <link href="https://homewyk.com/2020/05/14/20200514-101602/"/>
+    <id>https://homewyk.com/2020/05/14/20200514-101602/</id>
+    <published>2020-05-14T02:15:58.000Z</published>
+    <updated>2020-05-14T02:45:06.071Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;选择排序算法简介&quot;&gt;&lt;a href=&quot;#选择排序算法简介&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="https://homewyk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
+    
+      <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>17-数据结构Java版-冒泡排序</title>
+    <link href="https://homewyk.com/2020/05/13/20200513-114405/"/>
+    <id>https://homewyk.com/2020/05/13/20200513-114405/</id>
+    <published>2020-05-13T03:44:02.000Z</published>
+    <updated>2020-05-14T02:09:02.138Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;冒泡排序&quot;&gt;&lt;a href=&quot;#冒泡排序&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="https://homewyk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
+    
+      <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>18-数据结构Java版-复杂度概念</title>
+    <link href="https://homewyk.com/2020/05/13/20200513-114405/"/>
+    <id>https://homewyk.com/2020/05/13/20200513-114405/</id>
+    <published>2020-05-13T03:44:02.000Z</published>
+    <updated>2020-05-13T06:54:35.189Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="https://homewyk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
+    
+      <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>16-数据结构Java版-递归解决8皇后问题</title>
+    <link href="https://homewyk.com/2020/05/12/2020512-102420/"/>
+    <id>https://homewyk.com/2020/05/12/2020512-102420/</id>
+    <published>2020-05-12T02:24:15.000Z</published>
+    <updated>2020-05-12T03:45:21.906Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;递归解决8皇后问题&quot;&gt;&lt;a href=&quot;#递归解决8皇后问题&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="https://homewyk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
+    
+      <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习计划</title>
+    <link href="https://homewyk.com/2020/05/06/20200506-145201/"/>
+    <id>https://homewyk.com/2020/05/06/20200506-145201/</id>
+    <published>2020-05-06T06:51:57.000Z</published>
+    <updated>2020-05-06T06:59:48.706Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;学习计划&quot;&gt;&lt;a href=&quot;#学习计划&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习计划" scheme="https://homewyk.com/categories/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
+    
+    
+      <category term="学习计划" scheme="https://homewyk.com/tags/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LSTM-C++版本实现</title>
     <link href="https://homewyk.com/2020/05/03/20200503-094544/"/>
     <id>https://homewyk.com/2020/05/03/20200503-094544/</id>
     <published>2020-05-03T01:45:38.000Z</published>
-    <updated>2020-05-05T04:04:17.970Z</updated>
+    <updated>2020-05-06T06:49:54.070Z</updated>
     
     <summary type="html">
     
@@ -36,12 +278,10 @@
     </summary>
     
     
-      <category term="数据结构" scheme="https://homewyk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="深度学习" scheme="https://homewyk.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
-    
-      <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -347,241 +587,6 @@
     
     
       <category term="opencv" scheme="https://homewyk.com/tags/opencv/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>12-数据结构Java版-中缀表达式</title>
-    <link href="https://homewyk.com/2020/04/19/20200419-100027/"/>
-    <id>https://homewyk.com/2020/04/19/20200419-100027/</id>
-    <published>2020-04-19T02:00:27.000Z</published>
-    <updated>2020-04-21T02:35:43.807Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;中缀表达式&quot;&gt;&lt;a href=&quot;#中缀表达式&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="数据结构" scheme="https://homewyk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
-    
-      <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>09-pytorch-StartWithCoab</title>
-    <link href="https://homewyk.com/2020/04/18/20200418-221300/"/>
-    <id>https://homewyk.com/2020/04/18/20200418-221300/</id>
-    <published>2020-04-18T14:13:05.000Z</published>
-    <updated>2020-04-19T03:44:56.183Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;使用Google-Colab-实现关于Yolov3的训练检测&quot;&gt;&lt;a href=&quot;#使用Google-Colab-实现关于Yolov3的训练检测&quot; class=&quot;headerlink&quot; title=&quot;使用Google Colab
-        
-      
-    
-    </summary>
-    
-    
-      <category term="pytorch" scheme="https://homewyk.com/categories/pytorch/"/>
-    
-    
-      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://homewyk.com/tags/pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>08-pytorch-循环神经网络</title>
-    <link href="https://homewyk.com/2020/04/17/20200417-134000/"/>
-    <id>https://homewyk.com/2020/04/17/20200417-134000/</id>
-    <published>2020-04-17T05:40:05.000Z</published>
-    <updated>2020-04-18T14:14:17.022Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;时间序列表示&quot;&gt;&lt;a href=&quot;#时间序列表示&quot; class=&quot;headerlink&quot; title=&quot;时间序列表示&quot;&gt;&lt;/a&gt;时间序列表示&lt;/h2&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="pytorch" scheme="https://homewyk.com/categories/pytorch/"/>
-    
-    
-      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://homewyk.com/tags/pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>07-pytorch-神经网络</title>
-    <link href="https://homewyk.com/2020/04/17/20200417-102000/"/>
-    <id>https://homewyk.com/2020/04/17/20200417-102000/</id>
-    <published>2020-04-17T02:20:05.000Z</published>
-    <updated>2020-04-17T04:00:35.139Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;神经网络和全连接层&quot;&gt;&lt;a href=&quot;#神经网络和全连接层&quot; class=&quot;headerlink&quot; title=&quot;神经网络和全连接层&quot;&gt;&lt;/a&gt;神经网络和全连接层&lt;/h2&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="pytorch" scheme="https://homewyk.com/categories/pytorch/"/>
-    
-    
-      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://homewyk.com/tags/pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>06-pytorch-梯度</title>
-    <link href="https://homewyk.com/2020/04/16/20200416-162400/"/>
-    <id>https://homewyk.com/2020/04/16/20200416-162400/</id>
-    <published>2020-04-16T08:24:05.000Z</published>
-    <updated>2020-04-17T02:20:17.299Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;什么叫做梯度&quot;&gt;&lt;a href=&quot;#什么叫做梯度&quot; class=&quot;headerlink&quot; title=&quot;什么叫做梯度&quot;&gt;&lt;/a&gt;什么叫做梯度&lt;/h2&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="pytorch" scheme="https://homewyk.com/categories/pytorch/"/>
-    
-    
-      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://homewyk.com/tags/pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>05-pytorch-进阶知识</title>
-    <link href="https://homewyk.com/2020/04/16/20200416-160000/"/>
-    <id>https://homewyk.com/2020/04/16/20200416-160000/</id>
-    <published>2020-04-16T08:00:05.000Z</published>
-    <updated>2020-04-17T02:09:33.533Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;拼接与拆分操作&quot;&gt;&lt;a href=&quot;#拼接与拆分操作&quot; class=&quot;headerlink&quot; title=&quot;拼接与拆分操作&quot;&gt;&lt;/a&gt;拼接与拆分操作&lt;/h2&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="pytorch" scheme="https://homewyk.com/categories/pytorch/"/>
-    
-    
-      <category term="深度学习" scheme="https://homewyk.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://homewyk.com/tags/pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11-数据结构Java版-单链表模拟栈实现</title>
-    <link href="https://homewyk.com/2020/04/16/20200416-120027/"/>
-    <id>https://homewyk.com/2020/04/16/20200416-120027/</id>
-    <published>2020-04-16T04:00:27.000Z</published>
-    <updated>2020-04-19T01:56:01.180Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;单链表模拟栈&quot;&gt;&lt;a href=&quot;#单链表模拟栈&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="数据结构" scheme="https://homewyk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
-    
-      <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>10-数据结构Java版-数组模拟栈实现</title>
-    <link href="https://homewyk.com/2020/04/16/20200416-101527/"/>
-    <id>https://homewyk.com/2020/04/16/20200416-101527/</id>
-    <published>2020-04-16T02:15:27.000Z</published>
-    <updated>2020-04-19T02:03:14.798Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;img src=&quot;https://gitee.com/homewyk/cloudimg/raw/master/images.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;栈-Stack&quot;&gt;&lt;a href=&quot;#栈-Stack&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="数据结构" scheme="https://homewyk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="Java" scheme="https://homewyk.com/tags/Java/"/>
-    
-      <category term="数据结构" scheme="https://homewyk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
